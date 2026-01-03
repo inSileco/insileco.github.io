@@ -139,4 +139,20 @@ input[type="checkbox"] {
         padding-left: 0.75rem;
         padding-right: 0.75rem;
     }
+
+    /* Increase navbar burger icon size on mobile */
+    .navbar-burger {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .navbar-burger span {
+        height: 2px;
+        width: 24px;
+    }
+
+    /* Adjust header margin to account for larger navbar on mobile */
+    #header-logo {
+        margin-top: 5rem !important;
+    }
 }
