@@ -2,14 +2,15 @@
   <div class="columns is-desktop is-vcentered">
     <div class="column is-1"></div>
     
+    {{ $footer := index .Site.Data .Site.Language.Lang "home" "footer" }}
     <div class="column is-5-desktop is-12-mobile">
       <div id="contact" class="content has-text-centered">
-        <h3>Stay informed</h3>
-        <p><i>Occasional insights and updates by email. No Spam!</i></p>
+        <h3>{{ $footer.tally.heading }}</h3>
+        <p><i>{{ $footer.tally.blurb }}</i></p>
         <iframe
-          data-tally-src="https://tally.so/embed/jaoJKE?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-          loading="lazy" width="100%" height="150" frameborder="0" marginheight="0" marginwidth="0"
-          title="Subscribe footer">
+          data-tally-src="{{ $footer.tally.subscribe_url }}"
+          loading="lazy" width="100%" height="{{ $footer.tally.subscribe_height }}" frameborder="0" marginheight="0" marginwidth="0"
+          title="{{ $footer.tally.subscribe_title }}">
         </iframe>
         <script>var d = document, w = "https://tally.so/widgets/embed.js", v = function () { "undefined" != typeof Tally ? Tally.loadEmbeds() : d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function (e) { e.src = e.dataset.tallySrc })) }; if ("undefined" != typeof Tally) v(); else if (d.querySelector('script[src="' + w + '"]') == null) { var s = d.createElement("script"); s.src = w, s.onload = v, s.onerror = v, d.body.appendChild(s); }</script>
       </div>
