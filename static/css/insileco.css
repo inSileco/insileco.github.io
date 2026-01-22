@@ -166,6 +166,10 @@ body {
     color: #37abc8;
 }
 
+.home-placeholder .portfolio-grid {
+    margin-top: 1.5rem;
+}
+
 .home-placeholder {
     padding-top: 2rem;
     padding-bottom: 2rem;
