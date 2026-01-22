@@ -1,5 +1,6 @@
 ---
 title: "Portfolio"
+subtitle: "Selected work demonstrating decision-ready data systems, assessments, and tools."
 ---
 
 # Our Portfolio

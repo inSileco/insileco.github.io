@@ -1,5 +1,6 @@
 ---
 title: "Careers"
+subtitle: "Rejoignez une équipe au carrefour des sciences environnementales, des systèmes de données et de la prise de décision."
 ---
 
 ## Intro

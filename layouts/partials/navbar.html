@@ -11,16 +11,17 @@
         </a>
     </div>
 
+    {{ $isFr := eq .Site.Language.Lang "fr" }}
     <div id="navbarBasicExample" class="navbar-menu">
 
         <div class="navbar-start">
-            <a class="navbar-item" href="{{ relLangURL "/" }}">Home</a>
-            <a class="navbar-item" href="{{ relLangURL "/services/" }}">Services</a>
-            <a class="navbar-item" href="{{ relLangURL "/about/" }}">About</a>
-            <a class="navbar-item" href="{{ relLangURL "/careers/" }}">Careers</a>
-            <a class="navbar-item" href="{{ relLangURL "/portfolio/" }}">Portfolio</a>
-            <a class="navbar-item" href="{{ relLangURL "/publications/" }}">Publications</a>
-            <a class="navbar-item" href="https://blog.insileco.io">Blog</a>
+            <a class="navbar-item" href="{{ relLangURL "/" }}">{{ if $isFr }}Accueil{{ else }}Home{{ end }}</a>
+            <a class="navbar-item" href="{{ relLangURL "/services/" }}">{{ if $isFr }}Services{{ else }}Services{{ end }}</a>
+            <a class="navbar-item" href="{{ relLangURL "/about/" }}">{{ if $isFr }}À propos{{ else }}About{{ end }}</a>
+            <a class="navbar-item" href="{{ relLangURL "/careers/" }}">{{ if $isFr }}Carrières{{ else }}Careers{{ end }}</a>
+            <a class="navbar-item" href="{{ relLangURL "/portfolio/" }}">{{ if $isFr }}Portfolio{{ else }}Portfolio{{ end }}</a>
+            <a class="navbar-item" href="{{ relLangURL "/publications/" }}">{{ if $isFr }}Publications{{ else }}Publications{{ end }}</a>
+            <a class="navbar-item" href="https://blog.insileco.io">{{ if $isFr }}Blogue{{ else }}Blog{{ end }}</a>
         </div>
 
         <div class="navbar-end">
@@ -31,10 +32,10 @@
                 <i class="fa-brands fa-github"></i>
             </a>
             <div class="navbar-item">
-                <a class="button is-light navbar-login is-static">Login</a>
+                <a class="button is-light navbar-login" href="{{ relLangURL "/login/" }}">{{ if $isFr }}Connexion{{ else }}Login{{ end }}</a>
             </div>
             <div class="navbar-item">
-                <a class="button navbar-contact" href="{{ relLangURL "/contact/" }}">Contact us</a>
+                <a class="button navbar-contact" href="{{ relLangURL "/contact/" }}">{{ if $isFr }}Contactez-nous{{ else }}Contact us{{ end }}</a>
             </div>
             {{ range .Translations }}
                 <a class="navbar-item has-text-weight-bold" href="{{ .Permalink }}">{{ upper .Lang }}</a>

@@ -1,5 +1,6 @@
 ---
 title: "Careers"
+subtitle: "Join a team working at the intersection of environmental science, data systems, and decision-making."
 ---
 
 ## Intro
