@@ -1,0 +1,92 @@
+{{ define "main" }}
+{{ $hero := index .Site.Data .Site.Language.Lang "about" "hero" }}
+<section class="section about-hero">
+    <div class="container about-content has-text-centered hero-shared">
+        <h1 class="title is-2 hero-title">{{ $hero.headline }}</h1>
+        <p class="subtitle is-5 hero-subtitle">{{ $hero.subheadline }}</p>
+        <div class="buttons is-centered hero-cta">
+            <a class="button is-primary" href="{{ relLangURL $hero.cta_primary.link }}">{{ $hero.cta_primary.label }}</a>
+            <a class="button is-light" href="{{ $hero.cta_secondary.link }}">{{ $hero.cta_secondary.label }}</a>
+        </div>
+    </div>
+</section>
+
+<section class="section about-section">
+    <div class="container content about-content">
+        <h2>Purpose</h2>
+        <p>We help organizations turn complex environmental data into actionable decisions.</p>
+        <p>Our work focuses on data systems, environmental assessments, and capacity building to support biodiversity management and decision-making.</p>
+    </div>
+</section>
+
+<section class="section about-section about-section-alt">
+    <div class="container content about-content">
+        <h2>How we work</h2>
+        <p>We prioritize clarity, transparency, and collaboration from discovery to delivery.</p>
+        <ul>
+            <li>Decision-driven approach that starts from use cases, not datasets.</li>
+            <li>Reproducible and transparent workflows that are easy to audit.</li>
+            <li>Co-development and capacity building to reduce dependency.</li>
+            <li>Maintainable systems with clear documentation and handover.</li>
+            <li>Tools and methods that teams can operate and adapt.</li>
+        </ul>
+    </div>
+</section>
+
+<section class="section about-section">
+    <div class="container content about-content">
+        <h2>What we do</h2>
+        <ul>
+            <li>Environmental data systems and pipelines.</li>
+            <li>Biodiversity and cumulative-effects assessments.</li>
+            <li>Decision-support tools and dashboards.</li>
+            <li>Training, workshops, and coaching.</li>
+        </ul>
+    </div>
+</section>
+
+<section class="section about-section about-section-alt">
+    <div class="container content about-content">
+        <h2>Who we work with</h2>
+        <p>We collaborate across public, Indigenous, and research sectors.</p>
+        <ul>
+            <li>Public agencies.</li>
+            <li>Indigenous organizations.</li>
+            <li>Research networks and NGOs.</li>
+        </ul>
+        <p><em>(Add partner examples here)</em></p>
+    </div>
+</section>
+
+<section class="section about-expertise">
+    {{ partial "expertise.html" . }}
+</section>
+
+<section class="section about-team">
+    <div class="container">
+        {{ partial "team.html" . }}
+    </div>
+</section>
+
+<section class="section about-section">
+    <div class="container content about-content">
+        <h2>Principles</h2>
+        <ul>
+            <li>Transparency and reproducibility.</li>
+            <li>Collaboration and co-development.</li>
+            <li>Capacity building and knowledge transfer.</li>
+            <li>Practical, decision-ready outputs.</li>
+        </ul>
+    </div>
+</section>
+
+<section class="section about-section about-section-alt">
+    <div class="container content about-content">
+        <h2>Next steps</h2>
+        <div class="buttons">
+            <a class="button is-primary" href="{{ relLangURL "/portfolio/" }}">Explore our project portfolio</a>
+            <a class="button is-light" href="#contact">Contact us</a>
+        </div>
+    </div>
+</section>
+{{ end }}

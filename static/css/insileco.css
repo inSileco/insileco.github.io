@@ -87,6 +87,7 @@ body {
     padding-bottom: rem;
 }
 
+.hero-shared .hero-title,
 .hero-title {
     max-width: 28ch;
     padding-bottom: 1rem;
@@ -94,6 +95,7 @@ body {
     margin-right: auto;
 }
 
+.hero-shared .hero-subtitle,
 .hero-subtitle {
     max-width: 70ch;
     margin-left: auto;
@@ -133,6 +135,67 @@ body {
 .hero-carousel img {
     height: 2.25rem;
     opacity: 0.75;
+}
+
+.about-content {
+    max-width: 46rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-hero {
+    position: relative;
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+    overflow: hidden;
+}
+
+.about-hero {
+    padding-top: 10rem;
+    padding-bottom: rem;
+}
+
+.about-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("/img/logo.svg") no-repeat center center;
+    background-size: 18rem auto;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.about-hero .container {
+    position: relative;
+}
+
+.about-section {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
+.about-section-alt {
+    background-color: #f6f6f6;
+}
+
+.about-team .columns {
+    max-width: 100rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-expertise #expertise .columns {
+    max-width: 100rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-table .table th {
+    width: 20%;
+}
+
+.about-table .table th a {
+    color: inherit;
 }
 
 @keyframes hero-carousel-scroll {

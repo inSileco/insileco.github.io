@@ -1,0 +1,20 @@
+{{ $mission := index .Site.Data .Site.Language.Lang "home" "mission" }}
+<section id="about" class="section about-table">
+    <div class="container">
+        <h2 class="title is-3 has-text-centered">{{ .Title }}</h2>
+        <div class="table-container">
+            <table class="table is-fullwidth is-striped">
+                <tbody>
+                    <tr>
+                        <th><a href="#mission">{{ $mission.title }}</a></th>
+                        <td>{{ $mission.description }}</td>
+                    </tr>
+                    <tr>
+                        <th><a href="#team">{{ .Site.Params.title_team }}</a></th>
+                        <td>{{ .Site.Params.subtitle_team | default "" }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
