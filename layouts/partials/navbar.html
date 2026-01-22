@@ -17,6 +17,7 @@
             <a class="navbar-item" href="{{ relLangURL "/" }}">Home</a>
             <a class="navbar-item" href="{{ relLangURL "/services/" }}">Services</a>
             <a class="navbar-item" href="{{ relLangURL "/about/" }}">About</a>
+            <a class="navbar-item" href="{{ relLangURL "/careers/" }}">Careers</a>
             <a class="navbar-item" href="{{ relLangURL "/portfolio/" }}">Portfolio</a>
             <a class="navbar-item" href="{{ relLangURL "/publications/" }}">Publications</a>
             <a class="navbar-item" href="https://blog.insileco.io">Blog</a>
@@ -33,7 +34,7 @@
                 <a class="button is-light navbar-login is-static">Login</a>
             </div>
             <div class="navbar-item">
-                <a class="button navbar-contact" href="#contact">Contact us</a>
+                <a class="button navbar-contact" href="{{ relLangURL "/contact/" }}">Contact us</a>
             </div>
             {{ range .Translations }}
                 <a class="navbar-item has-text-weight-bold" href="{{ .Permalink }}">{{ upper .Lang }}</a>

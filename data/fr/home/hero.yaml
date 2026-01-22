@@ -5,5 +5,5 @@ cta_primary:
   link: "/portfolio/"
 cta_secondary:
   label: "Contact us"
-  link: "#contact"
+  link: "/contact/"
 credibility: "Trusted by public agencies, Indigenous organizations, and research partners."

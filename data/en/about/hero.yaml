@@ -5,4 +5,4 @@ cta_primary:
   link: "/portfolio/"
 cta_secondary:
   label: "Contact us"
-  link: "#contact"
+  link: "/contact/"

@@ -45,7 +45,21 @@
     </div>
 </section>
 
-<section class="section about-section about-section-alt">
+<section id="about-how-we-work" class="section about-section about-section-alt">
+    <div class="container content about-content">
+        <h2>How we work</h2>
+        <p>We prioritize clarity, transparency, and collaboration from discovery to delivery.</p>
+        <ul>
+            <li>Decision-driven approach that starts from use cases, not datasets.</li>
+            <li>Reproducible and transparent workflows that are easy to audit.</li>
+            <li>Co-development and capacity building to reduce dependency.</li>
+            <li>Maintainable systems with clear documentation and handover.</li>
+            <li>Tools and methods that teams can operate and adapt.</li>
+        </ul>
+    </div>
+</section>
+
+<section class="section about-section">
     <div class="container content about-content">
         <h2>Who we work with</h2>
         <p>We collaborate across public, Indigenous, and research sectors.</p>
@@ -65,6 +79,9 @@
 <section class="section about-team">
     <div class="container">
         {{ partial "team.html" . }}
+        <div class="buttons is-centered mt-5">
+            <a class="button is-primary" href="{{ relLangURL "/careers/" }}">Join our team</a>
+        </div>
     </div>
 </section>
 
@@ -85,7 +102,7 @@
         <h2>Next steps</h2>
         <div class="buttons">
             <a class="button is-primary" href="{{ relLangURL "/portfolio/" }}">Explore our project portfolio</a>
-            <a class="button is-light" href="#contact">Contact us</a>
+            <a class="button is-light" href="{{ relLangURL "/contact/" }}">Contact us</a>
         </div>
     </div>
 </section>

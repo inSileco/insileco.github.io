@@ -9,6 +9,7 @@ body {
     padding: 0;
     overflow-x: hidden;
     max-width: 100vw;
+    padding-top: 4.5rem;
 }
 
 
@@ -83,7 +84,7 @@ body {
 }
 
 .hero-main {
-    padding-top: 10rem;
+    padding-top: 6rem;
     padding-bottom: rem;
 }
 
@@ -135,6 +136,72 @@ body {
 .hero-carousel img {
     height: 2.25rem;
     opacity: 0.75;
+    filter: grayscale(100%);
+}
+
+.home-help {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.home-help-card {
+    display: block;
+    height: 100%;
+    border: 1px solid #e5e7eb;
+    box-shadow: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.home-help-card:hover,
+.home-help-card:focus {
+    border-color: #cbd5f5;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.home-help-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-weight: 600;
+    color: #37abc8;
+}
+
+.home-placeholder {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.home-placeholder-alt {
+    background-color: #f6f6f6;
+}
+
+.home-band-alt {
+    background-color: #f6f6f6;
+}
+
+.home-band-text {
+    color: inherit;
+}
+
+.home-band-text li {
+    color: inherit;
+}
+
+.home-placeholder-list {
+    max-width: 38rem;
+    margin: 0 auto;
+}
+
+.home-credibility-text {
+    color: #6b7280;
+    font-style: italic;
+    font-size: 1.05rem;
+}
+
+.network-credibility {
+    color: #6b7280;
+    font-style: italic;
+    margin-top: 0.5rem;
 }
 
 .about-content {
