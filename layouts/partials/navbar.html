@@ -1,23 +1,40 @@
 <nav class="navbar is-spaced is-fixed-top is-size-8" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
+        <a class="navbar-item navbar-logo" href="{{ relLangURL "/" }}">
+            <img src="/img/logo.svg" alt="inSileco logo" />
+            <span class="navbar-title">inSileco</span>
+        </a>
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
         </a>
     </div>
 
     <div id="navbarBasicExample" class="navbar-menu">
 
         <div class="navbar-start">
-            {{ range .Site.Menus.main }}
-                <a class="navbar-item" href="{{ relLangURL .URL }}">
-                    {{ .Name }}
-                </a>
-            {{ end }}
+            <a class="navbar-item" href="{{ relLangURL "/" }}">Home</a>
+            <a class="navbar-item" href="{{ relLangURL "/services/" }}">Services</a>
+            <a class="navbar-item" href="{{ relLangURL "/about/" }}">About</a>
+            <a class="navbar-item" href="{{ relLangURL "/portfolio/" }}">Portfolio</a>
+            <a class="navbar-item" href="{{ relLangURL "/publications/" }}">Publications</a>
+            <a class="navbar-item" href="https://blog.insileco.io">Blog</a>
         </div>
 
         <div class="navbar-end">
+            <a class="navbar-item" href="https://www.linkedin.com/company/insileco/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a class="navbar-item" href="https://github.com/inSileco" target="_blank" rel="noopener" aria-label="GitHub">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <div class="navbar-item">
+                <a class="button is-light navbar-login is-static">Login</a>
+            </div>
+            <div class="navbar-item">
+                <a class="button navbar-contact" href="#contact">Contact us</a>
+            </div>
             {{ range .Translations }}
                 <a class="navbar-item has-text-weight-bold" href="{{ .Permalink }}">{{ upper .Lang }}</a>
             {{ end }}
