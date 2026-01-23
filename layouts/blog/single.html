@@ -1,0 +1,73 @@
+{{ define "main" }}
+{{ partial "page-hero.html" . }}
+
+<div class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-8-desktop is-offset-2">
+
+        <article class="content">
+          <header class="mb-5">
+            <h1 class="title is-2">{{ .Title }}</h1>
+
+            <div class="mb-4">
+              {{ with .Params.date }}
+              <span class="has-text-grey">
+                <i class="fa-regular fa-calendar"></i> {{ .Format "January 2, 2006" }}
+              </span>
+              {{ end }}
+
+              {{ with .Params.author }}
+              <span class="has-text-grey ml-3">
+                <i class="fa-regular fa-user"></i> {{ . }}
+              </span>
+              {{ end }}
+            </div>
+
+            {{ if .Params.categories }}
+            <div class="mb-3">
+              {{ range .Params.categories }}
+              <span class="tag is-warning is-medium mr-2">{{ . }}</span>
+              {{ end }}
+            </div>
+            {{ end }}
+
+            {{ if .Params.tags }}
+            <div class="mb-4">
+              {{ range .Params.tags }}
+              <span class="tag is-light mr-1">{{ . }}</span>
+              {{ end }}
+            </div>
+            {{ end }}
+
+            {{ with .Params.description }}
+            <p class="subtitle is-5 has-text-grey-dark">{{ . }}</p>
+            {{ end }}
+          </header>
+
+          <div class="blog-content">
+            {{ .Content }}
+          </div>
+
+          <footer class="mt-6 pt-4" style="border-top: 1px solid #e0e0e0;">
+            <div class="level">
+              <div class="level-left">
+                <div class="level-item">
+                  <a href="{{ relLangURL "/blog/" }}" class="button is-light">
+                    <span class="icon">
+                      <i class="fa-solid fa-arrow-left"></i>
+                    </span>
+                    <span>Back to Blog</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </article>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ end }}

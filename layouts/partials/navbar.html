@@ -21,7 +21,7 @@
             <a class="navbar-item" href="{{ relLangURL "/careers/" }}">{{ if $isFr }}Carrières{{ else }}Careers{{ end }}</a>
             <a class="navbar-item" href="{{ relLangURL "/portfolio/" }}">{{ if $isFr }}Portfolio{{ else }}Portfolio{{ end }}</a>
             <a class="navbar-item" href="{{ relLangURL "/publications/" }}">{{ if $isFr }}Publications{{ else }}Publications{{ end }}</a>
-            <a class="navbar-item" href="https://blog.insileco.io">{{ if $isFr }}Blogue{{ else }}Blog{{ end }}</a>
+            <a class="navbar-item" href="{{ relLangURL "/blog/" }}">{{ if $isFr }}Blogue{{ else }}Blog{{ end }}</a>
         </div>
 
         <div class="navbar-end">
@@ -30,6 +30,9 @@
             </a>
             <a class="navbar-item" href="https://github.com/inSileco" target="_blank" rel="noopener" aria-label="GitHub">
                 <i class="fa-brands fa-github"></i>
+            </a>
+            <a class="navbar-item" href="https://bsky.app/profile/insileco.bsky.social" target="_blank" rel="noopener" aria-label="Bluesky">
+                <i class="fa-brands fa-bluesky"></i>
             </a>
             <div class="navbar-item">
                 <a class="button is-light navbar-login" href="{{ relLangURL "/login/" }}">{{ if $isFr }}Connexion{{ else }}Login{{ end }}</a>
