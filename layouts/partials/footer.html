@@ -1,9 +1,9 @@
 <footer class="footer">
   <div class="columns is-desktop is-vcentered">
-    <div class="column is-1"></div>
+    <div class="column is-2"></div>
     
     {{ $footer := index .Site.Data .Site.Language.Lang "home" "footer" }}
-    <div class="column is-5-desktop is-12-mobile">
+    <div class="column is-4-desktop is-12-mobile">
       <div id="contact" class="content has-text-centered">
         <h3>{{ $footer.tally.heading }}</h3>
         <p><i>{{ $footer.tally.blurb }}</i></p>
