@@ -15,7 +15,7 @@ instructors:
   - Steve Vissault
 description: | 
   Recently, two independent analyses performed for the Scotian Shelf sought to assess cumulative effects to species (Beauchesne et al. 2023) and habitats (Murphy and Kelly 2023). The goal of this project was to combine both assessment into an ecosystem-scale cumulative effects assessment that considers direct effects to habitats and species as well as indirect effects to species arising from species interactions and habitat use. It results in the assessment of the cumulative effects of 17 environmental stressors on 21 habitats and 205 species of the Scotian Shelf Bioregion.
-gh: https://github.com/inSilecoInc/nceahab
+gh: https://github.com/inSileco/nceahab
 ws: 
 ---
 

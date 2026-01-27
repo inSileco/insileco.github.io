@@ -13,7 +13,7 @@ instructors:
   - Kevin Cazelles
 description: | 
   Lors de cet atelier, nous avons discuté des enjeux liés à la reproductibilité et nous avons montré comment organiser son processus de travail avec R.
-gh: inSilecoInc/workshop_reproducibility
+gh: inSileco/workshop_reproducibility
 ws: https://insilecoinc.github.io/workshop_reproducibility/ 
 ---
 

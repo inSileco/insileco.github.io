@@ -19,7 +19,7 @@ custom_js = []
         subtitle_expertise = "Nous sommes d’éminents scientifiques et experts en données spécialisés dans les sciences de la biodiversité. Notre expertise académique couvre l'écologie théorique du réseau trophique et le développement de méthodologies essentielles pour la gestion écosystémique, comme détaillé dans notre longue liste de publications évaluées par des pairs. En tant que data scientists, nous excellons dans un large éventail d’analyses statistiques, en les appliquant à des ensembles de données vastes et diversifiés à l’aide de technologies avancées. Avec plus d'une décennie d'expérience professionnelle et universitaire, nous avons perfectionné nos compétences en aidant les scientifiques universitaires et gouvernementaux à analyser et à visualiser les données sur la biodiversité, et à créer des pipelines analytiques robustes et des outils interactifs."
         title_team = "Notre équipe"
         subtitle_team = ""
-        footer = 'Le code source de ce site est disponible sur <a href="https://github.com/inSilecoInc/insilecoinc.github.io">GitHub</a> sous licence <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.</br><i class="fa-solid fa-copyright fa-sm"></i> inSileco Inc. 2020-2026'
+        footer = 'Le code source de ce site est disponible sur <a href="https://github.com/inSilecoinsilecoinc.github.io">GitHub</a> sous licence <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.</br><i class="fa-solid fa-copyright fa-sm"></i> inSileco Inc. 2020-2026'
     [[languages.fr.menu.main]]
         name = "Acceuil"
         url = "/"
@@ -67,7 +67,7 @@ custom_js = []
         subtitle_expertise = "We are distinguished scientists and data experts specializing in biodiversity sciences. Our academic expertise spans theoretical food web ecology and the development of essential methodologies for ecosystem-based management, as detailed in our extensive list of peer-reviewed publications. As data scientists, we excel in a wide range of statistical analyses, applying them to large and diverse datasets using advanced technologies. With over a decade of professional and academic experience, we have honed our skills in supporting academic and governmental scientists in analyzing and visualizing biodiversity data, and in creating robust analytical pipelines and interactive tools."
         title_team = "Our team"
         subtitle_team = ""
-        footer = 'The source code of this website is available on <a href="https://github.com/inSilecoInc/insilecoinc.github.io">GitHub</a> licensed under <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.</br><i class="fa-solid fa-copyright fa-sm"></i> inSileco Inc. 2020-2026.'
+        footer = 'The source code of this website is available on <a href="https://github.com/inSileco/insileco.github.io">GitHub</a> licensed under <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.</br><i class="fa-solid fa-copyright fa-sm"></i> inSileco Inc. 2020-2026.'
     [[languages.en.menu.main]]
         name = "Home"
         url = "/"

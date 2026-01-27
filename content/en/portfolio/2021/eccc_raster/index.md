@@ -13,8 +13,8 @@ instructors:
   - Kevin Cazelles
 description: | 
   During this workshop, we showed, using concrete examples, how to manipulate and visualize spatial data with R.
-gh: inSilecoInc/wksh_raster_CWS
-ws: https://github.com/inSilecoInc/wksh_raster_CWS?tab=readme-ov-file#presentations
+gh: inSileco/wksh_raster_CWS
+ws: https://github.com/inSileco/wksh_raster_CWS?tab=readme-ov-file#presentations
 ---
 
 

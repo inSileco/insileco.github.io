@@ -13,7 +13,7 @@ instructors:
   - Kevin Cazelles
 description: | 
   Lors de cet atelier, nous avons montré la puissance des outils R pour manipuler et visualiser efficacement les fichiers de type raster.
-gh: inSilecoInc/interactiveRaster
+gh: inSileco/interactiveRaster
 ws: https://insileco.io/interactiveRaster/#1
 ---
 

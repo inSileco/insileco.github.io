@@ -14,7 +14,7 @@ instructors:
   - Kevin Cazelles
 description: | 
   During this workshop, we showed how to collaborate concretely and efficiently on projects with git and GitHub.
-gh: inSilecoInc/learning_git
+gh: inSileco/learning_git
 ws: https://insileco.io/learning_git/#1
 ---
 
