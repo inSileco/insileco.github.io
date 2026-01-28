@@ -63,10 +63,10 @@ custom_js = []
         name = "About"
         url = "/about/"
         weight = 2
-    [[languages.fr.menu.main]]
-        name = "Carrières"
-        url = "/careers/"
-        weight = 3
+    # [[languages.fr.menu.main]]
+    #     name = "Carrières"
+    #     url = "/careers/"
+    #     weight = 3
     [[languages.fr.menu.main]]
         name = "Portfolio"
         url = "/portfolio/"
@@ -109,10 +109,10 @@ custom_js = []
         name = "About"
         url = "/about/"
         weight = 2
-    [[languages.en.menu.main]]
-        name = "Carrieers"
-        url = "/careers/"
-        weight = 3
+    # [[languages.en.menu.main]]
+    #     name = "Careers"
+    #     url = "/careers/"
+    #     weight = 3
     [[languages.en.menu.main]]
         name = "Portfolio"
         url = "/portfolio/"
