@@ -11,38 +11,36 @@
         </a>
     </div>
 
-    {{ $isFr := eq .Site.Language.Lang "fr" }}
     <div id="navbarBasicExample" class="navbar-menu">
 
         <div class="navbar-start">
-            <a class="navbar-item" href="{{ relLangURL "/" }}">{{ if $isFr }}Accueil{{ else }}Home{{ end }}</a>
-            <a class="navbar-item" href="{{ relLangURL "/services/" }}">{{ if $isFr }}Services{{ else }}Services{{ end }}</a>
-            <a class="navbar-item" href="{{ relLangURL "/about/" }}">{{ if $isFr }}À propos{{ else }}About{{ end }}</a>
-            <a class="navbar-item" href="{{ relLangURL "/careers/" }}">{{ if $isFr }}Carrières{{ else }}Careers{{ end }}</a>
-            <a class="navbar-item" href="{{ relLangURL "/portfolio/" }}">{{ if $isFr }}Portfolio{{ else }}Portfolio{{ end }}</a>
-            <a class="navbar-item" href="{{ relLangURL "/publications/" }}">{{ if $isFr }}Publications{{ else }}Publications{{ end }}</a>
-            <a class="navbar-item" href="{{ relLangURL "/blog/" }}">{{ if $isFr }}Blogue{{ else }}Blog{{ end }}</a>
+            {{ range .Site.Menus.main }}
+            <a class="navbar-item" href="{{ relLangURL .URL }}">
+                {{ .Name }}
+            </a>
+            {{ end }}
         </div>
 
         <div class="navbar-end">
-            <a class="navbar-item" href="https://www.linkedin.com/company/insileco/" target="_blank" rel="noopener" aria-label="LinkedIn">
-                <i class="fa-brands fa-linkedin"></i>
-            </a>
-            <a class="navbar-item" href="https://github.com/inSileco" target="_blank" rel="noopener" aria-label="GitHub">
-                <i class="fa-brands fa-github"></i>
-            </a>
-            <a class="navbar-item" href="https://bsky.app/profile/insileco.bsky.social" target="_blank" rel="noopener" aria-label="Bluesky">
-                <i class="fa-brands fa-bluesky"></i>
-            </a>
-            <a class="navbar-item" href="https://x.com/inSileco" target="_blank" rel="noopener" aria-label="X">
-                <i class="fa-brands fa-x-twitter"></i>
-            </a>
-            <div class="navbar-item">
-                <a class="button is-light navbar-login" href="{{ relLangURL "/login/" }}">{{ if $isFr }}Connexion{{ else }}Login{{ end }}</a>
-            </div>
-            <div class="navbar-item">
-                <a class="button navbar-contact" href="{{ relLangURL "/contact/" }}">{{ if $isFr }}Contactez-nous{{ else }}Contact us{{ end }}</a>
-            </div>
+            {{ range .Site.Params.social }}
+                <a class="navbar-item" href="{{ .url }}" target="_blank" rel="noopener" aria-label="{{ .name }}">
+                    <i class="{{ .icon }}"></i>
+                </a>
+            {{ end }}
+            {{ with .Site.Params.login }}
+                <div class="navbar-item">
+                    <a class="button is-light navbar-login" href="{{ relLangURL .url }}">
+                        {{ .name }}
+                    </a>
+                </div>
+            {{ end }}
+            {{ with .Site.Params.contact }}
+                <div class="navbar-item">
+                    <a class="button navbar-contact" href="{{ relLangURL .url }}">
+                        {{ .name }}
+                    </a>
+                </div>
+            {{ end }}
             {{ range .Translations }}
                 <a class="navbar-item has-text-weight-bold" href="{{ .Permalink }}">{{ upper .Lang }}</a>
             {{ end }}
