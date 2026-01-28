@@ -45,9 +45,9 @@ custom_js = []
         title_team = "Notre équipe"
         subtitle_team = ""
         footer = 'Le code source de ce site est disponible sur <a href="https://github.com/inSilecoInc/insilecoinc.github.io">GitHub</a> sous licence <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.</br><i class="fa-solid fa-copyright fa-sm"></i> inSileco Inc. 2020-2026'
-    [languages.fr.params.login]
-      name = "Connexion"
-      url = "/login/"
+    # [languages.fr.params.login]
+    #   name = "Connexion"
+    #   url = "/login/"
     [languages.fr.params.contact]
       name = "Contactez-nous"
       url = "contact"
@@ -91,9 +91,9 @@ custom_js = []
         title_team = "Our team"
         subtitle_team = ""
         footer = 'The source code of this website is available on <a href="https://github.com/inSilecoInc/insilecoinc.github.io">GitHub</a> licensed under <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.</br><i class="fa-solid fa-copyright fa-sm"></i> inSileco Inc. 2020-2026.'
-      [languages.en.params.login]
-        name = "Login"
-        url = "/login/"
+    #   [languages.en.params.login]
+    #     name = "Login"
+    #     url = "/login/"
       [languages.en.params.contact]
         name = "Contact us"
         url = "/contact/"
