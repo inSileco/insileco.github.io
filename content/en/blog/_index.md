@@ -1,5 +1,5 @@
 ---
-title: "Blog"
+title: "inSileco Blog"
 subtitle: "Insights and updates from the inSileco team"
 ---
 
