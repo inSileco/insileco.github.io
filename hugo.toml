@@ -30,11 +30,16 @@ icon = "fa-brands fa-bluesky"
 url = "https://bsky.app/profile/insileco.bsky.social"
 weight = 3
 
-[[params.social]]
-name = "X"
-icon = "fa-brands fa-x-twitter"
-url = "https://x.com/inSileco"
-weight = 4
+  [[params.social]]
+    name = "X"
+    icon = "fa-brands fa-x-twitter"
+    url = "https://x.com/inSileco"
+    weight = 4
+  [[params.social]]
+    name = "Facebook"
+    icon = "fa-brands fa-facebook"
+    url = "https://www.facebook.com/profile.php?id=61587282957743"
+    weight = 5
 
 
 
