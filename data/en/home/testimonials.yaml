@@ -1,0 +1,11 @@
+title: Testimonials
+subtitle: Our clients are our best allies. 
+testimonials:
+  - name: Élise Filotas
+    organization: TÉLUQ
+    text: |
+      The inSileco team provided outstanding support during the development and editing of the digital course SCI 1031 – Visualization and Analysis of Spatial Data in R, now offered at Université TÉLUQ. Whether for instructional content writing, development of original examples, or the use of R Markdown and GitHub, I was impressed by the quality, rigor, and efficiency of their work.
+  - name: Kevin McCann
+    organization: University of Guelph
+    text: |
+      The inSileco team is great.

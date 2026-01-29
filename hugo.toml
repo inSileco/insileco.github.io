@@ -69,6 +69,9 @@ service = "En apprendre davantage"
 contact = "Contactez-nous"
 blog = "Visitez notre blogue"
 
+[languages.fr.params.insights]
+title = "À la une sur le blogue inSileco"
+
 
 [[languages.fr.menu.main]]
 name = "Acceuil"
@@ -135,6 +138,10 @@ portfolio = "Explore our portfolio"
 service = "Learn more"
 contact = "Contact us"
 blog = "Check out our blog"
+
+[languages.en.params.insights]
+title = "Highlights from the inSileco blog"
+
 
 [[languages.en.menu.main]]
 name = "Home"
