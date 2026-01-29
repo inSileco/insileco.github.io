@@ -21,7 +21,7 @@
                                     {{ . | markdownify }}
                                 {{ else }}
                                     {{ with $page.Params.description }}
-                                        {{ . | plainify | truncate 140 }}
+                                        {{ . | markdownify | plainify | truncate 140 }}
                                     {{ else }}
                                         {{ $page.Summary | plainify | truncate 140 }}
                                     {{ end }}
