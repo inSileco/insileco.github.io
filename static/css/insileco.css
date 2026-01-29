@@ -188,6 +188,14 @@ body {
     padding: 1.5rem;
 }
 
+.blog-card-image img,
+.blog-post-image img {
+    width: 80% !important;
+    height: 80% !important;
+    object-fit: cover;
+    border-radius: 0.1rem;
+}
+
 .home-placeholder .portfolio-grid {
     margin-top: 1.5rem;
 }
