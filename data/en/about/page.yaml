@@ -1,0 +1,36 @@
+about:
+  title: "About inSileco"
+  paragraphs: |
+    inSileco emerged from a shared way of working at the intersection of ecology and data science. The name combines *in silico* -- work done through code, models, and computation -- with ecology, the lens through which we approach environmental questions involving complex systems that must be both conserved and used.
+    
+    Our approach grew from the need to make environmental analyses more robust, reusable, and easier to update as questions evolve. Today, inSileco helps environmental professionals and organizations work more efficiently, make better use of existing knowledge, and build workflows that hold up over time.
+image:
+  src: "/img/about/aboutus.png"
+  alt: "inSileco team collaborating"
+cards:
+  what:
+    title: "What we do"
+    intro: "We design and deliver services that support environmental decision-making across projects and organizations:"
+    items:
+      - "Environmental data systems and automated pipelines"
+      - "Biodiversity and cumulative-effects assessments"
+      - "Decision-support tools, models, and dashboards"
+      - "Training, workshops, and coaching to build internal capacity"
+  how:
+    title: "How we work"
+    intro: "We prioritize clarity, transparency, and long-term usability from discovery to delivery."
+    items:
+      - "Decision-driven approaches that start from use cases, not datasets"
+      - "Reproducible and transparent workflows that are easy to audit and update"
+      - "Co-development with teams to reduce dependency and increase ownership"
+      - "Maintainable systems with clear documentation and handover"
+      - "Tools and methods that teams can operate, adapt, and extend over time"
+next_steps:
+  title: "Next steps"
+  text: "Explore how our approach is applied in practice, or get in touch to discuss your context and needs."
+  cta_primary:
+    label: "Explore our work"
+    link: "/portfolio/"
+  cta_secondary:
+    label: "Contact us"
+    link: "/contact/"

@@ -1,8 +1,8 @@
-headline: "Science des données environnementales, conçue pour l’action"
-subheadline: "Nous aidons les organisations à transformer des données environnementales complexes en décisions actionnables grâce à des systèmes de données, des évaluations et des programmes de renforcement des capacités."
+headline: "Prise de décision environnementale fondée sur les données"
+subheadline: "Nous aidons les professionnels et les organisations de l’environnement à transformer des données complexes en systèmes, évaluations et outils robustes, prêts à supporter la prise de décision."
 cta_primary:
-  label: "Explore our project portfolio"
+  label: "Explorer nos projets"
   link: "/portfolio/"
 cta_secondary:
-  label: "Contact us"
+  label: "Contactez-nous"
   link: "/contact/"

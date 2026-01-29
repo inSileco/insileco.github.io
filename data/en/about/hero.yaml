@@ -1,7 +1,7 @@
-headline: "Purpose-built environmental data science"
-subheadline: "We help organizations turn complex environmental data into actionable decisions through data systems, assessments, and capacity-building programs."
+headline: "Data-driven environmental decision-making"
+subheadline: "We help environmental professionals and organizations turn complex data into robust, decision-ready systems, assessments, and tools."
 cta_primary:
-  label: "Explore our project portfolio"
+  label: "Explore our work"
   link: "/portfolio/"
 cta_secondary:
   label: "Contact us"
