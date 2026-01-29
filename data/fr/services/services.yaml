@@ -1,5 +1,6 @@
 - title: "**Blog inSileco** : Analyses & conseils pratiques"
   weigth: 1
+  anchor: blog
   description: |
     Nous partageons des analyses et des ressources sur la gestion des données, la visualisation, 
     les sciences de l’environnement et les outils reproductibles. 
@@ -11,6 +12,7 @@
 
 - title: "**inSileco Academy** : Formation & renforcement des capacités"
   weigth: 2
+  anchor: academy
   description: |
     Nous proposons des ateliers adaptés à vos besoins, ainsi qu’un accompagnement personnalisé 
     pour aider votre équipe à développer des compétences pratiques et une réelle confiance 
@@ -21,6 +23,7 @@
 
 - title: "**inSileco Systems** : Outils sur mesure & systèmes de données"
   weigth: 3
+  anchor: systems
   description: |
     Nous concevons et développons des systèmes sur mesure, guidés par les données, 
     adaptés à votre contexte et à vos enjeux. 
@@ -32,6 +35,7 @@
 
 - title: "**inSileco Intelligence** : Évaluations environnementales"
   weigth: 4
+  anchor: intelligence
   description: |
     Nous développons et déployons des solutions technologiques pour soutenir les évaluations environnementales, 
     fondées sur des outils et des flux de travail que nous améliorons continuellement à travers nos propres projets. 

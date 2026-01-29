@@ -83,22 +83,22 @@ title = "Comment nous vous aidons"
 [[languages.fr.params.help.item]]
 title = "Analyses & conseils pratiques"
 subtitle = "Contenu ouvert sur les données environnementales, la modélisation et la prise de décision, issu de projets concrets."
-url = "/services/"
+url = "/services#blog"
 
 [[languages.fr.params.help.item]]
 title = "Formation & renforcement des capacités"
 subtitle = "Cours, ateliers et accompagnement pour aider les équipes à utiliser les données et les outils avec confiance."
-url = "/services/"
+url = "/services#academy"
 
 [[languages.fr.params.help.item]]
 title = "Outils sur mesure & systèmes de données"
 subtitle = "Pipelines, modèles et applications prêts pour la décision, adaptés à votre contexte."
-url = "/services/"
+url = "/services#systems"
 
 [[languages.fr.params.help.item]]
 title = "Évaluations environnementales"
 subtitle = "Évaluations de la biodiversité, des effets cumulatifs et des risques, fondées sur des flux de données transparents."
-url = "/services/"
+url = "/services#intelligence"
 
 
 [[languages.fr.menu.main]]
@@ -177,22 +177,22 @@ title = "How we help"
 [[languages.en.params.help.item]]
 title = "Insights & practical guidance"
 subtitle = "Open content on environmental data, modeling, and decision-making drawn from real projects."
-url = "/services/"
+url = "/services#blog"
 
 [[languages.en.params.help.item]]
 title = "Training & capacity building"
 subtitle = "Courses, workshops, and coaching to help teams apply data and tools with confidence."
-url = "/services/"
+url = "/services#academy"
 
 [[languages.en.params.help.item]]
 title = "Custom tools & data systems"
 subtitle = "Decision-ready pipelines, models, and applications tailored to your context."
-url = "/services/"
+url = "/services#systems"
 
 [[languages.en.params.help.item]]
 title = "Environmental assessments"
 subtitle = "Biodiversity, cumulative-effects, and risk assessments grounded in transparent data workflows."
-url = "/services/"
+url = "/services#intelligence"
 
 
 [[languages.en.menu.main]]
