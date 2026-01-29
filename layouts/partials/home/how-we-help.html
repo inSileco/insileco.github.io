@@ -12,7 +12,7 @@
                 </a>
             </div>
             <div class="column is-one-quarter-desktop is-half-tablet is-full-mobile">
-                <a class="card home-help-card" href="{{ relLangURL "/academy/" }}" data-track="home_help_academy">
+                <a class="card home-help-card" href='{{ relLangURL "/academy/" }}' data-track="home_help_academy">
                     <div class="card-content">
                         <h3 class="title is-5">Training & capacity building</h3>
                         <p>Courses, workshops, and coaching to help teams apply data and tools with confidence.</p>
@@ -21,7 +21,7 @@
                 </a>
             </div>
             <div class="column is-one-quarter-desktop is-half-tablet is-full-mobile">
-                <a class="card home-help-card" href="{{ relLangURL "/portfolio/" }}" data-track="home_help_systems">
+                <a class="card home-help-card" href='{{ relLangURL "/portfolio/" }}' data-track="home_help_systems">
                     <div class="card-content">
                         <h3 class="title is-5">Custom tools & data systems</h3>
                         <p>Decision-ready pipelines, models, and applications tailored to your context.</p>
@@ -31,7 +31,7 @@
                 <!-- TODO: route to systems-specific page or tag -->
             </div>
             <div class="column is-one-quarter-desktop is-half-tablet is-full-mobile">
-                <a class="card home-help-card" href="{{ relLangURL "/portfolio/" }}" data-track="home_help_intelligence">
+                <a class="card home-help-card" href='{{ relLangURL "/portfolio/" }}' data-track="home_help_intelligence">
                     <div class="card-content">
                         <h3 class="title is-5">Environmental assessments</h3>
                         <p>Biodiversity, cumulative-effects, and risk assessments grounded in transparent data workflows.</p>
@@ -40,6 +40,11 @@
                 </a>
                 <!-- TODO: route to assessments-specific page or tag -->
             </div>
+        </div>
+        <div class="buttons is-centered mt-5 hero-cta">
+            <a class="button is-primary " href='{{ relLangURL " /services/" }}'>
+                {{ .Site.Params.button.service }}
+            </a>
         </div>
     </div>
 </section>
