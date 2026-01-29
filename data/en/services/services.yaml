@@ -1,36 +1,38 @@
-- name: La santé de vos données 
-  tag: environmental assessment
-  picture: 
-  rationale:
-    - Mettre en place un data management plan
-    - Audit de qualité sur les données et les métadonnées
-    - Évaluer que vos jeux de données suivent les principes FAIR
-    - Accompagner pour rendre des jeux de données FAIR 
-    - Avoir une meilleure vision 360 / dresser un portrait des données produites au sein de votre réseau collaborateur 
-  metrics:
-    number_datasets_reviews:
-    number_of_researchers:
-    number_of_plateforms:
-  blogs_ideas:
-    - Welcome to the farwest: Listing des plateformes
-    - L'importance du DOI (plateforme sans / avec)
-    - L'importance de rassembler et structurer ses métadonnées dans un réseau de collaboration         
-  clients_insights:
-    - name: Laurence Pilote 
-      testimony: "I loved work with inSileco, they are so wonderful!"
-- name: Évaluation d'impacts environmentales
-- name: Intégration de données
-  rationale:
-   - Permettre à deux systèmes de se communiquer de l’information
-   - Collecte, enrichissement et analyse de données
-- name: Analyse et visualisation de vos données (science des données)
-  rationale:
-    - statiques 
-    - Service d’accompagnement en analyses statistiques et spatiales
-- name: Reproductibilité - Science des données sous steroide, rendre reproductible l'expérience
-  rationale:
-    - Création de rapports HTML dynamiques et reproductibles. Ex. Synthèse / extraction de connaissances depuis un ensemble de données qui peut être mise à jour chaque année (ex. Bilan annuel). 
-    - Mise en place de pipelines arrimés aux dépôts de données clients
-    - Assurance qualité sur les données sources et les métriques produites par le pipeline
-    - Production finale d’un rapport / d’un tableau de bord
-    - Création de micro-applications et de tableaux de bords
+- title: "**inSileco Blog**: Insights & practical guidance"
+  weigth: 1
+  description: |
+    We share insights on data management, data visualization, environmental science, and reproducible tools. 
+    Our goal is to curate valuable resources that help you better understand and apply these topics. 
+  cta: Explore our blog to learn more.
+  img: "img/services/blog.svg"
+  url: "/blog"
+
+- title: "**inSileco Academy**: Training & capacity building"
+  weigth: 2
+  description: |
+    We offer workshops tailored to your needs, along with personalized coaching to help your team 
+    build practical skills and confidence in data, modeling, and decision-making. 
+  cta: Contact us to learn more.
+  img: "img/services/academy.svg"
+  url: "/contact/"
+
+- title: "**inSileco Systems**: Custom tools & data systems"
+  weigth: 3
+  description: |
+    We design and build custom, data-driven systems tailored to your specific context and challenges.
+    Our goal is to help you turn complex environmental data into reliable, actionable insights. 
+  cta: Reach out to see how we can support your projects.
+  img: "img/services/systems.svg"
+  url: "/contact/"
+
+- title: "**inSileco Intelligence**: Environmental assessments"
+  weigth: 4
+  description: |
+    We develop and deploy technological solutions to support environmental assessments, 
+    built on tools and workflows we continuously refine through our own research and projects. 
+    These systems enable rigorous, transparent, and reproducible analyses for biodiversity, 
+    cumulative effects, and environmental risk. 
+  cta: If this aligns with your needs, we’d be happy to discuss how we can help.
+  img: "img/services/intelligence.svg"
+  url: "/contact/"
+

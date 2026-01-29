@@ -1,0 +1,31 @@
+{{ define "main" }}
+<main>
+  {{ partial "page-hero.html" . }}
+
+  {{ $services := sort (index .Site.Data .Lang "services" "services") "weigth" }}
+
+  <section class="section">
+    <div class="container">
+      {{ range $i, $svc := $services }}
+      {{ $even := eq (mod $i 2) 0 }}
+      <section class="columns is-vcentered mb-6{{ if not $even }} is-flex-direction-row-reverse{{ end }}">
+        <div class="column is-6">
+          <h2 class="title is-4">{{ $svc.title | markdownify }}</h2>
+          <div class="content">
+              {{ $svc.description | markdownify }}
+                <a href="{{ relLangURL $svc.url}}">
+                    <b>{{ $svc.cta | markdownify }}</b>
+                </a>
+            </div>
+        </div>
+        <div class="column is-6">
+          <figure class="image">
+            <img src="{{ $svc.img | absURL }}" alt="{{ $svc.title | plainify }}">
+          </figure>
+        </div>
+      </section>
+      {{ end }}
+    </div>
+  </section>
+</main>
+{{ end }}

@@ -1,32 +1,42 @@
-- name: Nous améliorons la santé de vos données 
-  problem: Beaucoup de données, quelles sont celles qui ont de la valeur, qui sont de bonnes qualités et comment on les préserve
-  tags: ["Principes FAIR", "Gestion de données"]
-  img: 
-  rationales:
-    - Nous dressons un portrait des données produites au sein de votre entreprise
-    - Nous évaluons votre plan de gestion de données  
-    - Nous auditons la qualité de vos données et nous proposons des solutions pour l'améliorer
-    - Nous aidons à optimiser votre infrastructure de données pour répondre à des problèmes d'affaires
-  blogs_ideas:
-    - Welcome to the farwest: Listing des plateformes
-    - L'importance du DOI (plateforme sans / avec)
-    - L'importance de rassembler et structurer ses métadonnées dans un réseau de collaboration         
-  clients_insights:
-    - name: Laurence Pilote 
-      testimony: "Lorem ipsum."
-- name: Nous produisons des analyses statistiques que nous rendons reproductibles et disponibles dans des micro-applicatifs web 
-  problem: Des rapports ou des opérations que l'on fait trop souvent
-  tags: ["Reproductibilité", "Optimisation des ressources", "Statistiques"]
-  img: 
-  rationales:
-    - Nous concevons des rapports et des tableaux de bords pour que vous puissiez prendre des décisions éclairées basées sur vos données 
-    - Nous déploions des pipelines permettant de reproduire des analyses à fréquences régulières  
-    - Nous architecturons et concevons des micro-applicatifs web qui répondent à vos besoins d'affaires
-    - Nous conduisons des analyses spatiales avancées 
-- name: Nous connectons vos données à des systèmes internes ou tiers à votre entreprise pour les enrichir
-  tags: ["Intégration"]
-  rationale:
-   - Nous permettons à deux systèmes de se communiquer de l’information qu'il soit interne ou externe à votre entreprise
-   - Nous développons des APIs REST adaptées à vos besoins
-   - Nous faisons de l'acquisition de données
+- title: "**Blog inSileco** : Analyses & conseils pratiques"
+  weigth: 1
+  description: |
+    Nous partageons des analyses et des ressources sur la gestion des données, la visualisation, 
+    les sciences de l’environnement et les outils reproductibles. 
+    Notre objectif est de rassembler du contenu de qualité pour vous aider à mieux comprendre 
+    et appliquer ces approches. 
+  cta: Découvrez notre blogue pour en savoir plus.
+  img: "img/services/blog.svg"
+  url: "/blog/"
 
+- title: "**inSileco Academy** : Formation & renforcement des capacités"
+  weigth: 2
+  description: |
+    Nous proposons des ateliers adaptés à vos besoins, ainsi qu’un accompagnement personnalisé 
+    pour aider votre équipe à développer des compétences pratiques et une réelle confiance 
+    dans l’utilisation des données, de la modélisation et des outils d’aide à la décision. 
+  cta: Contactez-nous pour en savoir plus.
+  img: "img/services/academy.svg"
+  url: "/contact/"
+
+- title: "**inSileco Systems** : Outils sur mesure & systèmes de données"
+  weigth: 3
+  description: |
+    Nous concevons et développons des systèmes sur mesure, guidés par les données, 
+    adaptés à votre contexte et à vos enjeux. 
+    Notre objectif est de transformer des données environnementales complexes 
+    en informations fiables et directement exploitables. 
+  cta: Communiquez avec nous pour discuter de vos projets.
+  img: "img/services/systems.svg"
+  url: "/contact/"
+
+- title: "**inSileco Intelligence** : Évaluations environnementales"
+  weigth: 4
+  description: |
+    Nous développons et déployons des solutions technologiques pour soutenir les évaluations environnementales, 
+    fondées sur des outils et des flux de travail que nous améliorons continuellement à travers nos propres projets. 
+    Ces systèmes permettent des analyses rigoureuses, transparentes et reproductibles en matière de biodiversité, 
+    d’effets cumulatifs et de risques environnementaux. 
+  cta: Si cela correspond à vos besoins, nous serions heureux d’en discuter avec vous.
+  img: "img/services/intelligence.svg"
+  url: "/contact/"

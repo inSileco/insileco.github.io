@@ -1,6 +1,5 @@
 ---
 title: "Services"
-subtitle: "A detailed overview of our services is coming soon."
+subtitle: "Here is how we can help"
 ---
 
-We are preparing a comprehensive overview of our service offerings. Check back soon for details.

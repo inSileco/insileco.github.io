@@ -1,6 +1,6 @@
 ---
 title: "Services"
-subtitle: "Une présentation détaillée de nos services arrive bientôt."
+subtitle: "Voici comment nous pouvons vous aider"
 ---
 
-Nous préparons une présentation complète de nos services. Revenez bientôt pour en savoir plus.
+<!-- Nous préparons une présentation complète de nos services. Revenez bientôt pour en savoir plus. -->
