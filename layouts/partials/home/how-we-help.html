@@ -1,45 +1,18 @@
-<section id="how-we-help" class="section home-help home-band-alt">
+<section id="how-we-help" class="section home-help home-band-alt hero-cta">
     <div class="container">
         <h2 class="title is-3 has-text-centered home-band-text">How we help</h2>
         <div class="columns is-multiline">
-            <div class="column is-one-quarter-desktop is-half-tablet is-full-mobile">
-                <a class="card home-help-card" href="https://blog.insileco.io/" data-track="home_help_blog">
-                    <div class="card-content">
-                        <h3 class="title is-5">Insights & practical guidance</h3>
-                        <p>Open content on environmental data, modeling, and decision-making drawn from real projects.</p>
-                        <span class="home-help-link">Learn more →</span>
-                    </div>
-                </a>
-            </div>
-            <div class="column is-one-quarter-desktop is-half-tablet is-full-mobile">
-                <a class="card home-help-card" href='{{ relLangURL "/academy/" }}' data-track="home_help_academy">
-                    <div class="card-content">
-                        <h3 class="title is-5">Training & capacity building</h3>
-                        <p>Courses, workshops, and coaching to help teams apply data and tools with confidence.</p>
-                        <span class="home-help-link">Learn more →</span>
-                    </div>
-                </a>
-            </div>
-            <div class="column is-one-quarter-desktop is-half-tablet is-full-mobile">
-                <a class="card home-help-card" href='{{ relLangURL "/portfolio/" }}' data-track="home_help_systems">
-                    <div class="card-content">
-                        <h3 class="title is-5">Custom tools & data systems</h3>
-                        <p>Decision-ready pipelines, models, and applications tailored to your context.</p>
-                        <span class="home-help-link">Learn more →</span>
-                    </div>
-                </a>
-                <!-- TODO: route to systems-specific page or tag -->
-            </div>
-            <div class="column is-one-quarter-desktop is-half-tablet is-full-mobile">
-                <a class="card home-help-card" href='{{ relLangURL "/portfolio/" }}' data-track="home_help_intelligence">
-                    <div class="card-content">
-                        <h3 class="title is-5">Environmental assessments</h3>
-                        <p>Biodiversity, cumulative-effects, and risk assessments grounded in transparent data workflows.</p>
-                        <span class="home-help-link">Learn more →</span>
-                    </div>
-                </a>
-                <!-- TODO: route to assessments-specific page or tag -->
-            </div>
+            {{ range .Site.Params.help.item }}
+                <div class="column is-one-quarter-desktop is-half-tablet is-full-mobile">
+                    <a class="card home-help-card" href='{{ relLangURL .url }}' data-track="home_help_blog">
+                        <div class="card-content">
+                            <h3 class="title is-5">{{ .title }}</h3>
+                            <p>{{ .subtitle }}</p>
+                            <span class="home-help-link">Learn more <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </a>
+                </div>
+            {{ end }}
         </div>
         <div class="buttons is-centered mt-5 hero-cta">
             <a class="button is-primary " href='{{ relLangURL "/services/" }}'>
