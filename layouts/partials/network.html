@@ -1,4 +1,4 @@
-<section id="network" class="section home-band-alt">
+<section id="network" class="section home-band">
     <div class="hero-body">
         <div class="container">
             <div class="has-text-centered mb-6">
@@ -15,8 +15,7 @@
                       is-4-desktop is-6-tablet is-12-mobile
                     {{ end }}">
                     <div class="has-text-centered">
-                        <figure class="image is-inline-block p-4 bg-white"
-                            style="border-radius:8px;">
+                        <figure class="image is-inline-block p-4 bg-white" style="border-radius:8px;">
                             <a href="{{ .url }}" target="_blank" rel="noopener">
                                 <img src="{{ .logo }}" alt="{{ .name }}"
                                     style="max-height:8rem; max-width:12rem; object-fit:contain; display:block; margin:0 auto;" />
@@ -27,7 +26,7 @@
                 {{ end }}
             </div>
             <div class="has-text-centered mt-5">
-                <p class="network-credibility">Trusted by public agencies, Indigenous organizations, and research partners.</p>
+                <p class="network-credibility">{{ index .Site.Data .Site.Language.Lang "network" "credibility" }}</p>
             </div>
         </div>
     </div>
