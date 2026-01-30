@@ -1,0 +1,8 @@
+headline: "Vous avez un sujet en tête ou souhaitez rester informé de notre travail?"
+subhead: "Faites-nous signe!"
+primary:
+  label: "Communiquez avec nous"
+  link: "/get-in-touch/"
+secondary:
+  label: "Retour au blogue"
+  link: "/blog/"

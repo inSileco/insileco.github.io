@@ -60,20 +60,7 @@
             {{ .Content }}
           </div>
 
-          <footer class="mt-6 pt-4" style="border-top: 1px solid #e0e0e0;">
-            <div class="level">
-              <div class="level-left">
-                <div class="level-item">
-                  <a href='{{ relLangURL "/blog/" }}' class="button is-light">
-                    <span class="icon">
-                      <i class="fa-solid fa-arrow-left"></i>
-                    </span>
-                    <span>Back to Blog</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </footer>
+          {{ partial "cta_blog.html" . }}
         </article>
 
       </div>

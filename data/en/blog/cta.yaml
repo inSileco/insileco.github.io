@@ -1,0 +1,8 @@
+headline: "Have a topic in mind or want to stay up to date with our work?"
+subhead: "Let us know!"
+primary:
+  label: "Get in touch"
+  link: "/get-in-touch/"
+secondary:
+  label: "Back to the blog"
+  link: "/blog/"
