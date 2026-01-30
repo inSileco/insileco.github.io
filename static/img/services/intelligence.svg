@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   width="254.84303mm"
-   height="174.21805mm"
-   viewBox="0 0 254.84303 174.21805"
+   width="272.30579mm"
+   height="144.83844mm"
+   viewBox="0 0 272.30579 144.83844"
    version="1.1"
    id="svg8"
    xml:space="preserve"
@@ -16,7 +16,7 @@
          rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><g
      id="layer1"
-     transform="translate(-297.98743,-211.50789)"><g
+     transform="translate(-280.52469,-240.88751)"><g
        id="g24-6"
        transform="translate(352.82328,200.00669)"><circle
          style="fill:#37abc8;fill-opacity:1;stroke:none;stroke-width:1.35388;stroke-miterlimit:4;stroke-dasharray:none"
@@ -42,15 +42,15 @@
          id="tspan31">reporting</tspan></text><text
        xml:space="preserve"
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.74983px;line-height:1.25;font-family:Didot;-inkscape-font-specification:'Didot, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:end;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.290618"
-       x="362.50909"
-       y="265.25378"
+       x="345.04633"
+       y="287.47913"
        id="text1536-1-5-9-3-6"><tspan
-         x="362.50909"
-         y="265.25378"
+         x="345.04633"
+         y="287.47913"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.87778px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:end;text-anchor:end;stroke-width:0.290618"
          id="tspan28-6-9">Reproducible</tspan><tspan
-         x="365.07733"
-         y="277.60101"
+         x="347.61456"
+         y="299.82635"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.87778px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:end;text-anchor:end;stroke-width:0.290618"
          id="tspan31-6">data pipelines </tspan></text><text
        xml:space="preserve"
@@ -614,20 +614,4 @@
          transform="matrix(1.0561319,0,0,1.0561319,570.94355,929.74626)" /><path
          d="m 433.02244,311.4231 c 1.47123,-0.34594 2.56736,-1.66713 2.56736,-3.24673 0,-1.84218 -1.49207,-3.33426 -3.33424,-3.33426 -1.80883,0 -3.28008,1.4379 -3.33425,3.23006 l -7.66044,3.06751 c -0.60433,-0.59599 -1.42956,-0.96277 -2.34231,-0.96277 -1.84218,0 -3.33426,1.49208 -3.33426,3.33426 0,1.84216 1.49208,3.33424 3.33426,3.33424 0.50848,0 0.99193,-0.11252 1.42122,-0.31674 l 6.06834,5.30979 c -0.10001,0.31676 -0.15422,0.65851 -0.15422,1.00861 0,1.84217 1.49209,3.33424 3.33426,3.33424 1.84217,0 3.33425,-1.49207 3.33425,-3.33424 0,-1.15448 -0.5835,-2.17143 -1.47541,-2.76742 z m -10.92384,3.09668 c 0.0917,-0.28759 0.14587,-0.59183 0.1542,-0.90442 l 7.66045,-3.06334 c 0.15004,0.14587 0.30842,0.27924 0.48346,0.39595 l -1.57543,8.65237 c -0.22923,0.0542 -0.45012,0.1292 -0.65852,0.22923 z"
          id="path1"
-         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.0416782;stroke-opacity:1" /></g><flowRoot
-       transform="matrix(0.27992367,0,0,0.27992367,185.97329,387.22252)"
-       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:57.5491px;line-height:125%;font-family:'Josefin Sans';-inkscape-font-specification:'Josefin Sans, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       id="flowRoot9715-1-5-4-0-4-9-1-8"
-       xml:space="preserve"><flowRegion
-         id="flowRegion9717-0-0-7-6-0-0-4-6"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:57.5491px;font-family:'Josefin Sans';-inkscape-font-specification:'Josefin Sans, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000"><rect
-           y="-631.10516"
-           x="507.09659"
-           height="80.779968"
-           width="726.55908"
-           id="rect9719-3-1-9-1-1-8-9-6"
-           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:57.5491px;font-family:'Josefin Sans';-inkscape-font-specification:'Josefin Sans, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000" /></flowRegion><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:74.3975px;font-family:Lato;-inkscape-font-specification:'Lato, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#000000"
-         id="flowPara9721-8-1-7-5-3-8-2-0">in<flowSpan
-   style="font-weight:bold"
-   id="flowSpan17-0-0">Sileco </flowSpan>Intelligence</flowPara></flowRoot></g></svg>
+         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.0416782;stroke-opacity:1" /></g></g></svg>

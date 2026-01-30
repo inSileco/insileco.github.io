@@ -7,9 +7,9 @@
   {{ range $i, $svc := $services }}
   {{ $even := eq (mod $i 2) 0 }}
   <section class="section services-section{{ if $even }} services-section-alt{{ end }}">
-    <div class="container">
+    <div class="container py-6">
       <section class="columns is-vcentered{{ if not $even }} is-flex-direction-row-reverse{{ end }}">
-        <div class="column is-6">
+        <div class="column is-6 {{ if not $even }} has-text-right {{ else }} has-text-left {{ end }}">
           <h2 class="title is-4" id="{{ $svc.anchor }}">{{ $svc.title | markdownify }}</h2>
           <div class="content">
               {{ $svc.description | markdownify }}
@@ -18,7 +18,7 @@
                 </a>
             </div>
         </div>
-        <div class="column is-6">
+        <div class="column is-6 px-6">
           <figure class="image">
             <img src="{{ $svc.img | absURL }}" alt="{{ $svc.title | plainify }}">
           </figure>
