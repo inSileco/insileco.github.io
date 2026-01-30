@@ -1,6 +1,6 @@
 ---
 title: "Custom tick marks with R's base graphics system"
-date: 2026-01-29
+date: 2026-02-20
 author: "inSileco Team"
 description: "Our first blog post introducing the new inSileco blog."
 featured_image: "img/unnamed-chunk-18-1.png"

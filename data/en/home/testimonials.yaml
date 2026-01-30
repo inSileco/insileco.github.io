@@ -11,3 +11,8 @@ testimonials:
     post: professor
     text: |
       I say that this company is top-notch programming, database abilities and general problem solving abilities. Additionally, they get things done efficiently and communicate well with you and your team. They will exceed your expectations.
+  - name: Marie-Hélène Birce
+    organization: Montreal Botanical Garden
+    post: professor
+    text: | 
+      With inSileco, we developed a reproducible data pipeline for vegetation classification in southern Quebec, which has become an essential tool for our research team. The results now provide a robust reference framework to analyze our data and better understand and anticipate changes in vegetation composition. inSileco is a highly professional, efficient, and attentive team, able to translate complex scientific needs into practical, effective solutions. I highly recommend them.
