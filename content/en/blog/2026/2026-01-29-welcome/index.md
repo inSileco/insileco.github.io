@@ -8,7 +8,7 @@ categories:
   - Storytelling
 tags:
   - Welcome
- tldr: We are launching our blog post where we will share content about blablabal
+tldr: We are launching our blog post where we will share content about blablabal
 ---
 
 ## Why we are launching this blog
@@ -33,13 +33,13 @@ This new blog is our way of making more of our thinking, experiments, and lesson
 
 ## What you can expect to find here
 
-We plan to share content that is grounded in practice rather than theory for its own sake. This will include:
+We plan to share content that is grounded in practice. This will include:
 - Practical notes on data, modeling, and workflows used in real environmental contexts
 - Short deep dives into tools, methods, or design choices we encounter in our work
 - Reflections on environmental decision-making, data reuse, and reproducibility
 - Updates on what we’re working on, building, or experimenting with
 - Occasionally, longer pieces that connect technical work to broader questions of capacity, robustness, and impact
-- How AI changes how we work
+- How we -- and you could -- integrate AI to our workflow and hot it affects how we work
 
 Some posts will be technical. Others will be more reflective. Most will sit somewhere in between.
 
@@ -61,6 +61,8 @@ As a starting point for this new chapter, our next posts will be refreshed versi
 
 At its core, this blog is about sharing what we learn while trying to do environmental work better: more robustly, more efficiently, and with fewer things breaking when questions inevitably change.
 
-If that resonates with you, we hope you’ll find something useful here. Never hestitate to reach out to us if you have comments or questions.
+If that resonates with you, we hope you’ll find something useful here. 
+
+Never hestitate to reach out to us if you have comments or questions.
 
 Happy reading! 
