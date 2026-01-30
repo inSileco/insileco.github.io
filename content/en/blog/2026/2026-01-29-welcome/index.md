@@ -8,6 +8,7 @@ categories:
   - Storytelling
 tags:
   - Welcome
+ tldr: We are launching our blog post where we will share content about blablabal
 ---
 
 ## Why we are launching this blog
@@ -38,6 +39,7 @@ We plan to share content that is grounded in practice rather than theory for its
 - Reflections on environmental decision-making, data reuse, and reproducibility
 - Updates on what we’re working on, building, or experimenting with
 - Occasionally, longer pieces that connect technical work to broader questions of capacity, robustness, and impact
+- How AI changes how we work
 
 Some posts will be technical. Others will be more reflective. Most will sit somewhere in between.
 
@@ -55,10 +57,10 @@ Although much of the content from our previous blog is now dated, two posts have
 
 As a starting point for this new chapter, our next posts will be refreshed versions of those two pieces. Consider it a small bridge between where we started and where we are now.
 
-## Why we’re doing this
+## Sharing with you
 
 At its core, this blog is about sharing what we learn while trying to do environmental work better: more robustly, more efficiently, and with fewer things breaking when questions inevitably change.
 
-If that resonates with you, we hope you’ll find something useful here.
+If that resonates with you, we hope you’ll find something useful here. Never hestitate to reach out to us if you have comments or questions.
 
 Happy reading! 
