@@ -4,3 +4,6 @@
 - name: "CEM logo"
   logo: "/img/network/CEM.png"
   url: "https://www.ecosystemscience.ca/"
+- name: "UoG logo"
+  logo: "/img/network/UofG.png"
+  url: "https://www.uoguelph.ca/"

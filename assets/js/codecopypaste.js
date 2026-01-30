@@ -10,15 +10,10 @@ function createCopyButton(highlightDiv) {
 }
 
 async function copyCodeToClipboard(button, highlightDiv) {
-  // const codeToCopy = highlightDiv.querySelectorAll(":last-child > .chroma > code > .line");
-  var allCodeLines = Array.from(
-    highlightDiv.querySelectorAll(":last-child > .chroma > code > .line")
-  );
-  // console.log(allCodeLines);
-
-  const codeToCopy = allCodeLines.filter(
-    function (x) { return !x.querySelectorAll("span .c1").length }
-  ).map(x => x.innerText).join("");
+  // Find code element: handle both table layout (lineNos) and simple pre>code
+  var codeEl = highlightDiv.querySelector("td:last-child code") ||
+               highlightDiv.querySelector("code");
+  var codeToCopy = codeEl ? codeEl.innerText : "";
   // console.log(codeToCopy);
 
   try {
@@ -69,5 +64,7 @@ function addCopyButtonToDom(button, highlightDiv) {
   wrapper.appendChild(highlightDiv);
 }
 
-document.querySelectorAll(".highlight")
-  .forEach(highlightDiv => createCopyButton(highlightDiv));
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".highlight")
+    .forEach(highlightDiv => createCopyButton(highlightDiv));
+});

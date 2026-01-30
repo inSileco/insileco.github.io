@@ -13,7 +13,7 @@
                     <div class="box testimonial-box">
                         <div class="content has-text-centered">
                             <p class="testimonial-text is-size-5 mb-4">"{{ $testimonial.text }}"</p>
-                            <p class="has-text-weight-semibold">{{ $testimonial.name }}</p>
+                            <p class="has-text-weight-semibold">{{ $testimonial.name }} ({{ $testimonial.post }})</p>
                             <p class="has-text-grey">{{ $testimonial.organization }}</p>
                         </div>
                     </div>
@@ -24,10 +24,11 @@
             {{ if gt (len .testimonials) 1 }}
             <div class="testimonial-controls has-text-centered mt-4">
                 {{ range $index, $testimonial := .testimonials }}
-                <button class="testimonial-dot {{ if eq $index 0 }}is-active{{ end }}"
+                    <button 
+                        class="testimonial-dot {{ if eq $index 0 }}is-active{{ end }}"
                         data-slide="{{ $index }}"
                         aria-label="Go to testimonial {{ add $index 1 }}">
-                </button>
+                    </button>
                 {{ end }}
             </div>
             {{ end }}
