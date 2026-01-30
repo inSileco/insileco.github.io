@@ -1,3 +1,20 @@
-// Fira Sans and Fira Code
+/* Fira Sans and Fira Code */
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap');
 @import url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css');
+
+/* Lato and Merriweather */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+
+h1,
+h2,
+h3 {
+    font-family: "Merriweather";
+    font-weight: 900;
+}
+
+h4,
+h5,
+h6 {
+    font-family: "Merriweather";
+    font-weight: 700;
+}
