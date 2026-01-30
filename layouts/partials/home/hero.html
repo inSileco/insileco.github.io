@@ -19,7 +19,7 @@
         {{ if $logos }}
         <div class="hero-carousel" aria-label="Partner logos">
             <div class="hero-carousel-track">
-                {{ range seq 3 }}
+                {{ range seq 2 }}
                     {{ range $logos }}
                         <a href="{{ .url }}" target="_blank" rel="noopener">
                             <img src="{{ .logo }}" alt="{{ .name }}" />
