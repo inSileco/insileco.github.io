@@ -1,10 +1,16 @@
 baseURL = 'https://insileco.io/'
 languageCode = 'en'
 title = 'inSileco'
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+
+[markup.highlight]
+style = "tokyonight-day"
+lineNos = true
 
 # Link custom CSS and JS assets
 #   (relative to /static/css and /static/js respectively)
-custom_css = ["perso.css"]
+custom_css = ["perso.css", "syntax.css"]
 custom_js = []
 
 
