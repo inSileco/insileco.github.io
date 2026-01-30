@@ -3,30 +3,31 @@ on:
   push:
     branches:
     - main
+  schedule:
+    - cron: '0 9 1-5 * *'
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v6
 
-    - uses: actions/setup-node@v3
+    - uses: actions/setup-node@v6
       with:
-        node-version: 18
-    
+        node-version: 20
     - run: npm install
 
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v3
       with:
-        hugo-version: '0.123.7'
+        hugo-version: '0.153.2'
         extended: true
         
     - name: Build website
       run: hugo --minify
 
     - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_branch: gh-pages
