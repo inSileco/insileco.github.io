@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (slides.length <= 1) return;
 
     let currentSlide = 0;
-    const slideInterval = 8000; // 8 seconds
+    const slideInterval = 10000; // 10 seconds
     let autoPlayInterval;
 
     function showSlide(index) {
