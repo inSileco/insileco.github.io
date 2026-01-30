@@ -4,11 +4,11 @@
 
   {{ $services := sort (index .Site.Data .Lang "services" "services") "weigth" }}
 
-  <section class="section">
+  {{ range $i, $svc := $services }}
+  {{ $even := eq (mod $i 2) 0 }}
+  <section class="section services-section{{ if $even }} services-section-alt{{ end }}">
     <div class="container">
-      {{ range $i, $svc := $services }}
-      {{ $even := eq (mod $i 2) 0 }}
-      <section class="columns is-vcentered mb-6{{ if not $even }} is-flex-direction-row-reverse{{ end }}">
+      <section class="columns is-vcentered{{ if not $even }} is-flex-direction-row-reverse{{ end }}">
         <div class="column is-6">
           <h2 class="title is-4" id="{{ $svc.anchor }}">{{ $svc.title | markdownify }}</h2>
           <div class="content">
@@ -24,8 +24,8 @@
           </figure>
         </div>
       </section>
-      {{ end }}
     </div>
   </section>
+  {{ end }}
 </main>
 {{ end }}

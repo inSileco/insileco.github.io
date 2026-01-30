@@ -358,6 +358,15 @@ body {
     background-color: #f6f6f6;
 }
 
+.services-section {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
+.services-section-alt {
+    background-color: #f6f6f6;
+}
+
 .about-cards {
     margin-top: 0.5rem;
 }
