@@ -1,0 +1,74 @@
+{{ define "main" }}
+{{ $hero := index .Site.Data .Site.Language.Lang "about" "hero" }}
+{{ $about := index .Site.Data .Site.Language.Lang "about" "page" }}
+<section class="section about-hero">
+    <div class="container about-content has-text-centered hero-shared">
+        <h1 class="title is-2 hero-title">{{ $hero.headline }}</h1>
+        <p class="subtitle is-5 hero-subtitle">{{ $hero.subheadline }}</p>
+        <div class="buttons is-centered hero-cta">
+            <a class="button is-primary" href="{{ relLangURL $hero.cta_primary.link }}">{{ $hero.cta_primary.label
+                }}</a>
+            <a class="button is-light" href="{{ relLangURL $hero.cta_secondary.link }}">{{ $hero.cta_secondary.label
+                }}</a>
+        </div>
+    </div>
+</section>
+
+<section class="section about-section about-section-alt">
+    <div class="container about-content">
+        <div class="columns is-vcentered about-two-col">
+            <div class="column is-6-desktop is-12-tablet content">
+                <h2>{{ $about.about.title }}</h2>
+                {{ $about.about.paragraphs | markdownify }}
+            </div>
+            <div class="column is-6-desktop is-12-tablet">
+                <figure class="image about-figure">
+                    <img src="{{ $about.image.src }}" alt="{{ $about.image.alt }}">
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section about-section">
+    <div class="container about-content">
+        <div class="columns is-multiline about-cards">
+            <div class="column is-6-desktop is-12-tablet">
+                <div class="card about-card">
+                    <div class="card-content content">
+                        <h2>{{ $about.cards.what.title }}</h2>
+                        <p>{{ $about.cards.what.intro }}</p>
+                        <ul>
+                            {{ range $about.cards.what.items }}
+                            <li>{{ . }}</li>
+                            {{ end }}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-6-desktop is-12-tablet">
+                <div class="card about-card">
+                    <div class="card-content content">
+                        <h2>{{ $about.cards.how.title }}</h2>
+                        <p>{{ $about.cards.how.intro }}</p>
+                        <ul>
+                            {{ range $about.cards.how.items }}
+                            <li>{{ . }}</li>
+                            {{ end }}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section about-team about-section-alt">
+    <div class="container">
+        {{ partial "team.html" . }}
+    </div>
+</section>
+
+{{ partial "network.html" . }}
+
+{{ end }}

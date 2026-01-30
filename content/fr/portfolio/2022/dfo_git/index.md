@@ -14,7 +14,7 @@ instructors:
 location: À distance
 description: | 
   Lors de cet atelier, nous avons montré comment collaborer concrètement et efficacement sur des projets avec git et GitHub.
-gh: inSilecoInc/learning_git
+gh: inSileco/learning_git
 ws: https://insileco.io/learning_git/#1
 ---
 

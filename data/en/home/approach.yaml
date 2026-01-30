@@ -1,9 +1,13 @@
-title: "Our approach"
+title: "Contact us"
+
+tally:
+  project_intake_url: "https://tally.so/embed/KYxWOg?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+  project_intake_title: "Project intake"
 
 step1: 
   name: First contact
   description: | 
-     Whether you need support in data science, environmental analytics, or tailored solutions for your projects, inSileco is here to help. Get in touch with us at <a href="mailto:info@insileco.io">info@insileco.io</a> to discuss your requirements, and let us assist you in achieving your goals.
+     Whether you need support in data science, environmental analytics, or tailored solutions for your projects, inSileco is here to help. Use the form below to tell us about your needs, and let us assist you in achieving your goals.
 
     
 step2: 
@@ -20,4 +24,3 @@ step4:
   name: "Step 4: implementation and quality assurance"
   description: | 
     This is where the core work takes place, ensuring that each step is executed with precision and efficiency. Through regular meetings and continuous feedback, we maintain the highest quality standards, refining our approach as needed to align with your expectations and deliver optimal results.
-

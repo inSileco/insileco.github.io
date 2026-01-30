@@ -1,0 +1,36 @@
+about:
+  title: "À propos d’inSileco"
+  paragraphs: |
+    inSileco est né d’une manière de travailler partagée, à l’intersection de l’écologie et de la science des données. Le nom combine *in silico* — un travail réalisé à l’aide de code, de modèles et de calculs — avec l’écologie, le prisme à travers lequel nous abordons des questions environnementales liées à des systèmes complexes devant être à la fois conservés et utilisés.
+    
+    Notre approche s’est développée à partir du besoin de rendre les analyses environnementales plus robustes, réutilisables et plus faciles à mettre à jour à mesure que les questions évoluent. Aujourd’hui, inSileco aide les professionnels et les organisations de l’environnement à travailler plus efficacement, à mieux tirer parti des connaissances existantes et à concevoir des flux de travail qui tiennent dans le temps.
+image:
+  src: "/img/about/aboutus.jpg"
+  alt: "L’équipe d’inSileco en collaboration"
+cards:
+  what:
+    title: "Ce que nous faisons"
+    intro: "Nous concevons et livrons des services qui soutiennent la prise de décision environnementale au sein des projets et des organisations :"
+    items:
+      - "Systèmes de données environnementales et pipelines automatisés"
+      - "Évaluations de la biodiversité et des effets cumulatifs"
+      - "Outils d’aide à la décision, modèles et tableaux de bord"
+      - "Formations, ateliers et accompagnement pour renforcer les capacités internes"
+  how:
+    title: "Notre façon de travailler"
+    intro: "Nous privilégions la clarté, la transparence et la pérennité des solutions, de la définition des besoins à la livraison."
+    items:
+      - "Des approches orientées vers les décisions, à partir des cas d’usage plutôt que des jeux de données"
+      - "Des flux de travail reproductibles et transparents, faciles à auditer et à mettre à jour"
+      - "La co-développement avec les équipes afin de réduire la dépendance et favoriser l’appropriation"
+      - "Des systèmes maintenables, avec une documentation claire et un transfert structuré"
+      - "Des outils et méthodes que les équipes peuvent opérer, adapter et faire évoluer dans le temps"
+next_steps:
+  title: "Pour aller plus loin"
+  text: "Découvrez comment notre approche se traduit concrètement dans nos projets, ou communiquez avec nous pour discuter de votre contexte et de vos besoins."
+  cta_primary:
+    label: "Explorer nos projets"
+    link: "/portfolio/"
+  cta_secondary:
+    label: "Nous contacter"
+    link: "/contact/"

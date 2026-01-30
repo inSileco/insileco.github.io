@@ -1,13 +1,11 @@
 {{ define "main" }}
-{{ partial "header.html" . }}
-
-{{ partial "mission.html" . }}
-{{ partial "team.html" . }}
-{{ partial "expertise.html" . }}
-{{ partial "approach.html" . }}
-{{ partial "network.html" . }}
+    {{ partial "home/hero.html" . }}
+    {{ partial "home/how-we-help.html" . }}
+    {{ partial "home/portfolio-preview.html" . }}
+    {{ partial "home/blog-highlights.html" . }}
+    {{ partial "home/testimonials.html" . }}
 {{ end }}
 
 {{ define "footer" }}
-{{ partial "footer.html" . }}
+    {{ partial "footer.html" . }}
 {{ end }}

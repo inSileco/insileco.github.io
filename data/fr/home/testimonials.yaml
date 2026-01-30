@@ -1,0 +1,18 @@
+title: Témoignages
+subtitle: Nos clients sont nos meilleurs alliés. 
+testimonials:
+  - name: Élise Filotas
+    organization: TÉLUQ
+    post: professeure
+    text: |
+      L'équipe d'inSileco m'a fourni un accompagnement hors pair lors de la création du contenu et de l'édition du cours numérique SCI 1031 Visualisation et analyse de données spatiales sous R, maintenant offert à l'Université TÉLUQ. Que ce soit pour la rédaction de contenu pédagogique, le développement d'exemples originaux, l'utilisation de RMarkdown ou github, j'ai été impressionnée par la qualité et l'efficacité de leur travail.
+  - name: Kevin McCann
+    organization: University of Guelph
+    post: professeur
+    text: |
+      Je dirais que cette entreprise offre des compétences de tout premier ordre en programmation, en bases de données et en résolution de problèmes complexes. De plus, elle livre efficacement, communique clairement avec vous et votre équipe, et dépasse largement les attentes.
+  - name: Marie-Hélène Birce
+    organization: Montreal Botanical Garden
+    post: professeur
+    text: | 
+      Avec inSileco, nous avons développé un pipeline de données reproductible pour la classification de la végétation du Québec méridional. Celui-ci est devenu un outil très utile pour notre équipe de recherche. Les résultats obtenus nous servent de cadre de référence pour analyser nos données et mieux comprendre et anticiper les changements de composition de la végétation. inSileco une équipe très professionnelle, efficace et à l'écoute, capable de transformer des besoins scientifiques complexes en solutions concrètes. Je les recommande sans hésiter.

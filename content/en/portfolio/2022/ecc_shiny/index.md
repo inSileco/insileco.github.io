@@ -12,7 +12,7 @@ instructors:
   - Kevin Cazelles
 description: | 
   During this workshop we showed how to build Shiny web applications.
-gh: inSilecoInc/cws-shiny-workshop
+gh: inSileco/cws-shiny-workshop
 ws: https://insileco.io/cws-shiny-workshop/#1
 ---
 

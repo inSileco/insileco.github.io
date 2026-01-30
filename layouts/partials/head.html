@@ -8,7 +8,15 @@
         <style> {{ .Content | safeCSS }} </style>
     {{ end }}
 
-    <link rel="stylesheet" href="/css/insileco.css">
+    {{- $cssFiles := resources.Match "css/*.css" }}
+    {{- $bundled := $cssFiles | resources.Concat "css/bundled.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $bundled.RelPermalink }}" integrity="{{ $bundled.Data.Integrity }}"
+        crossorigin="anonymous">
+
+    {{- $jsFiles := resources.Match "js/*.js" }}
+    {{- $bundled := $jsFiles | resources.Concat "js/bundled.js" | minify | fingerprint }}
+    <script src="{{ $bundled.RelPermalink }}" integrity="{{ $bundled.Data.Integrity }}" crossorigin="anonymous"></script>
+
 
     {{/*  files in js/  */}}
     {{ range os.ReadDir "/static/js" }}

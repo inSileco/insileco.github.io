@@ -1,8 +1,8 @@
-<section id="network" class="hero">
+<section id="network" class="section home-band">
     <div class="hero-body">
         <div class="container">
             <div class="has-text-centered mb-6">
-                <h1 class="title has-text-white">
+                <h1 class="title">
                     {{ index .Site.Data .Site.Language.Lang "network" "title" }}
                 </h1>
             </div>
@@ -15,8 +15,7 @@
                       is-4-desktop is-6-tablet is-12-mobile
                     {{ end }}">
                     <div class="has-text-centered">
-                        <figure class="image is-inline-block p-4 bg-white"
-                            style="border-radius:8px;">
+                        <figure class="image is-inline-block p-4 bg-white" style="border-radius:8px;">
                             <a href="{{ .url }}" target="_blank" rel="noopener">
                                 <img src="{{ .logo }}" alt="{{ .name }}"
                                     style="max-height:8rem; max-width:12rem; object-fit:contain; display:block; margin:0 auto;" />
@@ -25,6 +24,9 @@
                     </div>
                 </div>
                 {{ end }}
+            </div>
+            <div class="has-text-centered mt-5">
+                <p class="network-credibility">{{ index .Site.Data .Site.Language.Lang "network" "credibility" }}</p>
             </div>
         </div>
     </div>

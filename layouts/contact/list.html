@@ -1,0 +1,18 @@
+{{ define "main" }}
+{{ $contact := index .Site.Data .Site.Language.Lang "home" "approach" }}
+<section id="contact" class="section">
+    <div class="container content">
+        <h1>{{ .Title | default $contact.title }}</h1>
+        <p>{{ $contact.step1.description | safeHTML }}</p>
+        <div class="columns is-centered">
+            <div class="column is-8-desktop is-12-tablet">
+                <iframe
+                    data-tally-src="{{ $contact.tally.project_intake_url }}"
+                    loading="lazy" width="100%" height="733" frameborder="0" marginheight="0" marginwidth="0"
+                    title="{{ $contact.tally.project_intake_title }}"></iframe>
+                <script>var d = document, w = "https://tally.so/widgets/embed.js", v = function () { "undefined" != typeof Tally ? Tally.loadEmbeds() : d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function (e) { e.src = e.dataset.tallySrc })) }; if ("undefined" != typeof Tally) v(); else if (d.querySelector('script[src="' + w + '"]') == null) { var s = d.createElement("script"); s.src = w, s.onload = v, s.onerror = v, d.body.appendChild(s); }</script>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}

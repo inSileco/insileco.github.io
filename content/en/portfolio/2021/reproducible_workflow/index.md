@@ -14,7 +14,7 @@ instructors:
 description: | 
   During this workshop, we discussed issues related to reproducibility
   and we showed how to organize your work process with R.
-gh: inSilecoInc/workshop_reproducibility
+gh: inSileco/workshop_reproducibility
 ws: https://insilecoinc.github.io/workshop_reproducibility/ 
 ---
 

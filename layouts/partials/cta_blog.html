@@ -1,0 +1,9 @@
+{{ $cta := index .Site.Data .Site.Language.Lang "blog" "cta" }}
+<div class="mt-6 pt-4 has-text-centered" style="border-top: 1px solid #e0e0e0;">
+  <p class="mb-2"><em><strong>{{ $cta.headline }}</strong></em></p>
+  <p class="mb-4"><em>{{ $cta.subhead }}</em></p>
+  <div class="buttons is-centered">
+    <a class="button is-primary" href="{{ relLangURL $cta.primary.link }}">{{ $cta.primary.label }}</a>
+    <a class="button is-light" href="{{ relLangURL $cta.secondary.link }}">{{ $cta.secondary.label }}</a>
+  </div>
+</div>

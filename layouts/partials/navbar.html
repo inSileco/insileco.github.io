@@ -1,9 +1,13 @@
 <nav class="navbar is-spaced is-fixed-top is-size-8" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
+        <a class="navbar-item navbar-logo" href="{{ relLangURL "/" }}">
+            <img src="/img/logo.svg" alt="inSileco logo" />
+            <span class="navbar-title">inSileco</span>
+        </a>
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
         </a>
     </div>
 
@@ -11,13 +15,32 @@
 
         <div class="navbar-start">
             {{ range .Site.Menus.main }}
-                <a class="navbar-item" href="{{ relLangURL .URL }}">
-                    {{ .Name }}
-                </a>
+            <a class="navbar-item" href="{{ relLangURL .URL }}">
+                {{ .Name }}
+            </a>
             {{ end }}
         </div>
 
         <div class="navbar-end">
+            {{ range .Site.Params.social }}
+                <a class="navbar-item" href="{{ .url }}" target="_blank" rel="noopener" aria-label="{{ .name }}">
+                    <i class="{{ .icon }}"></i>
+                </a>
+            {{ end }}
+            {{ with .Site.Params.login }}
+                <div class="navbar-item">
+                    <a class="button is-light navbar-login" href="{{ relLangURL .url }}">
+                        {{ .name }}
+                    </a>
+                </div>
+            {{ end }}
+            {{ with .Site.Params.contact }}
+                <div class="navbar-item">
+                    <a class="button navbar-contact" href="{{ relLangURL .url }}">
+                        {{ .name }}
+                    </a>
+                </div>
+            {{ end }}
             {{ range .Translations }}
                 <a class="navbar-item has-text-weight-bold" href="{{ .Permalink }}">{{ upper .Lang }}</a>
             {{ end }}

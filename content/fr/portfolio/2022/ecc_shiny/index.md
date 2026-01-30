@@ -13,7 +13,7 @@ instructors:
 description: | 
   Lors de cet atelier nous avons montré comment construire des applications
   web Shiny.
-gh: inSilecoInc/cws-shiny-workshop
+gh: inSileco/cws-shiny-workshop
 ws: https://insileco.io/cws-shiny-workshop/#1
 ---
 

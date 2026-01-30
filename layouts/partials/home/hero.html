@@ -1,0 +1,36 @@
+{{ $hero := index .Site.Data .Site.Language.Lang "home" "hero" }}
+<section id="hero" class="section hero-main">
+    <div class="container">
+        <div class="columns is-centered is-vcentered">
+            <div class="column is-8-desktop is-10-tablet has-text-centered">
+                <h1 class="title is-2 hero-title">{{ $hero.headline }}</h1>
+                <p class="subtitle is-5 hero-subtitle">{{ $hero.subheadline }}</p>
+                <div class="buttons hero-cta is-centered">
+                    <a class="button is-primary" href="{{ relLangURL $hero.cta_primary.link }}" data-track="hero_cta_portfolio">
+                        {{ $hero.cta_primary.label }}
+                    </a>
+                    <a class="button is-light" href="{{ $hero.cta_secondary.link }}" data-track="hero_cta_contact">
+                        {{ $hero.cta_secondary.label }}
+                    </a>
+                </div>
+            </div>
+        </div>
+        {{ $logos := .Site.Data.network }}
+        {{ if $logos }}
+        <div class="hero-carousel" aria-label="Partner logos">
+            <div class="hero-carousel-track">
+                {{ range seq 2 }}
+                    {{ range $logos }}
+                        <a href="{{ .url }}" target="_blank" rel="noopener">
+                            <img src="{{ .logo }}" alt="{{ .name }}" />
+                        </a>
+                    {{ end }}
+                {{ end }}
+            </div>
+        </div>
+        {{ end }}
+        <div class="hero-credibility">
+            <p>{{ $hero.credibility }}</p>
+        </div>
+    </div>
+</section>

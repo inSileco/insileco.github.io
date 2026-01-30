@@ -1,9 +1,13 @@
 title: "Notre démarche"
 
+tally:
+  project_intake_url: "https://tally.so/embed/81L2Yl?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+  project_intake_title: "Project intake (FR)"
+
 step1: 
   name: Premier contact
   description: | 
-    Que vous ayez besoin d’un accompagnement en science des données, en analyse environnementale ou de solutions sur mesure pour vos projets, inSileco est là pour vous aider. Contactez-nous à <a href="mailto:info@insileco.io">info@insileco.io</a> pour discuter de vos besoins et laissez-nous vous accompagner dans la réalisation de vos objectifs.
+    Que vous ayez besoin d’un accompagnement en science des données, en analyse environnementale ou de solutions sur mesure pour vos projets, inSileco est là pour vous aider. Utilisez le formulaire ci-dessous pour nous parler de vos besoins, et laissez-nous vous accompagner dans la réalisation de vos objectifs.
 
     
 step2: 

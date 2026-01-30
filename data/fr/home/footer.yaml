@@ -1,0 +1,6 @@
+tally:
+  heading: "Restez informé"
+  blurb: "Des infos et nouvelles occasionnelles par courriel. Aucun spam!"
+  subscribe_url: "https://tally.so/embed/Pd94Je?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+  subscribe_title: "Subscribe footer (FR)"
+  subscribe_height: 120

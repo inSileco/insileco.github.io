@@ -1,0 +1,40 @@
+{{ $testimonials := index .Site.Data .Site.Language.Lang "home" "testimonials" }}
+{{ with $testimonials }}
+<section id="testimonials" class="section home-placeholder">
+    <div class="container">
+        <h2 class="title is-3 has-text-centered">{{ .title }}</h2>
+        <p class="has-text-centered mb-5">{{ .subtitle }}</p>
+
+        {{ if .testimonials }}
+        <div class="testimonials-carousel">
+            <div class="testimonials-container">
+                {{ range $index, $testimonial := .testimonials }}
+                <div class="testimonial-slide {{ if eq $index 0 }}is-active{{ end }}">
+                    <div class="box testimonial-box">
+                        <div class="content has-text-centered">
+                            <p class="testimonial-text is-size-5 mb-4">"{{ $testimonial.text }}"</p>
+                            <p class="has-text-weight-semibold">{{ $testimonial.name }} ({{ $testimonial.post }})</p>
+                            <p class="has-text-grey">{{ $testimonial.organization }}</p>
+                        </div>
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+
+            {{ if gt (len .testimonials) 1 }}
+            <div class="testimonial-controls has-text-centered mt-4">
+                {{ range $index, $testimonial := .testimonials }}
+                    <button 
+                        class="testimonial-dot {{ if eq $index 0 }}is-active{{ end }}"
+                        data-slide="{{ $index }}"
+                        aria-label="Go to testimonial {{ add $index 1 }}">
+                    </button>
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+        {{ end }}
+    </div>
+</section>
+
+{{ end }}

@@ -4,65 +4,14 @@
     <div class="column is-full has-text-centered content-text">
         <h1>{{ .title }}</h1>
     </div>
-    <div class="column is-4 is-mobile-6 is-offset-2">
-        <div class="approach_img">
-            <img src="/img/digital-product-manager.svg"/> 
-        </div>
+
+    <div class="column is-6 is-offset-3 has-text-centered hero-cta">
+        <p class="mb-4">{{ .step1.description | safeHTML }}</p>
+        <a class="button is-primary" href='{{ relLangURL "/contact/" }}'>
+            {{ $.Site.Params.button.contact }}
+        </a>
     </div>
-    <div class="column is-4 is-mobile-6">
-        <article class="message is-primary">
-            <div class="message-header">
-              <h5 class="has-text-white mb-0">{{ .step1.name }}</h5>
-            </div>
-            <div class="message-body has-text-justified">
-                {{ .step1.description | safeHTML }}
-            </div>
-          </article>
-    </div>
-    <div class="column is-4 is-mobile-6 is-offset-2">
-        <article class="message is-primary">
-            <div class="message-header">
-              <h5 class="has-text-white mb-0">{{ .step2.name }}</h5>
-            </div>
-            <div class="message-body has-text-justified">
-                {{ .step2.description | safeHTML }}
-            </div>
-        </article>
-    </div>
-    <div class="column is-4 is-mobile-6">
-        <div class="approach_img">
-            <img src="/img/back-end-engineer.svg"/> 
-        </div>
-    </div>
-    <div class="column is-4 is-mobile-6 is-offset-2">
-        <div class="approach_img">
-            <img src="/img/digital-product-manager.svg"/> 
-        </div>
-    </div>
-    <div class="column is-4 is-mobile-6">
-        <article class="message is-primary">
-            <div class="message-header">
-              <h5 class="has-text-white mb-0">{{ .step3.name }}</h5>
-            </div>
-            <div class="message-body has-text-justified">
-                {{ .step3.description | safeHTML }}
-            </div>
-        </article>
-    </div>
-    <div class="column is-4 is-mobile-6 is-offset-2">
-        <article class="message is-primary">
-            <div class="message-header">
-              <h5 class="has-text-white mb-0">{{ .step4.name }}</h5>
-            </div>
-            <div class="message-body has-text-justified">
-                {{ .step4.description | safeHTML }}
-            </div>
-        </article>
-    </div>
-    <div class="column is-4 is-mobile-6">
-        <div class="approach_img">
-            <img src="/img/operations-engineer.svg"/> 
-        </div>
-    </div>
+
     {{ end }}
+
 </div>
