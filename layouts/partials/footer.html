@@ -26,6 +26,13 @@
         {{ .Site.Params.footer | safeHTML }}
       </p>
     </div>
+    <div class="is-hidden-desktop is-flex is-justify-content-center mt-4" style="gap: 1.5rem;">
+      {{ range .Site.Params.social }}
+        <a class="has-text-grey" href="{{ .url }}" target="_blank" rel="noopener" aria-label="{{ .name }}">
+          <i class="{{ .icon }} is-size-5"></i>
+        </a>
+      {{ end }}
+    </div>
   </div>
 
   </div>

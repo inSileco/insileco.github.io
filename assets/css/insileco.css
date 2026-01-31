@@ -544,10 +544,30 @@ input[type="checkbox"] {
         padding-right: 0.75rem;
     }
 
+    .navbar {
+        max-width: 100% !important;
+        transform: none !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .navbar.is-spaced {
+        padding: 0 !important;
+    }
+
+    .navbar-menu.is-active {
+        display: block;
+        width: 100vw;
+    }
+
     /* Increase navbar burger icon size on mobile */
     .navbar-burger {
         width: 3.5rem;
         height: 3.5rem;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 50;
     }
 
     .navbar-burger span {
@@ -560,3 +580,4 @@ input[type="checkbox"] {
         margin-top: 5rem !important;
     }
 }
+

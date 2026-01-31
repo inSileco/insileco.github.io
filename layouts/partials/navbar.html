@@ -1,6 +1,6 @@
 <nav class="navbar is-spaced is-fixed-top is-size-8" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-        <a class="navbar-item navbar-logo" href="{{ relLangURL "/" }}">
+        <a class="navbar-item navbar-logo is-hidden-touch" href="{{ relLangURL "/" }}">
             <img src="/img/logo.svg" alt="inSileco logo" />
             <span class="navbar-title">inSileco</span>
         </a>
@@ -13,6 +13,11 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
 
+        <a class="navbar-item navbar-logo is-hidden-desktop" href="{{ relLangURL "/" }}">
+            <img src="/img/logo.svg" alt="inSileco logo" />
+            <span class="navbar-title">inSileco</span>
+        </a>
+
         <div class="navbar-start">
             {{ range .Site.Menus.main }}
             <a class="navbar-item" href="{{ relLangURL .URL }}">
@@ -23,7 +28,7 @@
 
         <div class="navbar-end">
             {{ range .Site.Params.social }}
-                <a class="navbar-item" href="{{ .url }}" target="_blank" rel="noopener" aria-label="{{ .name }}">
+                <a class="navbar-item is-hidden-touch" href="{{ .url }}" target="_blank" rel="noopener" aria-label="{{ .name }}">
                     <i class="{{ .icon }}"></i>
                 </a>
             {{ end }}
