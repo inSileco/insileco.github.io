@@ -13,10 +13,11 @@
           <h2 class="title is-4" id="{{ $svc.anchor }}">{{ $svc.title | markdownify }}</h2>
           <div class="content">
               {{ $svc.description | markdownify }}
-                <a href="{{ relLangURL $svc.url}}">
-                    <b>{{ $svc.cta | markdownify }}</b>
-                </a>
-            </div>
+              <br>
+              <a href="{{ relLangURL $svc.url}}">
+                <b>{{ $svc.cta | markdownify }}</b>
+              </a>
+          </div>
         </div>
         <div class="column is-6 px-6">
           <figure class="image">

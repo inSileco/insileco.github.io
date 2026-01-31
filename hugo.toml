@@ -125,7 +125,7 @@ url = "/services/"
 weight = 1
 
 [[languages.fr.menu.main]]
-name = "About"
+name = "À propos"
 url = "/about/"
 weight = 2
 

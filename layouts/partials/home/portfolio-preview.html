@@ -23,7 +23,7 @@
                                     {{ with $page.Params.description }}
                                         {{ . | markdownify | plainify | truncate 140 }}
                                     {{ else }}
-                                        {{ $page.Summary | plainify | truncate 140 }}
+                                        {{ $page.Summary | markdownify |plainify | truncate 140 }}
                                     {{ end }}
                                 {{ end }}
                             </p>

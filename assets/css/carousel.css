@@ -1,12 +1,12 @@
 .testimonials-carousel {
-    max-width: 48rem;
+    max-width: 60rem;
     margin: 0 auto;
     position: relative;
 }
 
 .testimonials-container {
     position: relative;
-    min-height: 200px;
+    min-height: 400px;
 }
 
 .testimonial-slide {
