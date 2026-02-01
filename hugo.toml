@@ -48,11 +48,11 @@ icon = "fa-brands fa-facebook"
 url = "https://www.facebook.com/profile.php?id=61587282957743"
 weight = 5
 
-[[params.social]]
- name = "Flux RSS"
- icon = "fa-solid fa-blog"
- url = "/blog/index.xml"
- weight = 6
+# [[params.social]]
+#  name = "Flux RSS"
+#  icon = "fa-solid fa-blog"
+#  url = "/blog/index.xml"
+#  weight = 6
 
 
 
