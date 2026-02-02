@@ -5,6 +5,9 @@
 {{ partial "navbar.html" . }}
 
 <body>
+<a class="navbar-mobile-logo is-hidden-desktop" href='{{ relLangURL "/" }}'>
+    <img src="/img/logo.svg" alt="inSileco logo" />
+</a>
 
 	{{ block "main" . }}
 

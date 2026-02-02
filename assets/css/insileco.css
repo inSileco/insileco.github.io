@@ -419,6 +419,8 @@ input[type="checkbox"] {
         transform: none !important;
         padding-left: 0 !important;
         padding-right: 0 !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
     }
 
     .navbar.is-spaced {
@@ -428,6 +430,19 @@ input[type="checkbox"] {
     .navbar-menu.is-active {
         display: block;
         width: 100vw;
+        background-color: white;
+    }
+
+    .navbar-mobile-logo {
+        position: absolute;
+        top: 0.75rem;
+        left: 0.75rem;
+        z-index: 1;
+    }
+
+    .navbar-mobile-logo img {
+        height: 3em;
+        width: auto;
     }
 
     /* Increase navbar burger icon size on mobile */
