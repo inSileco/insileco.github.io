@@ -83,3 +83,31 @@
         font-size: 1rem !important;
     }
 }
+
+
+@keyframes hero-carousel-scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-carousel-track {
+        animation: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-main {
+        padding-top: 5.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .hero-cta .button {
+        width: 100%;
+    }
+}

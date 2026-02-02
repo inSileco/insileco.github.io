@@ -17,17 +17,17 @@
         </div>
         {{ $logos := .Site.Data.network }}
         {{ if $logos }}
-        <div class="hero-carousel" aria-label="Partner logos">
-            <div class="hero-carousel-track">
-                {{ range seq 2 }}
-                    {{ range $logos }}
-                        <a href="{{ .url }}" target="_blank" rel="noopener">
-                            <img src="{{ .logo }}" alt="{{ .name }}" />
-                        </a>
+            <div class="hero-carousel" aria-label="Partner logos">
+                <div class="hero-carousel-track">
+                    {{ range seq 2 }}
+                        {{ range $logos }}
+                            <a href="{{ .url }}" target="_blank" rel="noopener">
+                                <img src="{{ .logo }}" alt="{{ .name }}" />
+                            </a>
+                        {{ end }}
                     {{ end }}
-                {{ end }}
+                </div>
             </div>
-        </div>
         {{ end }}
         <div class="hero-credibility">
             <p>{{ $hero.credibility }}</p>
