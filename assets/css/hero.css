@@ -97,12 +97,18 @@
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1025px) {
     #hero {
         padding-top: 1rem;
     }
     .hero-title {
         padding-bottom: 1rem;
         padding-top: 1rem;
+    }
+    .page-hero {
+        padding-top: 2rem;
+    }
+    .section {
+        padding-top: 2rem;
     }
 }
