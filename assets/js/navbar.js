@@ -21,5 +21,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
     }
-  
+
+    // Close menu via bottom chevron button
+    const closeWrapper = document.querySelector('.navbar-close-wrapper');
+    if (closeWrapper) {
+      closeWrapper.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const burger = document.querySelector('.navbar-burger');
+        const menu = document.getElementById(burger.dataset.target);
+        burger.classList.remove('is-active');
+        menu.classList.remove('is-active');
+      });
+    }
+
   });

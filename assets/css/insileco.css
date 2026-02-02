@@ -445,6 +445,19 @@ input[type="checkbox"] {
         width: 24px;
     }
 
+    .navbar-close-wrapper {
+        padding: 0.75rem 0;
+    }
+
+    .navbar-close-btn {
+        color: #888;
+        font-size: 1.2rem;
+    }
+
+    .navbar-close-btn:hover {
+        color: #37abc8ff;
+    }
+
     /* Adjust header margin to account for larger navbar on mobile */
     #header-logo {
         margin-top: 5rem !important;
