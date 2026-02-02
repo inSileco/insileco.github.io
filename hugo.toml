@@ -125,7 +125,7 @@ link_text = "En apprendre davantage"
 
 
 [[languages.fr.menu.main]]
-name = "Acceuil"
+name = "Accueil"
 url = "/"
 weight = 1
 
