@@ -2,6 +2,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title> {{ .Title }}</title>
+
+
+    {{ with .Site.Params.organization }}
+    <meta name="institution" content="{{ . }}" />
+    {{ end }}
+    {{/*  {{ with .Params.tags }}
+    <meta name="news_keywords" content="{{ . }}" />
+    {{ end }}  */}}
+
+    <!-- OG -->
+    <meta property="og:site_name" content="{{ .Site.Title }}" />
+    {{ if .IsPage }}
+        {{ with .Title }}
+        <meta property="og:title" content="{{ . }}" />
+        {{ end }}
+    {{ end }}
+
+
     <!-- load bulma css compiled with our customizations from scss -->
     {{ $cssOpts := (dict "includePaths" (slice "node_modules/bulma" "assets/scss")) }}
     {{ with $bulma := resources.Get "scss/main.scss" | toCSS $cssOpts }}

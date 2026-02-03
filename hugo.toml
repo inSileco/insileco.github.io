@@ -1,6 +1,7 @@
 baseURL = 'https://insileco.io/'
 languageCode = 'en'
-title = 'inSileco'
+title = 'inSileco Website'
+organization = "inSileco"
 pygmentsCodeFences = true
 pygmentsUseClasses = true
 

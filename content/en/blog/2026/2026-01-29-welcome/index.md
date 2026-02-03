@@ -8,7 +8,6 @@ categories:
   - Storytelling
 tags:
   - Welcome
-tldr: We are launching our blog post where we will share content about blablabal
 ---
 
 ## Why we are launching this blog
