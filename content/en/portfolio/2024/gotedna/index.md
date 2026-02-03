@@ -18,5 +18,5 @@ gh:
 ws: https://sites.google.com/view/gotedna/about
 ---
 
-## Plus de détails à venir
+
 

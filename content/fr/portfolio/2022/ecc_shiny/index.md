@@ -17,4 +17,4 @@ gh: inSileco/cws-shiny-workshop
 ws: https://insileco.io/cws-shiny-workshop/#1
 ---
 
-## Plus de détails à venir
+

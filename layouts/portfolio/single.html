@@ -2,23 +2,59 @@
 
 {{ partial "page-hero.html" . }}
 
-<div class="columns">
-    <div class="column is-8-desktop is-offset-2 p-2">
-        
-        <div class="content">
-            
-        <div class="columns">
-            <div class="column is-8 is-offset-2 p-6">
-                <figure class="image portfolio-featured-image">
-                    <img src="{{ .Permalink }}/img/cover.png" alt="Placeholder image">
-                </figure>
-            </div>
-        </div>
 
-        {{ .Content }}
-            
+<div class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-8-desktop is-offset-2">
+
+                <article class="content">
+                    <header class="mb-5">
+
+                        <div class="mb-4">
+                            {{ with .Params.date }}
+                            <span class="has-text-grey">
+                                <i class="fa-regular fa-calendar"></i> {{ .Format "January 2, 2006" }}
+                            </span>
+                            {{ end }}
+                        </div>
+
+                        {{ if .Params.categories }}
+                        <div class="mb-3">
+                            {{ range .Params.categories }}
+                            <span class="tag is-warning is-medium mr-2">{{ . }}</span>
+                            {{ end }}
+                        </div>
+                        {{ end }}
+
+                        {{ if .Params.tags }}
+                        <div class="mb-4">
+                            {{ range .Params.tags }}
+                            <span class="tag is-light mr-1">{{ . }}</span>
+                            {{ end }}
+                        </div>
+                        {{ end }}
+
+                        <div class="columns">
+                            <div class="column is-12 p-6">
+                                <figure class="image portfolio-featured-image">
+                                    <img src="{{ .Permalink }}/img/cover.png" alt="Placeholder image">
+                                </figure>
+                            </div>
+                        </div>
+
+                    </header>
+
+                    <div class="portfolio-content">
+                        {{ .Content }}
+                    </div>
+
+                </article>
+
+            </div>
         </div>
     </div>
 </div>
+
 
 {{ end }}

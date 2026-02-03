@@ -18,5 +18,5 @@ ws: https://insilecoinc.github.io/workshop_reproducibility/
 ---
 
 
-## Plus de détails à venir
+
 

@@ -19,5 +19,5 @@ ws: https://insileco.io/learning_git/#1
 ---
 
 
-## Plus de détails à venir
+
 
