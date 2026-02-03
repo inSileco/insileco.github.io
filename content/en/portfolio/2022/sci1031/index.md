@@ -13,11 +13,9 @@ instructors:
   - David Beauchesne
   - Kevin Cazelles
   - Steve Vissault
-description: | 
-  We helped structure the GitHub repository and automate the deployment of the course SCI 1031 de la TÉLUQ. We also contributed to writing portions of two chapters of the course.
+description: "GitHub repository structuring and deployment automation for the SCI 1031 course from TÉLUQ."
 gh: https://github.com/sci1031/sci1031
 ws: https://sci1031.github.io/sci1031/
 ---
 
-
-
+We helped structure the GitHub repository and automate the deployment of the course SCI 1031 de la TÉLUQ. We also contributed to writing portions of two chapters of the course.

@@ -2,4 +2,11 @@
     width: 84% !important;
     object-fit: cover;
     border-radius: 1.5rem;
+    border: solid #37abc8 0.25rem;
 }
+
+
+/* .portfolio-thumnbnail img {
+    object-fit: cover;
+    border-radius: 0.5rem;
+} */

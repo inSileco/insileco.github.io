@@ -11,12 +11,9 @@ instructors:
   - David Beauchesne
   - Kevin Cazelles
   - Steve Vissault
-description: | 
-  After 30 years of data collection on Bylot Island, researchers have generated more than 20 databases used for long-term ecosystem monitoring. Throughout this project, we analyzed the specific challenges linked to these databases and we proposed concrete solutions to improve data management practices.
-gh: 
-ws: 
+description: "Analysis of challenges and solutions for managing ecosystem monitoring data from Bylot Island."
+gh:
+ws:
 ---
 
-
-
-
+After 30 years of data collection on Bylot Island, researchers have generated more than 20 databases used for long-term ecosystem monitoring. Throughout this project, we analyzed the specific challenges linked to these databases and we proposed concrete solutions to improve data management practices.

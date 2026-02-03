@@ -17,6 +17,13 @@
                                 <i class="fa-regular fa-calendar"></i> {{ .Format "January 2, 2006" }}
                             </span>
                             {{ end }}
+                            {{/*  {{ with .Params.gh }}
+                            <span class="has-text-grey mr-2">
+                                <a href="https://github.io/{{ . }}">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                            </span>
+                            {{ end }}  */}}
                         </div>
 
                         {{ if .Params.categories }}
@@ -48,6 +55,8 @@
                     <div class="portfolio-content">
                         {{ .Content }}
                     </div>
+
+                    {{ partial "cta_portfolio.html" . }}
 
                 </article>
 

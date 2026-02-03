@@ -12,12 +12,9 @@ instructors:
   - David Beauchesne
   - Kevin Cazelles
 location: À distance
-description: | 
-  Lors de cet atelier, nous avons montré comment collaborer concrètement et efficacement sur des projets avec git et GitHub.
+description: "Atelier sur la collaboration avec git et GitHub."
 gh: inSileco/learning_git
 ws: https://insileco.io/learning_git/#1
 ---
 
-
-
-
+Lors de cet atelier, nous avons montré comment collaborer concrètement et efficacement sur des projets avec git et GitHub.

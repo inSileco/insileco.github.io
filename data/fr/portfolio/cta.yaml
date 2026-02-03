@@ -1,0 +1,8 @@
+headline: "Vous avez un projet et souhaitez travailler avec nous?"
+subhead: "Faites-le nous savoir!"
+primary:
+  label: "Communiquez avec nous"
+  link: "/get-in-touch/"
+secondary:
+  label: "Retour au portfolio"
+  link: "/portfolio/"
