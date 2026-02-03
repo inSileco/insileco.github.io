@@ -17,5 +17,5 @@ ws: https://effetscumulatifsnavigation.github.io/Report/
 ---
 
 
-## More details to come
+
 

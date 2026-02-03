@@ -18,4 +18,3 @@ ws: https://github.com/inSileco/wksh_raster_CWS?tab=readme-ov-file#presentations
 ---
 
 
-## More details to come

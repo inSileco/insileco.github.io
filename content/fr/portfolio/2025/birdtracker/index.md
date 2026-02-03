@@ -16,5 +16,5 @@ gh: inSileco/nunatsiavutBirdTracker
 ws: https://insileco-inc.shinyapps.io/nunatsiavutBirdTracker/
 ---
 
-## More details to come
+
 

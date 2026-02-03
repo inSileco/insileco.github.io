@@ -19,4 +19,4 @@ ws: https://insilecoinc.github.io/workshop_reproducibility/
 ---
 
 
-## More details to come
+

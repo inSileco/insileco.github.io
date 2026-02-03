@@ -1,0 +1,24 @@
+{{ define "main" }}
+
+{{ partial "page-hero.html" . }}
+
+<div class="columns">
+    <div class="column is-8-desktop is-offset-2 p-2">
+        
+        <div class="content">
+            
+        <div class="columns">
+            <div class="column is-8 is-offset-2 p-6">
+                <figure class="image portfolio-featured-image">
+                    <img src="{{ .Permalink }}/img/cover.png" alt="Placeholder image">
+                </figure>
+            </div>
+        </div>
+
+        {{ .Content }}
+            
+        </div>
+    </div>
+</div>
+
+{{ end }}

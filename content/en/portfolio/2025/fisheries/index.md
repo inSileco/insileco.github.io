@@ -15,6 +15,3 @@ gh:
 ws: 
 ---
 
-
-## More details to come
-

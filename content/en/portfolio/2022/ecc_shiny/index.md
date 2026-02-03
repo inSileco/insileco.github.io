@@ -17,5 +17,5 @@ ws: https://insileco.io/cws-shiny-workshop/#1
 ---
 
 
-## More details to come
+
 

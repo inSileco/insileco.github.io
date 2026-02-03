@@ -18,6 +18,6 @@ ws: https://insileco.io/interactiveRaster/#1
 ---
 
 
-## More details to come
+
 
 

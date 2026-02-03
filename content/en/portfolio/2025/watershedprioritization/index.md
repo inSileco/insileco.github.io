@@ -17,5 +17,5 @@ ws: https://insilecobot-watershed-prioritization.share.connect.posit.cloud/
 ---
 
 
-## More details to come
+
 

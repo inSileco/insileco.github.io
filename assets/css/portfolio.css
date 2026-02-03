@@ -1,0 +1,5 @@
+.portfolio-featured-image img {
+    width: 84% !important;
+    object-fit: cover;
+    border-radius: 1.5rem;
+}

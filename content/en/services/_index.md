@@ -1,5 +1,5 @@
 ---
 title: "Services"
-subtitle: "Here is how we can help"
+subtitle: "Here is how we can help."
 ---
 

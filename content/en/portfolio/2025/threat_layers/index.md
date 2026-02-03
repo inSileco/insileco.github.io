@@ -17,5 +17,5 @@ ws: https://insileco.io/ceacws/
 ---
 
 
-## More details to come
+
 

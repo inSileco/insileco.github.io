@@ -18,4 +18,3 @@ ws: https://david-beauchesne.shinyapps.io/edriversapp/
 ---
 
 
-## More details to come
