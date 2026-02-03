@@ -46,7 +46,7 @@
 
             {{ $page := . }}
             {{ with $page.Params.featured_image }}
-            <figure class="image is-16by9 blog-post-image mb-5">
+            <figure class="image blog-post-image mb-6">
               {{ $img := . }}
               {{ if and (not (hasPrefix $img "/")) (not (hasPrefix $img "http")) }}
               {{ $img = printf "%s%s" $page.RelPermalink $img }}

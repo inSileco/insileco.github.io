@@ -20,10 +20,9 @@
 
 .blog-card-image img,
 .blog-post-image img {
-    width: 80% !important;
-    height: 80% !important;
+    width: 84% !important;
     object-fit: cover;
-    border-radius: 0.1rem;
+    border-radius: 1.5rem;
 }
 
 .blog-remodel-note {
@@ -53,4 +52,12 @@
 
 .blog-content a:hover {
     color: rgb(0, 0, 0);
+}
+
+.blog-card-thumbnail {
+    height: 180px;
+}
+
+.blog-thumbnail {
+    border-radius: 0.5rem;
 }

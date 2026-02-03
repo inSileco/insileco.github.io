@@ -19,43 +19,49 @@
                 <div>
                   <h3 class="title is-5 mb-3">{{ $page.Title }}</h3>
 
-                  {{ with $page.Params.featured_image }}
-                  <figure class="image is-3by1 blog-card-image mb-4">
-                    {{ $img := . }}
-                    {{ if and (not (hasPrefix $img "/")) (not (hasPrefix $img "http")) }}
-                    {{ $img = printf "%s%s" $page.RelPermalink $img }}
+                  <div class="columns">
+                    <div class="column is-half py-4">
+                      {{ with $page.Params.date }}
+                      <p class="has-text-grey-light mb-3">
+                        <i class="fa-regular fa-calendar"></i> {{ .Format "January 2, 2006" }}
+                      </p>
+                      {{ end }}
+
+                      {{ with $page.Params.author }}
+                      <p class="has-text-grey-light mb-3">
+                        <i class="fa-regular fa-user"></i> {{ . }}
+                      </p>
+                      {{ end }}
+
+                      {{ if $page.Params.categories }}
+                      <div class="mb-3">
+                        {{ range $page.Params.categories }}
+                        <span class="tag is-warning">{{ . }}</span>
+                        {{ end }}
+                      </div>
+                      {{ end }}
+
+                      {{ if $page.Params.tags }}
+                      <div class="mb-3">
+                        {{ range $page.Params.tags }}
+                        <span class="tag is-light">{{ . }}</span>
+                        {{ end }}
+                      </div>
+                      {{ end }}
+                    </div>
+                      
+                    <div class="column is-half">
+                    {{ with $page.Params.featured_image }}
+                    <figure class="blog-card-thumbnail">
+                      {{ $img := . }}
+                      {{ if and (not (hasPrefix $img "/")) (not (hasPrefix $img "http")) }}
+                      {{ $img = printf "%s%s" $page.RelPermalink $img }}
+                      {{ end }}
+                      <img src="{{ $img }}" class="blog-thumbnail" alt="{{ $page.Params.featured_image_alt | default $page.Title }}">
+                    </figure>
                     {{ end }}
-                    <img src="{{ $img }}" alt="{{ $page.Params.featured_image_alt | default $page.Title }}">
-                  </figure>
-                  {{ end }}
-
-                  {{ with $page.Params.date }}
-                  <p class="has-text-grey-light mb-3">
-                    <i class="fa-regular fa-calendar"></i> {{ .Format "January 2, 2006" }}
-                  </p>
-                  {{ end }}
-
-                  {{ with $page.Params.author }}
-                  <p class="has-text-grey-light mb-3">
-                    <i class="fa-regular fa-user"></i> {{ . }}
-                  </p>
-                  {{ end }}
-
-                  {{ if $page.Params.categories }}
-                  <div class="mb-3">
-                    {{ range $page.Params.categories }}
-                    <span class="tag is-warning">{{ . }}</span>
-                    {{ end }}
-                  </div>
-                  {{ end }}
-
-                  {{ if $page.Params.tags }}
-                  <div class="mb-3">
-                    {{ range $page.Params.tags }}
-                    <span class="tag is-light">{{ . }}</span>
-                    {{ end }}
-                  </div>
-                  {{ end }}
+                    </div>
+                </div>
 
                   {{ with $page.Params.description }}
                   <p class="mb-3">{{ . }}</p>
@@ -66,7 +72,7 @@
                 </div>
 
                 <div style="margin-top: auto;">
-                  <span class="has-text-primary has-text-weight-semibold">Read more →</span>
+                  <span class="has-text-primary has-text-weight-semibold">{{ $.Site.Params.blog.link }} <i class="fa-solid fa-arrow-right"></i></span>
                 </div>
               </div>
             </a>

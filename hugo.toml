@@ -94,11 +94,17 @@ service = "En apprendre davantage"
 contact = "Contactez-nous"
 blog = "Visitez notre blogue"
 
+
 [languages.fr.params.insights]
 title = "À la une sur le blogue inSileco"
 
+
+[languages.fr.params.blog]
+link = "En lire davantage"
+
 [languages.fr.params.help]
 title = "Comment nous vous aidons"
+
 
 [[languages.fr.params.help.item]]
 title = "Analyses & conseils pratiques"
@@ -200,6 +206,10 @@ blog = "Check out our blog"
 
 [languages.en.params.insights]
 title = "Highlights from the inSileco blog"
+
+
+[languages.en.params.blog]
+link = "Read more"
 
 
 [languages.en.params.help]
