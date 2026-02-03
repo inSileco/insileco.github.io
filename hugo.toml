@@ -80,6 +80,7 @@ footer = 'Le code source de ce site est disponible sur <a href="https://github.c
 [languages.fr.params.portfolio]
 title = "Extrait de notre portfolio"
 subtitle = "Sélection de projets récents et de leurs résultats"
+link = "Voir le projet"
 
 
 [languages.fr.params.contact]
@@ -184,6 +185,7 @@ blog_button = "Checkout out blog"
 [languages.en.params.portfolio]
 title = "Portfolio preview"
 subtitle = "Selected work and outcomes from recent projects"
+link = "View project"
 
 
 [languages.en.params.contact]

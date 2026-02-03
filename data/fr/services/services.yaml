@@ -7,7 +7,7 @@
     Notre objectif est de rassembler du contenu de qualité pour vous aider à mieux comprendre 
     et appliquer ces approches. 
   cta: Découvrez notre blogue pour en savoir plus.
-  img: "img/services/blog.svg"
+  img: "img/services/blog_fr.svg"
   url: "/blog/"
 
 - title: "**inSileco Academy** : Formation & renforcement des capacités"
@@ -18,7 +18,7 @@
     pour aider votre équipe à développer des compétences pratiques et une réelle confiance 
     dans l’utilisation des données, de la modélisation et des outils d’aide à la décision. 
   cta: Contactez-nous pour en savoir plus.
-  img: "img/services/academy.svg"
+  img: "img/services/academy_fr.svg"
   url: "/contact/"
 
 - title: "**inSileco Systems** : Outils sur mesure & systèmes de données"
@@ -30,7 +30,7 @@
     Notre objectif est de transformer des données environnementales complexes 
     en informations fiables et directement exploitables. 
   cta: Communiquez avec nous pour discuter de vos projets.
-  img: "img/services/systems.svg"
+  img: "img/services/systems_fr.svg"
   url: "/contact/"
 
 - title: "**inSileco Intelligence** : Évaluations environnementales"
@@ -42,5 +42,5 @@
     Ces systèmes permettent des analyses rigoureuses, transparentes et reproductibles en matière de biodiversité, 
     d’effets cumulatifs et de risques environnementaux. 
   cta: Si cela correspond à vos besoins, nous serions heureux d’en discuter avec vous.
-  img: "img/services/intelligence.svg"
+  img: "img/services/intelligence_fr.svg"
   url: "/contact/"
