@@ -1,4 +1,5 @@
 # insileco.io
+[![Build and deploy website](https://github.com/inSileco/insileco.github.io/actions/workflows/deploy.yaml/badge.svg)](https://github.com/inSileco/insileco.github.io/actions/workflows/deploy.yaml)
 
 Our website built with [Hugo](https://gohugo.io/). 
 

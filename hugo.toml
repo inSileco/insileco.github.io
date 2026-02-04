@@ -15,7 +15,7 @@ custom_js = []
 
 
 [params]
-
+website_version = "v0.2.0"
 col_emphase = "#FFCC00"
 
 [[params.social]]
