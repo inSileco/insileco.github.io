@@ -13,10 +13,12 @@
 
     <!-- OG -->
     <meta property="og:site_name" content="{{ .Site.Title }}" />
+    <meta property="og:image" content='{{ "img/logo.png" | absURL }}' />
+    <meta property="og:url" content="{{ .Permalink }}" />
     {{ if .IsPage }}
-        {{ with .Title }}
-        <meta property="og:title" content="{{ . }}" />
-        {{ end }}
+    {{ with .Title }}
+    <meta property="og:title" content="{{ . }}" />
+    {{ end }}
     {{ end }}
 
 
