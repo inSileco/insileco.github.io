@@ -1,8 +1,8 @@
 ---
 title: "Ecological Classification System for Southern Quebec"
-client: "Pierre Grondin, Ministère des Ressources naturelles et des Forêts "
+client: "Pierre Grondin, Ministère des Ressources naturelles et des Forêts"
 categories: 
-  - Repoductibility
+  - Reproducibility
 tags: 
   - Géocomputation
   - Classification supervisée

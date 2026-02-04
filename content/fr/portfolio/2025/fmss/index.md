@@ -5,7 +5,7 @@ categories:
   - Shiny App
 tags: 
   - Outils d'aide à la décision
-  - Modélisationzz
+  - Modélisation
   - Pêches
   - Stratégies de gestion
 date: 2025-03-20

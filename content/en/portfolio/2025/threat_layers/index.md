@@ -4,7 +4,7 @@ client: "Canadian Wildlife Service, Environment and Climate Change Canada"
 categories: 
   - "Cumulative effects assessment"
 tags: 
-  - Environmemntal stressors
+  - Environmental stressors
   - Marine birds
 date: 2025-01-31
 instructors:

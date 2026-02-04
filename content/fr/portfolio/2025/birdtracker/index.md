@@ -5,7 +5,7 @@ categories:
   - Shiny App
 tags: 
   - Géocomputation
-  - VIsualisation de mouvement d'oiseaux
+  - Visualisation de mouvement d'oiseaux
   - Pipeline de données
 date: 2025-01-16
 instructors:

@@ -6,7 +6,7 @@ categories:
 tags: 
   - Géocomputation
   - GitHub
-  - Deploiement
+  - Déploiement
 date: 2022-06-27
 instructors:
   - David Beauchesne

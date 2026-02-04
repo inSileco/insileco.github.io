@@ -1,8 +1,8 @@
 ---
 title: "Système de classification écologique du sud du Québec"
-client: "Pierre Grondin, Ministère des Ressources naturelles et des Forêts "
+client: "Pierre Grondin, Ministère des Ressources naturelles et des Forêts"
 categories: 
-  - Repoductibilité
+  - Reproductibilité
 tags: 
   - Géocomputation
   - Classification supervisée
