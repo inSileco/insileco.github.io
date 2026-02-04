@@ -14,7 +14,7 @@ instructors:
   - Kevin Cazelles
   - Steve Vissault
 description: "Évaluation des effets cumulatifs de 17 stresseurs sur 21 habitats et 205 espèces du plateau néo-écossais."
-gh: https://github.com/inSileco/nceahab
+gh: inSileco/nceahab
 ws:
 ---
 

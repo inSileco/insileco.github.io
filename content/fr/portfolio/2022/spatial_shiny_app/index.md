@@ -13,7 +13,7 @@ instructors:
   - Kevin Cazelles
   - Steve Vissault
 description: "Application Shiny pour générer des rapports reproductibles sur les espèces en péril."
-gh: https://github.com/inSileco/shinySpatialApp_origin/tree/main
+gh: inSileco/shinySpatialApp_origin/tree/main
 ws:
 ---
 

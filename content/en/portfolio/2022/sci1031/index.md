@@ -14,7 +14,7 @@ instructors:
   - Kevin Cazelles
   - Steve Vissault
 description: "GitHub repository structuring and deployment automation for the SCI 1031 course from TÉLUQ."
-gh: https://github.com/sci1031/sci1031
+gh: sci1031/sci1031
 ws: https://sci1031.github.io/sci1031/
 ---
 

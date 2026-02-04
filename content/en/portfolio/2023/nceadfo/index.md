@@ -11,7 +11,7 @@ date: 2023-03-31
 instructors:
   - David Beauchesne
 description: "Assessment of the cumulative effects of 17 environmental drivers on 205 species of the Scotian Shelf Bioregion."
-gh: https://github.com/Ecosystem-Assessments/nceadfo
+gh: Ecosystem-Assessments/nceadfo
 ws: https://ecosystem-assessments.github.io/nceadfo/
 ---
 

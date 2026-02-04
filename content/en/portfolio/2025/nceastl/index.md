@@ -10,7 +10,7 @@ date: 2025-01-24
 instructors:
   - David Beauchesne
 description: "Assessment of cumulative effects of 18 stressors on 193 species in the St. Lawrence marine ecosystem."
-gh: https://github.com/Ecosystem-Assessments/nceastl
+gh: Ecosystem-Assessments/nceastl
 ws: https://www.science.org/doi/10.1126/sciadv.adp9315
 ---
 

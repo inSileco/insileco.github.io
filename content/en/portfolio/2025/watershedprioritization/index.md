@@ -11,7 +11,7 @@ tags:
   - Interactive mapping tool
 date: 2025-03-01
 description: "Identification of priority watersheds across Canada for freshwater fish conservation goals."
-gh: https://github.com/DFOChuLab/Watershed_prioritization
+gh: DFOChuLab/Watershed_prioritization
 ws: https://insilecobot-watershed-prioritization.share.connect.posit.cloud/
 ---
 

@@ -12,7 +12,7 @@ date: 2020-06-24
 instructors:
   - David Beauchesne
 description: "Open knowledge platform for sharing data on environmental drivers in the St. Lawrence estuary and gulf."
-gh: https://github.com/Ecosystem-Assessments/eDriversApp
+gh: Ecosystem-Assessments/eDriversApp
 ws: https://david-beauchesne.shinyapps.io/edriversapp/
 ---
 

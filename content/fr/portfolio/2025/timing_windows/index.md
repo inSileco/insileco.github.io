@@ -12,7 +12,7 @@ instructors:
   - David Beauchesne
   - Kevin Cazelles
 description: "Outil scientifique pour identifier les périodes optimales de protection des poissons d'eau douce au Canada."
-gh: https://github.com/inSileco/TimingWindowsCalculatorManual
+gh: inSileco/TimingWindowsCalculatorManual
 ws:
 ---
 

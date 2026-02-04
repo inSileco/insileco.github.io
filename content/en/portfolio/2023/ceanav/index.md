@@ -11,7 +11,7 @@ date: 2023-03-15
 instructors:
   - David Beauchesne
 description: "Assessment of the cumulative effects of 7 environmental stressors from marine vessel activities in the St. Lawrence and Saguenay rivers."
-gh: https://github.com/EffetsCumulatifsNavigation/ceanav
+gh: EffetsCumulatifsNavigation/ceanav
 ws: https://effetscumulatifsnavigation.github.io/Report/
 ---
 

@@ -11,7 +11,7 @@ tags:
   - Outil cartographique interactif
 date: 2025-03-01
 description: "Identification des bassins versants prioritaires au Canada pour la conservation des poissons d'eau douce."
-gh: https://github.com/DFOChuLab/Watershed_prioritization
+gh: DFOChuLab/Watershed_prioritization
 ws: https://insilecobot-watershed-prioritization.share.connect.posit.cloud/
 ---
 

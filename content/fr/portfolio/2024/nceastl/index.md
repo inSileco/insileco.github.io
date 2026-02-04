@@ -10,7 +10,7 @@ date: 2025-01-24
 instructors:
   - David Beauchesne
 description: "Évaluation des effets cumulatifs de 18 stresseurs sur 193 espèces de l'écosystème marin du Saint-Laurent."
-gh: https://github.com/Ecosystem-Assessments/nceastl
+gh: Ecosystem-Assessments/nceastl
 ws: https://www.science.org/doi/10.1126/sciadv.adp9315
 ---
 

@@ -17,13 +17,20 @@
                                 <i class="fa-regular fa-calendar"></i> {{ .Format "January 2, 2006" }}
                             </span>
                             {{ end }}
-                            {{/*  {{ with .Params.gh }}
-                            <span class="has-text-grey mr-2">
-                                <a href="https://github.io/{{ . }}">
+                            {{ with .Params.gh }}
+                            <span class="has-text-grey ml-1">
+                                <a href="https://github.com/{{ . }}">
                                     <i class="fa-brands fa-github"></i>
                                 </a>
                             </span>
-                            {{ end }}  */}}
+                            {{ end }}
+                            {{ with .Params.gh }}
+                            <span class="has-text-grey ml-1">
+                                <a href="{{ . }}">
+                                    <i class="fa-solid fa-globe"></i>
+                                </a>
+                            </span>
+                            {{ end }}
                         </div>
 
                         {{ if .Params.categories }}

@@ -12,7 +12,7 @@ instructors:
   - David Beauchesne
   - Kevin Cazelles
 description: "Science-based tool to identify optimal timing windows for protecting freshwater fish species in Canada."
-gh: https://github.com/inSileco/TimingWindowsCalculatorManual
+gh: inSileco/TimingWindowsCalculatorManual
 ws:
 ---
 

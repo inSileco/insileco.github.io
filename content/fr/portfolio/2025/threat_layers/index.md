@@ -11,7 +11,7 @@ instructors:
   - David Beauchesne
   - Kevin Cazelles
 description: "Jeu de données spatio-temporel des stresseurs anthropiques dans les eaux atlantiques du Canada."
-gh: https://github.com/inSileco/ceacws
+gh: inSileco/ceacws
 ws: https://insileco.io/ceacws/
 ---
 

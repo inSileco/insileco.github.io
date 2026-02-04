@@ -12,7 +12,7 @@ date: 2020-06-24
 instructors:
   - David Beauchesne
 description: "Plateforme de partage de connaissances sur la répartition et l'intensité des stresseurs environnementaux dans l'estuaire et le golfe du Saint-Laurent."
-gh: https://github.com/Ecosystem-Assessments/eDriversApp
+gh: Ecosystem-Assessments/eDriversApp
 ws: https://david-beauchesne.shinyapps.io/edriversapp/
 ---
 

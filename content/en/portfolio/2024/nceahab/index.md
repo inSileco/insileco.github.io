@@ -14,7 +14,7 @@ instructors:
   - Kevin Cazelles
   - Steve Vissault
 description: "Assessment of cumulative effects of 17 environmental stressors on 21 habitats and 205 species of the Scotian Shelf."
-gh: https://github.com/inSileco/nceahab
+gh: inSileco/nceahab
 ws:
 ---
 

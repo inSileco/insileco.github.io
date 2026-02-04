@@ -1,5 +1,5 @@
 ---
-title: Rasters with R
+title: Working on rasters with R
 client: "Canadian Wildlife Service, Environment and Climate Change Canada"
 categories: 
   - Workshop
@@ -13,7 +13,10 @@ instructors:
   - Kevin Cazelles
 description: "Workshop on manipulating and visualizing spatial data with R."
 gh: inSileco/wksh_raster_CWS
-ws: https://github.com/inSileco/wksh_raster_CWS?tab=readme-ov-file#presentations
+ws: https://insileco.io/wksh_raster_CWS/_part1.html#1
 ---
 
-During this workshop, we showed, using concrete examples, how to manipulate and visualize spatial data with R.
+The goal of this workshop is to introduce participants to the fundamentals of manipulating, analyzing, and visualizing raster data using R, with an emphasis on reproducible workflows tailored to environmental spatial analysis needs. Through demonstrations and hands-on exercises, the workshop helps participants become familiar with key tools and concepts used to load, explore, transform, and visualize gridded spatial data, while promoting good practices in organizing code and data.
+
+More broadly, the workshop aims to strengthen participants’ capacity to integrate spatial data into scientific analyses or environmental management workflows. It focuses on understanding raster data structures, using them to produce meaningful visualizations, and incorporating them into reproducible analytical pipelines. By the end of the workshop, participants should be able to apply these approaches to their own projects, particularly for exploring, summarizing, and communicating spatial data related to biodiversity or habitat management.
+

@@ -14,7 +14,7 @@ instructors:
   - Kevin Cazelles
   - Steve Vissault
 description: "Update of cumulative effects assessment on Scotian Shelf food webs with focus on beaked whale habitat."
-gh: https://github.com/inSileco/nceamm
+gh: inSileco/nceamm
 ws:
 ---
 

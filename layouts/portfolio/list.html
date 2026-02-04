@@ -37,7 +37,9 @@
                                 <span class="tag is-primary is-light">{{ . }}</span>
                             {{ end }}
                         </div>
-                        <span class="portfolio-link">View project →</span>
+                        <span class="portfolio-link">
+                            {{ $.Site.Params.portfolio.link }} <i class="fa-solid fa-arrow-right"></i>
+                        </span>
                     </div>
                 </a>
             </div>

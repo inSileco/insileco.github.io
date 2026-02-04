@@ -11,7 +11,7 @@ instructors:
   - David Beauchesne
   - Kevin Cazelles
 description: "High-resolution spatiotemporal dataset of anthropogenic stressors in Atlantic Canadian waters."
-gh: https://github.com/inSileco/ceacws
+gh: inSileco/ceacws
 ws: https://insileco.io/ceacws/
 ---
 

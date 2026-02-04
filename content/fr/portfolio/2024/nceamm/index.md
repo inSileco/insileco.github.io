@@ -14,7 +14,7 @@ instructors:
   - Kevin Cazelles
   - Steve Vissault
 description: "Mise à jour de l'évaluation des effets cumulatifs sur les réseaux trophiques du plateau néo-écossais pour les baleines à bec."
-gh: https://github.com/inSileco/nceamm
+gh: inSileco/nceamm
 ws:
 ---
 

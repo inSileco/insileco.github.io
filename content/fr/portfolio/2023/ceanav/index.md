@@ -11,7 +11,7 @@ date: 2023-03-15
 instructors:
   - David Beauchesne
 description: "Évaluation des effets cumulatifs de 7 stresseurs environnementaux sur le fleuve Saint-Laurent et le Saguenay."
-gh: https://github.com/EffetsCumulatifsNavigation/ceanav
+gh: EffetsCumulatifsNavigation/ceanav
 ws: https://effetscumulatifsnavigation.github.io/Report/
 ---
 

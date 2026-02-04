@@ -11,7 +11,7 @@ date: 2023-03-31
 instructors:
   - David Beauchesne
 description: "Évaluation des effets cumulatifs de 17 facteurs environnementaux sur 205 espèces du plateau néo-écossais."
-gh: https://github.com/Ecosystem-Assessments/nceadfo
+gh: Ecosystem-Assessments/nceadfo
 ws: https://ecosystem-assessments.github.io/nceadfo/
 ---
 
