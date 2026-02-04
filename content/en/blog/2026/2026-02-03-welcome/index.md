@@ -1,6 +1,6 @@
 ---
 title: "Welcome to Our Blog!"
-date: 2026-01-29
+date: 2026-02-03
 author: "inSileco Team"
 description: "Our first blog post introducing the new inSileco blog."
 featured_image: "img/welcome.jpg"
@@ -62,6 +62,6 @@ At its core, this blog is about sharing what we learn while trying to do environ
 
 If that resonates with you, we hope you’ll find something useful here. 
 
-Never hestitate to reach out to us if you have comments or questions.
+Never hesitate to reach out to us if you have comments or questions.
 
 Happy reading! 

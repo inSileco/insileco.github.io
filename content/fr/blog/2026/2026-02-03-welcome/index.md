@@ -1,6 +1,6 @@
 ---
 title: "Bienvenue sur notre blogue!"
-date: 2026-01-29
+date: 2026-02-03
 author: "Équipe inSileco"
 description: "Notre premier billet pour présenter le nouveau blogue d’inSileco."
 featured_image: "img/welcome.jpg"

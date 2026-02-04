@@ -1,13 +1,13 @@
 ---
 title: "Custom tick marks with R's base graphics system"
-date: 2026-02-20
+date: 2026-02-10
 author: "inSileco Team"
 description: "Our first blog post introducing the new inSileco blog."
-featured_image: "img/welcome.jpg"
+featured_image: "img/unnamed-chunk-18-1.png"
 categories:
-  - Storytelling
+  - Data vizualisation
 tags:
-  - Welcome
+  - R
 ---
 
 This post was first published on August 29, 2020, on the old blog
@@ -21,7 +21,7 @@ If you are using R’s base graphics system for your plots and if you like
 customizing your plots, you may have already wondered how to customize
 the tick marks of your plots! I do that quite a lot and I thought it
 would be worth explaining how I do so. Let’s consider the following
-plot,
+plot
 
 ``` r
 x_axis <- seq(0, 2, 0.1)
@@ -29,7 +29,7 @@ y_axis <- x_axis + .5 * rnorm(length(x_axis))
 plot(x_axis, y_axis)
 ```
 
-![](post2_files/figure-commonmark/unnamed-chunk-1-1.png)
+![](img/unnamed-chunk-1-1.png)
 
 By default, `plot.default` internally has its way to decide where tick
 marks should be added. It is always a good default choice, but sometimes
@@ -47,13 +47,13 @@ x-axis and the y-axis, respectively.
 plot(x_axis, y_axis, xaxt = "n")
 ```
 
-![](post2_files/figure-commonmark/unnamed-chunk-2-1.png)
+![](img/unnamed-chunk-2-1.png)
 
 ``` r
 plot(x_axis, y_axis, xaxt = "n", yaxt = "n")
 ```
 
-![](post2_files/figure-commonmark/unnamed-chunk-3-1.png)
+![](img/unnamed-chunk-3-1.png)
 
 The second option is to set `axes` to `FALSE` in `plot()`:
 
@@ -61,7 +61,7 @@ The second option is to set `axes` to `FALSE` in `plot()`:
 plot(x_axis, y_axis, axes = FALSE)
 ```
 
-![](post2_files/figure-commonmark/unnamed-chunk-4-1.png)
+![](img/unnamed-chunk-4-1.png)
 
 As you can see, when `axes = FALSE` the box is also removed and you can
 actually add it back with `box()`:
@@ -71,7 +71,7 @@ plot(x_axis, y_axis, axes = FALSE)
 box()
 ```
 
-![](post2_files/figure-commonmark/unnamed-chunk-5-1.png)
+![](img/unnamed-chunk-5-1.png)
 
 and change its style, if desired:
 
@@ -80,7 +80,7 @@ plot(x_axis, y_axis, axes = FALSE)
 box(bty = "l")
 ```
 
-![](post2_files/figure-commonmark/unnamed-chunk-6-1.png)
+![](img/unnamed-chunk-6-1.png)
 
 That being said, let’s only remove the x-axis for the moment and add
 ticks at 0, 0.5, 1, 1.5 and 2 to the x-axis using `axis()`:
@@ -90,7 +90,7 @@ plot(x_axis, y_axis, xaxt = "n")
 axis(1, at = seq(0, 2, .5))
 ```
 
-![](post2_files/figure-commonmark/unnamed-chunk-7-1.png)
+![](img/unnamed-chunk-7-1.png)
 
 I can easily change the labels if values on the axis are not the ones
 that should be displayed, e.g.
@@ -100,7 +100,7 @@ plot(x_axis, y_axis, xaxt = "n")
 axis(1, at = seq(0, 2, .5), labels = letters[1:5])
 ```
 
-![](post2_files/figure-commonmark/unnamed-chunk-8-1.png)
+![](img/unnamed-chunk-8-1.png)
 
 ## Second set of tick marks
 
@@ -113,7 +113,7 @@ axis(1, at = seq(0, 2, .5))
 axis(1, at = setdiff(x_axis, seq(0, 2, .5)), labels = NA)
 ```
 
-![](post2_files/figure-commonmark/unnamed-chunk-9-1.png)
+![](img/unnamed-chunk-9-1.png)
 
 As you may have noticed, I use `setdiff()` to select the complementary
 set of ticks. The approach is straightforward: define all tick positions
@@ -135,7 +135,7 @@ axis(1, at = seq(0, 2, .5), labels = seq(0, 2, .5))
 axis(1, at = setdiff(x_axis, seq(0, 2, .5)), labels = NA)
 ```
 
-![](post2_files/figure-commonmark/unnamed-chunk-10-1.png)
+![](img/unnamed-chunk-10-1.png)
 
 overlap with the box
 
@@ -144,7 +144,7 @@ plot(x_axis, y_axis, axes = FALSE)
 box()
 ```
 
-![](post2_files/figure-commonmark/unnamed-chunk-11-1.png)
+![](img/unnamed-chunk-11-1.png)
 
 This may frequently go unnoticed, but I personally tend to notice such
 overlaps and it annoys me… Anyway, one way to handle this is to set the
@@ -156,7 +156,7 @@ axis(1, at = seq(0, 2, .5), labels = seq(0, 2, .5), lwd = 0)
 axis(1, at = setdiff(x_axis, seq(0, 2, .5)), labels = NA, lwd = 0)
 ```
 
-![](post2_files/figure-commonmark/unnamed-chunk-12-1.png)
+![](img/unnamed-chunk-12-1.png)
 
 and then to set the line width of the ticks, controlled by `lwd.ticks`,
 to something greater than 0
@@ -168,7 +168,7 @@ axis(1, at = setdiff(x_axis, seq(0, 2, .5)), labels = NA, lwd = NA, lwd.ticks = 
 box()
 ```
 
-![](post2_files/figure-commonmark/unnamed-chunk-13-1.png)
+![](img/unnamed-chunk-13-1.png)
 
 Note that if you only wish to remove the marks you can use
 `tick = FALSE`.
@@ -180,7 +180,7 @@ axis(1, at = setdiff(x_axis, seq(0, 2, .5)), labels = NA, tick = FALSE)
 box()
 ```
 
-![](post2_files/figure-commonmark/unnamed-chunk-14-1.png)
+![](img/unnamed-chunk-14-1.png)
 
 But if you just want to get rid of the extra line, but not the ticks,
 then you need to set `lwd` to 0 and `lwd.ticks` to a positive value.
@@ -197,7 +197,7 @@ axis(1, at = setdiff(x_axis, seq(0, 2, .5)), labels = NA, lwd = 0, lwd.ticks = .
 box()
 ```
 
-![](post2_files/figure-commonmark/unnamed-chunk-15-1.png)
+![](img/unnamed-chunk-15-1.png)
 
 A second parameter to further customize the tick marks is `tck`, which
 belongs to `par()`
@@ -213,7 +213,7 @@ axis(1, at = setdiff(x_axis, seq(0, 2, .5)), labels = NA, lwd.ticks = 1)
 box()
 ```
 
-![](post2_files/figure-commonmark/unnamed-chunk-16-1.png)
+![](img/unnamed-chunk-16-1.png)
 
 but can also be used with `axis()` thanks to the ellipsis (`...`) which
 allows me to change it only for one set of ticks
@@ -228,7 +228,7 @@ axis(1, at = setdiff(x_axis, seq(0, 2, .5)), labels = NA, lwd.ticks = 1)
 box()
 ```
 
-![](post2_files/figure-commonmark/unnamed-chunk-17-1.png)
+![](img/unnamed-chunk-17-1.png)
 
 Moreover, using a positive value you can make the ticks point inward!
 
@@ -242,7 +242,7 @@ axis(1, at = setdiff(x_axis, seq(0, 2, .5)), labels = NA, lwd.ticks = 1)
 box()
 ```
 
-![](post2_files/figure-commonmark/unnamed-chunk-18-1.png)
+![](img/unnamed-chunk-18-1.png)
 
 And finally you can change many aspects of them, including their color
 and line type:
@@ -254,7 +254,7 @@ axis(1, at = setdiff(x_axis, seq(0, 2, .5)), labels = NA, lwd.ticks = .5, tck = 
 box()
 ```
 
-![](post2_files/figure-commonmark/unnamed-chunk-19-1.png)
+![](img/unnamed-chunk-19-1.png)
 
 One more tip, if you need to adjust the position of the ticks you would
 have to use `mgp` (also documented in `par`) which is a vector of three
@@ -275,7 +275,7 @@ axis(1, at = setdiff(x_axis, seq(0, 2, .5)), labels = NA, lwd.ticks = .5, tck = 
 box()
 ```
 
-![](post2_files/figure-commonmark/unnamed-chunk-20-1.png)
+![](img/unnamed-chunk-20-1.png)
 
 Note that, just as for `tck`, I can use `mgp` in `axis()`. In this
 example, it won’t affect the axis labels because they were added by
@@ -291,7 +291,7 @@ axis(1, at = setdiff(x_axis, seq(0, 2, .5)), labels = NA, lwd.ticks = .5, tck = 
 box()
 ```
 
-![](post2_files/figure-commonmark/unnamed-chunk-21-1.png)
+![](img/unnamed-chunk-21-1.png)
 
 ## Wrap all that up in a function
 
@@ -318,7 +318,7 @@ myaxis(1, x_axis, seq(0, 2, .5))
 myaxis(2, seq(-0.5, 2.8, .1), seq(-0.5, 2.5, .5), las = 1)
 ```
 
-![](post2_files/figure-commonmark/unnamed-chunk-23-1.png)
+![](img/unnamed-chunk-23-1.png)
 
 ## What about ggplot2?
 
