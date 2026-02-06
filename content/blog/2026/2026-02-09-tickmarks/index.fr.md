@@ -1,6 +1,6 @@
 ---
 title: "Personnaliser les graduations de vos graphiques avec R"
-date: 2026-02-09
+date: 2026-02-06
 author: "Équipe inSileco"
 description: "Personnalisez les graduations avec le système graphique de base de R en utilisant axis(), box() et par()."
 featured_image: "img/unnamed-chunk-18-1.png"
