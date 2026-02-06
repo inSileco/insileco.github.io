@@ -1,6 +1,7 @@
 baseURL = 'https://insileco.io/'
 languageCode = 'en'
 title = 'inSileco Website'
+defaultContentLanguageInSubdir = true
 organization = "inSileco"
 pygmentsCodeFences = true
 pygmentsUseClasses = true

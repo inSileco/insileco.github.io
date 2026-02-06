@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ .Permalink }}</title>
+    <link rel="canonical" href="{{ .Permalink }}" />
+    <meta name="robots" content="noindex">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <script type="text/javascript">
+        var userLang = navigator.language || navigator.userLanguage;
+        var supportedLangs = ['en', 'fr'];
+        var primaryLang = userLang.split('-')[0];
+        var currentPath = window.location.pathname;
+
+        if (!supportedLangs.some(function(lang) { return currentPath.startsWith('/' + lang + '/'); })) {
+            if (supportedLangs.includes(primaryLang)) {
+                window.location.replace('/' + primaryLang + currentPath);
+            } else {
+                window.location.replace('/en' + currentPath);
+            }
+        } else {
+            window.location.replace('{{ .Permalink }}');
+        }
+    </script>
+    <noscript>
+        <meta http-equiv="refresh" content="0; url={{ .Permalink }}" />
+    </noscript>
+</head>
+</html>
