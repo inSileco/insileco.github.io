@@ -23,9 +23,9 @@
                                 {{ . | markdownify }}
                             {{ else }}
                                 {{ with .Params.description }}
-                                    {{ . | markdownify | plainify | truncate 160 }}
+                                    {{ . | markdownify | plainify | htmlUnescape | truncate 160 }}
                                 {{ else }}
-                                    {{ .Summary | markdownify | plainify | truncate 160 }}
+                                    {{ .Summary | markdownify | plainify | htmlUnescape | truncate 160 }}
                                 {{ end }}
                             {{ end }}
                         </p>
