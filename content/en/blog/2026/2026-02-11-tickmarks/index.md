@@ -1,27 +1,28 @@
 ---
 title: "Custom tick marks with R's base graphics system"
-date: 2026-02-10
+date: 2026-02-06
 author: "inSileco Team"
-description: "Our first blog post introducing the new inSileco blog."
+description: "Customize tick marks with R's base graphics system using axis(), box(), and par()."
 featured_image: "img/unnamed-chunk-18-1.png"
 categories:
-  - Data vizualisation
+  - Data visualization
 tags:
   - R
+  - graphics
+  - tickmarks
 ---
 
-This post was first published on August 29, 2020, on the old blog
-(<https://bloglegay_axis.insileco.io/2020/08/29/custom-tick-marks-with-rs-base-graphics-system/>).
+This post was first published on August 29, 2020, on the [old blog](https://bloglegacy.insileco.io/2020/08/29/custom-tick-marks-with-rs-base-graphics-system/).
 We believe it has been useful to R users and decided to review its
-content and translate it into French.
+content and translate it into French on our new blog.
 
 ## Context
 
-If you are using R’s base graphics system for your plots and if you like
-customizing your plots, you may have already wondered how to customize
-the tick marks of your plots! I do that quite a lot and I thought it
+If you are using R's base graphics system for your plots and if you like
+customizing them, you may have already wondered how to customize
+the tick marks! I do that quite a lot and I thought it
 would be worth explaining how I do so. Let’s consider the following
-plot
+plot:
 
 ``` r
 x_axis <- seq(0, 2, 0.1)
@@ -31,7 +32,7 @@ plot(x_axis, y_axis)
 
 ![](img/unnamed-chunk-1-1.png)
 
-By default, `plot.default` internally has its way to decide where tick
+By default, `plot.default` has its own way of deciding where tick
 marks should be added. It is always a good default choice, but sometimes
 not the one you’re looking for. Fortunately, the core package `graphics`
 includes everything you need to customize the tick marks and so, without
@@ -170,7 +171,7 @@ box()
 
 ![](img/unnamed-chunk-13-1.png)
 
-Note that if you only wish to remove the marks you can use
+Note that if you only wish to remove the marks, you can use
 `tick = FALSE`.
 
 ``` r
@@ -215,7 +216,7 @@ box()
 
 ![](img/unnamed-chunk-16-1.png)
 
-but can also be used with `axis()` thanks to the ellipsis (`...`) which
+but can also be used with `axis()` thanks to the ellipsis (`...`), which
 allows me to change it only for one set of ticks
 
 ``` r
@@ -230,7 +231,7 @@ box()
 
 ![](img/unnamed-chunk-17-1.png)
 
-Moreover, using a positive value you can make the ticks point inward!
+Moreover, using a positive value, you can make the ticks point inward!
 
 ``` r
 plot(x_axis, y_axis, xaxt = "n")
@@ -257,7 +258,7 @@ box()
 ![](img/unnamed-chunk-19-1.png)
 
 One more tip, if you need to adjust the position of the ticks you would
-have to use `mgp` (also documented in `par`) which is a vector of three
+have to use `mgp` (also documented in `par`), which is a vector of three
 elements controlling the following features:
 
 1.  the position of the axis labels,

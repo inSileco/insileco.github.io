@@ -43,15 +43,23 @@
     position: absolute;
     left: 0;
     right: 0;
-    top: 60%;
-    height: 8px;
-    background: #37abc8;
-    opacity: 0.3;
+    top: 70%;
+    height: 9px;
+    background: #37abc844;
     pointer-events: none;
+    border-radius: 0.25rem;
 }
 
-.blog-content a:hover {
-    color: rgb(0, 0, 0);
+.blog-content a:hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 70%;
+    height: 9px;
+    background: #37abc899;
+    pointer-events: none;
+    border-radius: 0.25rem;
 }
 
 .blog-card-thumbnail {
