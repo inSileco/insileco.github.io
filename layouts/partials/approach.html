@@ -8,7 +8,7 @@
     <div class="column is-6 is-offset-3 has-text-centered hero-cta">
         <p class="mb-4">{{ .step1.description | safeHTML }}</p>
         <a class="button is-primary" href='{{ relLangURL "/contact/" }}'>
-            {{ $.Site.Params.button.contact }}
+            {{ lang.Traslate "contact" . }}
         </a>
     </div>
 

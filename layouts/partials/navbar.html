@@ -39,13 +39,11 @@
                     </a>
                 </div>
             {{ end }}
-            {{ with .Site.Params.contact }}
-                <div class="navbar-item">
-                    <a class="button navbar-contact" href="{{ relLangURL .url }}">
-                        {{ .name }}
-                    </a>
-                </div>
-            {{ end }}
+            <div class="navbar-item">
+                <a class="button navbar-contact" href='{{ relLangURL "/contact/" }}'>
+                    {{ lang.Translate "contact" . }}
+                </a>
+            </div>
             {{ range .Translations }}
                 <a class="navbar-item has-text-weight-bold" href="{{ .Permalink }}">{{ upper .Lang }}</a>
             {{ end }}

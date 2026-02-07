@@ -85,10 +85,6 @@ subtitle = "Sélection de projets récents et de leurs résultats"
 link = "Voir le projet"
 
 
-[languages.fr.params.contact]
-name = "Contactez-nous"
-url = "contact"
-
 
 [languages.fr.params.button]
 portfolio = "Explorez notre portfolio"
@@ -101,8 +97,6 @@ blog = "Visitez notre blogue"
 title = "À la une sur le blogue inSileco"
 
 
-[languages.fr.params.blog]
-link = "En lire davantage"
 
 [languages.fr.params.help]
 title = "Comment nous vous aidons"
@@ -196,10 +190,6 @@ subtitle = "Selected work and outcomes from recent projects"
 link = "View project"
 
 
-[languages.en.params.contact]
-name = "Contact us"
-url = "/contact/"
-
 [languages.en.params.button]
 portfolio = "Explore our portfolio"
 service = "Learn more"
@@ -209,9 +199,6 @@ blog = "Check out our blog"
 [languages.en.params.insights]
 title = "Highlights from the inSileco blog"
 
-
-[languages.en.params.blog]
-link = "Read more"
 
 
 [languages.en.params.help]
