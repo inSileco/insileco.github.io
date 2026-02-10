@@ -11,7 +11,10 @@
         var primaryLang = userLang.split('-')[0];
         var currentPath = window.location.pathname;
 
-        if (!supportedLangs.some(function(lang) { return currentPath.startsWith('/' + lang + '/'); })) {
+        // Always redirect /qr.html to /en/qr.html
+        if (currentPath === '/qr/') {
+            window.location.replace('/en/qr/');
+        } else if (!supportedLangs.some(function(lang) { return currentPath.startsWith('/' + lang + '/'); })) {
             if (supportedLangs.includes(primaryLang)) {
                 window.location.replace('/' + primaryLang + currentPath);
             } else {

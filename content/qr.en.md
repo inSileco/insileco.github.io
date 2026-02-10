@@ -1,0 +1,4 @@
+---
+layout: "qr"
+aliases: ["/qr"]
+---
