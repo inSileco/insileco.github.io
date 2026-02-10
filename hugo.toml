@@ -62,7 +62,6 @@ weight = 5
 [languages.fr]
 languageCode = "fr-ca"
 weight = 1
-contentDir = "content/fr"
 
 [languages.fr.params]
 subtitle = "Gestion Écosystémique & Science des Données en Biodiversité"
@@ -167,7 +166,6 @@ weight = 6
 [languages.en]
 languageCode = "en-ca"
 weight = 2
-contentDir = "content/en"
 
 [languages.en.params]
 subtitle = "Environmental Management & Biodiversity Data Science"
