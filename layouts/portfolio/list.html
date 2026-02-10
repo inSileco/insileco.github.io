@@ -13,7 +13,12 @@
                 <a class="card portfolio-card" href="{{ .RelPermalink }}">
                     <div class="card-image">
                         <figure class="image portfolio-thumbnail is-3by2">
+                            {{ $resource := .Resources.GetMatch "img/cover.png" }}
+                            {{ if $resource }}
+                            <img src="{{ $resource.RelPermalink }}" alt="{{ .Title }}">
+                            {{ else }}
                             <img src="{{ .RelPermalink }}img/cover.png" alt="{{ .Title }}">
+                            {{ end }}
                         </figure>
                     </div>
                     <div class="card-content">
