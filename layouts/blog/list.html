@@ -54,10 +54,15 @@
                     {{ with $page.Params.featured_image }}
                     <figure class="blog-card-thumbnail">
                       {{ $img := . }}
+                      {{ $resource := $page.Resources.GetMatch $img }}
+                      {{ if $resource }}
+                      <img src="{{ $resource.RelPermalink }}" class="blog-thumbnail" alt="{{ $page.Params.featured_image_alt | default $page.Title }}">
+                      {{ else }}
                       {{ if and (not (hasPrefix $img "/")) (not (hasPrefix $img "http")) }}
                       {{ $img = printf "%s%s" $page.RelPermalink $img }}
                       {{ end }}
                       <img src="{{ $img }}" class="blog-thumbnail" alt="{{ $page.Params.featured_image_alt | default $page.Title }}">
+                      {{ end }}
                     </figure>
                     {{ end }}
                     </div>

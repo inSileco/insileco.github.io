@@ -1,6 +1,6 @@
 ---
 title: "Personnaliser les graduations de vos graphiques avec R"
-date: 2026-02-08
+date: 2026-02-09
 author: "Équipe inSileco"
 description: "Personnalisez les graduations avec le système graphique de base de R en utilisant axis(), box() et par()."
 featured_image: "img/unnamed-chunk-18-1.png"
@@ -9,18 +9,19 @@ categories:
 tags:
   - R
   - graphics
-  - tickmarks
+  - personnalisation
 ---
 
 Cet article a d'abord été publié le 29 août 2020 sur [l'ancien blog](https://bloglegacy.insileco.io/2020/08/29/custom-tick-marks-with-rs-base-graphics-system/).
 Nous pensons qu'il a été utile aux utilisateurs de R et avons décidé de revoir
 son contenu et de le traduire en français sur notre nouveau blog.
 
+
 ## Contexte
 
-Si vous utilisez le système graphique de base de R pour vos graphiques et que
+Si vous utilisez les graphiques de base de R pour vos graphiques et que
 vous aimez les personnaliser, vous vous êtes peut-être déjà demandé comment
-personnaliser les graduations ! Je le fais assez souvent et je me suis dit
+personnaliser les graduations ! Je le fais régulièrement et je me suis dit
 qu'il serait utile d'expliquer comment je procède. Considérons le graphique
 suivant :
 
@@ -32,16 +33,17 @@ plot(x_axis, y_axis)
 
 ![](img/unnamed-chunk-1-1.png)
 
-Par défaut, `plot.default` a sa propre manière de décider où les graduations
+Par défaut, `plot.default` a ses propres heuristiques où les graduations
 doivent être placées. C'est toujours un bon choix par défaut, mais parfois
 ce n'est pas celui que vous recherchez. Heureusement, le package de base
 `graphics` inclut tout ce dont vous avez besoin pour personnaliser les
-graduations et donc, sans plus attendre, personnalisons nos graduations !
+graduations, alors, personnalisons nos graduations !
+
 
 ## Supprimer les axes et les rajouter
 
 La première étape consiste à supprimer tous les axes. Il existe essentiellement
-deux façons de procéder. Une option est d'utiliser `xaxt = "n"` et `yaxt = "n"`
+deux façons de procéder. La première est d'utiliser `xaxt = "n"` et `yaxt = "n"`
 pour supprimer sélectivement l'axe des x et l'axe des y, respectivement.
 
 ``` r
@@ -56,7 +58,7 @@ plot(x_axis, y_axis, xaxt = "n", yaxt = "n")
 
 ![](img/unnamed-chunk-3-1.png)
 
-La deuxième option est de définir `axes` à `FALSE` dans `plot()` :
+L'autre approche est de mettre `axes` à `FALSE` dans `plot()` :
 
 ``` r
 plot(x_axis, y_axis, axes = FALSE)
@@ -65,7 +67,7 @@ plot(x_axis, y_axis, axes = FALSE)
 ![](img/unnamed-chunk-4-1.png)
 
 Comme vous pouvez le voir, lorsque `axes = FALSE`, le cadre est également
-supprimé et vous pouvez en fait le rajouter avec `box()` :
+supprimé. Vous pouvez le rajouter avec `box()` :
 
 ``` r
 plot(x_axis, y_axis, axes = FALSE)
@@ -74,7 +76,7 @@ box()
 
 ![](img/unnamed-chunk-5-1.png)
 
-et changer son style, si désiré :
+et changer son style au besoin :
 
 ``` r
 plot(x_axis, y_axis, axes = FALSE)
@@ -103,6 +105,7 @@ axis(1, at = seq(0, 2, .5), labels = letters[1:5])
 
 ![](img/unnamed-chunk-8-1.png)
 
+
 ## Deuxième ensemble de graduations
 
 Maintenant, ajoutons un deuxième ensemble de graduations ! Cela peut se faire
@@ -116,18 +119,19 @@ axis(1, at = setdiff(x_axis, seq(0, 2, .5)), labels = NA)
 
 ![](img/unnamed-chunk-9-1.png)
 
-Comme vous l'avez peut-être remarqué, j'utilise `setdiff()` pour sélectionner
+Comme vous l'avez peut-être remarqué, `setdiff()` est utilisé pour sélectionner
 l'ensemble complémentaire de graduations. L'approche est simple : définir
 toutes les positions de graduations avec `seq()` (ici avec un pas de 0.1),
 définir les graduations principales, et utiliser `setdiff()` pour obtenir les
 positions restantes. Comme ces graduations mineures n'ont pas besoin
 d'étiquettes, je définis `labels = NA`.
 
+
 ## Supprimer la ligne supplémentaire
 
 La principale raison pour laquelle j'ajuste les graduations sur mes graphiques
 est d'éviter les lignes qui se superposent. `axis()` et `box()` dessinent tous
-deux des lignes qui se chevauchent partiellement — c'est également vrai avec le
+deux des lignes qui se chevauchent partiellement, c'est également vrai avec le
 comportement par défaut de `plot()`. Les lignes qui accompagnent les graduations
 
 ``` r

@@ -1,6 +1,6 @@
 ---
 title: "Custom tick marks with R's base graphics system"
-date: 2026-02-08
+date: 2026-02-09
 author: "inSileco Team"
 description: "Customize tick marks with R's base graphics system using axis(), box(), and par()."
 featured_image: "img/unnamed-chunk-18-1.png"
@@ -9,12 +9,13 @@ categories:
 tags:
   - R
   - graphics
-  - tickmarks
+  - customization
 ---
 
 This post was first published on August 29, 2020, on the [old blog](https://bloglegacy.insileco.io/2020/08/29/custom-tick-marks-with-rs-base-graphics-system/).
 We believe it has been useful to R users and decided to review its
 content and translate it into French on our new blog.
+
 
 ## Context
 
@@ -32,11 +33,10 @@ plot(x_axis, y_axis)
 
 ![](img/unnamed-chunk-1-1.png)
 
-By default, `plot.default` has its own way of deciding where tick
-marks should be added. It is always a good default choice, but sometimes
-not the one you’re looking for. Fortunately, the core package `graphics`
-includes everything you need to customize the tick marks and so, without
-further ado, let’s customize our ticks!
+By default, `plot.default` has its own heuristics to add tick marks. 
+It's a good default choice, but not always what we are looking for. 
+Fortunately, the core package `graphics` includes everything you need to customize the tick marks and so, without further ado, let’s customize our ticks!
+
 
 ## Remove axes and add them back
 
