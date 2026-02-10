@@ -1,5 +1,5 @@
 ---
-title: "Welcsme to Our Blog!"
+title: "Welcome to Our Blog!"
 date: 2026-02-03
 author: "inSileco Team"
 description: "Our first blog post introducing the new inSileco blog."

@@ -85,13 +85,6 @@ link = "Voir le projet"
 
 
 
-[languages.fr.params.button]
-portfolio = "Explorez notre portfolio"
-service = "En apprendre davantage"
-contact = "Contactez-nous"
-blog = "Visitez notre blogue"
-
-
 [languages.fr.params.insights]
 title = "À la une sur le blogue inSileco"
 
@@ -105,25 +98,21 @@ title = "Comment nous vous aidons"
 title = "Analyses & conseils pratiques"
 subtitle = "Contenu ouvert sur les données environnementales, la modélisation et la prise de décision, issu de projets concrets."
 url = "/services#blog"
-link_text = "En apprendre davantage"
 
 [[languages.fr.params.help.item]]
 title = "Formation & renforcement des capacités"
 subtitle = "Cours, ateliers et accompagnement pour aider les équipes à utiliser les données et les outils avec confiance."
 url = "/services#academy"
-link_text = "En apprendre davantage"
 
 [[languages.fr.params.help.item]]
 title = "Outils sur mesure & systèmes de données"
 subtitle = "Pipelines, modèles et applications prêts pour la décision, adaptés à votre contexte."
 url = "/services#systems"
-link_text = "En apprendre davantage"
 
 [[languages.fr.params.help.item]]
 title = "Évaluations environnementales"
 subtitle = "Évaluations de la biodiversité, des effets cumulatifs et des risques, fondées sur des flux de données transparents."
 url = "/services#intelligence"
-link_text = "En apprendre davantage"
 
 
 [[languages.fr.menu.main]]
@@ -188,12 +177,6 @@ subtitle = "Selected work and outcomes from recent projects"
 link = "View project"
 
 
-[languages.en.params.button]
-portfolio = "Explore our portfolio"
-service = "Learn more"
-contact = "Contact us"
-blog = "Check out our blog"
-
 [languages.en.params.insights]
 title = "Highlights from the inSileco blog"
 
@@ -206,25 +189,21 @@ title = "How we help"
 title = "Insights & practical guidance"
 subtitle = "Open content on environmental data, modeling, and decision-making drawn from real projects."
 url = "/services#blog"
-link_text = "Learn more"
 
 [[languages.en.params.help.item]]
 title = "Training & capacity building"
 subtitle = "Courses, workshops, and coaching to help teams apply data and tools with confidence."
 url = "/services#academy"
-link_text = "Learn more"
 
 [[languages.en.params.help.item]]
 title = "Custom tools & data systems"
 subtitle = "Decision-ready pipelines, models, and applications tailored to your context."
 url = "/services#systems"
-link_text = "Learn more"
 
 [[languages.en.params.help.item]]
 title = "Environmental assessments"
 subtitle = "Biodiversity, cumulative-effects, and risk assessments grounded in transparent data workflows."
 url = "/services#intelligence"
-link_text = "Learn more"
 
 
 [[languages.en.menu.main]]

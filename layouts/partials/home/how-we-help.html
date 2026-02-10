@@ -9,7 +9,7 @@
                             <h3 class="title is-5">{{ .title }}</h3>
                             <p>{{ .subtitle }}</p>
                             <span class="home-help-link">
-                                {{ .link_text }} <i class="fa-solid fa-arrow-right"></i>
+                                {{ lang.Translate "learn_more" . }} <i class="fa-solid fa-arrow-right"></i>
                             </span>
                         </div>
                     </a>
@@ -18,7 +18,7 @@
         </div>
         <div class="buttons is-centered mt-5 hero-cta">
             <a class="button is-primary " href='{{ relLangURL "/services/" }}'>
-                {{ .Site.Params.button.service }}
+                {{ lang.Translate "learn_more" . }}
             </a>
         </div>
     </div>

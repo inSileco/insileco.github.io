@@ -1,6 +1,6 @@
 ---
 title: "Custom tick marks with R's base graphics system"
-date: 2026-02-09
+date: 2026-02-11
 author: "inSileco Team"
 description: "Customize tick marks with R's base graphics system using axis(), box(), and par()."
 featured_image: "img/unnamed-chunk-18-1.png"
@@ -126,7 +126,7 @@ don’t need labels, I set `labels = NA`.
 
 The main reason why I adjust the tick marks on my plots is to avoid
 overlapping lines. Both `axis()` and `box()` draw lines that partially
-overlap — this is also true with the default behavior of `plot()`. The
+overlap — this is also true with the default behaviour of `plot()`. The
 lines that come along with the ticks
 
 ``` r
@@ -321,16 +321,14 @@ myaxis(2, seq(-0.5, 2.8, .1), seq(-0.5, 2.5, .5), las = 1)
 
 ![](img/unnamed-chunk-23-1.png)
 
-## What about ggplot2?
 
-You may be wondering why this post focuses on base graphics rather than
-ggplot2. Customizing tick marks in ggplot2 is well documented elsewhere,
-so we recommend the following resources:
+## A note about `ggplot2`
 
-- [Annotation log
-  ticks](https://tidyverse.github.io/ggplot2-docs/reference/annotation_logticks.html)
-- [ggplot2 axis ticks: a guide to customize tick marks and
-  labels](https://www.sthda.com/english/wiki/ggplot2-axis-ticks-a-guide-to-customize-tick-marks-and-labels#change-the-appearance-of-the-axis-tick-mark-labels)
+You might be wondering why this article focuses on base graphics rather than `ggplot2`. Simply put, the topic is already well covered, for example:
+
+* This article from the package documentation: [Annotation log ticks](https://tidyverse.github.io/ggplot2-docs/reference/annotation_logticks.html)
+* This blog post from STHDA: [ggplot2 axis ticks: a guide to customize tick marks and labels](https://www.sthda.com/english/wiki/ggplot2-axis-ticks-a-guide-to-customize-tick-marks-and-labels#change-the-appearance-of-the-axis-tick-mark-labels)
+
 
 ## Session Information
 

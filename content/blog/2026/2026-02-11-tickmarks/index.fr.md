@@ -1,6 +1,6 @@
 ---
 title: "Personnaliser les graduations de vos graphiques avec R"
-date: 2026-02-06
+date: 2026-02-11
 author: "Équipe inSileco"
 description: "Personnalisez les graduations avec le système graphique de base de R en utilisant axis(), box() et par()."
 featured_image: "img/unnamed-chunk-18-1.png"
@@ -195,8 +195,7 @@ mais pas des graduations, alors vous devez définir `lwd` à 0 et `lwd.ticks`
 ## Personnaliser les graduations
 
 Après avoir effectué les étapes ci-dessus, vous avez peut-être réalisé
-qu'ajuster finement `lwd.ticks` est un bon moyen de personnaliser vos
-graduations !
+qu'ajuster finement `lwd.ticks` permet de personnaliser vos graduations.
 
 ``` r
 plot(x_axis, y_axis, xaxt = "n")
@@ -208,7 +207,7 @@ box()
 ![](img/unnamed-chunk-15-1.png)
 
 Un deuxième paramètre pour personnaliser davantage les graduations est `tck`,
-qui appartient à `par()`
+qui est ajusté avec `par()` :
 
 ``` r
 par(tck = -0.07)
@@ -223,8 +222,8 @@ box()
 
 ![](img/unnamed-chunk-16-1.png)
 
-mais peut également être utilisé avec `axis()` grâce aux points de suspension
-(`...`), ce qui me permet de le changer uniquement pour un ensemble de
+ou bien avec `axis()` (grâce aux points de suspension
+`...`), ce qui me permet de le changer uniquement pour un ensemble de
 graduations
 
 ``` r
@@ -254,7 +253,7 @@ box()
 
 ![](img/unnamed-chunk-18-1.png)
 
-Et finalement, vous pouvez modifier de nombreux aspects, y compris leur couleur
+Enfin, vous pouvez modifier de nombreux aspects, y compris leur couleur
 et leur type de ligne :
 
 ``` r
@@ -331,17 +330,19 @@ myaxis(2, seq(-0.5, 2.8, .1), seq(-0.5, 2.5, .5), las = 1)
 
 ![](img/unnamed-chunk-23-1.png)
 
-## Et ggplot2 ?
+
+## Une note à propos de `ggplot2`
 
 Vous vous demandez peut-être pourquoi cet article se concentre sur les
-graphiques de base plutôt que sur ggplot2. La personnalisation des graduations
-dans ggplot2 est bien documentée ailleurs, nous recommandons donc les ressources
-suivantes :
+graphiques de base plutôt que sur `ggplot2`. C'est tout simplement que le sujet 
+est bien couvert, par exemple: 
 
-- [Annotation log
+- Cet article issu de la documentation du paquet : [Annotation log
   ticks](https://tidyverse.github.io/ggplot2-docs/reference/annotation_logticks.html)
-- [ggplot2 axis ticks: a guide to customize tick marks and
+- Ce billet de blog sur STHDA : [ggplot2 axis ticks: a guide to customize tick marks and
   labels](https://www.sthda.com/english/wiki/ggplot2-axis-ticks-a-guide-to-customize-tick-marks-and-labels#change-the-appearance-of-the-axis-tick-mark-labels)
+
+
 
 ## Informations de session
 
