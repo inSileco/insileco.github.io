@@ -1,1 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Personnalisation on inSileco Website</title><link>https://insileco.io/fr/tags/personnalisation/</link><description>Recent content in Personnalisation on inSileco Website</description><generator>Hugo</generator><language>fr-ca</language><atom:link href="https://insileco.io/fr/tags/personnalisation/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Personnalisation on inSileco Website</title><link>https://insileco.io/fr/tags/personnalisation/</link><description>Recent content in Personnalisation on inSileco Website</description><generator>Hugo</generator><language>fr-ca</language><lastBuildDate>Wed, 11 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://insileco.io/fr/tags/personnalisation/index.xml" rel="self" type="application/rss+xml"/><item><title>Personnaliser les graduations de vos graphiques avec R</title><link>https://insileco.io/fr/blog/2026/2026-02-11-tickmarks/</link><pubDate>Wed, 11 Feb 2026 00:00:00 +0000</pubDate><guid>https://insileco.io/fr/blog/2026/2026-02-11-tickmarks/</guid><description>&lt;p&gt;Cet article a d&amp;rsquo;abord été publié le 29 août 2020 sur &lt;a href="https://bloglegacy.insileco.io/2020/08/29/custom-tick-marks-with-rs-base-graphics-system/"&gt;l&amp;rsquo;ancien blog&lt;/a&gt;.
+Nous pensons qu&amp;rsquo;il a été utile aux utilisateurs de R et avons décidé de revoir
+son contenu et de le traduire en français sur notre nouveau blog.&lt;/p&gt;
+&lt;h2 id="contexte"&gt;Contexte&lt;/h2&gt;
+&lt;p&gt;Si vous utilisez les graphiques de base de R pour vos graphiques et que
+vous aimez les personnaliser, vous vous êtes peut-être déjà demandé comment
+personnaliser les graduations ! Je le fais régulièrement et je me suis dit
+qu&amp;rsquo;il serait utile d&amp;rsquo;expliquer comment je procède. Considérons le graphique
+suivant :&lt;/p&gt;</description></item></channel></rss>

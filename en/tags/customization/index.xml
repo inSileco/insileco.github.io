@@ -1,1 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Customization on inSileco Website</title><link>https://insileco.io/en/tags/customization/</link><description>Recent content in Customization on inSileco Website</description><generator>Hugo</generator><language>en-ca</language><atom:link href="https://insileco.io/en/tags/customization/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Customization on inSileco Website</title><link>https://insileco.io/en/tags/customization/</link><description>Recent content in Customization on inSileco Website</description><generator>Hugo</generator><language>en-ca</language><lastBuildDate>Wed, 11 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://insileco.io/en/tags/customization/index.xml" rel="self" type="application/rss+xml"/><item><title>Custom tick marks with R's base graphics system</title><link>https://insileco.io/en/blog/2026/2026-02-11-tickmarks/</link><pubDate>Wed, 11 Feb 2026 00:00:00 +0000</pubDate><guid>https://insileco.io/en/blog/2026/2026-02-11-tickmarks/</guid><description>&lt;p&gt;This post was first published on August 29, 2020, on the &lt;a href="https://bloglegacy.insileco.io/2020/08/29/custom-tick-marks-with-rs-base-graphics-system/"&gt;old blog&lt;/a&gt;.
+We believe it has been useful to R users and decided to review its
+content and translate it into French on our new blog.&lt;/p&gt;
+&lt;h2 id="context"&gt;Context&lt;/h2&gt;
+&lt;p&gt;If you are using R&amp;rsquo;s base graphics system for your plots and if you like
+customizing them, you may have already wondered how to customize
+the tick marks! I do that quite a lot and I thought it
+would be worth explaining how I do so. Let’s consider the following
+plot:&lt;/p&gt;</description></item></channel></rss>
