@@ -4,6 +4,8 @@
     position: relative;
 }
 
+
+
 .testimonials-container {
     position: relative;
     min-height: 400px;
@@ -22,17 +24,21 @@
 }
 
 .testimonial-box {
-    background-color: #ffffff;
+    background: repeating-conic-gradient(from 45deg at 10% 50%,
+                #37abc833 0deg 10deg,
+                #ffe08a33 10deg 20deg,
+                #fff 20deg 30deg);
     border: 1px solid #e5e7eb;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     border-radius: 0.5rem;
     padding: 2rem;
 }
 
+
 .testimonial-text {
     font-style: italic;
     line-height: 1.6;
-    color: #374151;
+    color: rgb(24, 24, 24);
 }
 
 .testimonial-controls {
