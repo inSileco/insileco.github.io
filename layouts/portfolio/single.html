@@ -52,7 +52,12 @@
                         <div class="columns">
                             <div class="column is-12 p-6">
                                 <figure class="image portfolio-featured-image">
-                                    <img src="{{ .Permalink }}/img/cover.png" alt="Placeholder image">
+                                    {{ $resource := .Resources.GetMatch "img/cover.png" }}
+                                    {{ if $resource }}
+                                    <img src="{{ $resource.RelPermalink }}" alt="{{ .Title }}">
+                                    {{ else }}
+                                    <img src="{{ .RelPermalink }}img/cover.png" alt="{{ .Title }}">
+                                    {{ end }}
                                 </figure>
                             </div>
                         </div>
