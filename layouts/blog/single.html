@@ -44,11 +44,12 @@
             {{ $page := . }}
             {{ with $page.Params.featured_image }}
             <figure class="image blog-post-image mb-6">
-              {{ $img := . }}
-              {{ if and (not (hasPrefix $img "/")) (not (hasPrefix $img "http")) }}
-              {{ $img = printf "%s%s" $page.RelPermalink $img }}
-              {{ end }}
-              <img src="{{ $img }}" alt="{{ $page.Params.featured_image_alt | default $page.Title }}">
+                {{ $img := . }}
+                {{ $resource := $page.Resources.GetMatch $img }}
+                {{ if $resource }}
+                <img src="{{ $resource.RelPermalink }}"
+                  alt="{{ $page.Params.featured_image_alt | default $page.Title }}">
+                {{ end }}
             </figure>
             {{ end }}
           </header>
