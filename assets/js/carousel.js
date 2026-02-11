@@ -46,6 +46,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const carousel = document.querySelector('.testimonials-carousel');
     if (carousel) {
         carousel.addEventListener('mouseenter', stopAutoPlay);
-        carousel.addEventListener('mouseleave', startAutoPlay);
+        carousel.addEventListener('mouseleave', () => {
+            stopAutoPlay();
+            startAutoPlay();
+        });
     }
 });
