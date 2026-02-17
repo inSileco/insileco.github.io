@@ -1,6 +1,6 @@
 ---
 title: "Academic writing with Markdown, Visual Studio Code and Zotero"
-date: 2026-02-18
+date: 2026-02-15
 author: "inSileco Team"
 description: "How to setup vscode to write scientific paper or report efficiently"
 featured_image: "img/welcome.jpg"
