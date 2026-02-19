@@ -58,6 +58,7 @@ pre>code {
     background-color: #fafafa;
     border: 2px solid #37abc8;
     border-radius: 6px;
+    margin-bottom: 0.75rem;
 }
 
 .chroma {
