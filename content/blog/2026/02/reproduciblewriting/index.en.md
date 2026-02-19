@@ -1,6 +1,6 @@
 ---
 title: "Write Once, Publish Anywhere: Reproducible Writing for Academia and Industry"
-date: 2026-02-25
+date: 2026-02-19
 author: "inSileco Team"
 description: "A practical workflow to reduce reformatting and version-management overhead when writing papers and professional reports, using Markdown, Quarto, VS Code, and Zotero."
 featured_image: "img/writing.jpg"
@@ -222,7 +222,7 @@ For this workflow, Positron adds practical benefits on top of VS Code:
 Our recommendation:
 
 - choose VS Code if you want a general editor-first workflow and you work in multiple programming languages
-- choose Positron if your reporting is tightly coupled to R analysis and you want an IDE feel closer to RStudio
+- choose Positron if your reporting is tightly coupled to R, Python or Julia analysis and you want an IDE feel closer to RStudio
 
 ## 5) Collaboration and reproducibility practices {#git}
 
