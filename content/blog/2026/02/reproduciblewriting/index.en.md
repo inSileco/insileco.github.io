@@ -2,13 +2,14 @@
 title: "Write Once, Publish Anywhere: Reproducible Writing for Academia and Industry"
 date: 2026-02-25
 author: "inSileco Team"
-description: "A practical workflow to reduce reformatting and version-management overhead when writing papers and professional reports, using Markdown, Quarto, Positron, VS Code, and Zotero."
+description: "A practical workflow to reduce reformatting and version-management overhead when writing papers and professional reports, using Markdown, Quarto, VS Code, and Zotero."
 featured_image: "img/writing.jpg"
 categories:
   - Writing
 tags:
   - Markdown
   - Quarto
+  - VSCode
   - Positron
   - Zotero
   - Pandoc
@@ -28,9 +29,11 @@ In practice, this workflow relies on five tools, each solving a specific part of
 - [Zotero](https://www.zotero.org/) for reference management
 - [Better BibTeX](https://retorque.re/zotero-better-bibtex/) for stable citation keys and bibliography export
 - [Quarto](https://quarto.org/) for reproducible rendering
-- [Positron](https://positron.posit.co/) (or [VS Code](https://code.visualstudio.com/)) as the writing environment
+- [VS Code](https://code.visualstudio.com/) (or [Positron](https://positron.posit.co/)) as the writing environment
 
 The goal is simple: write once, render to multiple formats, and keep the document reproducible.
+
+If you want to know right away the what's in it for you, go right ahead to the [tradeoffs and benefits section](#benefits)
 
 ## Who this workflow is for
 
@@ -85,6 +88,7 @@ If you are new to Markdown, these are good starting points:
 - [Quarto: Markdown Basics](https://quarto.org/docs/authoring/markdown-basics.html)
 - [Pandoc Markdown](https://pandoc.org/MANUAL.html#pandocs-markdown)
 
+
 ## 2) Manage references with Zotero (+ Better BibTeX)
 
 As a team, we have been using reference managers for almost two decades. We rely on them because they solve recurring problems in long-form writing:
@@ -105,13 +109,7 @@ Over the years, we have used several tools, including [Mendeley](https://www.men
 
 In day-to-day work, Zotero gives us the practical capabilities we need: metadata retrieval, collections and tags, duplicate detection, citation-style support, and reliable bibliography export. You can refer to the [Zotero documentation](https://www.zotero.org/support/) for more information on available functionalities. 
 
-One Mendeley feature we used to miss was full-text search across all PDFs, which is especially useful for non-native English speakers. Since Zotero stores PDFs in one location, we handle this with a simple `grep` alias:
 
-```sh
-alias szot='grep -rnw ~/Zotero/storage/ -e'
-```
-
-which fulfills our need! This command should work on most Unix-like operating systems and we are pretty sure there are simple ways to do this on Windows. 
 
 #### Better BibTeX
 
@@ -136,11 +134,9 @@ Quarto sits on top of Pandoc and provides a cleaner workflow for real projects: 
 Quarto is helpful when you need:
 
 - one source, many outputs
-- code + narrative in the same document
+- code + narrative in the same document (ex: automatically insert figures and tables in a report)
 - cross-references for figures/tables/sections
 - project-level defaults via `_quarto.yml`
-
-In short: plain Markdown is often enough for simple documents, while Quarto becomes a better fit as soon as you need structured multi-format publishing and reproducible analysis in the same project.
 
 
 #### Minimal project example
@@ -159,7 +155,7 @@ format:
     toc: true
   docx: default
 ```
-<br><br>
+
 
 Quarto document stored as `*.Qmd` file:
 
@@ -174,9 +170,9 @@ bibliography: references.bib
 
 Citing a source is straightforward: see @smith2021.
 ```
-<br><br>
 
 Render commands (see [Quarto CLI docs](https://quarto.org/docs/reference/projects/options.html)):
+
 
 ```sh
 quarto render report.qmd
@@ -184,7 +180,7 @@ quarto render report.qmd --to pdf
 quarto render report.qmd --to docx
 ```
 
-<br><br>
+
 
 #### Decision guide: Markdown only vs Quarto
 
@@ -205,7 +201,7 @@ Use Quarto (`.Qmd`) when:
 
 Writing in a code editor is useful because it keeps content and presentation separate. In practice, that means less time fighting formatting and more time improving ideas.
 
-Our own path was LaTeX, then Markdown in Atom, and now [VS Code](https://code.visualstudio.com/docs/languages/markdown) for most long-form writing projects.
+Our own path was LaTeX in Sublime Text, then Markdown in Atom, and now [VS Code](https://code.visualstudio.com/docs/languages/markdown) for most long-form writing projects.
 
 As a general-purpose editor, VS Code is a strong baseline:
 
@@ -226,7 +222,7 @@ For this workflow, Positron adds practical benefits on top of VS Code:
 Our recommendation:
 
 - choose VS Code if you want a general editor-first workflow and you work in multiple programming languages
-- choose Positron if your reporting is tightly coupled to R analysis and you want an IDE feel closer to RStudio
+- choose Positron if your reporting is tightly coupled to R, Python or Julia analysis and you want an IDE feel closer to RStudio
 
 ## 5) Collaboration and reproducibility practices {#git}
 
@@ -265,9 +261,9 @@ report-project/
   figures/
 ```
 
-## Trade-offs and expected benefits
+## Trade-offs and expected benefits {#benefits}
 
-Adopting a reproducible writing workflow is not frictionless. There is an upfront cost, but for recurring reporting work, the payoff is usually worth it.
+Adopting a reproducible writing workflow is not frictionless. There is an upfront cost, but for recurring reporting work, the payoff is definitely worth it.
 
 | Trade-off | Expected benefit |
 | --- | --- |
@@ -290,4 +286,4 @@ For most teams, this stack is a practical default:
 
 The result is a writing process that is easier to review, easier to reproduce, and easier to maintain over time.
 
-If you want to implement this workflow in your team, we can help you set it up end-to-end: tooling, templates, and automated reporting pipelines. [Contact us](/en/get-in-touch/) to discuss your context and constraints.
+If you want to implement this workflow in your team, we can help you set it up end-to-end: tooling, templates, and automated reporting pipelines. [Contact us](/en/get-in-touch/) to discuss your context and constraints!
