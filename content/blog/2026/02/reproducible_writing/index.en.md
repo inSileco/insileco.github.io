@@ -33,6 +33,8 @@ In practice, this workflow relies on five tools, each solving a specific part of
 
 The goal is simple: write once, render to multiple formats, and keep the document reproducible.
 
+If you want to know right away the what's in it for you, go right ahead to the [tradeoffs and benefits section](#benefits)
+
 ## Who this workflow is for
 
 This setup is useful if you:
@@ -132,11 +134,9 @@ Quarto sits on top of Pandoc and provides a cleaner workflow for real projects: 
 Quarto is helpful when you need:
 
 - one source, many outputs
-- code + narrative in the same document
+- code + narrative in the same document (ex: automatically insert figures and tables in a report)
 - cross-references for figures/tables/sections
 - project-level defaults via `_quarto.yml`
-
-In short: plain Markdown is often enough for simple documents, while Quarto becomes a better fit as soon as you need structured multi-format publishing and reproducible analysis in the same project.
 
 
 #### Minimal project example
@@ -261,9 +261,9 @@ report-project/
   figures/
 ```
 
-## Trade-offs and expected benefits
+## Trade-offs and expected benefits {#benefits}
 
-Adopting a reproducible writing workflow is not frictionless. There is an upfront cost, but for recurring reporting work, the payoff is usually worth it.
+Adopting a reproducible writing workflow is not frictionless. There is an upfront cost, but for recurring reporting work, the payoff is definitely worth it.
 
 | Trade-off | Expected benefit |
 | --- | --- |
@@ -286,4 +286,4 @@ For most teams, this stack is a practical default:
 
 The result is a writing process that is easier to review, easier to reproduce, and easier to maintain over time.
 
-If you want to implement this workflow in your team, we can help you set it up end-to-end: tooling, templates, and automated reporting pipelines. [Contact us](/en/get-in-touch/) to discuss your context and constraints.
+If you want to implement this workflow in your team, we can help you set it up end-to-end: tooling, templates, and automated reporting pipelines. [Contact us](/en/get-in-touch/) to discuss your context and constraints!
