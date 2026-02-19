@@ -13,16 +13,21 @@
 
     <!-- OG -->
     <meta property="og:site_name" content="{{ .Site.Title }}" />
-    <meta property="og:image" content='{{ "img/logo.png" | absURL }}' />
+    {{ $ogImage := "img/logo.png" | absURL }}
+    {{ if and (eq .Section "blog") .Params.featured_image }}
+    {{ with .Resources.GetMatch .Params.featured_image }}
+    {{ $ogImage = .Permalink }}
+    {{ end }}
+    {{ end }}
+    <meta property="og:image" content="{{ $ogImage }}" />
     <meta property="og:url" content="{{ .Permalink }}" />
     {{ if .IsPage }}
     {{ with .Title }}
     <meta property="og:title" content="{{ . }}" />
     {{ end }}
     {{ end }}
-
-
-    <!-- load bulma css compiled with our customizations from scss -->
+    
+   <!-- load bulma css compiled with our customizations from scss -->
     {{ $cssOpts := (dict "includePaths" (slice "node_modules/bulma" "assets/scss")) }}
     {{ with $bulma := resources.Get "scss/main.scss" | toCSS $cssOpts }}
         <style> {{ .Content | safeCSS }} </style>
