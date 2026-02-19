@@ -1,6 +1,6 @@
 ---
 title: "Rédiger une fois, diffuser partout : la rédaction reproductible pour l'académique et l'industrie"
-date: 2026-02-19
+date: 2026-02-25
 author: "Équipe inSileco"
 description: "Un flux de travail pratique pour réduire le temps perdu en reformatage et en gestion de versions lors de la rédaction d'articles et de rapports professionnels, avec Markdown, Quarto, VS Code et Zotero."
 featured_image: "img/writing.jpg"

@@ -1,6 +1,6 @@
 ---
 title: "Write Once, Publish Anywhere: Reproducible Writing for Academia and Industry"
-date: 2026-02-19
+date: 2026-02-25
 author: "inSileco Team"
 description: "A practical workflow to reduce reformatting and version-management overhead when writing papers and professional reports, using Markdown, Quarto, VS Code, and Zotero."
 featured_image: "img/writing.jpg"
