@@ -45,7 +45,7 @@
                 </a>
             </div>
             {{ range .Translations }}
-                <a class="navbar-item has-text-weight-bold" href="{{ .Permalink }}">{{ upper .Lang }}</a>
+                <a class="navbar-item has-text-weight-bold" href="{{ .RelPermalink }}">{{ upper .Lang }}</a>
             {{ end }}
         </div>
         <div class="navbar-close-wrapper is-hidden-desktop has-text-centered">

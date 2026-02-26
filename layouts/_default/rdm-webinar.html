@@ -1,0 +1,106 @@
+{{ define "main" }}
+{{ partial "page-hero.html" . }}
+
+{{ $slidesURL := .Params.slides_url | default "SLIDES_URL" }}
+{{ $contactEmails := .Params.contact_emails | default (slice "david.beauchesne@insileco.io" "kevin.cazelles@insileco.io") }}
+{{ $contactHref := printf "mailto:%s" (delimit $contactEmails ",") }}
+{{ $dmpPageHref := printf "%sdmp_form/" .RelPermalink }}
+{{ $feedbackPageHref := printf "%srdm_feedback/" .RelPermalink }}
+{{ $actions := .Params.actions }}
+{{ $actionImages := .Params.action_images }}
+{{ $slidesImage := "" }}
+{{ with and $actionImages (index $actionImages "view_slides") }}
+  {{ $slidesImage = . }}
+{{ end }}
+{{ $dmpImage := "" }}
+{{ with and $actionImages (index $actionImages "dmp") }}
+  {{ $dmpImage = . }}
+{{ end }}
+{{ $feedbackImage := "" }}
+{{ with and $actionImages (index $actionImages "feedback") }}
+  {{ $feedbackImage = . }}
+{{ end }}
+{{ $slidesResource := "" }}
+{{ with $slidesImage }}
+  {{ $slidesResource = $.Resources.GetMatch . }}
+{{ end }}
+{{ $dmpResource := "" }}
+{{ with $dmpImage }}
+  {{ $dmpResource = $.Resources.GetMatch . }}
+{{ end }}
+{{ $feedbackResource := "" }}
+{{ with $feedbackImage }}
+  {{ $feedbackResource = $.Resources.GetMatch . }}
+{{ end }}
+{{ $contactDavid := .Resources.GetMatch "img/david.png" }}
+{{ $contactKevin := .Resources.GetMatch "img/kevin.png" }}
+
+<section class="section rdm-webinar-page">
+  <div class="container">
+    <div class="rdm-actions-grid">
+      <a class="card rdm-action-card" href="{{ $slidesURL }}" target="_blank" rel="noopener noreferrer">
+        <div class="card-content">
+          <p class="title is-5 mb-2">{{ index $actions "view_slides" | default "View slides" }}</p>
+          <p class="has-text-grey">{{ index $actions "view_slides_hint" | default "Open the presentation deck." }}</p>
+          {{ if $slidesResource }}
+          <figure class="rdm-action-card-image">
+            <img src="{{ $slidesResource.RelPermalink }}" alt="{{ index $actions "view_slides" | default "View slides" }}">
+          </figure>
+          {{ else if $slidesImage }}
+          <figure class="rdm-action-card-image">
+            <img src="{{ $slidesImage | relURL }}" alt="{{ index $actions "view_slides" | default "View slides" }}">
+          </figure>
+          {{ end }}
+        </div>
+      </a>
+
+      <a class="card rdm-action-card" href="{{ $dmpPageHref }}">
+        <div class="card-content">
+          <p class="title is-5 mb-2">{{ index $actions "dmp" | default "Data Management Plan" }}</p>
+          <p class="has-text-grey">{{ index $actions "dmp_hint" | default "Open the embedded planning form page." }}</p>
+          {{ if $dmpResource }}
+          <figure class="rdm-action-card-image">
+            <img src="{{ $dmpResource.RelPermalink }}" alt="{{ index $actions "dmp" | default "Data Management Plan" }}">
+          </figure>
+          {{ else if $dmpImage }}
+          <figure class="rdm-action-card-image">
+            <img src="{{ $dmpImage | relURL }}" alt="{{ index $actions "dmp" | default "Data Management Plan" }}">
+          </figure>
+          {{ end }}
+        </div>
+      </a>
+
+      <a class="card rdm-action-card" href="{{ $feedbackPageHref }}">
+        <div class="card-content">
+          <p class="title is-5 mb-2">{{ index $actions "feedback" | default "Leave feedback" }}</p>
+          <p class="has-text-grey">{{ index $actions "feedback_hint" | default "Open the embedded feedback form page." }}</p>
+          {{ if $feedbackResource }}
+          <figure class="rdm-action-card-image">
+            <img src="{{ $feedbackResource.RelPermalink }}" alt="{{ index $actions "feedback" | default "Leave feedback" }}">
+          </figure>
+          {{ else if $feedbackImage }}
+          <figure class="rdm-action-card-image">
+            <img src="{{ $feedbackImage | relURL }}" alt="{{ index $actions "feedback" | default "Leave feedback" }}">
+          </figure>
+          {{ end }}
+        </div>
+      </a>
+
+      <a class="card rdm-action-card" href="{{ $contactHref }}">
+        <div class="card-content">
+          <p class="title is-5 mb-2">{{ index $actions "contact" | default "Contact us" }}</p>
+          <div class="rdm-contact-people" aria-hidden="true">
+            {{ if $contactDavid }}
+            <img src="{{ $contactDavid.RelPermalink }}" alt="" class="rdm-contact-avatar">
+            {{ end }}
+            {{ if $contactKevin }}
+            <img src="{{ $contactKevin.RelPermalink }}" alt="" class="rdm-contact-avatar">
+            {{ end }}
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+{{ end }}
