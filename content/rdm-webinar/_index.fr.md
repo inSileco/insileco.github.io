@@ -2,7 +2,7 @@
 title: "Ressources du webinaire et rétroaction"
 subtitle: "Merci pour votre participation! Les diapositives et les ressources sont disponibles ci-dessous."
 layout: "rdm-webinar"
-slides_url: "SLIDES_URL"
+slides_url: "https://insileco.io/webinar_data_management/fr"
 contact_emails:
   - "david.beauchesne@insileco.io"
   - "kevin.cazelles@insileco.io"

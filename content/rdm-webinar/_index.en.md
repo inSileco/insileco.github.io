@@ -2,7 +2,7 @@
 title: "Webinar Resources & Feedback"
 subtitle: "Thanks for attending! Slides and resources are available below."
 layout: "rdm-webinar"
-slides_url: "SLIDES_URL"
+slides_url: "https://insileco.io/webinar_data_management/en"
 contact_emails:
   - "david.beauchesne@insileco.io"
   - "kevin.cazelles@insileco.io"
