@@ -16,7 +16,7 @@ aliases:
 resources:
   - title: "Voir les diapositives"
     hint: "Ouvrir la présentation."
-    url: "slides/index.html"
+    url: "../slides/"
     image: "img/RDM_Webinar.png"
   - title: "Plan de gestion de données"
     hint: "Construisez votre PGD interactivement avec nous."
