@@ -16,7 +16,7 @@ aliases:
 resources:
   - title: "Voir les diapositives"
     hint: "Ouvrir la présentation."
-    url: "https://insileco.io/webinar_data_management/fr"
+    url: "slides/index.html"
     image: "img/RDM_Webinar.png"
   - title: "Plan de gestion de données"
     hint: "Construisez votre PGD interactivement avec nous."

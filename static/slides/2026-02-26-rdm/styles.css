@@ -1,0 +1,49 @@
+
+/* styles.css */
+.title-slide {
+  text-align: center;
+}
+
+#title-slide .title {
+  font-size: 2em;
+  /* Adjust this value as needed */
+  /* You can also add other styles here, like color or font-family */
+}
+
+.title-slide .logos {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.title-slide .logos img {
+  margin: 20px;
+  width: 100px;
+  /* Adjust as needed */
+  height: auto;
+}
+
+.reveal .slide-background-content {
+  background-color: white;
+}
+
+.quarto-title-author-name {
+  margin-top: 2rem;
+  font-style: italic;
+}
+
+/* Reduce default body text size to 80% */
+.reveal p,
+.reveal li {
+  font-size: 70% !important;
+}
+
+
+.footer {
+  text-align: center !important;
+  font-size: 70% !important;
+}
+
+.small {
+  font-size: 80% !important;
+}

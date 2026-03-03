@@ -1,6 +1,6 @@
 ---
 title: "Forms"
-_build:
+build:
   render: never
   list: never
 ---

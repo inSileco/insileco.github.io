@@ -1,6 +1,6 @@
 ---
 title: "Formulaires"
-_build:
+build:
   render: never
   list: never
 ---
