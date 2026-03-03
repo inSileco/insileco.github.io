@@ -16,7 +16,7 @@ aliases:
 resources:
   - title: "View slides"
     hint: "Open the presentation deck."
-    url: "https://insileco.io/webinar_data_management/en"
+    url: "slides/index.html"
     image: "img/RDM_Webinar.png"
   - title: "Data Management Plan"
     hint: "Build your DMP interactively with us."

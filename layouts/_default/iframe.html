@@ -1,0 +1,54 @@
+{{ define "main" }}
+{{ partial "page-hero.html" . }}
+
+{{ $iframeURL := .Params.iframe_url }}
+{{ $iframeHeight := .Params.iframe_height | default "800px" }}
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-10-desktop">
+        {{ with .Content }}
+        <div class="content mb-5">
+          {{ . }}
+        </div>
+        {{ end }}
+        <div class="iframe-container" style="position: relative;">
+          <button
+            class="button is-small is-light iframe-fullscreen-btn"
+            style="position: absolute; top: 0.5rem; right: 0.5rem; z-index: 10;"
+            title="Toggle fullscreen"
+            onclick="(function(btn){var c=btn.closest('.iframe-container');if(document.fullscreenElement){document.exitFullscreen()}else{c.requestFullscreen()};})(this)">
+            <span class="icon is-small">
+              <i class="fas fa-expand"></i>
+            </span>
+          </button>
+          <iframe
+            id="iframe-embed"
+            src="{{ $iframeURL }}"
+            title="{{ .Title }}"
+            loading="lazy"
+            width="100%"
+            style="height: {{ $iframeHeight }}; border: none;"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+<script>
+document.addEventListener('fullscreenchange', function() {
+  var btn = document.querySelector('.iframe-fullscreen-btn i');
+  var iframe = document.getElementById('iframe-embed');
+  if (document.fullscreenElement) {
+    btn.className = 'fas fa-compress';
+    iframe.style.height = '100vh';
+  } else {
+    btn.className = 'fas fa-expand';
+    iframe.style.height = '{{ $iframeHeight }}';
+  }
+});
+</script>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
