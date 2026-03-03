@@ -150,6 +150,11 @@ name = "Blogue"
 url = "/blog/"
 weight = 6
 
+[[languages.fr.menu.main]]
+name = "Évènements"
+url = "/events/"
+weight = 7
+
 
 
 [languages.en]
@@ -240,3 +245,8 @@ weight = 5
 name = "Blog"
 url = "/blog/"
 weight = 6
+
+[[languages.en.menu.main]]
+name = "Events"
+url = "/events/"
+weight = 7

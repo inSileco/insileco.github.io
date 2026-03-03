@@ -1,0 +1,59 @@
+{{ define "main" }}
+{{ partial "page-hero.html" . }}
+
+{{ $formURL := .Params.form_embed_url | default "TALLY_EMBED_URL" }}
+{{ $notes := .Params.notes }}
+
+<section class="section rdm-webinar-section">
+  <div class="container">
+    <div class="rdm-section-shell">
+      <div class="rdm-embed-frame">
+        <iframe
+          data-tally-src="{{ $formURL }}"
+          title="{{ .Title }}"
+          loading="lazy"
+          width="100%"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ with index $notes "footer" }}
+<section class="section pt-0">
+  <div class="container">
+    <p class="rdm-footer-note">{{ . }}</p>
+  </div>
+</section>
+{{ end }}
+
+<script>
+  (function() {
+    var d = document;
+    var w = "https://tally.so/widgets/embed.js";
+    var v = function() {
+      if (typeof Tally !== "undefined") {
+        Tally.loadEmbeds();
+      } else {
+        d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e) {
+          e.src = e.dataset.tallySrc;
+        });
+      }
+    };
+    if (typeof Tally !== "undefined") {
+      v();
+    } else if (d.querySelector('script[src="' + w + '"]') == null) {
+      var s = d.createElement("script");
+      s.src = w;
+      s.onload = v;
+      s.onerror = v;
+      d.body.appendChild(s);
+    } else {
+      v();
+    }
+  })();
+</script>
+{{ end }}

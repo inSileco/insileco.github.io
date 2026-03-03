@@ -1,0 +1,131 @@
+{{ define "main" }}
+{{ partial "page-hero.html" . }}
+
+<div class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-8-desktop is-offset-2">
+
+        <article class="content">
+          <header class="mb-5">
+            <div class="mb-4">
+              {{ $start := .Date }}
+              {{ with .Params.event_start }}
+                {{ $start = time . }}
+              {{ end }}
+              {{ $end := $start }}
+              {{ with .Params.event_end }}
+                {{ $end = time . }}
+              {{ end }}
+              <span class="has-text-grey">
+                <i class="fa-regular fa-calendar"></i>
+                {{ if ne ($start.Format "2006-01-02") ($end.Format "2006-01-02") }}
+                {{ $start.Format "January 2, 2006" }} - {{ $end.Format "January 2, 2006" }}
+                {{ else }}
+                {{ $start.Format "January 2, 2006" }}
+                {{ end }}
+              </span>
+
+              {{ with .Params.author }}
+              <span class="has-text-grey ml-3">
+                <i class="fa-regular fa-user"></i> {{ . }}
+              </span>
+              {{ end }}
+            </div>
+
+            {{ if .Params.categories }}
+            <div class="mb-3">
+              {{ range .Params.categories }}
+              <span class="tag is-warning is-medium mr-2">{{ . }}</span>
+              {{ end }}
+            </div>
+            {{ end }}
+
+            {{ if .Params.tags }}
+            <div class="mb-4">
+              {{ range .Params.tags }}
+              <span class="tag is-light mr-1">{{ . }}</span>
+              {{ end }}
+            </div>
+            {{ end }}
+
+            {{ $page := . }}
+            {{ with $page.Params.featured_image }}
+            <figure class="image blog-post-image mb-6">
+                {{ $img := . }}
+                {{ $resource := $page.Resources.GetMatch $img }}
+                {{ if $resource }}
+                <img src="{{ $resource.RelPermalink }}"
+                  alt="{{ $page.Params.featured_image_alt | default $page.Title }}">
+                {{ end }}
+            </figure>
+            {{ end }}
+          </header>
+
+          <div class="blog-content">
+            {{ .Content }}
+          </div>
+
+          {{ with .Params.resources }}
+          <section class="mt-6">
+            <h2 class="title is-4">{{ $.Params.resources_title | default "Resources" }}</h2>
+            <div class="event-resources-grid">
+              {{ range . }}
+              {{ $title := .title }}
+              {{ $hint := .hint }}
+              {{ $url := .url }}
+              {{ $target := .target | default "_self" }}
+              {{ $rel := .rel | default "" }}
+              {{ if and (eq $target "_blank") (eq $rel "") }}
+                {{ $rel = "noopener noreferrer" }}
+              {{ end }}
+
+              {{ $href := $url }}
+              {{ if and (not (hasPrefix $url "http://")) (not (hasPrefix $url "https://")) (not (hasPrefix $url "mailto:")) }}
+                {{ if hasPrefix $url "/" }}
+                  {{ $href = relLangURL $url }}
+                {{ else }}
+                  {{ $href = printf "%s%s" $.RelPermalink $url }}
+                {{ end }}
+              {{ end }}
+
+              <a class="card rdm-action-card" href="{{ $href }}" {{ if eq $target "_blank" }}target="_blank"{{ end }} {{ if ne $rel "" }}rel="{{ $rel }}"{{ end }}>
+                <div class="card-content">
+                  <p class="title is-5 mb-2">{{ $title }}</p>
+                  {{ with $hint }}
+                  <p class="has-text-grey">{{ . }}</p>
+                  {{ end }}
+                  {{ with .avatars }}
+                  <div class="rdm-contact-people" aria-hidden="true">
+                    {{ range . }}
+                    {{ $avatar := $.Resources.GetMatch . }}
+                    {{ if $avatar }}
+                    <img src="{{ $avatar.RelPermalink }}" alt="" class="rdm-contact-avatar">
+                    {{ end }}
+                    {{ end }}
+                  </div>
+                  {{ end }}
+                  {{ with .image }}
+                  {{ $resource := $.Resources.GetMatch . }}
+                  {{ if $resource }}
+                  <figure class="rdm-action-card-image">
+                    <img src="{{ $resource.RelPermalink }}" alt="{{ $title }}">
+                  </figure>
+                  {{ end }}
+                  {{ end }}
+                </div>
+              </a>
+              {{ end }}
+            </div>
+          </section>
+          {{ end }}
+
+          {{ partial "cta_events.html" . }}
+
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ end }}

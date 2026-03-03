@@ -14,7 +14,7 @@
     <!-- OG -->
     <meta property="og:site_name" content="{{ .Site.Title }}" />
     {{ $ogImage := "img/logo.png" | absURL }}
-    {{ if and (eq .Section "blog") .Params.featured_image }}
+    {{ if and (in (slice "blog" "events") .Section) .Params.featured_image }}
     {{ with .Resources.GetMatch .Params.featured_image }}
     {{ $ogImage = .Permalink }}
     {{ end }}
@@ -25,6 +25,9 @@
     {{ with .Title }}
     <meta property="og:title" content="{{ . }}" />
     {{ end }}
+    {{ end }}
+    {{ if .Params.noindex }}
+    <meta name="robots" content="noindex,nofollow" />
     {{ end }}
     
    <!-- load bulma css compiled with our customizations from scss -->

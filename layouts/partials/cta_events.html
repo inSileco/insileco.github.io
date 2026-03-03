@@ -1,0 +1,12 @@
+{{ $cta := index .Site.Data .Site.Language.Lang "events" "cta" }}
+{{ with $cta }}
+<div class="mt-6 pt-4 has-text-centered" style="border-top: 1px solid #e0e0e0;">
+  <p class="mb-2"><em><strong>{{ .headline }}</strong></em></p>
+  {{ with .subhead }}
+  <p class="mb-4"><em>{{ . }}</em></p>
+  {{ end }}
+  <div class="buttons is-centered">
+    <a class="button is-primary" href="{{ relLangURL .primary.link }}">{{ .primary.label }}</a>
+  </div>
+</div>
+{{ end }}
