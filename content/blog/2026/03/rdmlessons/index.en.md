@@ -12,7 +12,7 @@ tags:
 
 Everyone agrees that data management is important.
 
-Yet in practice it often feels like a burden: files end up scattered across personal folders, metadata is incomplete, and meeting reporting or administrative requirements turns into a scramble at the end of a project.
+Yet in practice it often feels like a burden: files end up scattered across personal folders, metadata (data about data) is incomplete, and meeting reporting or administrative requirements turns into a scramble at the end of a project.
 
 After years of working with academic teams, government agencies, industry partners, and Indigenous organizations, we keep seeing the same patterns.
 
@@ -103,11 +103,11 @@ This does not require building complex infrastructure upfront. Instead, it means
 Small strategic decisions made early prevent large problems later.
 
 
-## 5. Metadata is infrastructure
+## 5. Metadata is a strategic asset
 
 Metadata is often treated as documentation that can be written later.
 
-In reality, metadata is the infrastructure that allows datasets to be discovered, understood, and reused.
+In reality, metadata is the key asset that allows datasets to be discovered, understood, and reused.
 
 Without metadata, datasets quickly become difficult to interpret -- even for the people who originally collected them.
 
