@@ -111,7 +111,7 @@ In reality, metadata is the key asset that allows datasets to be discovered, und
 
 Without metadata, datasets quickly become difficult to interpret -- even for the people who originally collected them.
 
-In collaborative projects especially, metadata plays an even more important role. It allows diverse datasets to be indexed, connected, and explored across projects -- much like tags or categories make information discoverable on the webs.
+In collaborative projects especially, metadata plays an even more important role. It allows diverse datasets to be indexed, connected, and explored across projects -- much like tags or categories make information discoverable on the web.
 
 In practice, this usually means capturing a small set of shared descriptors, such as who collected the data, where and when it was collected, what variables were measured, and how the data can be accessed.
 
@@ -146,7 +146,7 @@ Infrastructure matters, but so do habits, incentives, and cognitive load. System
 
 The most effective approaches take the opposite path. They simplify workflows, reduce friction, and make good practices easier to maintain over time.
 
-Next, we will go deeper on metadata hubs and on lightweight workflows that teams can adopt without adding bureaucracy.
+In the coming posts, we will explore these ideas in more detail and share practical approaches teams can adopt to make data management simpler and more sustainable — from metadata hubs and interoperable data systems to lightweight workflows that reduce friction for researchers and project teams.
 
 Because in the end, effective data management is not about building the most sophisticated system.
 
