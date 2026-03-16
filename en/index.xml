@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>inSileco Website</title><link>https://insileco.io/en/</link><description>Recent content on inSileco Website</description><generator>Hugo</generator><language>en-ca</language><lastBuildDate>Wed, 18 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://insileco.io/en/index.xml" rel="self" type="application/rss+xml"/><item><title>Salon des technologies environnementales du Québec 2026</title><link>https://insileco.io/en/events/2026/03/reseau-environnement/</link><pubDate>Tue, 03 Mar 2026 00:00:00 +0000</pubDate><guid>https://insileco.io/en/events/2026/03/reseau-environnement/</guid><description>&lt;p&gt;inSileco will be attending the Salon des technologies environnementales du Québec 2026 organized by Réseau Environnement with a kiosk.&lt;/p&gt;
+&lt;p&gt;What we do at inSileco:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Environmental data structuring and management&lt;/li&gt;
+&lt;li&gt;Development of analytical tools (R, GIS, applications)&lt;/li&gt;
+&lt;li&gt;Automated dashboards and reporting&lt;/li&gt;
+&lt;li&gt;Decision-support tools (environmental impacts, environmental management)&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;If you are attending, come meet us to discuss biodiversity data workflows, reproducible analysis pipelines, and applied decision-support tools for environmental teams.&lt;/p&gt;
 &lt;p&gt;We are available for short one-on-one exchanges throughout the event and can also schedule a follow-up conversation after the conference.&lt;/p&gt;</description></item><item><title>Designing data systems people will actually use</title><link>https://insileco.io/en/blog/2026/03/rdmlessons/</link><pubDate>Wed, 04 Mar 2026 00:00:00 +0000</pubDate><guid>https://insileco.io/en/blog/2026/03/rdmlessons/</guid><description>&lt;p&gt;Everyone agrees that data management is important.&lt;/p&gt;
 &lt;p&gt;Yet in practice it often feels like a burden: files end up scattered across personal folders, metadata (data about data) is incomplete, and meeting reporting or administrative requirements turns into a scramble at the end of a project.&lt;/p&gt;
