@@ -26,6 +26,13 @@ resources:
 
 inSileco will be attending the Salon des technologies environnementales du Québec 2026 organized by Réseau Environnement with a kiosk.
 
+What we do at inSileco:
+
+- Environmental data structuring and management
+- Development of analytical tools (R, GIS, applications)
+- Automated dashboards and reporting
+- Decision-support tools (environmental impacts, environmental management)
+
 If you are attending, come meet us to discuss biodiversity data workflows, reproducible analysis pipelines, and applied decision-support tools for environmental teams.
 
 We are available for short one-on-one exchanges throughout the event and can also schedule a follow-up conversation after the conference.

@@ -26,6 +26,13 @@ resources:
 
 inSileco présentera un kiosque au [Salon des technologies environnementales du Québec 2026](https://www.reseau-environnement.com/event/salon-des-technologies-environnementales-du-quebec-2026-39/page/introduction-salon-des-technologies-environnementales-du-quebec-2026) organisé par Réseau Environnement le 18 et 19 mars 2026 an Centre des congrès de Québec.
 
+Ce que nous faisons chez inSileco :
+
+- Structuration et gestion de données environnementales
+- Développement d’outils analytiques (R, SIG, applications)
+- Tableaux de bord et rapports automatisés
+- Outils d'aide à la décision (impacts environnementaux, gestion environnementale)
+
 Si vous êtes présent, venez nous rencontrer pour discuter de flux de travail en données de biodiversite, d'automatisation des processus et d'outils d'aide a la décision appliqués aux équipes en environnement.
 
 Nous sommes disponibles pour de courtes discussions individuelles pendant l'évènement et pouvons aussi planifier une rencontre de suivi après le salon.
