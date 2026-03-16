@@ -7,3 +7,6 @@
 - name: "UoG logo"
   logo: "/img/network/UofG.png"
   url: "https://www.uoguelph.ca/"
+- name: "QO logo"
+  logo: "/img/network/QO.png"
+  url: "https://www.quebec-ocean.ulaval.ca/"
