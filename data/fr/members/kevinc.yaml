@@ -3,8 +3,9 @@ name:
   given: Kevin
   family: Cazelles
 title: PhD.
+order: 2
 social:
-  mail: kcazelles@insileco.io
+  mail: kevin.cazelles@insileco.io
   website: https://kevcaz.insileco.io/
   github: KevCaz
   researchgate: Kevin_Cazelles

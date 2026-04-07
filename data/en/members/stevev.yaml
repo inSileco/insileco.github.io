@@ -2,19 +2,16 @@ picture: /img/team/steve.jpg
 name:
   given: Steve
   family: Vissault
+order: 3
 title: MSc.
 social:
-  mail: svissault@insileco.io
+  mail: steve.vissault@insileco.io
   website: http://steveviss.github.io/html_resume
   github: SteveViss
   twitter: SVissault
   researchgate: Steve-Vissault
   orcid: 0000-0002-0866-4376
   linkedin: steve-vissault-66602946
-skills:
-  - R
-  - Data wrangling 
-  - Data visualization
 role: Co-founder and data scientist
 bio:
   short: |

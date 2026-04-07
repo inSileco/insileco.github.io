@@ -1,19 +1,16 @@
-picture: /img/team/kev.jpg
+picture: /img/team/kcazelles.jpg
 name:
   given: Kevin
   family: Cazelles
+order: 2
 title: PhD.
 social:
-  mail: kcazelles@insileco.io
+  mail: kevin.cazelles@insileco.io
   website: https://kevcaz.insileco.io/
   github: KevCaz
   researchgate: Kevin_Cazelles
   orcid: 0000-0001-6619-9874
   linkedin: kevin-cazelles-51552283
-skills:
-  - R
-  - Data wrangling 
-  - Data visualization
 role: Co-founder and data scientist
 bio:
   short: |

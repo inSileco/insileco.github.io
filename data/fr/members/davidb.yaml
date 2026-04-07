@@ -3,18 +3,15 @@ name:
   given: David
   family: Beauchesne
 title: PhD.
+order: 1
 social:
-  mail: dbeauchesne@insileco.io
+  mail: david.beauchesne@insileco.io
   website: https://david-beauchesne.github.io
   github: david-beauchesne
   twitter: d_beauchesne
   researchgate: David_Beauchesne
   orcid: 0000-0002-3590-8161
   linkedin: david-beauchesne-16683353
-skills:
-  - R
-  - Manipulation de données
-  - Visualitsation de données
 role: Co-fondateur et scientifique de données
 bio:
   short: |

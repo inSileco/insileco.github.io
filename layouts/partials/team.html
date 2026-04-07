@@ -5,7 +5,7 @@
             <p>{{ .Site.Params.subtitle_team }}</p>
         </div>
         {{ $members := index .Site.Data .Site.Language.Lang "members"}}
-        {{ range $members }}
+        {{ range sort $members "order" }}
         <div class="column is-4-desktop is-12-mobile has-text-centered">
             <figure class="image is-inline-block">
                 <img class="is-rounded img-member" style="max-height:13rem" src="{{ .picture }}"/>
