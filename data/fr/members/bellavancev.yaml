@@ -1,0 +1,17 @@
+picture: /img/team/vbellavance.jpg
+name:
+  given: Vincent
+  family: Bellavance
+title: M.Sc.
+order: 4
+social:
+  mail: vincent.bellavance@insileco.io
+  github: VincentBellavance
+  orcid: 0000-0002-3263-8784
+  linkedin: vincent-bellavance-895759401
+role: scientifique de données
+bio:
+  short: |
+    Vincent Bellavance est titulaire d'une maîtrise de l'Université de Sherbrooke. Spécialisé en programmation scientifique et en gestion des données, il travaille à structurer et valoriser les données de recherche, avec un intérêt particulier pour la modélisation spatiale et le développement d'outils interactifs.
+  long: |
+    Vincent Bellavance est titulaire d'une maîtrise de l'Université de Sherbrooke. Spécialisé en programmation scientifique et en gestion des données, il se consacre à l'organisation, à la structuration et à la diffusion des données issues de travaux de laboratoire. Son expertise porte notamment sur la modélisation spatiale et les modèles de répartition des espèces, appliqués en particulier à l'écologie benthique. Il développe également des applications web interactives visant à faciliter la visualisation et l'interprétation des résultats de la recherche.

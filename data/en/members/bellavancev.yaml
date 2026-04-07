@@ -1,0 +1,17 @@
+picture: /img/team/vbellavance.jpg
+name:
+  given: Vincent
+  family: Bellavance
+order: 4
+title: M.Sc.
+social:
+  mail: vincent.bellavance@insileco.io
+  github: VincentBellavance
+  orcid: 0000-0002-3263-8784
+  linkedin: vincent-bellavance-895759401
+role: Data scientist
+bio:
+  short: |
+    Vincent Bellavance holds a master’s degree from the Université de Sherbrooke. Specializing in scientific programming and data management, he works on structuring and enhancing research data, with a focus on spatial modeling and interactive tool development.
+  long: |
+    Vincent Bellavance holds a master’s degree from the Université de Sherbrooke. Specializing in scientific programming and data management, he focuses on organizing, structuring, and disseminating laboratory data. His expertise includes spatial modeling and species distribution models, particularly applied to benthic ecology. He also develops interactive web applications to support the visualization and interpretation of research results.
