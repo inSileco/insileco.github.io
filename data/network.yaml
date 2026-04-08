@@ -10,3 +10,6 @@
 - name: "QO logo"
   logo: "/img/network/QO.png"
   url: "https://www.quebec-ocean.ulaval.ca/"
+- name: "AN logo"
+  logo: "/img/network/arcticnet.png"
+  url: "https://arcticnet.ca/"
