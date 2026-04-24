@@ -3,17 +3,17 @@ subtitle: Nos clients sont nos meilleurs alliés.
 testimonials:
   - name: Élise Filotas
     organization: TÉLUQ
-    post: professeure
+    post: Professeure
     text: |
       L'équipe d'inSileco m'a fourni un accompagnement hors pair lors de la création du contenu et de l'édition du cours numérique SCI 1031 Visualisation et analyse de données spatiales sous R, maintenant offert à l'Université TÉLUQ. Que ce soit pour la rédaction de contenu pédagogique, le développement d'exemples originaux, l'utilisation de RMarkdown ou github, j'ai été impressionnée par la qualité et l'efficacité de leur travail.
   - name: Kevin McCann
     organization: University of Guelph
-    post: professeur
+    post: Professeur
     text: |
       Je dirais que cette entreprise offre des compétences de tout premier ordre en programmation, en bases de données et en résolution de problèmes complexes. De plus, elle livre efficacement, communique clairement avec vous et votre équipe, et dépasse largement les attentes.
   - name: Marie-Hélène Brice
     organization: Jardin Botanique de Montréal
-    post: professeure
+    post: Professeure
     text: | 
       Avec inSileco, nous avons développé un pipeline de données reproductible pour la classification de la végétation du Québec méridional. Celui-ci est devenu un outil très utile pour notre équipe de recherche. Les résultats obtenus nous servent de cadre de référence pour analyser nos données et mieux comprendre et anticiper les changements de composition de la végétation. inSileco une équipe très professionnelle, efficace et à l'écoute, capable de transformer des besoins scientifiques complexes en solutions concrètes. Je les recommande sans hésiter.
   - name: Jacob Brownscombe
@@ -27,3 +27,40 @@ testimonials:
     post: Gestionnaire de projet
     text: |
       Je recommande sans hésiter InSileco pour leur ouverture, professionnalisme et bonne communication. Les échanges entre l'entrepreneur et le client ont toujours été fait de manière conviviale et transparente de façon à éviter les malentendus.
+  - name: Christine Barnard
+    organization: ArcticNet
+    post: Vice Présidente Recherche
+    text: |
+      La capacité d’inSileco à s’adapter à nos besoins, leur flexibilité et leur réactivité sont particulièrement précieuses. Ils sont très attentifs à nos besoins et comprennent notre contexte, notre budget ainsi que la réalité de nos organismes de financement et de nos partenaires nordiques.
+  - name: Stephanie Avery-Gomm
+    post: Chercheure Scientifique
+    text: |
+      La qualité du travail d’inSileco était excellente, leur ouverture aux changements a été appréciée et leur communication était excellente. J’ai apprécié la franchise avec laquelle les limites du projet ont été communiquées. Leur approche consistant à itérer rapidement et à présenter des prototypes a été particulièrement appréciée.
+  - name: Anonyme
+    post: Spécialiste en environnement, secteur public
+    text: |
+      inSileco a fourni des services de compilation, de structuration et d’analyse de données au-delà de notre capacité et de notre expertise internes. Leur approche bien documentée et reproductible a permis de garantir que les analyses pourront être étendues ou mises à jour dans le futur. Ils étaient clairement engagés dans la co-développement de produits répondant à nos besoins et utilisables à long terme. Les jeux de données et outils interactifs qui en résultent soutiennent maintenant l’analyse des effets cumulatifs, éclairent la prise de décision et sont déjà utilisés par nos collaborateurs.
+  - name: Anonyme
+    post: Spécialiste en environnement, secteur public
+    text: |
+      L’aspect le plus précieux a été la transparence et l’archivage rigoureux des métadonnées, des méthodes, des résultats et de leur interprétation. Les retombées concrètes incluent la production d’outils analytiques bien documentés et reproductibles, développés selon les meilleures pratiques actuelles, ainsi qu’une amélioration de la capacité et de l’efficacité à livrer des projets dans des délais courts. J’ai également apprécié la communication ouverte tout au long du cycle de vie du projet.
+  - name:  "" # Matthieu
+    organization: "" 
+    post: "" 
+    text: |
+      Expertise hautement spécialisée en traitement opérationnel de données d’inventaires biologiques, avec une capacité de requête rapide et flexible. L’engagement de l’équipe d’inSileco dans le projet a été particulièrement apprécié. Le produit fourni correspondait au mandat octroyé et nous sommes très satisfaits.
+  - name:  "" # Camille
+    organization: "" 
+    post: "" 
+    text: |
+      La formation sur les analyses spatiales avec R offerte par inSileco a été très appréciée pour la pratique des exercices avec accompagnement en présentiel, la personnalisation des contenus à partir de nos données et le suivi post-formation. Mes collègues ont rapidement commencé à générer des cartes interactives partageables. Malgré un contenu dense, les formateurs étaient qualifiés et professionnels, et le suivi personnalisé distingue clairement cette offre.
+  - name:  "" # Mickaël
+    organization: "" 
+    post: "" 
+    text: |
+      La collaboration d’inSileco nous a permis de mieux organiser et gérer nos données géoréférencées. Le travail réalisé nous aide à mieux mesurer la vulnérabilité de nos composantes d’importance et à obtenir un portrait plus juste des effets cumulés sur le territoire. Nous sommes très satisfaits du professionnalisme, de la communication et de la capacité de l’équipe à comprendre nos besoins et y répondre efficacement. Excellent travail.
+  - name:  "" # Raphaël
+    organization: "" 
+    post: "" 
+    text: |
+      La formation sur les analyses spatiales avec R offerte par inSileco a été très appréciée pour les flux de travail intégrés (raster + vectoriel), ainsi que pour la manipulation des rasters et des vecteurs. L’équipe d’inSileco est extrêmement compétente, efficace et enseigne très bien! Je recommande fortement leur formation sur les statistiques spatiales.
