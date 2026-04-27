@@ -44,11 +44,6 @@ testimonials:
     post: Spécialiste en environnement, secteur public
     text: |
       L’aspect le plus précieux a été la transparence et l’archivage rigoureux des métadonnées, des méthodes, des résultats et de leur interprétation. Les retombées concrètes incluent la production d’outils analytiques bien documentés et reproductibles, développés selon les meilleures pratiques actuelles, ainsi qu’une amélioration de la capacité et de l’efficacité à livrer des projets dans des délais courts. J’ai également apprécié la communication ouverte tout au long du cycle de vie du projet.
-  - name:  "" # Matthieu
-    organization: "" 
-    post: "" 
-    text: |
-      Expertise hautement spécialisée en traitement opérationnel de données d’inventaires biologiques, avec une capacité de requête rapide et flexible. L’engagement de l’équipe d’inSileco dans le projet a été particulièrement apprécié. Le produit fourni correspondait au mandat octroyé et nous sommes très satisfaits.
   - name:  "" # Camille
     organization: "" 
     post: "" 
@@ -59,8 +54,8 @@ testimonials:
     post: "" 
     text: |
       La collaboration d’inSileco nous a permis de mieux organiser et gérer nos données géoréférencées. Le travail réalisé nous aide à mieux mesurer la vulnérabilité de nos composantes d’importance et à obtenir un portrait plus juste des effets cumulés sur le territoire. Nous sommes très satisfaits du professionnalisme, de la communication et de la capacité de l’équipe à comprendre nos besoins et y répondre efficacement. Excellent travail.
-  - name:  "" # Raphaël
-    organization: "" 
-    post: "" 
+  - name: "Raphaël Lavoie"
+    organization: "Environment et Changement climatique Canada" 
+    post: "Chercheur Scientifique" 
     text: |
       La formation sur les analyses spatiales avec R offerte par inSileco a été très appréciée pour les flux de travail intégrés (raster + vectoriel), ainsi que pour la manipulation des rasters et des vecteurs. L’équipe d’inSileco est extrêmement compétente, efficace et enseigne très bien! Je recommande fortement leur formation sur les statistiques spatiales.

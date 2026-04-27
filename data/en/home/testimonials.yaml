@@ -44,11 +44,6 @@ testimonials:
     post: Environmental Specialist, public sector
     text: |
       The most valuable aspect was the transparency and thorough archiving of metadata, methods, results, and interpretation. Tangible outcomes include the production of well-documented, repeatable analytical tools built using up-to-date best practices, as well as improved capacity and efficiency to deliver projects on short timelines. I also appreciated the open communication throughout the project lifecycle.
-  - name: "" # Matthieu
-    organization: "" 
-    post: "" 
-    text: |
-      Highly specialized expertise in the operational processing of biological inventory data, with a rapid and flexible querying capacity. The inSileco team’s engagement in the project was particularly appreciated. The product delivered met the mandate, and we are very satisfied.
   - name: "" # Camille
     organization: "" 
     post: "" 
@@ -59,8 +54,8 @@ testimonials:
     post: "" 
     text: |
       inSileco’s collaboration has enabled us to better organize and manage our georeferenced data. The work carried out helps us better measure the vulnerability of our key components and obtain a more accurate picture of cumulative effects across the territory, supporting our participation in the ERSL. We are very satisfied with the professionalism, communication, and the team’s ability to understand our needs and respond effectively. Excellent work.
-  - name: ""  # Raphaël
-    organization: "" 
-    post: "" 
+  - name: "Raphaël Lavoie"
+    organization: "Environment and Climate Change Canada" 
+    post: "Research Scientist" 
     text: |
       The training on spatial analysis with R offered by inSileco was highly appreciated for its integrated workflows (raster + vector), as well as for raster and vector data manipulation. The inSileco team is extremely competent, efficient, and teaches very well. I highly recommend their training on spatial statistics.
