@@ -40,20 +40,19 @@ testimonials:
     post: Environmental Specialist, public sector
     text: |
       inSileco provided data collation, curation, and analytical services beyond our internal capacity and expertise. Their well-documented, reproducible approach ensured analyses could be expanded or updated in the future. They were clearly invested in co-developing products that met our needs and would be usable long-term. The resulting datasets and interactive tools are now supporting cumulative effects analysis, informing decision-making, and are already being used by our collaborators.
+  - name: "Mickaël Castilloux-Gaboury"
+    organization: "Bureau du Ndakina, W8banaki" 
+    post: "Impact analysis coordinator" 
+    text: |
+      inSileco’s collaboration has enabled us to better organize and manage our georeferenced data. The work carried out helps us better measure the vulnerability of our key components and obtain a more accurate picture of cumulative effects across the territory, supporting our participation in the ERSL. We are very satisfied with the professionalism, communication, and the team’s ability to understand our needs and respond effectively. Excellent work.
   - name: Anonymous
     post: Environmental Specialist, public sector
     text: |
       The most valuable aspect was the transparency and thorough archiving of metadata, methods, results, and interpretation. Tangible outcomes include the production of well-documented, repeatable analytical tools built using up-to-date best practices, as well as improved capacity and efficiency to deliver projects on short timelines. I also appreciated the open communication throughout the project lifecycle.
-  - name: "" # Camille
-    organization: "" 
-    post: "" 
+  - name: "Camille"
+    post: Environmental Specialist, public sector
     text: |
       The training on spatial analysis with R offered by inSileco was highly appreciated for the hands-on exercises with in-person support, the ability to explore both package workflows (terra vs sf+stars), the customization of exercises and code using our own data, and the post-training follow-up. My colleagues have already started generating shareable interactive maps. Despite the dense content, the trainers were qualified and professional, and the personalized follow-up clearly sets this offering apart.
-  - name: "" # Mickaël
-    organization: "" 
-    post: "" 
-    text: |
-      inSileco’s collaboration has enabled us to better organize and manage our georeferenced data. The work carried out helps us better measure the vulnerability of our key components and obtain a more accurate picture of cumulative effects across the territory, supporting our participation in the ERSL. We are very satisfied with the professionalism, communication, and the team’s ability to understand our needs and respond effectively. Excellent work.
   - name: "Raphaël Lavoie"
     organization: "Environment and Climate Change Canada" 
     post: "Research Scientist" 

@@ -40,20 +40,19 @@ testimonials:
     post: Spécialiste en environnement, secteur public
     text: |
       inSileco a fourni des services de compilation, de structuration et d’analyse de données au-delà de notre capacité et de notre expertise internes. Leur approche bien documentée et reproductible a permis de garantir que les analyses pourront être étendues ou mises à jour dans le futur. Ils étaient clairement engagés dans la co-développement de produits répondant à nos besoins et utilisables à long terme. Les jeux de données et outils interactifs qui en résultent soutiennent maintenant l’analyse des effets cumulatifs, éclairent la prise de décision et sont déjà utilisés par nos collaborateurs.
+  - name:  "Mickaël Castilloux-Gaboury"
+    organization: "Bureau du Ndakina, W8banaki" 
+    post: "Coordonnateur aux analyses d’impact" 
+    text: |
+      La collaboration d’inSileco nous a permis de mieux organiser et gérer nos données géoréférencées. Le travail réalisé nous aide à mieux mesurer la vulnérabilité de nos composantes d’importance et à obtenir un portrait plus juste des effets cumulés sur le territoire. Nous sommes très satisfaits du professionnalisme, de la communication et de la capacité de l’équipe à comprendre nos besoins et y répondre efficacement. Excellent travail.
   - name: Anonyme
     post: Spécialiste en environnement, secteur public
     text: |
       L’aspect le plus précieux a été la transparence et l’archivage rigoureux des métadonnées, des méthodes, des résultats et de leur interprétation. Les retombées concrètes incluent la production d’outils analytiques bien documentés et reproductibles, développés selon les meilleures pratiques actuelles, ainsi qu’une amélioration de la capacité et de l’efficacité à livrer des projets dans des délais courts. J’ai également apprécié la communication ouverte tout au long du cycle de vie du projet.
-  - name:  "" # Camille
-    organization: "" 
-    post: "" 
+  - name:  "Camille"
+    post: "Spécialiste en environnement, secteur public" 
     text: |
       La formation sur les analyses spatiales avec R offerte par inSileco a été très appréciée pour la pratique des exercices avec accompagnement en présentiel, la personnalisation des contenus à partir de nos données et le suivi post-formation. Mes collègues ont rapidement commencé à générer des cartes interactives partageables. Malgré un contenu dense, les formateurs étaient qualifiés et professionnels, et le suivi personnalisé distingue clairement cette offre.
-  - name:  "" # Mickaël
-    organization: "" 
-    post: "" 
-    text: |
-      La collaboration d’inSileco nous a permis de mieux organiser et gérer nos données géoréférencées. Le travail réalisé nous aide à mieux mesurer la vulnérabilité de nos composantes d’importance et à obtenir un portrait plus juste des effets cumulés sur le territoire. Nous sommes très satisfaits du professionnalisme, de la communication et de la capacité de l’équipe à comprendre nos besoins et y répondre efficacement. Excellent travail.
   - name: "Raphaël Lavoie"
     organization: "Environment et Changement climatique Canada" 
     post: "Chercheur Scientifique" 
