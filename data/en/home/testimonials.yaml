@@ -3,17 +3,17 @@ subtitle: Our clients are our best allies.
 testimonials:
   - name: Élise Filotas
     organization: TÉLUQ
-    post: professor
+    post: Professor
     text: |
       The inSileco team provided outstanding support during the development and editing of the digital course SCI 1031 – Visualization and Analysis of Spatial Data in R, now offered at Université TÉLUQ. Whether for instructional content writing, development of original examples, or the use of R Markdown and GitHub, I was impressed by the quality, rigor, and efficiency of their work.
   - name: Kevin McCann
     organization: University of Guelph
-    post: professor
+    post: Professor
     text: |
       I say that this company is top-notch programming, database abilities and general problem solving abilities. Additionally, they get things done efficiently and communicate well with you and your team. They will exceed your expectations.
   - name: Marie-Hélène Brice
     organization: Montreal Botanical Garden
-    post: professor
+    post: Professor
     text: | 
       With inSileco, we developed a reproducible data pipeline for vegetation classification in southern Quebec, which has become an essential tool for our research team. The results now provide a robust reference framework to analyze our data and better understand and anticipate changes in vegetation composition. inSileco is a highly professional, efficient, and attentive team, able to translate complex scientific needs into practical, effective solutions. I highly recommend them.
   - name: Jacob Brownscombe
@@ -27,3 +27,34 @@ testimonials:
     post: Project manager
     text: |
       I highly recommend inSileco for their openness, professionalism, and strong communication. Interactions between the contractor and client were always conducted in a friendly and transparent manner, helping to avoid misunderstandings.
+  - name: Christine Barnard
+    organization: ArcticNet
+    post: Vice President Research
+    text: |
+      inSileco's capacity to adapt to our needs, their flexibility, and their responsiveness is particularly valuable. They are very attentive to our needs and understand our context, budget, and the reality of our funders and northern partners.
+  - name: Stephanie Avery-Gomm
+    post: Research Scientist
+    text: |
+      The quality of inSileco's work was excellent, their openness to changes was appreciated and their communication was excellent. I appreciated the frankness with which project limitations were communicated. Their approach to quickly iterate and show prototypes was valuable.
+  - name: Anonymous
+    post: Environmental Specialist, public sector
+    text: |
+      inSileco provided data collation, curation, and analytical services beyond our internal capacity and expertise. Their well-documented, reproducible approach ensured analyses could be expanded or updated in the future. They were clearly invested in co-developing products that met our needs and would be usable long-term. The resulting datasets and interactive tools are now supporting cumulative effects analysis, informing decision-making, and are already being used by our collaborators.
+  - name: "Mickaël Castilloux-Gaboury"
+    organization: "Bureau du Ndakina, W8banaki" 
+    post: "Impact analysis coordinator" 
+    text: |
+      inSileco’s collaboration has enabled us to better organize and manage our georeferenced data. The work carried out helps us better measure the vulnerability of our key components and obtain a more accurate picture of cumulative effects across the territory, supporting our participation in the ERSL. We are very satisfied with the professionalism, communication, and the team’s ability to understand our needs and respond effectively. Excellent work.
+  - name: Anonymous
+    post: Environmental Specialist, public sector
+    text: |
+      The most valuable aspect was the transparency and thorough archiving of metadata, methods, results, and interpretation. Tangible outcomes include the production of well-documented, repeatable analytical tools built using up-to-date best practices, as well as improved capacity and efficiency to deliver projects on short timelines. I also appreciated the open communication throughout the project lifecycle.
+  - name: "Camille"
+    post: Environmental Specialist, public sector
+    text: |
+      The training on spatial analysis with R offered by inSileco was highly appreciated for the hands-on exercises with in-person support, the ability to explore both package workflows (terra vs sf+stars), the customization of exercises and code using our own data, and the post-training follow-up. My colleagues have already started generating shareable interactive maps. Despite the dense content, the trainers were qualified and professional, and the personalized follow-up clearly sets this offering apart.
+  - name: "Raphaël Lavoie"
+    organization: "Environment and Climate Change Canada" 
+    post: "Research Scientist" 
+    text: |
+      The training on spatial analysis with R offered by inSileco was highly appreciated for its integrated workflows (raster + vector), as well as for raster and vector data manipulation. The inSileco team is extremely competent, efficient, and teaches very well. I highly recommend their training on spatial statistics.

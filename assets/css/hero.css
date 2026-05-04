@@ -46,11 +46,20 @@
     display: flex;
     align-items: center;
     gap: 2rem;
-    animation: hero-carousel-scroll 18s linear infinite;
+    width: max-content;
+    animation: hero-carousel-scroll 14s linear infinite;
+}
+
+.hero-carousel-track a {
+    flex: 0 0 auto;
 }
 
 .hero-carousel img {
+    display: block;
+    flex: 0 0 auto;
     height: 2.25rem;
+    width: auto;
+    max-width: none;
     opacity: 0.75;
     filter: grayscale(100%);
 }
@@ -101,13 +110,16 @@
     #hero {
         padding-top: 1rem;
     }
+
     .hero-title {
         padding-bottom: 1rem;
         padding-top: 1rem;
     }
+
     .page-hero {
         padding-top: 2rem;
     }
+
     .section {
         padding-top: 2rem;
     }
