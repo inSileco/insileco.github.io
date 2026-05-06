@@ -19,3 +19,6 @@
 - name: "W8banaki logo"
   logo: "/img/network/w8banaki.png"
   url: "https://www.facebook.com/bureaundakina"
+- name: "IRBV logo"
+  logo: "/img/network/irbv.png"
+  url: "https://irbv.umontreal.ca/"
