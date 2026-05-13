@@ -16,7 +16,7 @@ tags:
   - Reporting
   - Results delivery
 academy_levers:
-  - Decision-support tools
+  - Decision-support Tools
 promise: "Reduce repeated reporting effort and build more reliable output workflows."
 audience_short: "Environmental professionals and teams producing recurring results, reports, figures, tables, or communication outputs."
 workshop_outcome: "Participants leave with a clearer way to automate repeated reporting and result-delivery tasks."

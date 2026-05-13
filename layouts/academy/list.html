@@ -153,6 +153,12 @@
 
 {{ if gt (len $workshops) 0 }}
 <section id="available-workshops" class="section academy-section academy-section-alt">
+  {{ $workshopGroups := slice
+    (dict "label" "Data Management" "slug" "data-management")
+    (dict "label" "Analytical Capabilities" "slug" "analytical-capabilities")
+    (dict "label" "Decision-support Tools" "slug" "decision-support-tools")
+    (dict "label" "Automated Workflows" "slug" "automated-workflows")
+  }}
   <div class="container">
     <div class="academy-section-header">
       <p class="academy-section-kicker">Featured workshops</p>
@@ -160,52 +166,63 @@
       <p>{{ .Params.workshops_intro }}</p>
     </div>
 
-    <div class="columns is-multiline">
-      {{ range $workshops }}
-      <div class="column is-one-quarter-desktop is-half-tablet is-full-mobile">
-        <a href="{{ .RelPermalink }}" class="academy-workshop-card">
-          {{ $levers := .Params.academy_levers | default (slice) }}
-          <div class="academy-workshop-visual">
-            {{ with .Params.card_image }}
-            <img src="{{ . | relURL }}" alt="{{ $.Title }} workshop cover">
-            {{ else }}
-            <div class="academy-workshop-placeholder">
-              <span>{{ .Title }}</span>
-            </div>
-            {{ end }}
-            {{ if gt (len $levers) 0 }}
-              <div class="academy-workshop-overlay">
-                {{ range $levers }}
-                {{ $slug := . | urlize }}
-                <span class="academy-workshop-lever academy-workshop-lever-{{ $slug }}">{{ . }}</span>
+    {{ range $group := $workshopGroups }}
+      {{ $groupWorkshops := where $workshops "Params.academy_levers" "intersect" (slice $group.label) }}
+      {{ if gt (len $groupWorkshops) 0 }}
+      <div class="academy-workshop-group academy-workshop-group-{{ $group.slug }}">
+        <div class="academy-workshop-group-header academy-workshop-group-header-{{ $group.slug }}">
+          <p class="academy-workshop-group-kicker">Workshop topic</p>
+          <h3 class="title is-4 academy-workshop-group-title">{{ $group.label }}</h3>
+        </div>
+        <div class="columns is-multiline">
+          {{ range $groupWorkshops }}
+          <div class="column is-one-quarter-desktop is-half-tablet is-full-mobile">
+            <a href="{{ .RelPermalink }}" class="academy-workshop-card">
+              {{ $levers := .Params.academy_levers | default (slice) }}
+              <div class="academy-workshop-visual">
+                {{ with .Params.card_image }}
+                <img src="{{ . | relURL }}" alt="{{ $.Title }} workshop cover">
+                {{ else }}
+                <div class="academy-workshop-placeholder">
+                  <span>{{ .Title }}</span>
+                </div>
+                {{ end }}
+                {{ if gt (len $levers) 0 }}
+                  <div class="academy-workshop-overlay">
+                    {{ range $levers }}
+                    {{ $slug := . | urlize }}
+                    <span class="academy-workshop-lever academy-workshop-lever-{{ $slug }}">{{ . }}</span>
+                    {{ end }}
+                  </div>
                 {{ end }}
               </div>
-            {{ end }}
+              <div class="academy-workshop-body">
+                <h3 class="title is-4">{{ .Title }}</h3>
+                {{ with .Params.workshop_outcome }}
+                <p class="academy-workshop-outcome">{{ . }}</p>
+                {{ else }}
+                {{ with .Params.promise }}
+                <p class="academy-workshop-outcome">{{ . }}</p>
+                {{ end }}
+                {{ end }}
+                {{ if or .Params.card_next_cohort .Params.card_price }}
+                <div class="academy-workshop-meta">
+                  {{ with .Params.card_next_cohort }}
+                  <span class="academy-workshop-meta-pill">{{ . }}</span>
+                  {{ end }}
+                  {{ with .Params.card_price }}
+                  <span class="academy-workshop-meta-pill academy-workshop-meta-pill-price">{{ . }}</span>
+                  {{ end }}
+                </div>
+                {{ end }}
+              </div>
+            </a>
           </div>
-          <div class="academy-workshop-body">
-            <h3 class="title is-4">{{ .Title }}</h3>
-            {{ with .Params.workshop_outcome }}
-            <p class="academy-workshop-outcome">{{ . }}</p>
-            {{ else }}
-            {{ with .Params.promise }}
-            <p class="academy-workshop-outcome">{{ . }}</p>
-            {{ end }}
-            {{ end }}
-            {{ if or .Params.card_next_cohort .Params.card_price }}
-            <div class="academy-workshop-meta">
-              {{ with .Params.card_next_cohort }}
-              <span class="academy-workshop-meta-pill">{{ . }}</span>
-              {{ end }}
-              {{ with .Params.card_price }}
-              <span class="academy-workshop-meta-pill academy-workshop-meta-pill-price">{{ . }}</span>
-              {{ end }}
-            </div>
-            {{ end }}
-          </div>
-        </a>
+          {{ end }}
+        </div>
       </div>
       {{ end }}
-    </div>
+    {{ end }}
 
     {{ with .Params.workshops_fallback }}
     {{ $href := .url }}
@@ -231,61 +248,11 @@
       <p>{{ .Params.difference.intro }}</p>
     </div>
 
-    <div class="academy-compare-shell">
-      <div class="academy-compare-head">
-        <div class="academy-compare-head-card academy-compare-head-card-dimension">
-          <p class="academy-compare-label">Decision dimension</p>
-        </div>
-        <div class="academy-compare-head-card academy-compare-head-card-muted">
-          <p class="academy-compare-label">{{ .Params.difference.left.label }}</p>
-        </div>
-        <div class="academy-compare-head-card academy-compare-head-card-strong">
-          <p class="academy-compare-label">{{ .Params.difference.right.label }}</p>
-        </div>
-      </div>
-
-      <div class="academy-compare-board">
-        {{ range .Params.difference.dimensions }}
-        <div class="academy-compare-row">
-          <div class="academy-compare-dimension">
-            <p class="academy-compare-dimension-label">{{ .label }}</p>
-          </div>
-          <div class="academy-compare-cell academy-compare-cell-muted">
-            <p>{{ .left }}</p>
-          </div>
-          <div class="academy-compare-cell academy-compare-cell-strong">
-            <p>{{ .right }}</p>
-          </div>
-        </div>
-        {{ end }}
-      </div>
-    </div>
+    <figure class="academy-difference-visual">
+      <img src="{{ "/img/academy/academy-why-it-works.png" | relURL }}" alt="Visual comparison showing that standard training stops at delivery while Academy includes preparation, a live workshop, and three months of implementation coaching.">
+    </figure>
   </div>
 </section>
-
-{{ with .Params.cohort_features }}
-<section class="section academy-section">
-  <div class="container">
-    <div class="academy-section-header">
-      <p class="academy-section-kicker">Cohort experience</p>
-      <h2 class="title is-3">{{ $.Params.cohort_title }}</h2>
-      <p>{{ $.Params.cohort_intro }}</p>
-    </div>
-
-    <div class="columns is-multiline">
-      {{ range . }}
-      <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-        <div class="academy-feature-card">
-          <div class="academy-feature-icon"><i class="{{ .icon }}"></i></div>
-          <h3 class="title is-5">{{ .title }}</h3>
-          <p>{{ .text }}</p>
-        </div>
-      </div>
-      {{ end }}
-    </div>
-  </div>
-</section>
-{{ end }}
 
 {{ with .Params.team_offer }}
 <section id="team-option" class="section academy-section academy-team-band">
@@ -355,58 +322,6 @@
         {{ end }}
       </div>
       {{ end }}
-    </div>
-  </div>
-</section>
-{{ end }}
-
-{{ with .Params.pricing }}
-<section id="pricing" class="section academy-section">
-  <div class="container">
-    <div class="academy-section-header academy-section-header-centered">
-      <p class="academy-section-kicker">Pricing and enrollment</p>
-      <h2 class="title is-3">{{ .title }}</h2>
-      <p>{{ .intro }}</p>
-    </div>
-
-    <div class="columns is-multiline">
-      <div class="column is-half-desktop is-full-tablet">
-        <div class="academy-price-card academy-price-card-primary">
-          <p class="academy-price-label">{{ .cohort.label }}</p>
-          <h3 class="title is-4">{{ .cohort.title }}</h3>
-          <p class="academy-price-value">{{ .cohort.price }}</p>
-          <p class="academy-price-text">{{ .cohort.text }}</p>
-          <ul>
-            {{ range .cohort.points }}
-            <li>{{ . }}</li>
-            {{ end }}
-          </ul>
-          {{ $href := .cohort.cta.url }}
-          {{ if and (not (hasPrefix $href "#")) (not (hasPrefix $href "http")) (not (hasPrefix $href "/en/")) (not (hasPrefix $href "/fr/")) }}
-            {{ $href = relLangURL $href }}
-          {{ end }}
-          <a class="button is-primary is-fullwidth" href="{{ $href }}">{{ .cohort.cta.label }}</a>
-        </div>
-      </div>
-
-      <div class="column is-half-desktop is-full-tablet">
-        <div class="academy-price-card">
-          <p class="academy-price-label">{{ .team.label }}</p>
-          <h3 class="title is-4">{{ .team.title }}</h3>
-          <p class="academy-price-value academy-price-value-muted">{{ .team.price }}</p>
-          <p class="academy-price-text">{{ .team.text }}</p>
-          <ul>
-            {{ range .team.points }}
-            <li>{{ . }}</li>
-            {{ end }}
-          </ul>
-          {{ $href := .team.cta.url }}
-          {{ if and (not (hasPrefix $href "#")) (not (hasPrefix $href "http")) (not (hasPrefix $href "/en/")) (not (hasPrefix $href "/fr/")) }}
-            {{ $href = relLangURL $href }}
-          {{ end }}
-          <a class="button is-light is-fullwidth" href="{{ $href }}">{{ .team.cta.label }}</a>
-        </div>
-      </div>
     </div>
   </div>
 </section>

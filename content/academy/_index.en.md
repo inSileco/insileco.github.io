@@ -8,6 +8,7 @@ hero_badges:
   - "Small rolling cohorts"
   - "Real-work application"
   - "3-month implementation coaching"
+  - "Most cohorts: $1,500-$3,500"
 hero_ctas:
   - label: "Explore workshops"
     url: "#available-workshops"
@@ -226,5 +227,8 @@ final_cta:
       class: "is-primary"
     - label: "Apply for a cohort"
       url: "/contact/"
+      class: "is-light"
+    - label: "Discuss team delivery"
+      url: "#team-option"
       class: "is-light"
 ---
