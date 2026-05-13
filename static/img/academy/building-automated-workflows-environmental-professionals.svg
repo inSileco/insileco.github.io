@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Building Automated Workflows for Environmental Professionals</title>
+  <desc id="desc">Workshop cover illustration with connected workflow blocks, gears, and automation-oriented shapes.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10263b"/>
+      <stop offset="55%" stop-color="#2a6a7b"/>
+      <stop offset="100%" stop-color="#e9f2d7"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1280" cy="180" r="220" fill="#ffffff" opacity=".08"/>
+  <path d="M0 704c121-50 248-56 363-8 83 35 150 97 260 102 144 5 207-98 342-117 108-15 208 14 302 34 110 23 209 27 333-9V900H0Z" fill="#ffffff" opacity=".08"/>
+  <g transform="translate(958 226)">
+    <rect x="0" y="0" width="376" height="408" rx="28" fill="#fbfdfe" opacity=".95"/>
+    <rect x="40" y="54" width="96" height="70" rx="18" fill="#37abc8"/>
+    <rect x="154" y="54" width="96" height="70" rx="18" fill="#123247"/>
+    <rect x="268" y="54" width="68" height="70" rx="18" fill="#ffe08a"/>
+    <path d="M136 90h18M250 90h18M88 124v52h132v42h96" fill="none" stroke="#6a8993" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="88" cy="90" r="18" fill="#37abc8"/>
+    <circle cx="220" cy="176" r="18" fill="#37abc8"/>
+    <circle cx="316" cy="218" r="18" fill="#123247"/>
+    <rect x="40" y="252" width="296" height="122" rx="22" fill="#deefef"/>
+    <rect x="66" y="284" width="230" height="18" rx="9" fill="#123247"/>
+    <rect x="66" y="320" width="194" height="14" rx="7" fill="#5c7f88"/>
+    <rect x="66" y="350" width="214" height="14" rx="7" fill="#5c7f88" opacity=".75"/>
+  </g>
+  <g transform="translate(120 110)">
+    <rect x="0" y="0" width="180" height="44" rx="22" fill="#ffffff" opacity=".14"/>
+    <text x="90" y="29" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#ffffff" letter-spacing="2">ACADEMY WORKSHOP</text>
+  </g>
+  <g transform="translate(120 540)">
+    <text x="0" y="0" font-family="Georgia, 'Times New Roman', serif" font-size="66" fill="#ffffff">Building Automated</text>
+    <text x="0" y="82" font-family="Georgia, 'Times New Roman', serif" font-size="66" fill="#ffffff">Workflows</text>
+    <text x="0" y="144" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#e6f5ea" letter-spacing="1">Less fragility, more repeatability, and cleaner environmental delivery</text>
+  </g>
+</svg>

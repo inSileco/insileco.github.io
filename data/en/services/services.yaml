@@ -14,9 +14,9 @@
   description: |
     We offer workshops tailored to your needs, along with personalized coaching to help your team 
     build practical skills and confidence in data, modeling, and decision-making. 
-  cta: Contact us to learn more.
+  cta: Explore the Academy.
   img: "img/services/academy.svg"
-  url: "/contact/"
+  url: "/academy/"
 
 - title: "**inSileco Systems**: Custom tools & data systems"
   weigth: 3
@@ -39,4 +39,3 @@
   cta: If this aligns with your needs, we’d be happy to discuss how we can help.
   img: "img/services/intelligence.svg"
   url: "/contact/"
-
