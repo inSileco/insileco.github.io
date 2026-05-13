@@ -1,8 +1,8 @@
 ---
-title: "A Practical Introduction to R"
+title: "A Practical Introduction to R for Environmental Professionals"
 subtitle: "A coached Academy workshop for professionals who want a usable foundation in R for environmental work."
 description: "Introduce R through practical environmental workflows rather than abstract programming exercises."
-weight: 5
+weight: 4
 card_image: "/img/academy/practical-introduction-to-r.png"
 hero_eyebrow: "Academy workshop"
 hero_badges:
@@ -15,9 +15,13 @@ tags:
   - R
   - Foundations
   - Data workflows
+academy_levers:
+  - Analytical Capabilities
 promise: "Build a practical starting point in R that supports real environmental work."
 audience_short: "Environmental professionals, analysts, and researchers who want a usable entry point into R."
 workshop_outcome: "Participants leave with a clearer understanding of how R can support day-to-day data work, analysis, and reporting."
+card_next_cohort: "Nov 2026"
+card_price: "$1,500"
 contact_url: "/contact/"
 hero_ctas:
   - label: "Discuss this workshop"

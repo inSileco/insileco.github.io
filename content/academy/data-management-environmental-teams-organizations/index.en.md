@@ -2,7 +2,7 @@
 title: "Data Management for Environmental Teams and Organizations"
 subtitle: "A coached Academy workshop for teams that want practical, durable data-management practices built around real environmental work."
 description: "Improve how environmental teams organize, document, store, share, and sustain their data across projects and staff."
-weight: 2
+weight: 1
 card_image: "/img/academy/data-management-environmental-teams-organizations.png"
 hero_eyebrow: "Academy workshop"
 hero_badges:
@@ -15,9 +15,13 @@ tags:
   - Data management
   - Documentation
   - Team workflows
+academy_levers:
+  - Data Management
 promise: "Build data-management practices your team can actually maintain under real project pressure."
 audience_short: "Environmental teams, analysts, project managers, and organizations that need clearer, more durable data practices."
 workshop_outcome: "Participants leave with a stronger operational approach to organizing, documenting, storing, and sharing environmental data."
+card_next_cohort: "Sep 2026"
+card_price: "$2,500"
 contact_url: "/contact/"
 hero_ctas:
   - label: "Discuss this workshop"

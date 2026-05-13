@@ -2,7 +2,7 @@
 title: "Harnessing R Packages for Environmental Project Management"
 subtitle: "A coached Academy workshop for professionals who want to use R packages more effectively to structure and support environmental project work."
 description: "Use R packages more strategically to support repeatable project work, team consistency, and smoother delivery."
-weight: 6
+weight: 5
 card_image: "/img/academy/harnessing-r-packages-environmental-project-management.png"
 hero_eyebrow: "Academy workshop"
 hero_badges:
@@ -15,9 +15,13 @@ tags:
   - R
   - Packages
   - Project management
+academy_levers:
+  - Analytical Capabilities
 promise: "Use R packages more intentionally to support environmental project work, not just isolated analysis."
 audience_short: "Environmental professionals and teams using R who want a clearer way to use packages across projects and workflows."
 workshop_outcome: "Participants leave with a better understanding of how packages can support repeatability, efficiency, and clearer project structure."
+card_next_cohort: "Oct 2026"
+card_price: "$2,000"
 contact_url: "/contact/"
 hero_ctas:
   - label: "Discuss this workshop"

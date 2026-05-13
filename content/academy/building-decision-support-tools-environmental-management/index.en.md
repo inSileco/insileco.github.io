@@ -2,7 +2,7 @@
 title: "Building Decision-Support Tools for Environmental Management"
 subtitle: "A coached Academy workshop for professionals and teams who want to design more usable decision-support tools for environmental work."
 description: "Learn how to think more clearly about the structure, usability, and workflow role of decision-support tools in environmental management."
-weight: 7
+weight: 6
 card_image: "/img/academy/building-decision-support-tools-environmental-management.png"
 hero_eyebrow: "Academy workshop"
 hero_badges:
@@ -15,9 +15,13 @@ tags:
   - Decision support
   - Tools
   - Environmental management
+academy_levers:
+  - Decision-support Tools
 promise: "Design decision-support tools that are more usable, clearer, and better connected to real environmental workflows."
 audience_short: "Environmental professionals, technical leads, and teams building or planning decision-support tools."
 workshop_outcome: "Participants leave with a clearer view of how to shape decision-support tools around users, workflows, and operational realities."
+card_next_cohort: "Oct 2026"
+card_price: "$3,000"
 contact_url: "/contact/"
 hero_ctas:
   - label: "Discuss this workshop"

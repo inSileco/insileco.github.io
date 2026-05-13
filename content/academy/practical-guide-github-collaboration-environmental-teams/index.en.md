@@ -2,7 +2,7 @@
 title: "A Practical Guide to Implementing GitHub for Collaboration in Environmental Teams"
 subtitle: "A coached Academy workshop for teams that want to use GitHub more confidently for versioning, collaboration, and transparent project work."
 description: "Help environmental teams implement GitHub in a way that supports collaboration, review, project continuity, and better analytical practice."
-weight: 4
+weight: 8
 card_image: "/img/academy/practical-guide-github-collaboration-environmental-teams.png"
 hero_eyebrow: "Academy workshop"
 hero_badges:
@@ -15,9 +15,13 @@ tags:
   - GitHub
   - Collaboration
   - Version control
+academy_levers:
+  - Automated Workflows
 promise: "Use GitHub as a practical collaboration layer instead of treating it as a tool only for software developers."
 audience_short: "Environmental teams, analysts, and researchers who want better collaboration, review, and continuity in project work."
 workshop_outcome: "Participants leave with a clearer practical route for using GitHub to support collaboration, versioning, and structured project work."
+card_next_cohort: "Sep 2026"
+card_price: "$2,000"
 contact_url: "/contact/"
 hero_ctas:
   - label: "Discuss this workshop"

@@ -2,7 +2,7 @@
 title: "Data Management for Indigenous Communities"
 subtitle: "A coached Academy workshop focused on practical data-management approaches that respect community priorities, governance, and long-term usability."
 description: "Support stronger data stewardship, organization, documentation, and internal use in Indigenous community contexts."
-weight: 3
+weight: 2
 card_image: "/img/academy/data-management-indigenous-communities.png"
 hero_eyebrow: "Academy workshop"
 hero_badges:
@@ -15,9 +15,13 @@ tags:
   - Data management
   - Community data
   - Stewardship
+academy_levers:
+  - Data Management
 promise: "Build data-management practice that supports community priorities, continuity, and practical use."
 audience_short: "Indigenous communities, community organizations, coordinators, and teams strengthening internal data stewardship and use."
 workshop_outcome: "Participants leave with a clearer operational approach to managing, documenting, and sustaining community-relevant data."
+card_next_cohort: "Oct 2026"
+card_price: "$2,800"
 contact_url: "/contact/"
 hero_ctas:
   - label: "Discuss this workshop"

@@ -1,8 +1,8 @@
 ---
-title: "R as a Practical GIS"
+title: "R as a Practical GIS for Environmental Professionals"
 subtitle: "A coached Academy workshop for environmental teams that want clearer, more reusable spatial workflows in R."
 description: "Use R more operationally for routine spatial work and connect data manipulation, analysis, and delivery outputs inside one explicit workflow."
-weight: 1
+weight: 3
 card_image: "/img/academy/r-as-a-practical-gis.png"
 hero_eyebrow: "Academy workshop"
 hero_badges:
@@ -15,9 +15,13 @@ tags:
   - R
   - Spatial data
   - GIS
+academy_levers:
+  - Analytical Capabilities
 promise: "Use R more operationally for routine spatial work without leaving your workflow fragmented across tools."
 audience_short: "Environmental professionals, analysts, researchers, and teams already using R who want a practical path into spatial workflows."
 workshop_outcome: "Participants leave with a more integrated, reviewable, and reusable approach to common vector and raster work in R."
+card_next_cohort: "Sep 2026"
+card_price: "$2,400"
 contact_url: "/contact/"
 hero_ctas:
   - label: "Discuss this workshop"

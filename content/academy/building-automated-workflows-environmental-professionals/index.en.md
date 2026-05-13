@@ -15,9 +15,13 @@ tags:
   - Automation
   - Workflows
   - Environmental practice
+academy_levers:
+  - Automated Workflows
 promise: "Build automated workflows that reduce fragility, improve repeatability, and support clearer delivery."
 audience_short: "Environmental professionals and teams who want to automate recurring workflow steps and reduce manual friction."
 workshop_outcome: "Participants leave with a clearer view of how to structure and automate repeated work in a practical, sustainable way."
+card_next_cohort: "Jan 2027"
+card_price: "$3,000"
 contact_url: "/contact/"
 hero_ctas:
   - label: "Discuss this workshop"

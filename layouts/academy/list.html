@@ -111,28 +111,40 @@
       <p>{{ .Params.process_intro }}</p>
     </div>
 
-    <div class="columns is-multiline academy-process-row">
-      {{ range $index, $step := .Params.process }}
-      <div class="column is-one-third-desktop is-full-tablet">
-        <div class="academy-process-card">
-          <div class="academy-process-top">
-            <span class="academy-process-step">0{{ add $index 1 }}</span>
-            <h3 class="title is-4">{{ $step.title }}</h3>
-          </div>
-          <p>{{ $step.text }}</p>
-          <ul>
-            {{ range $step.points }}
-            <li>{{ . }}</li>
+    <div class="academy-process-timeline">
+      <div class="academy-process-line" aria-hidden="true"></div>
+      <div class="columns is-multiline academy-process-row">
+        {{ $lastIndex := sub (len .Params.process) 1 }}
+        {{ range $index, $step := .Params.process }}
+        <div class="column is-one-third-desktop is-full-tablet">
+          <div class="academy-process-card{{ if eq $index $lastIndex }} academy-process-card-featured{{ end }}">
+            <div class="academy-process-top">
+              <span class="academy-process-step">0{{ add $index 1 }}</span>
+              <div class="academy-process-heading">
+                {{ with $step.duration }}
+                <p class="academy-process-duration">{{ . }}</p>
+                {{ end }}
+                <h3 class="title is-4">{{ $step.title }}</h3>
+              </div>
+            </div>
+            {{ with $step.emphasis }}
+            <p class="academy-process-emphasis">{{ . }}</p>
             {{ end }}
-          </ul>
+            <p class="academy-process-summary">{{ $step.text }}</p>
+            <ul class="academy-process-points">
+              {{ range $step.points }}
+              <li>{{ . }}</li>
+              {{ end }}
+            </ul>
+          </div>
         </div>
+        {{ end }}
       </div>
-      {{ end }}
     </div>
 
-    {{ with .Params.follow_through_note }}
-    <div class="academy-followthrough">
-      <span class="academy-badge academy-badge-solid">3-month follow-through</span>
+    {{ with .Params.process_channel_note }}
+    <div class="academy-process-channel">
+      <span class="academy-badge">Shared support channel</span>
       <p>{{ . }}</p>
     </div>
     {{ end }}
@@ -152,37 +164,61 @@
       {{ range $workshops }}
       <div class="column is-one-quarter-desktop is-half-tablet is-full-mobile">
         <a href="{{ .RelPermalink }}" class="academy-workshop-card">
+          {{ $levers := .Params.academy_levers | default (slice) }}
           <div class="academy-workshop-visual">
             {{ with .Params.card_image }}
-            <img src="{{ . | relURL }}" alt="{{ $.Title }}">
+            <img src="{{ . | relURL }}" alt="{{ $.Title }} workshop cover">
             {{ else }}
             <div class="academy-workshop-placeholder">
               <span>{{ .Title }}</span>
             </div>
             {{ end }}
-            <div class="academy-workshop-overlay">
-              {{ range .Params.categories }}
-              <span class="academy-badge academy-badge-solid">{{ . }}</span>
-              {{ end }}
-            </div>
+            {{ if gt (len $levers) 0 }}
+              <div class="academy-workshop-overlay">
+                {{ range $levers }}
+                {{ $slug := . | urlize }}
+                <span class="academy-workshop-lever academy-workshop-lever-{{ $slug }}">{{ . }}</span>
+                {{ end }}
+              </div>
+            {{ end }}
           </div>
           <div class="academy-workshop-body">
             <h3 class="title is-4">{{ .Title }}</h3>
-            {{ with .Params.promise }}
-            <p class="academy-workshop-promise">{{ . }}</p>
-            {{ end }}
             {{ with .Params.workshop_outcome }}
-            <p class="academy-workshop-outcome"><strong>Dream outcome:</strong> {{ . }}</p>
+            <p class="academy-workshop-outcome">{{ . }}</p>
+            {{ else }}
+            {{ with .Params.promise }}
+            <p class="academy-workshop-outcome">{{ . }}</p>
             {{ end }}
+            {{ end }}
+            {{ if or .Params.card_next_cohort .Params.card_price }}
             <div class="academy-workshop-meta">
-              <span class="academy-workshop-cohort">{{ .Params.cohort_status | default "Next cohort: waitlist open" }}</span>
-              <span class="academy-inline-link">{{ .Params.card_cta | default "Join waitlist" }} <i class="fa-solid fa-arrow-right"></i></span>
+              {{ with .Params.card_next_cohort }}
+              <span class="academy-workshop-meta-pill">{{ . }}</span>
+              {{ end }}
+              {{ with .Params.card_price }}
+              <span class="academy-workshop-meta-pill academy-workshop-meta-pill-price">{{ . }}</span>
+              {{ end }}
             </div>
+            {{ end }}
           </div>
         </a>
       </div>
       {{ end }}
     </div>
+
+    {{ with .Params.workshops_fallback }}
+    {{ $href := .url }}
+    {{ if and (not (hasPrefix $href "#")) (not (hasPrefix $href "http")) (not (hasPrefix $href "/en/")) (not (hasPrefix $href "/fr/")) }}
+      {{ $href = relLangURL $href }}
+    {{ end }}
+    <div class="academy-workshops-fallback">
+      <p class="academy-workshops-fallback-headline"><em><strong>{{ .text }}</strong></em></p>
+      <div class="buttons is-centered">
+        <a class="button is-primary" href="{{ $href }}">{{ .label }}</a>
+      </div>
+    </div>
+    {{ end }}
   </div>
 </section>
 {{ end }}

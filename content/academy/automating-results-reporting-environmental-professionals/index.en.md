@@ -2,7 +2,7 @@
 title: "Automating Results and Reporting for Environmental Professionals"
 subtitle: "A coached Academy workshop for professionals who want to reduce repetitive reporting work and improve output consistency."
 description: "Automate more of the repeated steps involved in environmental results production, reporting, and communication."
-weight: 8
+weight: 7
 card_image: "/img/academy/automating-results-reporting-environmental-professionals.png"
 hero_eyebrow: "Academy workshop"
 hero_badges:
@@ -15,9 +15,13 @@ tags:
   - Automation
   - Reporting
   - Results delivery
+academy_levers:
+  - Decision-support tools
 promise: "Reduce repeated reporting effort and build more reliable output workflows."
 audience_short: "Environmental professionals and teams producing recurring results, reports, figures, tables, or communication outputs."
 workshop_outcome: "Participants leave with a clearer way to automate repeated reporting and result-delivery tasks."
+card_next_cohort: "Nov 2026"
+card_price: "$2,500"
 contact_url: "/contact/"
 hero_ctas:
   - label: "Discuss this workshop"

@@ -15,9 +15,13 @@ tags:
   - AI
   - Workflows
   - Professional practice
+academy_levers:
+  - Automated Workflows
 promise: "Use AI more deliberately in your workflow without turning it into a source of confusion, fragility, or overreach."
 audience_short: "Environmental professionals and teams exploring how AI can support analysis, reporting, documentation, or operational work."
 workshop_outcome: "Participants leave with a clearer, more practical view of where AI fits, where it does not, and how to use it with confidence."
+card_next_cohort: "Jan 2027"
+card_price: "$3,200"
 contact_url: "/contact/"
 hero_ctas:
   - label: "Discuss this workshop"
