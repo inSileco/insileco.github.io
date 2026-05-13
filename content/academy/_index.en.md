@@ -1,47 +1,12 @@
 ---
 title: "inSileco Academy"
-subtitle: "Applied coaching for environmental professionals who want stronger technical practice."
-hero_title: "Applied coaching for environmental professionals who want stronger technical practice"
+hero_title: "Premium workshops and coaching for environmental professionals and teams"
 hero_eyebrow: "inSileco Academy"
-hero_summary: "Academy helps environmental professionals strengthen data management, analytical capability, decision-support practice, and automated or AI-augmented workflows."
-hero_badges:
-  - "Small rolling cohorts"
-  - "Real-work application"
-  - "3-month implementation coaching"
-  - "Most cohorts: $1,500-$3,500"
+hero_summary: "Create lasting operational capability through guided implementation built around real projects"
 hero_ctas:
   - label: "Explore workshops"
     url: "#available-workshops"
     class: "is-primary"
-  - label: "Apply for a cohort"
-    url: "/contact/"
-    class: "is-light"
-hero_link:
-  label: "Buying for a team? Talk to us"
-  url: "#team-option"
-hero_visual:
-  title: "Built for lasting practical change"
-  text: "Academy combines pre-workshop diagnostics and preparation, guided live delivery, a dedicated communication channel, and a fixed three-month implementation coaching period to guarantee long-term learning retention."
-  image: "/img/academy/academy-overview.png"
-  image_alt: "Academy illustration showing environmental technical practice across data, analysis, tools, and automated workflows"
-  mark: "/img/services/academy.svg"
-  focus_areas:
-    - "Data management"
-    - "Analytical capability"
-    - "Decision-support tools"
-    - "Automated and AI-augmented workflows"
-  timeline:
-    - phase: "Before"
-      text: "diagnose and prepare"
-    - phase: "During"
-      text: "apply and coach"
-    - phase: "After"
-      text: "reinforce and sustain"
-  enrollment:
-    label: "Next cohort"
-    title: "Waitlist open"
-    text: "Next cohort timing will be announced based on demand and fit. Join the waitlist if you want first notice when enrollment opens."
-    cta: "Join the waitlist"
 audience_cards:
   - label: "Primary path"
     icon: "fa-solid fa-user-group"
@@ -118,7 +83,7 @@ process:
     emphasis: "Make learning last"
     text: "The coaching continues long enough for habits, reuse, and accountability to become part of the workflow."
     points:
-      - "check-ins every two weeks"
+      - "structured check-ins every two weeks"
       - "async workflow review"
       - "progress accountability"
 process_channel_note: "Every Academy workshop includes one dedicated communication channel used before, during, and after delivery. The exact platform depends on context."
@@ -156,7 +121,7 @@ cohort_features:
     text: "Every Academy workshop includes a dedicated communication channel used before the workshop for preparation, during delivery for live coordination when useful, and after the session during the implementation coaching period. The exact platform depends on context."
 team_offer:
   kicker: "Team option"
-  title: "Need this for your team instead?"
+  title: "Need this for your team?"
   text: "Academy can also be delivered privately for teams that want the same coached structure with examples, pacing, and scope adapted to their own environment."
   points:
     - "Private delivery"

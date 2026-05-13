@@ -4,86 +4,42 @@
 
 <section class="section academy-hero">
   <div class="container">
-    <div class="columns is-vcentered academy-hero-columns">
-      <div class="column is-6-desktop academy-hero-copy">
-        {{ with .Params.hero_eyebrow }}
-        <p class="academy-eyebrow">{{ . }}</p>
-        {{ end }}
-        <h1 class="title academy-hero-title">{{ .Params.hero_title | default .Title }}</h1>
-        {{ with .Params.hero_summary }}
-        <p class="subtitle academy-hero-subtitle">{{ . }}</p>
-        {{ end }}
+    <div class="academy-hero-copy">
+      {{ with .Params.hero_eyebrow }}
+      <p class="academy-eyebrow">{{ . }}</p>
+      {{ end }}
+      <h1 class="title academy-hero-title">{{ .Params.hero_title | default .Title }}</h1>
+      {{ with .Params.hero_summary }}
+      <p class="subtitle academy-hero-subtitle">{{ . }}</p>
+      {{ end }}
 
-        {{ with .Params.hero_badges }}
-        <div class="academy-badge-row">
-          {{ range . }}
-          <span class="academy-badge">{{ . }}</span>
-          {{ end }}
-        </div>
+      {{ with .Params.hero_badges }}
+      <div class="academy-badge-row">
+        {{ range . }}
+        <span class="academy-badge">{{ . }}</span>
         {{ end }}
+      </div>
+      {{ end }}
 
-        {{ with .Params.hero_ctas }}
-        <div class="buttons academy-hero-actions">
-          {{ range . }}
-          {{ $href := .url }}
-          {{ if and (not (hasPrefix $href "#")) (not (hasPrefix $href "http")) (not (hasPrefix $href "/en/")) (not (hasPrefix $href "/fr/")) }}
-            {{ $href = relLangURL $href }}
-          {{ end }}
-          <a class="button {{ .class | default "is-light" }}" href="{{ $href }}">{{ .label }}</a>
-          {{ end }}
-        </div>
-        {{ end }}
-
-        {{ with .Params.hero_link }}
+      {{ with .Params.hero_ctas }}
+      <div class="buttons academy-hero-actions">
+        {{ range . }}
         {{ $href := .url }}
         {{ if and (not (hasPrefix $href "#")) (not (hasPrefix $href "http")) (not (hasPrefix $href "/en/")) (not (hasPrefix $href "/fr/")) }}
           {{ $href = relLangURL $href }}
         {{ end }}
-        <p class="academy-hero-link"><a href="{{ $href }}">{{ .label }}</a></p>
+        <a class="button {{ .class | default "is-light" }}" href="{{ $href }}">{{ .label }}</a>
         {{ end }}
       </div>
+      {{ end }}
 
-      <div class="column is-6-desktop">
-        <div class="academy-hero-visual">
-          <div class="academy-hero-panel academy-hero-panel-main">
-            <div class="academy-hero-panel-head">
-              <span class="academy-badge academy-badge-solid">Academy</span>
-              <span class="academy-badge">Cohort model</span>
-              <img src="{{ .Params.hero_visual.mark | relURL }}" alt="Academy mark" class="academy-hero-mark">
-            </div>
-            <h2>{{ .Params.hero_visual.title }}</h2>
-            <p>{{ .Params.hero_visual.text }}</p>
-            <div class="academy-focus-row">
-              {{ range .Params.hero_visual.focus_areas }}
-              <span class="academy-badge academy-focus-badge">{{ . }}</span>
-              {{ end }}
-            </div>
-          </div>
-
-          <div class="academy-hero-grid">
-            <div class="academy-hero-tile academy-hero-tile-image academy-hero-tile-image-large">
-              <img src="{{ .Params.hero_visual.image | relURL }}" alt="{{ .Params.hero_visual.image_alt }}">
-            </div>
-            <div class="academy-hero-tile academy-hero-tile-timeline">
-              <p class="academy-tile-label">How the coaching unfolds</p>
-              <div class="academy-timeline">
-                {{ range .Params.hero_visual.timeline }}
-                <div class="academy-timeline-phase">
-                  <span class="academy-timeline-phase-name">{{ .phase }}</span>
-                  <span class="academy-timeline-phase-text">{{ .text }}</span>
-                </div>
-                {{ end }}
-              </div>
-            </div>
-            <div class="academy-hero-tile academy-hero-tile-enrollment">
-              <p class="academy-tile-label">{{ .Params.hero_visual.enrollment.label }}</p>
-              <h3 class="title is-5">{{ .Params.hero_visual.enrollment.title }}</h3>
-              <p>{{ .Params.hero_visual.enrollment.text }}</p>
-              <span class="academy-inline-link">{{ .Params.hero_visual.enrollment.cta }} <i class="fa-solid fa-arrow-right"></i></span>
-            </div>
-          </div>
-        </div>
-      </div>
+      {{ with .Params.hero_link }}
+      {{ $href := .url }}
+      {{ if and (not (hasPrefix $href "#")) (not (hasPrefix $href "http")) (not (hasPrefix $href "/en/")) (not (hasPrefix $href "/fr/")) }}
+        {{ $href = relLangURL $href }}
+      {{ end }}
+      <p class="academy-hero-link"><a href="{{ $href }}">{{ .label }}</a></p>
+      {{ end }}
     </div>
   </div>
 </section>
