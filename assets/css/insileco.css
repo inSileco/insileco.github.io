@@ -531,6 +531,18 @@ body {
     justify-content: center;
 }
 
+.academy-hero-actions .button.is-light {
+    background: #dbe5ec;
+    border-color: #c7d6e0;
+    color: #1d3449;
+}
+
+.academy-hero-actions .button.is-light:hover {
+    background: #cfdce5;
+    border-color: #bccfdb;
+    color: #122436;
+}
+
 .academy-hero-link a,
 .academy-inline-link {
     color: #2f95ae;
@@ -1008,17 +1020,6 @@ body {
     padding: 1.4rem;
 }
 
-.academy-team-band {
-    background: linear-gradient(135deg, #0f172a 0%, #1d3449 100%);
-    color: #ffffff;
-}
-
-.academy-team-title,
-.academy-team-text,
-.academy-team-band .academy-section-kicker {
-    color: #ffffff;
-}
-
 .academy-team-band .academy-section-kicker,
 .academy-cta-section .academy-section-kicker {
     color: #2f95ae;
@@ -1027,16 +1028,31 @@ body {
 .academy-team-text {
     max-width: 40rem;
     font-size: 1.05rem;
+    color: #334155;
 }
 
 .academy-team-card {
     padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.96);
+    background: linear-gradient(135deg, #0f172a 0%, #1d3449 100%);
+    color: #ffffff;
 }
 
 .academy-team-card-text {
-    color: #334155;
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: 1.25rem;
+}
+
+.academy-team-form {
+    margin-top: 0.25rem;
+}
+
+.academy-team-form iframe {
+    display: block;
+    width: 100%;
+}
+
+.academy-team-card .academy-team-card-label {
+    color: #2f95ae;
 }
 
 .academy-testimonials .testimonials-container {
@@ -1126,6 +1142,40 @@ body {
 .academy-cta-section .title,
 .academy-cta-section p {
     color: #ffffff;
+}
+
+.academy-cta-form {
+    max-width: 34rem;
+    margin: 1.5rem auto 0;
+}
+
+.academy-cta-form iframe {
+    display: block;
+    width: 100%;
+}
+
+.academy-cta-secondary-link {
+    margin: 1rem 0 0;
+}
+
+.academy-cta-secondary-link a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: rgba(255, 255, 255, 0.08);
+    color: #2f95ae;
+    text-decoration: none;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.academy-cta-secondary-link a:hover {
+    color: #2f95ae;
+    background: rgba(255, 255, 255, 0.14);
+    border-color: rgba(255, 255, 255, 0.42);
 }
 
 .academy-workshop-hero .academy-hero-title {

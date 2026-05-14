@@ -7,29 +7,9 @@ hero_ctas:
   - label: "Explore workshops"
     url: "#available-workshops"
     class: "is-primary"
-audience_cards:
-  - label: "Primary path"
-    icon: "fa-solid fa-user-group"
-    title: "For individual professionals"
-    text: "Join a small cohort, work on real operational problems, and build better habits with guided coached implementation."
-    points:
-      - "Best for professionals who want practical improvement, not generic training"
-      - "Rolling cohorts help support steady participation and cash-flow-friendly enrollment"
-      - "Strong fit when you can bring a real workflow, deliverable, or project context"
-    cta:
-      label: "See cohort workshops"
-      url: "#available-workshops"
-  - label: "Also available"
-    icon: "fa-solid fa-people-roof"
-    title: "For teams and managers"
-    text: "Bring Academy into your organization through a private delivery adapted to your workflows, tools, and constraints."
-    points:
-      - "Private delivery for managers buying for a team"
-      - "Adapted examples, pacing, and use cases"
-      - "Custom quote based on scope, participant count, and format"
-    cta:
-      label: "Discuss team delivery"
-      url: "#team-option"
+  - label: "Join a cohort"
+    url: "#academy-cta"
+    class: "is-light"
 proof_items:
   - value: "Environmental"
     label: "workflows, data, and reporting focus"
@@ -86,38 +66,12 @@ process:
       - "structured check-ins every two weeks"
       - "async workflow review"
       - "progress accountability"
-follow_through_note: "Every Academy cohort includes a fixed three-month coached implementation period with check-ins every two weeks. The goal is not only to run a strong workshop. The goal is to support lasting practical change."
 workshops_title: "Start with the workshop topic that fits your needs"
 workshops_intro: "Each workshop is built around a practical improvement area: data management, analytical capability, decision-support tools, or automated workflows."
 workshops_fallback:
   text: "Cannot find what you are looking for? Let us know what would be useful for you."
   label: "Get in touch"
   url: "/contact/"
-workshop_card_cta: "View workshop"
-cohort_title: "What participants get in a cohort"
-cohort_intro: "The cohort model is designed to create momentum, clearer application, and more durable change than a standalone training session."
-cohort_features:
-  - icon: "fa-solid fa-layer-group"
-    title: "Small-group learning"
-    text: "Cohorts stay focused enough for real discussion, live support, and shared momentum."
-  - icon: "fa-solid fa-diagram-project"
-    title: "Real-work application"
-    text: "Participants work on problems, workflows, and deliverables that actually matter in their context."
-  - icon: "fa-solid fa-chalkboard-user"
-    title: "Expert guidance"
-    text: "The learning process includes live routing, troubleshooting, and decision support."
-  - icon: "fa-solid fa-people-arrows"
-    title: "Peer accountability"
-    text: "A cohort helps maintain momentum and makes implementation feel less isolated."
-  - icon: "fa-solid fa-file-circle-check"
-    title: "Reusable assets"
-    text: "Participants leave with examples, scripts, scaffolding, and practical references they can keep using."
-  - icon: "fa-solid fa-calendar-check"
-    title: "Adoption that lasts"
-    text: "The structure continues for a fixed three-month period so adoption has time to hold."
-  - icon: "fa-solid fa-comments"
-    title: "Dedicated communication channel"
-    text: "Every Academy workshop includes a dedicated communication channel used before the workshop for preparation, during delivery for live coordination when useful, and after the session during the coached implementation period. The exact platform depends on context."
 team_offer:
   kicker: "Team option"
   title: "Need this for your team?"
@@ -129,45 +83,14 @@ team_offer:
     - "Custom quote"
   card:
     label: "Private team delivery"
-    text: "For managers who want to improve a team workflow, align participants around one operational problem, or run a workshop with adapted materials and pacing."
-  cta:
-    label: "Discuss team delivery"
-    url: "/contact/"
+    note: "Submit your information and we will reach out to schedule a conversation."
+  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=team&cta_source=academy_team"
 testimonial_names:
   - "Camille"
   - "Élise Filotas"
   - "Raphaël Lavoie"
 testimonials_title: "What participants value"
 testimonials_intro: "These testimonials were selected because they speak to practical relevance, coaching quality, and the kind of support that makes Academy different from generic training."
-pricing:
-  title: "Cohort pricing published, team pricing custom"
-  intro: "Most Academy cohorts will likely fall between CAD 1,500 and CAD 3,500 per participant, depending on workshop scope, live delivery intensity, and coached implementation needs. Private team delivery is quoted based on participant count, scope, and the degree of adaptation required."
-  cohort:
-    label: "For individual professionals"
-    title: "Join a cohort"
-    price: "Most cohorts: CAD 1,500-3,500 per participant"
-    text: "Designed for professionals joining a rolling cohort with live delivery, materials, and structured coached implementation."
-    points:
-      - "live cohort sessions"
-      - "practical materials and reusable assets"
-      - "three months of structured coached implementation"
-      - "limited seats per cohort when relevant"
-    cta:
-      label: "Apply for a cohort"
-      url: "/contact/"
-  team:
-    label: "For teams and managers"
-    title: "Bring Academy to your team"
-    price: "Custom pricing"
-    text: "Quoted based on format, participant count, scope, and how much workshop adaptation is needed."
-    points:
-      - "private delivery"
-      - "adapted examples and use cases"
-      - "manager-friendly planning"
-      - "quoted to fit the actual engagement"
-    cta:
-      label: "Request a team quote"
-      url: "/contact/"
 faq:
   title: "Questions buyers usually ask before reaching out"
   items:
@@ -179,19 +102,16 @@ faq:
       answer: "Yes, whenever possible. Academy is strongest when participants bring a real workflow, deliverable, or project context into the cohort."
     - question: "How much support is included after the workshop?"
       answer: "Every Academy cohort includes a fixed three-month coached implementation period with check-ins every two weeks throughout that period."
+    - question: "How does fit review work?"
+      answer: "We reach out to schedule a call after each request. Fit is assessed during that conversation so we can discuss the right workshop, cohort, or team format."
     - question: "Why publish cohort pricing but not team pricing?"
       answer: "Cohorts are easier to package publicly. Team delivery depends more heavily on participant count, scope, and how much adaptation is needed, so a custom quote is more accurate."
 final_cta:
   kicker: "Next step"
-  title: "Start with a workshop, a cohort, or a team conversation"
-  buttons:
-    - label: "Explore workshops"
-      url: "#available-workshops"
-      class: "is-primary"
-    - label: "Apply for a cohort"
-      url: "/contact/"
-      class: "is-light"
-    - label: "Discuss team delivery"
-      url: "#team-option"
-      class: "is-light"
+  title: "Join a cohort conversation"
+  text: "Submit your information and we will reach out to schedule a conversation about the right cohort and workshop fit."
+  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=individual&cta_source=academy_final"
+  secondary_link:
+    label: "Applying for your team?"
+    url: "#team-option"
 ---

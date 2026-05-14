@@ -204,36 +204,6 @@
   </div>
 </section>
 
-{{ with .Params.team_offer }}
-<section id="team-option" class="section academy-section academy-team-band">
-  <div class="container">
-    <div class="columns is-vcentered">
-      <div class="column is-7-desktop">
-        <p class="academy-section-kicker">{{ .kicker }}</p>
-        <h2 class="title is-3 academy-team-title">{{ .title }}</h2>
-        <p class="academy-team-text">{{ .text }}</p>
-        <div class="academy-team-points">
-          {{ range .points }}
-          <span class="academy-badge academy-badge-light">{{ . }}</span>
-          {{ end }}
-        </div>
-      </div>
-      <div class="column is-5-desktop">
-        <div class="academy-team-card">
-          <p class="academy-team-card-label">{{ .card.label }}</p>
-          <p class="academy-team-card-text">{{ .card.text }}</p>
-          {{ $href := .cta.url }}
-          {{ if and (not (hasPrefix $href "#")) (not (hasPrefix $href "http")) (not (hasPrefix $href "/en/")) (not (hasPrefix $href "/fr/")) }}
-            {{ $href = relLangURL $href }}
-          {{ end }}
-          <a class="button is-primary is-fullwidth" href="{{ $href }}">{{ .cta.label }}</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-{{ end }}
-
 {{ with .Params.testimonial_names }}
 <section id="testimonials" class="section academy-section academy-section-alt">
   <div class="container">
@@ -277,6 +247,129 @@
 </section>
 {{ end }}
 
+{{ with .Params.final_cta }}
+<section id="academy-cta" class="section academy-cta-section">
+  <div class="container">
+    <div class="academy-cta-shell">
+      <p class="academy-section-kicker">{{ .kicker }}</p>
+      <h2 class="title is-3">{{ .title }}</h2>
+      {{ with .text }}
+      <p>{{ . }}</p>
+      {{ end }}
+      {{ with .tally_src }}
+      <div class="academy-cta-form">
+        <iframe
+          data-tally-src="{{ . }}"
+          loading="lazy"
+          width="100%"
+          height="168"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="Academy">
+        </iframe>
+      </div>
+      <script>
+        (function() {
+          var d = document;
+          var widgetSrc = "https://tally.so/widgets/embed.js";
+          var loadEmbeds = function() {
+            if (typeof Tally !== "undefined") {
+              Tally.loadEmbeds();
+            } else {
+              d.querySelectorAll('iframe[data-tally-src]:not([src])').forEach(function(el) {
+                el.src = el.dataset.tallySrc;
+              });
+            }
+          };
+
+          if (typeof Tally !== "undefined") {
+            loadEmbeds();
+          } else if (d.querySelector('script[src="' + widgetSrc + '"]') === null) {
+            var s = d.createElement("script");
+            s.src = widgetSrc;
+            s.onload = loadEmbeds;
+            s.onerror = loadEmbeds;
+            d.body.appendChild(s);
+          } else {
+            loadEmbeds();
+          }
+        })();
+      </script>
+      {{ with $.Params.final_cta.secondary_link }}
+      {{ $href := .url }}
+      {{ if and (not (hasPrefix $href "#")) (not (hasPrefix $href "http")) (not (hasPrefix $href "/en/")) (not (hasPrefix $href "/fr/")) }}
+        {{ $href = relLangURL $href }}
+      {{ end }}
+      <p class="academy-cta-secondary-link">
+        <a href="{{ $href }}">{{ .label }}</a>
+      </p>
+      {{ end }}
+      {{ else }}
+      {{ with .buttons }}
+      <div class="buttons is-centered mt-5">
+        {{ range . }}
+        {{ $href := .url }}
+        {{ if and (not (hasPrefix $href "#")) (not (hasPrefix $href "http")) (not (hasPrefix $href "/en/")) (not (hasPrefix $href "/fr/")) }}
+          {{ $href = relLangURL $href }}
+        {{ end }}
+        <a class="button {{ .class | default "is-light" }}" href="{{ $href }}">{{ .label }}</a>
+        {{ end }}
+      </div>
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with .Params.team_offer }}
+<section id="team-option" class="section academy-section academy-section-alt academy-team-band">
+  <div class="container">
+    <div class="columns is-vcentered">
+      <div class="column is-7-desktop">
+        <p class="academy-section-kicker">{{ .kicker }}</p>
+        <h2 class="title is-3 academy-team-title">{{ .title }}</h2>
+        <p class="academy-team-text">{{ .text }}</p>
+        <div class="academy-team-points">
+          {{ range .points }}
+          <span class="academy-badge academy-badge-light">{{ . }}</span>
+          {{ end }}
+        </div>
+      </div>
+      <div class="column is-5-desktop">
+        <div class="academy-team-card">
+          <p class="academy-team-card-label">{{ .card.label }}</p>
+          {{ with .card.note }}
+          <p class="academy-team-card-text">{{ . }}</p>
+          {{ end }}
+          {{ with .tally_src }}
+          <div class="academy-team-form">
+            <iframe
+              data-tally-src="{{ . }}"
+              loading="lazy"
+              width="100%"
+              height="168"
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0"
+              title="Academy team inquiry">
+            </iframe>
+          </div>
+          {{ else }}
+          {{ $href := .cta.url }}
+          {{ if and (not (hasPrefix $href "#")) (not (hasPrefix $href "http")) (not (hasPrefix $href "/en/")) (not (hasPrefix $href "/fr/")) }}
+            {{ $href = relLangURL $href }}
+          {{ end }}
+          <a class="button is-primary is-fullwidth" href="{{ $href }}">{{ .cta.label }}</a>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
 {{ with .Params.faq }}
 <section class="section academy-section academy-section-alt">
   <div class="container">
@@ -292,29 +385,6 @@
         <p>{{ .answer }}</p>
       </details>
       {{ end }}
-    </div>
-  </div>
-</section>
-{{ end }}
-
-{{ with .Params.final_cta }}
-<section id="academy-cta" class="section academy-cta-section">
-  <div class="container">
-    <div class="academy-cta-shell">
-      <p class="academy-section-kicker">{{ .kicker }}</p>
-      <h2 class="title is-3">{{ .title }}</h2>
-      {{ with .text }}
-      <p>{{ . }}</p>
-      {{ end }}
-      <div class="buttons is-centered mt-5">
-        {{ range .buttons }}
-        {{ $href := .url }}
-        {{ if and (not (hasPrefix $href "#")) (not (hasPrefix $href "http")) (not (hasPrefix $href "/en/")) (not (hasPrefix $href "/fr/")) }}
-          {{ $href = relLangURL $href }}
-        {{ end }}
-        <a class="button {{ .class | default "is-light" }}" href="{{ $href }}">{{ .label }}</a>
-        {{ end }}
-      </div>
     </div>
   </div>
 </section>
