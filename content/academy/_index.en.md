@@ -86,7 +86,6 @@ process:
       - "structured check-ins every two weeks"
       - "async workflow review"
       - "progress accountability"
-process_channel_note: "Every Academy workshop includes one dedicated communication channel used before, during, and after delivery. The exact platform depends on context."
 follow_through_note: "Every Academy cohort includes a fixed three-month implementation coaching period with check-ins every two weeks. The goal is not only to run a strong workshop. The goal is to support lasting practical change."
 workshops_title: "Start with the workshop topic that fits your needs"
 workshops_intro: "Each workshop is built around a practical improvement area: data management, analytical capability, decision-support tools, or automated workflows."

@@ -778,19 +778,6 @@ body {
     background: #37abc8;
 }
 
-.academy-process-channel {
-    margin-top: 1rem;
-    padding: 0.95rem 1.1rem;
-    border-radius: 0.95rem;
-    border: 1px solid #dbe5ec;
-    background: #f8fafc;
-}
-
-.academy-process-channel p {
-    margin: 0.55rem 0 0;
-    color: #334155;
-}
-
 .academy-followthrough {
     margin-top: 1rem;
     padding: 1.15rem 1.25rem;
