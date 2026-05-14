@@ -1,0 +1,22 @@
+testimonials: 
+  - id: camille-r-practical-gis
+    date: 2026-03-27
+    workshop: "r-as-a-practical-gis"
+    name:  "Camille"
+    post: "Spécialiste en environnement, secteur public" 
+    text: |
+      La formation sur les analyses spatiales avec R offerte par inSileco a été très appréciée pour la pratique des exercices avec accompagnement en présentiel, la personnalisation des contenus à partir de nos données et le suivi post-formation. Mes collègues ont rapidement commencé à générer des cartes interactives partageables. Malgré un contenu dense, les formateurs étaient qualifiés et professionnels, et le suivi personnalisé distingue clairement cette offre.
+  - id: raphael-lavoie-r-practical-gis
+    date: 2026-03-27
+    workshop: "r-as-a-practical-gis"
+    name: "Raphaël Lavoie"
+    organization: "Environment et Changement climatique Canada" 
+    post: "Chercheur Scientifique" 
+    text: |
+      La formation sur les analyses spatiales avec R offerte par inSileco a été très appréciée pour les flux de travail intégrés (raster + vectoriel), ainsi que pour la manipulation des rasters et des vecteurs. L’équipe d’inSileco est extrêmement compétente, efficace et enseigne très bien! Je recommande fortement leur formation sur les statistiques spatiales.
+  - id: anonyme1-r-practical-gis
+    date: 2026-03-30
+    name: "Anonymous"
+    post: "Spécialiste en environnement, secteur public" 
+    text: |
+      Je vais maintenant pouvoir effectuer directement dans R certaines tâches que j’avais l’habitude de réaliser dans ArcGIS, ce qui me permettra d’éviter les allers-retours entre les deux applications. La formation m’a également permis d’améliorer ma façon de travailler. Les formateurs d’inSileco sont très généreux dans le partage de leurs connaissances. Cette qualité, combinée à leur modestie, témoigne de leur réelle volonté d’aider les participants à tirer le maximum de R.

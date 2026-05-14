@@ -1,5 +1,9 @@
 {{ define "main" }}
-{{ $testimonials := index .Site.Data .Site.Language.Lang "home" "testimonials" }}
+{{ $academyTestimonialsData := index .Site.Data .Site.Language.Lang "academy" "testimonials" }}
+{{ $academyTestimonials := slice }}
+{{ with $academyTestimonialsData.testimonials }}
+  {{ $academyTestimonials = sort . "date" "desc" }}
+{{ end }}
 {{ $workshops := sort .Pages "Weight" "asc" }}
 
 <section class="section academy-hero">
@@ -204,7 +208,7 @@
   </div>
 </section>
 
-{{ with .Params.testimonial_names }}
+{{ if gt (len $academyTestimonials) 0 }}
 <section id="testimonials" class="section academy-section academy-section-alt">
   <div class="container">
     <div class="academy-section-header academy-section-header-centered">
@@ -213,36 +217,47 @@
       <p>{{ $.Params.testimonials_intro }}</p>
     </div>
 
-    <div class="testimonials-carousel academy-testimonials">
-      <div class="testimonials-container">
-        {{ $names := . }}
-        {{ range $index, $name := $names }}
-          {{ range $testimonials.testimonials }}
-            {{ if eq .name $name }}
-            <div class="testimonial-slide {{ if eq $index 0 }}is-active{{ end }}">
-              <div class="box testimonial-box academy-testimonial-box">
-                <div class="content has-text-centered">
-                  <p class="testimonial-text is-size-5 mb-4">"{{ .text }}"</p>
-                  <p class="has-text-weight-semibold">{{ .name }}{{ with .post }} ({{ . }}){{ end }}</p>
-                  {{ with .organization }}
-                  <p class="has-text-grey">{{ . }}</p>
-                  {{ end }}
-                </div>
-              </div>
-            </div>
+    <div class="academy-testimonial-grid">
+      {{ range $index, $testimonial := $academyTestimonials }}
+      <article class="academy-testimonial-card{{ if ge $index 3 }} academy-testimonial-card-extra is-hidden{{ end }}">
+        <div class="box testimonial-box academy-testimonial-box">
+          <div class="content has-text-centered">
+            <p class="testimonial-text academy-testimonial-text mb-4">"{{ $testimonial.text }}"</p>
+            <p class="has-text-weight-semibold">{{ $testimonial.name }}{{ with $testimonial.post }} ({{ . }}){{ end }}</p>
+            {{ with $testimonial.organization }}
+            <p class="has-text-grey">{{ . }}</p>
             {{ end }}
-          {{ end }}
-        {{ end }}
-      </div>
-
-      {{ if gt (len .) 1 }}
-      <div class="testimonial-controls has-text-centered mt-4">
-        {{ range $index, $_ := . }}
-        <button class="testimonial-dot {{ if eq $index 0 }}is-active{{ end }}" data-slide="{{ $index }}" aria-label="Go to testimonial {{ add $index 1 }}"></button>
-        {{ end }}
-      </div>
+          </div>
+        </div>
+      </article>
       {{ end }}
     </div>
+
+    {{ if gt (len $academyTestimonials) 3 }}
+    <div class="academy-testimonial-actions has-text-centered">
+      <button class="button is-light academy-testimonial-toggle" type="button" data-label-more="Read more testimonials" data-label-less="Show fewer testimonials">
+        Read more testimonials
+      </button>
+    </div>
+    <script>
+      (function() {
+        var section = document.getElementById("testimonials");
+        if (!section) return;
+        var button = section.querySelector(".academy-testimonial-toggle");
+        if (!button) return;
+        var extras = section.querySelectorAll(".academy-testimonial-card-extra");
+        if (!extras.length) return;
+
+        button.addEventListener("click", function() {
+          var expanded = button.classList.toggle("is-expanded");
+          extras.forEach(function(card) {
+            card.classList.toggle("is-hidden", !expanded);
+          });
+          button.textContent = expanded ? button.dataset.labelLess : button.dataset.labelMore;
+        });
+      })();
+    </script>
+    {{ end }}
   </div>
 </section>
 {{ end }}

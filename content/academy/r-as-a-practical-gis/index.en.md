@@ -17,6 +17,7 @@ tags:
   - GIS
 academy_levers:
   - Analytical Capabilities
+academy_testimonial_workshop: "r-as-a-practical-gis"
 promise: "Use R more operationally for routine spatial work without leaving your workflow fragmented across tools."
 audience_short: "Environmental professionals, analysts, researchers, and teams already using R who want a practical path into spatial workflows."
 workshop_outcome: "Participants leave with a more integrated, reviewable, and reusable approach to common vector and raster work in R."
@@ -140,9 +141,6 @@ pricing:
     cta:
       label: "Discuss team delivery"
       url: "/contact/"
-testimonial_names:
-  - "Camille"
-  - "Raphaël Lavoie"
 testimonials_title: "What participants valued"
 testimonials_intro: "These testimonials speak directly to the workshop's practical relevance, coaching quality, and post-session usefulness."
 final_cta:

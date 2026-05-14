@@ -85,10 +85,6 @@ team_offer:
     label: "Private team delivery"
     note: "Submit your information and we will reach out to schedule a conversation."
   tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=team&cta_source=academy_team"
-testimonial_names:
-  - "Camille"
-  - "Élise Filotas"
-  - "Raphaël Lavoie"
 testimonials_title: "What participants value"
 testimonials_intro: "These testimonials were selected because they speak to practical relevance, coaching quality, and the kind of support that makes Academy different from generic training."
 faq:

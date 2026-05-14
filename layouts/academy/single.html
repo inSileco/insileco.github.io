@@ -1,5 +1,9 @@
 {{ define "main" }}
-{{ $testimonialData := index .Site.Data .Site.Language.Lang "home" "testimonials" }}
+{{ $academyTestimonialsData := index .Site.Data .Site.Language.Lang "academy" "testimonials" }}
+{{ $academyTestimonials := slice }}
+{{ with $academyTestimonialsData.testimonials }}
+  {{ $academyTestimonials = sort . "date" "desc" }}
+{{ end }}
 
 <section class="section academy-hero academy-workshop-hero">
   <div class="container">
@@ -283,7 +287,12 @@
 </section>
 {{ end }}
 
-{{ with .Params.testimonial_names }}
+{{ $workshopKey := .Params.academy_testimonial_workshop }}
+{{ $workshopTestimonials := slice }}
+{{ if $workshopKey }}
+  {{ $workshopTestimonials = where $academyTestimonials "workshop" $workshopKey }}
+{{ end }}
+{{ if gt (len $workshopTestimonials) 0 }}
 <section id="workshop-testimonials" class="section academy-section">
   <div class="container">
     <div class="academy-section-header academy-section-header-centered">
@@ -294,34 +303,19 @@
       {{ end }}
     </div>
 
-    <div class="testimonials-carousel academy-testimonials">
-      <div class="testimonials-container">
-        {{ $names := . }}
-        {{ range $index, $name := $names }}
-          {{ range $testimonialData.testimonials }}
-            {{ if eq .name $name }}
-            <div class="testimonial-slide {{ if eq $index 0 }}is-active{{ end }}">
-              <div class="box testimonial-box academy-testimonial-box">
-                <div class="content has-text-centered">
-                  <p class="testimonial-text is-size-5 mb-4">"{{ .text }}"</p>
-                  <p class="has-text-weight-semibold">{{ .name }}{{ with .post }} ({{ . }}){{ end }}</p>
-                  {{ with .organization }}
-                  <p class="has-text-grey">{{ . }}</p>
-                  {{ end }}
-                </div>
-              </div>
-            </div>
+    <div class="academy-testimonial-grid">
+      {{ range $workshopTestimonials }}
+      <article class="academy-testimonial-card">
+        <div class="box testimonial-box academy-testimonial-box">
+          <div class="content has-text-centered">
+            <p class="testimonial-text academy-testimonial-text mb-4">"{{ .text }}"</p>
+            <p class="has-text-weight-semibold">{{ .name }}{{ with .post }} ({{ . }}){{ end }}</p>
+            {{ with .organization }}
+            <p class="has-text-grey">{{ . }}</p>
             {{ end }}
-          {{ end }}
-        {{ end }}
-      </div>
-
-      {{ if gt (len .) 1 }}
-      <div class="testimonial-controls has-text-centered mt-4">
-        {{ range $index, $_ := . }}
-        <button class="testimonial-dot {{ if eq $index 0 }}is-active{{ end }}" data-slide="{{ $index }}" aria-label="Go to testimonial {{ add $index 1 }}"></button>
-        {{ end }}
-      </div>
+          </div>
+        </div>
+      </article>
       {{ end }}
     </div>
   </div>

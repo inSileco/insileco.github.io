@@ -702,7 +702,7 @@ body {
 
 .academy-process-line {
     position: absolute;
-    top: 2.45rem;
+    top: 3.05rem;
     left: calc(16.666% + 2.55rem);
     right: calc(16.666% + 2.55rem);
     height: 0.28rem;
@@ -1055,12 +1055,46 @@ body {
     color: #2f95ae;
 }
 
-.academy-testimonials .testimonials-container {
-    min-height: 360px;
-}
-
 .academy-testimonial-box {
     background: linear-gradient(140deg, #ffffff 0%, #f8fbfd 100%);
+    border-top: 3px solid rgba(47, 149, 174, 0.28);
+}
+
+.academy-testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.academy-testimonial-card .academy-testimonial-box {
+    height: 100%;
+}
+
+.academy-testimonial-text {
+    font-size: 1.1rem;
+    line-height: 1.55;
+}
+
+.academy-testimonial-card.is-hidden {
+    display: none;
+}
+
+.academy-testimonial-actions {
+    margin-top: 1.25rem;
+}
+
+.button.academy-testimonial-toggle,
+.button.is-light.academy-testimonial-toggle {
+    border-color: #2f95ae;
+    background: #2f95ae;
+    color: #ffffff;
+}
+
+.button.academy-testimonial-toggle:hover,
+.button.is-light.academy-testimonial-toggle:hover {
+    border-color: #267f94;
+    background: #267f94;
+    color: #ffffff;
 }
 
 .academy-price-card {
@@ -1326,6 +1360,10 @@ input[type="checkbox"] {
     }
 
     .academy-proof-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .academy-testimonial-grid {
         grid-template-columns: 1fr;
     }
 
