@@ -4,7 +4,27 @@
 {{ with $academyTestimonialsData.testimonials }}
   {{ $academyTestimonials = sort . "date" "desc" }}
 {{ end }}
+{{ $isFr := eq .Site.Language.Lang "fr" }}
 {{ $workshops := sort .Pages "Weight" "asc" }}
+{{ if and $isFr (eq (len $workshops) 0) }}
+  {{ range .Sites }}
+    {{ if eq .Language.Lang "en" }}
+      {{ with .GetPage "section" "academy" }}
+        {{ $workshops = sort .Pages "Weight" "asc" }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ $labelHowItWorks := cond $isFr "Fonctionnement" "How it works" }}
+{{ $labelFeaturedWorkshops := cond $isFr "Ateliers en vedette" "Featured workshops" }}
+{{ $labelWorkshopTopic := cond $isFr "Thématique d'atelier" "Workshop topic" }}
+{{ $labelWhyAcademyWorks := cond $isFr "Pourquoi Académie fonctionne" "Why Academy works" }}
+{{ $labelProof := cond $isFr "Preuves" "Proof" }}
+{{ $labelFaq := cond $isFr "FAQ" "FAQ" }}
+{{ $testimonialMore := cond $isFr "Voir plus de témoignages" "Read more testimonials" }}
+{{ $testimonialLess := cond $isFr "Voir moins de témoignages" "Show fewer testimonials" }}
+{{ $differenceAlt := cond $isFr "Comparatif visuel montrant qu’une formation standard s’arrête à la livraison alors qu’Académie inclut la préparation, un atelier en direct et trois mois de mise en oeuvre accompagnée." "Visual comparison showing that standard training stops at delivery while Academy includes preparation, a live workshop, and three months of coached implementation." }}
+{{ $differenceImage := "/img/academy/academy-why-it-works.png" }}
 
 <section class="section academy-hero">
   <div class="container">
@@ -66,7 +86,7 @@
 <section id="how-academy-works" class="section academy-section academy-section-alt">
   <div class="container">
     <div class="academy-section-header academy-section-header-centered">
-      <p class="academy-section-kicker">How it works</p>
+      <p class="academy-section-kicker">{{ $labelHowItWorks }}</p>
       <h2 class="title is-3">{{ .Params.process_title }}</h2>
       <p>{{ .Params.process_intro }}</p>
     </div>
@@ -115,7 +135,7 @@
   }}
   <div class="container">
     <div class="academy-section-header">
-      <p class="academy-section-kicker">Featured workshops</p>
+      <p class="academy-section-kicker">{{ $labelFeaturedWorkshops }}</p>
       <h2 class="title is-3">{{ .Params.workshops_title }}</h2>
       <p>{{ .Params.workshops_intro }}</p>
     </div>
@@ -125,7 +145,7 @@
       {{ if gt (len $groupWorkshops) 0 }}
       <div class="academy-workshop-group academy-workshop-group-{{ $group.slug }}">
         <div class="academy-workshop-group-header academy-workshop-group-header-{{ $group.slug }}">
-          <p class="academy-workshop-group-kicker">Workshop topic</p>
+          <p class="academy-workshop-group-kicker">{{ $labelWorkshopTopic }}</p>
           <h3 class="title is-4 academy-workshop-group-title">{{ $group.label }}</h3>
         </div>
         <div class="columns is-multiline">
@@ -197,13 +217,13 @@
 <section class="section academy-section academy-section-alt">
   <div class="container">
     <div class="academy-section-header academy-section-header-centered academy-difference-header">
-      <p class="academy-section-kicker">Why Academy works</p>
+      <p class="academy-section-kicker">{{ $labelWhyAcademyWorks }}</p>
       <h2 class="title is-3">{{ .Params.difference.title }}</h2>
       <p>{{ .Params.difference.intro }}</p>
     </div>
 
     <figure class="academy-difference-visual">
-      <img src="{{ "/img/academy/academy-why-it-works.png" | relURL }}" alt="Visual comparison showing that standard training stops at delivery while Academy includes preparation, a live workshop, and three months of coached implementation.">
+      <img src="{{ $differenceImage | relURL }}" alt="{{ $differenceAlt }}">
     </figure>
   </div>
 </section>
@@ -212,7 +232,7 @@
 <section id="testimonials" class="section academy-section academy-section-alt">
   <div class="container">
     <div class="academy-section-header academy-section-header-centered">
-      <p class="academy-section-kicker">Proof</p>
+      <p class="academy-section-kicker">{{ $labelProof }}</p>
       <h2 class="title is-3">{{ $.Params.testimonials_title }}</h2>
       <p>{{ $.Params.testimonials_intro }}</p>
     </div>
@@ -235,8 +255,8 @@
 
     {{ if gt (len $academyTestimonials) 3 }}
     <div class="academy-testimonial-actions has-text-centered">
-      <button class="button is-light academy-testimonial-toggle" type="button" data-label-more="Read more testimonials" data-label-less="Show fewer testimonials">
-        Read more testimonials
+      <button class="button is-light academy-testimonial-toggle" type="button" data-label-more="{{ $testimonialMore }}" data-label-less="{{ $testimonialLess }}">
+        {{ $testimonialMore }}
       </button>
     </div>
     <script>
@@ -389,7 +409,7 @@
 <section class="section academy-section academy-section-alt">
   <div class="container">
     <div class="academy-section-header academy-section-header-centered">
-      <p class="academy-section-kicker">FAQ</p>
+      <p class="academy-section-kicker">{{ $labelFaq }}</p>
       <h2 class="title is-3">{{ .title }}</h2>
     </div>
 

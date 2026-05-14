@@ -97,7 +97,7 @@ title = "Comment nous vous aidons"
 [[languages.fr.params.help.item]]
 title = "Analyses & conseils pratiques"
 subtitle = "Contenu ouvert sur les données environnementales, la modélisation et la prise de décision, issu de projets concrets."
-url = "/services#blog"
+url = "/blog/"
 
 [[languages.fr.params.help.item]]
 title = "Formation & renforcement des capacités"
@@ -131,7 +131,7 @@ url = "/about/"
 weight = 2
 
 [[languages.fr.menu.main]]
-name = "Academy"
+name = "Académie"
 url = "/academy/"
 weight = 3
 
@@ -198,7 +198,7 @@ title = "How we help"
 [[languages.en.params.help.item]]
 title = "Insights & practical guidance"
 subtitle = "Open content on environmental data, modeling, and decision-making drawn from real projects."
-url = "/services#blog"
+url = "/blog/"
 
 [[languages.en.params.help.item]]
 title = "Training & capacity building"

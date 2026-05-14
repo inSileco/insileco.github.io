@@ -16,6 +16,7 @@ testimonials:
       The training on spatial analysis with R offered by inSileco was highly appreciated for its integrated workflows (raster + vector), as well as for raster and vector data manipulation. The inSileco team is extremely competent, efficient, and teaches very well. I highly recommend their training on spatial statistics.
   - id: anonyme1-r-practical-gis
     date: 2026-03-30
+    workshop: "r-as-a-practical-gis"
     name: "Anonymous"
     post: "Environmental Specialist, public sector"
     text: |
