@@ -72,7 +72,7 @@
       <div class="columns is-multiline academy-process-row">
         {{ $lastIndex := sub (len .Params.process) 1 }}
         {{ range $index, $step := .Params.process }}
-        <div class="column is-one-third-desktop is-full-tablet">
+        <div class="column is-one-third-desktop is-full-tablet academy-process-column{{ if eq $index $lastIndex }} academy-process-column-last{{ end }}">
           <div class="academy-process-card{{ if eq $index $lastIndex }} academy-process-card-featured{{ end }}">
             <div class="academy-process-top">
               <span class="academy-process-step">0{{ add $index 1 }}</span>
@@ -199,7 +199,7 @@
     </div>
 
     <figure class="academy-difference-visual">
-      <img src="{{ "/img/academy/academy-why-it-works.png" | relURL }}" alt="Visual comparison showing that standard training stops at delivery while Academy includes preparation, a live workshop, and three months of implementation coaching.">
+      <img src="{{ "/img/academy/academy-why-it-works.png" | relURL }}" alt="Visual comparison showing that standard training stops at delivery while Academy includes preparation, a live workshop, and three months of coached implementation.">
     </figure>
   </div>
 </section>
@@ -302,8 +302,10 @@
   <div class="container">
     <div class="academy-cta-shell">
       <p class="academy-section-kicker">{{ .kicker }}</p>
-      <h2 class="title is-2">{{ .title }}</h2>
-      <p>{{ .text }}</p>
+      <h2 class="title is-3">{{ .title }}</h2>
+      {{ with .text }}
+      <p>{{ . }}</p>
+      {{ end }}
       <div class="buttons is-centered mt-5">
         {{ range .buttons }}
         {{ $href := .url }}
