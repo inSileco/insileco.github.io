@@ -12,9 +12,9 @@
       {{ with .Params.hero_eyebrow }}
       <p class="academy-eyebrow">{{ . }}</p>
       {{ end }}
-      <h1 class="title academy-hero-title">{{ .Params.hero_title | default .Title }}</h1>
+      <h1 class="title is-2 hero-title academy-hero-title">{{ .Params.hero_title | default .Title }}</h1>
       {{ with .Params.hero_summary }}
-      <p class="subtitle academy-hero-subtitle">{{ . }}</p>
+      <p class="subtitle is-5 hero-subtitle academy-hero-subtitle">{{ . }}</p>
       {{ end }}
 
       {{ with .Params.hero_badges }}
@@ -26,7 +26,7 @@
       {{ end }}
 
       {{ with .Params.hero_ctas }}
-      <div class="buttons academy-hero-actions">
+      <div class="buttons hero-cta academy-hero-actions is-centered">
         {{ range . }}
         {{ $href := .url }}
         {{ if and (not (hasPrefix $href "#")) (not (hasPrefix $href "http")) (not (hasPrefix $href "/en/")) (not (hasPrefix $href "/fr/")) }}
@@ -63,7 +63,7 @@
 </section>
 {{ end }}
 
-<section id="how-academy-works" class="section academy-section">
+<section id="how-academy-works" class="section academy-section academy-section-alt">
   <div class="container">
     <div class="academy-section-header academy-section-header-centered">
       <p class="academy-section-kicker">How it works</p>
