@@ -130,20 +130,21 @@
   </div>
 </section>
 
-{{ with .Params.audience_points }}
+{{ with .Params.included }}
 <section class="section academy-section academy-section-alt">
   <div class="container">
     <div class="academy-section-header">
-      <p class="academy-section-kicker">Who it is for</p>
-      <h2 class="title is-3">{{ $.Params.audience_title }}</h2>
-      <p>{{ $.Params.audience_intro }}</p>
+      <p class="academy-section-kicker">What is included</p>
+      <h2 class="title is-3">{{ .title }}</h2>
+      {{ with .intro }}
+      <p>{{ . }}</p>
+      {{ end }}
     </div>
     <div class="columns is-multiline">
-      {{ range . }}
+      {{ range .points }}
       <div class="column is-half-desktop is-full-tablet">
-        <div class="academy-path-card">
-          <h3 class="title is-5">{{ .title }}</h3>
-          <p>{{ .text }}</p>
+        <div class="academy-feature-card">
+          <p>{{ . }}</p>
         </div>
       </div>
       {{ end }}
@@ -152,31 +153,67 @@
 </section>
 {{ end }}
 
-{{ with .Params.feature_points }}
+{{ with .Params.bonus_support }}
 <section class="section academy-section">
   <div class="container">
     <div class="academy-section-header">
-      <p class="academy-section-kicker">What makes it different</p>
-      <h2 class="title is-3">{{ $.Params.features_title }}</h2>
-      <p>{{ $.Params.features_intro }}</p>
+      <p class="academy-section-kicker">Bonus support</p>
+      <h2 class="title is-3">{{ .title }}</h2>
+      {{ with .intro }}
+      <p>{{ . }}</p>
+      {{ end }}
     </div>
     <div class="columns is-multiline">
-      {{ range . }}
+      {{ range .points }}
       <div class="column is-half-desktop is-full-tablet">
         <div class="academy-feature-card">
-          <div class="academy-feature-icon"><i class="{{ .icon }}"></i></div>
-          <h3 class="title is-5">{{ .title }}</h3>
-          <p>{{ .text }}</p>
+          <p>{{ . }}</p>
         </div>
       </div>
       {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with .Params.guarantee }}
+<section class="section academy-section academy-section-alt">
+  <div class="container">
+    <div class="academy-section-header">
+      <p class="academy-section-kicker">Conditional guarantee</p>
+      <h2 class="title is-3">{{ .title }}</h2>
+      {{ with .intro }}
+      <p>{{ . }}</p>
+      {{ end }}
+    </div>
+    <div class="columns is-multiline">
+      <div class="column is-half-desktop is-full-tablet">
+        <div class="academy-compare-card academy-compare-card-strong">
+          <p class="academy-compare-label">{{ .conditions_label | default "To qualify" }}</p>
+          <ul>
+            {{ range .conditions }}
+            <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+      <div class="column is-half-desktop is-full-tablet">
+        <div class="academy-compare-card academy-compare-card-muted">
+          <p class="academy-compare-label">{{ .remedy_label | default "What we commit to" }}</p>
+          <ul>
+            {{ range .remedy }}
+            <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 {{ end }}
 
 {{ with .Params.process }}
-<section class="section academy-section academy-section-alt">
+<section class="section academy-section">
   <div class="container">
     <div class="academy-section-header academy-section-header-centered">
       <p class="academy-section-kicker">What working together looks like</p>
@@ -206,8 +243,114 @@
 </section>
 {{ end }}
 
-{{ with .Params.fit }}
+{{ with .Params.feature_points }}
+<section class="section academy-section academy-section-alt">
+  <div class="container">
+    <div class="academy-section-header">
+      <p class="academy-section-kicker">What makes it different</p>
+      <h2 class="title is-3">{{ $.Params.features_title }}</h2>
+      <p>{{ $.Params.features_intro }}</p>
+    </div>
+    <div class="columns is-multiline">
+      {{ range . }}
+      <div class="column is-half-desktop is-full-tablet">
+        <div class="academy-feature-card">
+          <div class="academy-feature-icon"><i class="{{ .icon }}"></i></div>
+          <h3 class="title is-5">{{ .title }}</h3>
+          <p>{{ .text }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with .Params.project_fit }}
 <section class="section academy-section">
+  <div class="container">
+    <div class="academy-section-header">
+      <p class="academy-section-kicker">Bring your own project</p>
+      <h2 class="title is-3">{{ .title }}</h2>
+      <p>{{ .text }}</p>
+    </div>
+    {{ with .points }}
+    <div class="columns is-multiline">
+      {{ range . }}
+      <div class="column is-half-desktop is-full-tablet">
+        <div class="academy-feature-card">
+          <p>{{ . }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+{{ with .Params.audience_points }}
+<section class="section academy-section academy-section-alt">
+  <div class="container">
+    <div class="academy-section-header">
+      <p class="academy-section-kicker">Who it is for</p>
+      <h2 class="title is-3">{{ $.Params.audience_title }}</h2>
+      <p>{{ $.Params.audience_intro }}</p>
+    </div>
+    <div class="columns is-multiline">
+      {{ range . }}
+      <div class="column is-half-desktop is-full-tablet">
+        <div class="academy-path-card">
+          <h3 class="title is-5">{{ .title }}</h3>
+          <p>{{ .text }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with .Params.requirements }}
+<section class="section academy-section">
+  <div class="container">
+    <div class="academy-section-header">
+      <p class="academy-section-kicker">Requirements and non-fit</p>
+      <h2 class="title is-3">{{ .title }}</h2>
+      {{ with .intro }}
+      <p>{{ . }}</p>
+      {{ end }}
+    </div>
+    <div class="columns is-multiline">
+      <div class="column is-half-desktop is-full-tablet">
+        <div class="academy-compare-card academy-compare-card-strong">
+          <p class="academy-compare-label">{{ .required_label | default "You should already be comfortable with" }}</p>
+          <ul>
+            {{ range .required_points }}
+            <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+      {{ with .not_fit_points }}
+      <div class="column is-half-desktop is-full-tablet">
+        <div class="academy-compare-card academy-compare-card-muted">
+          <p class="academy-compare-label">{{ $.Params.requirements.not_fit_label | default "Not a fit when" }}</p>
+          <ul>
+            {{ range . }}
+            <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with .Params.fit }}
+<section class="section academy-section academy-section-alt">
   <div class="container">
     <div class="columns is-multiline">
       <div class="column is-half-desktop is-full-tablet">
@@ -230,6 +373,33 @@
           </ul>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with .Params.companion_offers }}
+<section class="section academy-section">
+  <div class="container">
+    <div class="academy-section-header">
+      <p class="academy-section-kicker">Companion offers</p>
+      <h2 class="title is-3">{{ .title }}</h2>
+      {{ with .intro }}
+      <p>{{ . }}</p>
+      {{ end }}
+    </div>
+    <div class="columns is-multiline">
+      {{ range .items }}
+      <div class="column is-half-desktop is-full-tablet">
+        <div class="academy-path-card">
+          <h3 class="title is-5">{{ .title }}</h3>
+          <p>{{ .text }}</p>
+          {{ with .url }}
+          <p class="academy-hero-link"><a href="{{ . | relLangURL }}">Learn more</a></p>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
     </div>
   </div>
 </section>
