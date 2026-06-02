@@ -3,7 +3,7 @@ title: "R as a Practical GIS"
 subtitle: "A practical coaching offer for environmental professionals who already use R and need clearer, reusable spatial workflows for analysis, mapping, and reporting."
 description: "A cohort-based coached Academy experience for environmental professionals who want clearer, reusable spatial workflows in R."
 weight: 6
-layout: "practical-gis-landing"
+layout: "offer-landing"
 card_image: "/img/academy/r-as-a-practical-gis.png"
 hero_eyebrow: "inSileco Academy"
 hero_support: "This is a cohort-based coached experience with two half-day sessions and three months of follow-through to help you build practical spatial capability in R on a real project."
