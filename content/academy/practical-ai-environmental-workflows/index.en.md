@@ -1,14 +1,14 @@
 ---
-title: "Integrating AI into Environmental Workflows with Confidence"
-subtitle: "A practical coaching offer for environmental professionals and teams who want useful AI-assisted workflows without losing reviewability, data protection, or professional judgment."
-description: "A cohort-based coached Academy experience for environmental professionals who want to integrate AI into real workflows with clearer controls, documentation, validation, and follow-through."
+title: "Practical AI for Environmental Workflows"
+subtitle: "Learn where AI genuinely helps, where it creates risk, and how to use it without weakening reviewability or professional judgment."
+description: "A cohort-based coached Academy experience for environmental professionals who want to integrate AI into real workflows such as literature triage, report drafting, coding support, and QA with clearer controls, documentation, validation, and follow-through."
 weight: 9
 layout: "offer-landing"
 draft: false
 
 card_image: "/img/academy/integrating-ai-workflow-confidence-environmental-professionals.png"
 hero_eyebrow: "inSileco Academy"
-hero_support: "This is a cohort-based coached experience with live delivery and three months of follow-through to help you apply AI in controlled, documented, and reviewable environmental workflows."
+hero_support: "This coached experience combines live workshop sessions and three months of follow-through to help you apply AI in real environmental workflows such as drafting, literature triage, coding support, QA, and documentation while keeping the work reviewable and expert judgment central."
 
 categories:
   - Workshop
@@ -21,7 +21,7 @@ academy_levers:
   - Data Management
   - Decision Support
 academy_testimonial_workshop: ""
-workshop_outcome: "Use AI where it helps environmental work while keeping workflows documented, validated, and reviewable."
+workshop_outcome: "Use AI where it genuinely helps environmental work, and build a workflow that stays documented, validated, and reviewable."
 card_price: "$3,500"
 
 hero_ctas:
@@ -41,7 +41,7 @@ what_you_get:
   title: "What you'll get"
   items:
     - title: "A controlled AI workflow pattern"
-      text: "Choose one real or close-to-real workflow and define where AI can help, where it needs controls, and where it should stay out."
+      text: "Choose one real or close-to-real workflow and define where AI genuinely helps, where it needs controls, and where it should stay out."
       image: "/img/academy/offers/ai-workflow-0.png"
     - title: "Reviewable documentation habits"
       text: "Capture prompts, source material, outputs, assumptions, edits, and decisions so AI-assisted work can be reviewed and explained."
@@ -57,7 +57,7 @@ inline_cta:
 what_happens:
   label: "What actually happens over 3 months?"
   title: "What actually happens over 3 months?"
-  intro: "This is not a prompt-engineering class. It is a coached Academy experience that helps participants apply AI to real work through preparation, live workflow design, and structured follow-through."
+  intro: "This is not a prompt-engineering class. It is a coached Academy experience that helps participants apply AI to real work such as literature triage, report drafting, coding support, QA, and internal documentation through preparation, live workflow design, and structured follow-through."
   steps:
     - title: "Before"
       text: "Before the workshop, you complete an intake and use-case scoping step, clarify tool and data boundaries, and prepare a real, sanitized, or approved fallback workflow."
@@ -124,7 +124,7 @@ final_cta:
   kicker: "Next step"
   title: "Apply to see whether this is the right fit"
   text: "Start with a short application or conversation. If the fit is strong, we will route you to the next cohort or the right team-delivery path."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=individual&cta_source=ai_workflow_final_cta&workshop=integrating-ai-workflow-confidence-environmental-professionals"
+  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=individual&cta_source=ai_workflow_final_cta&workshop=practical-ai-environmental-workflows"
   secondary_link:
     label: "Applying for your team?"
     url: "#team-cta"
@@ -141,5 +141,5 @@ team_offer:
   card:
     label: "Private team delivery"
     note: "Submit your information and we will reach out to schedule a conversation."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=team&cta_source=ai_workflow_team_cta&workshop=integrating-ai-workflow-confidence-environmental-professionals"
+  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=team&cta_source=ai_workflow_team_cta&workshop=practical-ai-environmental-workflows"
 ---
