@@ -18,8 +18,6 @@ tags:
   - Environmental reporting
 academy_levers:
   - Automated Workflows
-  - Data Management
-  - Decision Support
 academy_testimonial_workshop: ""
 workshop_outcome: "Use AI where it genuinely helps environmental work, and build a workflow that stays documented, validated, and reviewable."
 card_price: "$3,500"
