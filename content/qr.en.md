@@ -1,5 +1,5 @@
 ---
 layout: "qr"
 aliases: ["/qr"]
-redirect_url: "https://insileco.io/"
+redirect_url: get-in-touch
 ---
