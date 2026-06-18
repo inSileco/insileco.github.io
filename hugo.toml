@@ -1,6 +1,6 @@
 baseURL = 'https://insileco.io/'
 languageCode = 'en'
-title = 'inSileco Website'
+title = 'inSileco | Environmental Intelligence'
 defaultContentLanguageInSubdir = true
 organization = "inSileco"
 pygmentsCodeFences = true
