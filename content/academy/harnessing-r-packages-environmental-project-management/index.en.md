@@ -1,154 +1,143 @@
 ---
-title: "Harnessing R Packages for Environmental Project Management"
-subtitle: "A coached Academy workshop for professionals who want to use R packages more effectively to structure and support environmental project work."
-description: "Use R packages more strategically to support repeatable project work, team consistency, and smoother delivery."
-weight: 5
+title: "Building Reusable Analytical Tools with R Packages"
+subtitle: "A coached Academy offer for environmental professionals who want to turn real analytical, reporting, or decision-support work into reusable internal tooling in R."
+description: "A cohort-based coached Academy experience for environmental professionals who want to build reusable analytical tools in R through package-based structure, reproducibility, and follow-through on real project work."
+weight: 7
+layout: "offer-landing"
+draft: false
+
 card_image: "/img/academy/harnessing-r-packages-environmental-project-management.png"
-hero_eyebrow: "Academy workshop"
-hero_badges:
-  - "R packages"
-  - "Project workflows"
-  - "Cohort-ready"
+hero_eyebrow: "inSileco Academy"
+hero_support: "This is a cohort-based coached experience with two practical live sessions and three months of follow-through to help you structure and continue a real package around your own analytical, reporting, or tooling work."
+
 categories:
   - Workshop
 tags:
   - R
   - Packages
-  - Project management
+  - Reproducibility
 academy_levers:
   - Analytical Capabilities
-promise: "Use R packages more intentionally to support environmental project work, not just isolated analysis."
-audience_short: "Environmental professionals and teams using R who want a clearer way to use packages across projects and workflows."
-workshop_outcome: "Participants leave with a better understanding of how packages can support repeatability, efficiency, and clearer project structure."
-card_next_cohort: "Oct 2026"
-card_price: "$2,000"
-contact_url: "/contact/"
+academy_testimonial_workshop: ""
+workshop_outcome: "Turn real project logic into a materially advanced R package or reusable first-package foundation through coached implementation."
+card_price: "$3,750"
+
 hero_ctas:
-  - label: "Discuss this workshop"
-    url: "/contact/"
+  - label: "Apply now"
+    url: "#academy-cta"
     class: "is-primary"
-  - label: "Apply for a cohort"
-    url: "/contact/"
+  - label: "Discuss team delivery"
+    url: "#team-cta"
     class: "is-light"
-hero_link:
-  label: "Back to Academy"
-  url: "/academy/"
-quick_facts:
-  - title: "Best for"
-    text: "Teams already using R who want a clearer package strategy for repeated analytical or reporting work."
-  - title: "Format"
-    text: "A coached Academy workshop focused on practical package use in environmental project workflows."
-  - title: "Follow-through"
-    text: "Includes Academy's fixed six-month cadence to support continued reuse and workflow adoption."
-overview:
-  title: "Move from ad hoc package use toward a clearer project workflow"
-  intro: "This workshop helps participants think more practically about how R packages support project management, repeatability, and cleaner delivery across environmental work."
-  problem_label: "The problem it solves"
-  outcome_label: "What changes after"
-problem_points:
-  - "packages may be used reactively rather than strategically"
-  - "project work becomes harder to standardize and reuse across people or time"
-  - "participants may not know how packages support broader workflow structure"
-outcome_points:
-  - "participants gain a clearer view of package roles in project work"
-  - "workflow structure becomes easier to repeat and maintain"
-  - "teams can reduce friction in recurring analytical tasks"
-audience_title: "A strong fit for teams that want more consistent R project practice"
-audience_intro: "This workshop is designed for people who already use R and want to improve how tools and packages support broader project execution."
-audience_points:
-  - title: "R users with recurring project work"
-    text: "Professionals who want more reusable ways to structure work across projects."
-  - title: "Teams seeking consistency"
-    text: "Groups that want clearer conventions around tools, packages, and workflow patterns."
-  - title: "Managers improving efficiency"
-    text: "Leads who want less reinvention and more repeatability in analytical delivery."
-  - title: "Participants moving beyond scripts"
-    text: "People who want to think more systemically about how R supports project management."
-features_title: "What makes this workshop different"
-features_intro: "The focus is not only on what packages do, but on how they fit into repeatable work."
-feature_points:
-  - icon: "fa-solid fa-cubes"
-    title: "Package use in workflow context"
-    text: "The workshop frames packages as operational building blocks in broader project work."
-  - icon: "fa-solid fa-list-check"
-    title: "Repeatability and reuse"
-    text: "Participants work toward practices that reduce reinvention and improve consistency."
-  - icon: "fa-solid fa-gears"
-    title: "Project-level thinking"
-    text: "The workshop connects technical tools to delivery, structure, and maintainability."
-  - icon: "fa-solid fa-arrows-rotate"
-    title: "Longer-term adoption"
-    text: "Academy follow-through supports continued use and refinement after the live session."
-process_title: "A coached structure for making package use more strategic"
-process_intro: "The workshop follows the Academy before, during, and after model so participants can carry the change into actual project work."
-process:
-  - title: "Before"
-    text: "We identify the current R context, package use patterns, and recurring workflow needs."
-    points:
-      - "context intake"
-      - "review of current package use"
-      - "selection of relevant examples"
-  - title: "During"
-    text: "Participants work through how packages can support clearer, more reusable project workflows."
-    points:
-      - "guided application"
-      - "live discussion and support"
-      - "focus on repeatable project use"
-  - title: "After"
-    text: "Follow-through supports continued reuse, adjustment, and translation into real project practice."
-    points:
-      - "implementation support"
-      - "review of blockers"
-      - "reinforcement through Academy cadence"
-fit:
-  good:
-    label: "Good fit"
-    points:
-      - "you already use R and want better project-level structure"
-      - "your work involves recurring analysis or reporting tasks"
-      - "you want clearer, more reusable workflow patterns"
-  not_fit:
-    label: "Not a fit"
-    points:
-      - "you are completely new to R"
-      - "you only want a package-by-package feature tour"
-      - "there is no intention to apply the learning in project work"
-pricing:
-  title: "Choose cohort enrollment or private team delivery"
-  intro: "This workshop can be delivered through the Academy cohort path or adapted for a private team engagement."
-  cohort:
-    label: "Individual professionals"
-    title: "Join a cohort"
-    price: "Starting at [insert price] per participant"
-    text: "Best for professionals who want to improve how they use R packages in project work."
-    points:
-      - "live cohort delivery"
-      - "workflow-oriented examples"
-      - "six months of follow-through"
-    cta:
-      label: "Apply for a cohort"
-      url: "/contact/"
-  team:
-    label: "Teams and managers"
-    title: "Bring this to your team"
-    price: "Custom pricing"
-    text: "Best for teams trying to standardize or improve recurring R-supported project workflows."
-    points:
-      - "private delivery"
-      - "adapted examples and workflows"
-      - "custom quote based on scope and participant count"
-    cta:
-      label: "Discuss team delivery"
-      url: "/contact/"
+
+inline_cta:
+  label: "Apply now"
+  url: "#academy-cta"
+
+proof_section:
+  label: "What people are saying"
+  title: "What people are saying"
+
+what_you_get:
+  label: "What you'll get"
+  title: "What you'll get"
+  items:
+    - title: "A real package around real work"
+      text: "Bring your own project and use the workshop to structure something that matters to your workflow instead of staying in abstract package examples."
+      image: "/img/academy/offers/r-packages-environmental-workflows-0.png"
+    - title: "Practical package-build coaching"
+      text: "Work through functions, dependencies, documentation, tests, and package boundaries with support while your reusable structure actually moves forward."
+      image: "/img/academy/offers/r-packages-environmental-workflows-1.png"
+    - title: "Three months of follow-through"
+      text: "Keep building after the live workshop through biweekly check-ins, review, and bounded support designed to carry the first package into a maintainable state."
+      image: "/img/academy/offers/r-packages-environmental-workflows-2.png"
+
+what_happens:
+  label: "What actually happens over 3 months?"
+  title: "What actually happens over 3 months?"
+  intro: "This is not a generic package class. It is a coached Academy experience designed to help environmental professionals structure and materially advance a real reusable package around their own work."
+  steps:
+    - title: "Before"
+      text: "Before the workshop, we review fit, qualify your project, help cut it to a realistic first package, and reduce setup friction so you arrive ready to build."
+    - title: "During"
+      text: "During the two live workshop sessions, you work on your own package while we guide the key decisions around structure, dependencies, documentation, testing, and package scope."
+    - title: "After"
+      text: "Afterward, you continue implementing through six biweekly check-ins, one individual package review meeting, and bounded async review over three months."
+
+price_section:
+  label: "How much is it?"
+  title: "How much is it?"
+  price: "$3,750 per participant"
+  rationale_intro: "This allows us to:"
+  rationale_points:
+    - "keep the cohort small enough for project-specific coaching"
+    - "include qualification and package-scope review before the workshop"
+    - "provide follow-through strong enough to support real implementation"
+  includes_label: "What that includes:"
+  includes:
+    - "one fit and package-scoping call"
+    - "one group readiness and setup call"
+    - "2 half-day live workshop sessions"
+    - "3 months of coached follow-through"
+    - "6 biweekly cohort check-ins"
+    - "1 individual package review meeting"
+
+bonus_section:
+  label: "Bonus support and guarantee"
+  summary: "More support than a simple workshop, including bonus support assets and a conditional implementation-focused guarantee."
+  bonus_label: "Bonus support"
+  bonus_points:
+    - "3 async review windows"
+    - "package-readiness and scoping worksheet"
+    - "starter package scaffold and planning tools"
+    - "maintenance and handoff checklist"
+  guarantee_label: "Conditional guarantee"
+  guarantee_intro: "If a participant:"
+  guarantee_points:
+    - "brings a real project or approved fallback case"
+    - "completes the required scoping and setup work"
+    - "attends the live sessions"
+    - "attends the required check-ins"
+    - "completes the agreed implementation work between sessions"
+  guarantee_close: "then we will continue supporting them until they reach the defined first-package workshop outcome."
+
+fit_section:
+  label: "Is this right for me?"
+  title: "Is this right for me?"
+  summary: "This is a strong fit for environmental professionals who already use R, have real work to structure, and want coached implementation rather than generic instruction."
+  for_label: "Who this is for"
+  for_points:
+    - "intermediate R users with a real project to package"
+    - "analysts, researchers, and consultants wanting stronger reproducibility"
+    - "teams wanting reusable internal tooling and clearer structure"
+    - "buyers who want coached build support rather than passive training"
+  not_label: "Who this is not for"
+  not_points:
+    - "beginners to R"
+    - "buyers looking for a low-touch package tutorial"
+    - "projects that really need a larger custom Systems build"
+    - "participants without a real use case or without time to keep building afterward"
+
 final_cta:
   kicker: "Next step"
-  title: "Make R packages support better project work"
-  text: "Use this scaffold as a starting point and refine the eventual public offer around your preferred examples and package families."
-  buttons:
-    - label: "Apply for a cohort"
-      url: "/contact/"
-      class: "is-primary"
-    - label: "Back to Academy"
-      url: "/academy/"
-      class: "is-light"
+  title: "Apply to see whether this is the right fit"
+  text: "Start with a short application or conversation. We will review your project, confirm whether it fits the workshop, and redirect you if a different path makes more sense."
+  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=individual&cta_source=academy_harnessing_r_packages_environmental_project_management_final&workshop=harnessing-r-packages-environmental-project-management"
+  secondary_link:
+    label: "Applying for your team?"
+    url: "#team-cta"
+
+team_offer:
+  kicker: "Team option"
+  title: "Need this for your team?"
+  text: "Academy can also be delivered privately for teams that want the same coached structure with package conventions, internal examples, and project alignment adapted to their own workflow."
+  points:
+    - "Private delivery"
+    - "Shared project alignment"
+    - "Adapted examples"
+    - "Custom quote"
+  card:
+    label: "Private team delivery"
+    note: "Submit your information and we will reach out to schedule a conversation."
+  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=team&cta_source=academy_harnessing_r_packages_environmental_project_management_team&workshop=harnessing-r-packages-environmental-project-management"
 ---
