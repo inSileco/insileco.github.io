@@ -66,8 +66,7 @@ process:
       - "structured check-ins every two weeks"
       - "async workflow review"
       - "progress accountability"
-workshops_title: "Start with the workshop topic that fits your needs"
-workshops_intro: "Each workshop is built around a practical improvement area: data management, analytical capability, decision-support tools, or automated workflows."
+workshops_title: "Explore all Academy workshops"
 workshops_fallback:
   text: "Cannot find what you are looking for? Let us know what would be useful for you."
   label: "Get in touch"

@@ -66,8 +66,7 @@ process:
       - "suivis structurés toutes les deux semaines"
       - "revue asynchrone des workflows"
       - "suivi de progression"
-workshops_title: "Commencez par la thématique d’atelier qui correspond à vos besoins"
-workshops_intro: "Chaque atelier est construit autour d’un axe d’amélioration concret : gestion des données, capacités analytiques, outils d’aide à la décision ou workflows automatisés."
+workshops_title: "Explorer tous les ateliers Académie"
 workshops_fallback:
   text: "Vous ne trouvez pas ce que vous cherchez? Dites-nous ce qui serait utile pour vous."
   label: "Nous contacter"

@@ -15,9 +15,26 @@
     {{ end }}
   {{ end }}
 {{ end }}
+{{ $orderedWorkshops := slice }}
+{{ $workshopGroups := slice
+  "Data Management"
+  "Analytical Capabilities"
+  "Decision-support Tools"
+  "Automated Workflows"
+}}
+{{ range $group := $workshopGroups }}
+  {{ range where $workshops "Params.academy_levers" "intersect" (slice $group) }}
+    {{ $orderedWorkshops = $orderedWorkshops | append . }}
+  {{ end }}
+{{ end }}
+{{ range $workshops }}
+  {{ if not (in $orderedWorkshops .) }}
+    {{ $orderedWorkshops = $orderedWorkshops | append . }}
+  {{ end }}
+{{ end }}
 {{ $labelHowItWorks := cond $isFr "Fonctionnement" "How it works" }}
 {{ $labelFeaturedWorkshops := cond $isFr "Ateliers en vedette" "Featured workshops" }}
-{{ $labelWorkshopTopic := cond $isFr "Thématique d'atelier" "Workshop topic" }}
+{{ $labelWorkshopCta := cond $isFr "Voir l'atelier" "View workshop" }}
 {{ $labelWhyAcademyWorks := cond $isFr "Pourquoi Académie fonctionne" "Why Academy works" }}
 {{ $labelProof := cond $isFr "Preuves" "Proof" }}
 {{ $labelFaq := cond $isFr "FAQ" "FAQ" }}
@@ -127,12 +144,6 @@
 
 {{ if gt (len $workshops) 0 }}
 <section id="available-workshops" class="section academy-section academy-section-alt">
-  {{ $workshopGroups := slice
-    (dict "label" "Data Management" "slug" "data-management")
-    (dict "label" "Analytical Capabilities" "slug" "analytical-capabilities")
-    (dict "label" "Decision-support Tools" "slug" "decision-support-tools")
-    (dict "label" "Automated Workflows" "slug" "automated-workflows")
-  }}
   <div class="container">
     <div class="academy-section-header">
       <p class="academy-section-kicker">{{ $labelFeaturedWorkshops }}</p>
@@ -140,63 +151,39 @@
       <p>{{ .Params.workshops_intro }}</p>
     </div>
 
-    {{ range $group := $workshopGroups }}
-      {{ $groupWorkshops := where $workshops "Params.academy_levers" "intersect" (slice $group.label) }}
-      {{ if gt (len $groupWorkshops) 0 }}
-      <div class="academy-workshop-group academy-workshop-group-{{ $group.slug }}">
-        <div class="academy-workshop-group-header academy-workshop-group-header-{{ $group.slug }}">
-          <p class="academy-workshop-group-kicker">{{ $labelWorkshopTopic }}</p>
-          <h3 class="title is-4 academy-workshop-group-title">{{ $group.label }}</h3>
-        </div>
-        <div class="columns is-multiline">
-          {{ range $groupWorkshops }}
-          <div class="column is-one-quarter-desktop is-half-tablet is-full-mobile">
-            <a href="{{ .RelPermalink }}" class="academy-workshop-card">
-              {{ $levers := .Params.academy_levers | default (slice) }}
-              <div class="academy-workshop-visual">
-                {{ with .Params.card_image }}
-                <img src="{{ . | relURL }}" alt="{{ $.Title }} workshop cover">
-                {{ else }}
-                <div class="academy-workshop-placeholder">
-                  <span>{{ .Title }}</span>
-                </div>
-                {{ end }}
-                {{ if gt (len $levers) 0 }}
-                  <div class="academy-workshop-overlay">
-                    {{ range $levers }}
-                    {{ $slug := . | urlize }}
-                    <span class="academy-workshop-lever academy-workshop-lever-{{ $slug }}">{{ . }}</span>
-                    {{ end }}
-                  </div>
-                {{ end }}
-              </div>
-              <div class="academy-workshop-body">
-                <h3 class="title is-4">{{ .Title }}</h3>
-                {{ with .Params.workshop_outcome }}
-                <p class="academy-workshop-outcome">{{ . }}</p>
-                {{ else }}
-                {{ with .Params.promise }}
-                <p class="academy-workshop-outcome">{{ . }}</p>
-                {{ end }}
-                {{ end }}
-                {{ if or .Params.card_next_cohort .Params.card_price }}
-                <div class="academy-workshop-meta">
-                  {{ with .Params.card_next_cohort }}
-                  <span class="academy-workshop-meta-pill">{{ . }}</span>
-                  {{ end }}
-                  {{ with .Params.card_price }}
-                  <span class="academy-workshop-meta-pill academy-workshop-meta-pill-price">{{ . }}</span>
-                  {{ end }}
-                </div>
-                {{ end }}
-              </div>
-            </a>
+    <div class="columns is-multiline">
+      {{ range $orderedWorkshops }}
+      <div class="column is-one-quarter-desktop is-half-tablet is-full-mobile">
+        <article class="academy-workshop-card">
+          {{ $workshop := . }}
+          {{ $levers := .Params.academy_levers | default (slice) }}
+          <div class="academy-workshop-visual">
+            {{ with .Params.card_image }}
+            <img src="{{ . | relURL }}" alt="{{ $workshop.Title }} workshop cover">
+            {{ else }}
+            <div class="academy-workshop-placeholder">
+              <span>{{ .Title }}</span>
+            </div>
+            {{ end }}
+            {{ if gt (len $levers) 0 }}
+            <div class="academy-workshop-overlay">
+              {{ range $levers }}
+              {{ $slug := . | urlize }}
+              <span class="academy-workshop-lever academy-workshop-lever-{{ $slug }}">{{ . }}</span>
+              {{ end }}
+            </div>
+            {{ end }}
           </div>
-          {{ end }}
-        </div>
+          <div class="academy-workshop-body">
+            <h3 class="title is-4 academy-workshop-title">{{ .Title }}</h3>
+          </div>
+          <div class="academy-workshop-body academy-workshop-body-actions">
+            <a href="{{ .RelPermalink }}" class="button is-primary is-fullwidth academy-workshop-cta">{{ $labelWorkshopCta }}</a>
+          </div>
+        </article>
       </div>
       {{ end }}
-    {{ end }}
+    </div>
 
     {{ with .Params.workshops_fallback }}
     {{ $href := .url }}
