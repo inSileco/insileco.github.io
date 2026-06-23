@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">A Practical Guide to Implementing GitHub for Collaboration in Environmental Teams</title>
+  <desc id="desc">Workshop cover illustration with branching nodes, repository cards, and collaborative workflow framing.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#101b2d"/>
+      <stop offset="55%" stop-color="#2a4a74"/>
+      <stop offset="100%" stop-color="#cae7f5"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1270" cy="170" r="210" fill="#ffffff" opacity=".08"/>
+  <path d="M0 705c139-48 241-49 333-10 86 36 162 105 273 106 128 0 186-92 321-107 130-14 273 44 415 57 87 8 171-1 258-27V900H0Z" fill="#ffffff" opacity=".07"/>
+  <g transform="translate(955 235)" fill="none" stroke="#e5f4fb" stroke-width="10" stroke-linecap="round">
+    <path d="M76 78h140l62 62h166"/>
+    <path d="M214 140v146h160"/>
+    <circle cx="76" cy="78" r="20" fill="#37abc8" stroke="none"/>
+    <circle cx="278" cy="140" r="20" fill="#ffe08a" stroke="none"/>
+    <circle cx="444" cy="140" r="20" fill="#37abc8" stroke="none"/>
+    <circle cx="374" cy="286" r="20" fill="#ffe08a" stroke="none"/>
+  </g>
+  <g transform="translate(1008 470)">
+    <rect x="0" y="0" width="352" height="196" rx="22" fill="#f9fbfd" opacity=".95"/>
+    <rect x="26" y="26" width="300" height="28" rx="14" fill="#102238"/>
+    <rect x="26" y="74" width="110" height="16" rx="8" fill="#37abc8"/>
+    <rect x="150" y="74" width="92" height="16" rx="8" fill="#ffe08a"/>
+    <rect x="26" y="116" width="276" height="14" rx="7" fill="#6c839c"/>
+    <rect x="26" y="146" width="232" height="14" rx="7" fill="#6c839c" opacity=".8"/>
+  </g>
+  <g transform="translate(120 110)">
+    <rect x="0" y="0" width="180" height="44" rx="22" fill="#ffffff" opacity=".14"/>
+    <text x="90" y="29" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#ffffff" letter-spacing="2">ACADEMY WORKSHOP</text>
+  </g>
+  <g transform="translate(120 532)">
+    <text x="0" y="0" font-family="Georgia, 'Times New Roman', serif" font-size="66" fill="#ffffff">A Practical Guide to</text>
+    <text x="0" y="82" font-family="Georgia, 'Times New Roman', serif" font-size="66" fill="#ffffff">Implementing GitHub</text>
+    <text x="0" y="164" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#d6eff8" letter-spacing="1">Collaboration, version control, review, and team continuity</text>
+  </g>
+</svg>
