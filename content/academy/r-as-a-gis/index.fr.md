@@ -1,5 +1,5 @@
 ---
-title: "R comme SIG pratique"
+title: "Utiliser R comme un SIG"
 subtitle: "Une offre d’accompagnement pratique pour les professionnel.le.s en environnement qui utilisent déjà R et qui ont besoin de workflows spatiaux plus clairs et réutilisables pour l’analyse, la cartographie et le reporting."
 description: "Une expérience Académie accompagnée en cohorte pour les professionnel.le.s en environnement qui veulent des workflows spatiaux plus clairs et réutilisables dans R."
 weight: 6

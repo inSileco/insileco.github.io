@@ -1,6 +1,6 @@
 ---
-title: "Créer des outils Shiny pratiques pour le soutien à la décision"
-subtitle: "Une offre d’accompagnement pratique pour les professionnel.le.s en environnement qui travaillent déjà avec R et qui veulent transformer un vrai projet à portée serrée en application Shiny utilisable."
+title: "Créer des outils Shiny pour le soutien à la décision"
+subtitle: "Une offre d’accompagnement pour les professionnel.le.s en environnement qui travaillent déjà avec R et qui veulent transformer une myriade de scripts R en une application Shiny efficace et robuste."
 description: "Une expérience Académie accompagnée en cohorte pour les professionnel.le.s en environnement qui veulent créer des applications Shiny pratiques pour l’analyse, le reporting et le soutien à la décision."
 weight: 8
 layout: "offer-landing"
@@ -19,7 +19,7 @@ tags:
 academy_levers:
   - Decision-support Tools
 academy_testimonial_workshop: ""
-workshop_outcome: "Transformer un vrai projet à portée serrée en une application Shiny nettement avancée ou en un prototype crédible de première version grâce à une mise en oeuvre accompagnée."
+workshop_outcome: "Transformer votre projet en une application Shiny nettement avancée ou en un prototype crédible de première version grâce à une mise en oeuvre accompagnée."
 card_price: "$4,500"
 
 hero_ctas:
@@ -114,8 +114,8 @@ fit_section:
   not_label: "Pour qui ce n’est pas conçu?"
   not_points:
     - "débutant.e.s en R"
-    - "acheteurs qui cherchent un tutoriel Shiny à faible accompagnement"
-    - "projets qui relèvent plutôt d’un développement Systems personnalisé plus large"
+    - "clients qui cherchent un tutoriel Shiny à faible accompagnement"
+    - "projets qui relèvent plutôt d’un développement personnalisé plus large (voir notre offre 'Systems')"
     - "participant.e.s sans vrai cas d’usage ou sans temps pour continuer à bâtir ensuite"
 
 final_cta:

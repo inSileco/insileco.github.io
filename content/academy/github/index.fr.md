@@ -1,5 +1,5 @@
 ---
-title: "Git et GitHub pratiques pour la collaboration en environnement"
+title: "Travailler en équipe avec Git et GitHub"
 subtitle: "Cessez de perdre du temps avec des échanges de fichiers désordonnés, des versions floues et des transferts fragiles en adoptant un workflow de collaboration que votre équipe peut réellement utiliser avec confiance."
 description: "Une expérience Académie accompagnée en cohorte pour les professionnel.le.s en environnement qui veulent remplacer le partage de fichiers fragile et les habitudes de versionnage manuel par une collaboration pratique avec Git et GitHub."
 weight: 10

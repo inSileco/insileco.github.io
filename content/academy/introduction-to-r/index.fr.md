@@ -1,5 +1,5 @@
 ---
-title: "Introduction pratique à R"
+title: "Introduction à R"
 subtitle: "Une offre d’accompagnement pratique pour les professionnel.le.s en environnement qui veulent remplacer le travail manuel lourd en feuilles de calcul par des workflows R simples, reproductibles, compréhensibles et réutilisables."
 description: "Une expérience Académie accompagnée en cohorte pour les professionnel.le.s en environnement qui veulent une première introduction pratique à R ancrée dans une amélioration réelle de workflow."
 weight: 4

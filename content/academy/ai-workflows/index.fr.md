@@ -41,7 +41,7 @@ what_you_get:
     - title: "Un modèle de workflow IA contrôlé"
       text: "Choisissez un workflow réel ou quasi réel et définissez où l’IA aide réellement, où elle doit être encadrée et où elle ne devrait pas intervenir."
       image: "/img/academy/offers/ai-workflow-0.png"
-    - title: "Des habitudes de documentation révisables"
+    - title: "Des habitudes de documentation révisable"
       text: "Documentez les prompts, sources, sorties, hypothèses, modifications et décisions pour qu’un travail assisté par IA puisse être relu et expliqué."
       image: "/img/academy/offers/ai-workflow-1.png"
     - title: "Un suivi structuré"

@@ -12,7 +12,7 @@ hero_ctas:
     class: "is-light"
 proof_items:
   - value: "Environnement"
-    label: "axé sur les flux de travail, les données et la production"
+    label: "axé sur les flux de travail, les données et l'automatisation de rapports"
   - value: "Accompagné"
     label: "avant, pendant et après la livraison"
   - value: "Appliqué"
