@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Harnessing R Packages for Environmental Project Management</title>
+  <desc id="desc">Workshop cover illustration with modular package blocks, a planning board, and project workflow framing.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#153240"/>
+      <stop offset="55%" stop-color="#2f7486"/>
+      <stop offset="100%" stop-color="#f5f0df"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1295" cy="170" r="225" fill="#ffffff" opacity=".08"/>
+  <path d="M0 694c127-55 265-63 387-11 86 36 153 99 259 102 141 5 198-97 331-116 110-16 219 17 316 41 90 22 179 29 307-4V900H0Z" fill="#ffffff" opacity=".08"/>
+  <g transform="translate(955 228)">
+    <rect x="0" y="0" width="388" height="420" rx="28" fill="#f9fbfd" opacity=".95"/>
+    <rect x="36" y="40" width="316" height="46" rx="16" fill="#123247"/>
+    <g transform="translate(36 122)">
+      <rect x="0" y="0" width="92" height="92" rx="18" fill="#37abc8"/>
+      <rect x="112" y="0" width="92" height="92" rx="18" fill="#ffe08a"/>
+      <rect x="224" y="0" width="92" height="92" rx="18" fill="#2f95ae"/>
+      <rect x="56" y="118" width="92" height="92" rx="18" fill="#163447"/>
+      <rect x="168" y="118" width="92" height="92" rx="18" fill="#82c7d8"/>
+    </g>
+    <rect x="36" y="352" width="286" height="16" rx="8" fill="#6a8291"/>
+    <rect x="36" y="384" width="248" height="16" rx="8" fill="#6a8291" opacity=".8"/>
+  </g>
+  <g transform="translate(120 110)">
+    <rect x="0" y="0" width="180" height="44" rx="22" fill="#ffffff" opacity=".14"/>
+    <text x="90" y="29" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#ffffff" letter-spacing="2">ACADEMY WORKSHOP</text>
+  </g>
+  <g transform="translate(120 540)">
+    <text x="0" y="0" font-family="Georgia, 'Times New Roman', serif" font-size="66" fill="#ffffff">Harnessing R Packages</text>
+    <text x="0" y="82" font-family="Georgia, 'Times New Roman', serif" font-size="66" fill="#ffffff">for Project Management</text>
+    <text x="0" y="144" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#e8f3f6" letter-spacing="1">Reusable tools, workflow structure, and better delivery across projects</text>
+  </g>
+</svg>

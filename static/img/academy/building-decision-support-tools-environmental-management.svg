@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Building Decision-Support Tools for Environmental Management</title>
+  <desc id="desc">Workshop cover illustration with dashboards, nodes, and layered decision-support visuals.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#122537"/>
+      <stop offset="55%" stop-color="#26637a"/>
+      <stop offset="100%" stop-color="#d8edf5"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1290" cy="180" r="220" fill="#ffffff" opacity=".08"/>
+  <path d="M0 706c113-42 218-46 300-17 106 38 177 127 315 124 130-2 199-83 322-101 126-17 257 32 379 39 91 5 171-10 284-42V900H0Z" fill="#ffffff" opacity=".08"/>
+  <g transform="translate(962 250)">
+    <rect x="0" y="0" width="372" height="384" rx="28" fill="#fbfdfe" opacity=".95"/>
+    <rect x="34" y="34" width="304" height="170" rx="22" fill="#d9eef4"/>
+    <circle cx="104" cy="118" r="24" fill="#37abc8"/>
+    <circle cx="194" cy="86" r="18" fill="#ffe08a"/>
+    <circle cx="280" cy="126" r="22" fill="#2f95ae"/>
+    <path d="M104 118l90-32 86 40" fill="none" stroke="#123247" stroke-width="8" stroke-linecap="round"/>
+    <rect x="34" y="238" width="128" height="92" rx="18" fill="#123247"/>
+    <rect x="182" y="238" width="156" height="20" rx="10" fill="#123247"/>
+    <rect x="182" y="276" width="124" height="16" rx="8" fill="#5b7f91"/>
+    <rect x="182" y="306" width="134" height="16" rx="8" fill="#5b7f91" opacity=".75"/>
+  </g>
+  <g transform="translate(120 110)">
+    <rect x="0" y="0" width="180" height="44" rx="22" fill="#ffffff" opacity=".14"/>
+    <text x="90" y="29" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#ffffff" letter-spacing="2">ACADEMY WORKSHOP</text>
+  </g>
+  <g transform="translate(120 540)">
+    <text x="0" y="0" font-family="Georgia, 'Times New Roman', serif" font-size="66" fill="#ffffff">Building Decision-Support</text>
+    <text x="0" y="82" font-family="Georgia, 'Times New Roman', serif" font-size="66" fill="#ffffff">Tools for Environmental Management</text>
+    <text x="0" y="144" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#dbf1f7" letter-spacing="1">Tool purpose, workflow fit, user context, and practical usability</text>
+  </g>
+</svg>

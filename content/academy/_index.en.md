@@ -1,5 +1,112 @@
 ---
-title: "Academy"
+title: "inSileco Academy"
+hero_title: "Premium workshops and coaching for environmental professionals and teams"
+hero_eyebrow: "inSileco Academy"
+hero_summary: "Create lasting operational capability through guided implementation built around real projects"
+hero_ctas:
+  - label: "Explore workshops"
+    url: "#available-workshops"
+    class: "is-primary"
+  - label: "Join a cohort"
+    url: "#academy-cta"
+    class: "is-light"
+proof_items:
+  - value: "Environmental"
+    label: "workflows, data, and reporting focus"
+  - value: "Coached"
+    label: "before, during, and after delivery"
+  - value: "Applied"
+    label: "real-work use cases instead of generic examples"
+  - value: "3 months"
+    label: "of coached implementation every two weeks"
+difference:
+  title: "Why Academy works better than standard training"
+  intro: "Most training creates value during the course itself. Academy provides value through coaching focused on guaranteeing workflow and behaviour changes stick long term."
+  left:
+    label: "Standard training"
+  right:
+    label: "Academy"
+  dimensions:
+    - label: "Delivery model"
+      left: "Most of the value is expected to happen during the live session itself."
+      right: "Live delivery is only one part of a coached adoption process."
+    - label: "Use in real work"
+      left: "Examples often stay generic and disconnected from the actual workflow pressure participants face."
+      right: "Workshops are designed around real operational problems, constraints, and deliverables."
+    - label: "Support after delivery"
+      left: "Participants are usually left to implement change on their own once the session ends."
+      right: "A fixed three-month coached implementation period provides support every two weeks as participants apply change."
+    - label: "Return on training spend"
+      left: "Understanding may improve even when behaviours and workflows do not actually change."
+      right: "The structure is designed to help the investment produce lasting workflow and behaviour change."
+process_title: "How Academy unfolds over time"
+process_intro: "Each workshop follows the same coached structure: preparation before delivery, real-work application during the live workshop, and a fixed three-month coached implementation period afterward."
+process:
+  - title: "Before"
+    duration: "1 to 2 weeks before"
+    emphasis: "Prepare the ground"
+    text: "We define client context and use cases, and remove setup friction before live delivery."
+    points:
+      - "intake and diagnostics"
+      - "setup and troubleshooting support"
+      - "preparation and coordination"
+  - title: "During"
+    duration: "Live workshop"
+    emphasis: "Work on your own project"
+    text: "Live time is used for guided application, practical feedback, and decisions that matter in real work."
+    points:
+      - "material overview"
+      - "apply to real workflows or operational problems"
+      - "live coaching, expert review, and feedback"
+  - title: "After"
+    duration: "3 months coached implementation"
+    emphasis: "Make learning last"
+    text: "The coaching continues long enough for habits, reuse, and accountability to become part of the workflow."
+    points:
+      - "structured check-ins every two weeks"
+      - "async workflow review"
+      - "progress accountability"
+workshops_title: "Explore all Academy workshops"
+workshops_fallback:
+  text: "Cannot find what you are looking for? Let us know what would be useful for you."
+  label: "Get in touch"
+  url: "/contact/"
+team_offer:
+  kicker: "Team option"
+  title: "Need this for your team?"
+  text: "Academy can also be delivered privately for teams that want the same coached structure with examples, pacing, and scope adapted to their own environment."
+  points:
+    - "Private delivery"
+    - "Adapted examples"
+    - "Manager-ready format"
+    - "Custom quote"
+  card:
+    label: "Private team delivery"
+    note: "Submit your information and we will reach out to schedule a conversation."
+  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=team&cta_source=academy_team"
+testimonials_title: "What participants value"
+testimonials_intro: "These testimonials were selected because they speak to practical relevance, coaching quality, and the kind of support that makes Academy different from generic training."
+faq:
+  title: "Questions buyers usually ask before reaching out"
+  items:
+    - question: "Who is Academy for?"
+      answer: "Academy is for environmental professionals, technical specialists, managers, analysts, and teams who want practical improvement in workflows, reporting, and applied use of tools or data."
+    - question: "Is Academy for individuals or teams?"
+      answer: "Both. The primary public path is small rolling cohorts for individual professionals, and there is also a private team-delivery option for managers."
+    - question: "Do participants need to bring their own project?"
+      answer: "Yes, whenever possible. Academy is strongest when participants bring a real workflow, deliverable, or project context into the cohort."
+    - question: "How much support is included after the workshop?"
+      answer: "Every Academy cohort includes a fixed three-month coached implementation period with check-ins every two weeks throughout that period."
+    - question: "How does fit review work?"
+      answer: "We reach out to schedule a call after each request. Fit is assessed during that conversation so we can discuss the right workshop, cohort, or team format."
+    - question: "Why publish cohort pricing but not team pricing?"
+      answer: "Cohorts are easier to package publicly. Team delivery depends more heavily on participant count, scope, and how much adaptation is needed, so a custom quote is more accurate."
+final_cta:
+  kicker: "Next step"
+  title: "Join a cohort conversation"
+  text: "Submit your information and we will reach out to schedule a conversation about the right cohort and workshop fit."
+  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=individual&cta_source=academy_final"
+  secondary_link:
+    label: "Applying for your team?"
+    url: "#team-option"
 ---
-
-Training and capacity building content coming soon.

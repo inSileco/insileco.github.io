@@ -443,6 +443,1737 @@ body {
     margin-bottom: 0;
 }
 
+.academy-hero {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background-color: #ffffff;
+}
+
+.academy-hero-copy {
+    max-width: 64rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.academy-eyebrow {
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #2f95ae;
+}
+
+.academy-hero-title {
+    max-width: 28ch;
+    line-height: 1.2;
+    padding-top: 0;
+    padding-bottom: 1.5rem;
+    margin-bottom: 0 !important;
+}
+
+.academy-hero-subtitle {
+    color: #334155;
+    max-width: 70ch;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem !important;
+}
+
+.academy-badge-row,
+.academy-team-points {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+.academy-team-points {
+    margin-top: 1rem;
+    justify-content: flex-start;
+}
+
+.academy-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.45rem 0.8rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(47, 149, 174, 0.18);
+    color: #0f172a;
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.academy-badge-solid {
+    background: #0f172a;
+    border-color: #0f172a;
+    color: #ffffff;
+}
+
+.academy-badge-light {
+    background: rgba(255, 255, 255, 0.16);
+    border-color: rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+}
+
+.academy-hero-actions {
+    margin-top: 1.5rem;
+    margin-bottom: 0.85rem !important;
+    justify-content: center;
+}
+
+.academy-hero-link a,
+.academy-inline-link {
+    color: #2f95ae;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.academy-hero-link a:hover,
+.academy-inline-link:hover {
+    text-decoration: underline;
+}
+
+.academy-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.academy-section-tight {
+    padding-top: 2rem;
+}
+
+.academy-section-alt {
+    background: #f8fafc;
+}
+
+.academy-section-header {
+    max-width: 42rem;
+    margin-bottom: 2rem;
+}
+
+.academy-section-header-centered {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.academy-section-kicker {
+    margin-bottom: 0.55rem;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #2f95ae;
+}
+
+.academy-path-card,
+.academy-feature-card,
+.academy-process-card,
+.academy-price-card,
+.academy-team-card {
+    height: 100%;
+    border-radius: 1.1rem;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    box-shadow: 0 16px 34px rgba(15, 23, 42, 0.05);
+}
+
+.academy-path-card {
+    padding: 1.6rem;
+}
+
+.academy-path-icon,
+.academy-feature-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, rgba(55, 171, 200, 0.16), rgba(255, 224, 138, 0.33));
+    color: #0f172a;
+    font-size: 1.2rem;
+}
+
+.academy-path-label,
+.academy-compare-label,
+.academy-price-label,
+.academy-team-card-label {
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #64748b;
+}
+
+.academy-proof-strip {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    background: linear-gradient(135deg, #0f172a 0%, #1d3449 100%);
+}
+
+.academy-proof-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.academy-proof-item {
+    text-align: center;
+    color: #ffffff;
+}
+
+.academy-proof-value {
+    display: block;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #ffe08a;
+}
+
+.academy-proof-label {
+    display: block;
+    margin-top: 0.3rem;
+    font-size: 0.92rem;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.academy-compare-card ul,
+.academy-process-card ul,
+.academy-price-card ul,
+.academy-path-card ul {
+    margin-top: 1rem;
+}
+
+.academy-difference-header {
+    margin-bottom: 1.1rem;
+}
+
+.academy-difference-visual {
+    margin: 0;
+    max-width: 68rem;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1.1rem;
+    border: 1px solid #dbe5ec;
+    background: linear-gradient(180deg, #ffffff 0%, #fbfdfe 100%);
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.05);
+    overflow: hidden;
+}
+
+.academy-difference-visual svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.academy-difference-visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.academy-process-timeline {
+    position: relative;
+}
+
+.academy-process-line {
+    position: absolute;
+    top: 3.05rem;
+    left: calc(16.666% + 2.55rem);
+    right: calc(16.666% + 2.55rem);
+    height: 0.28rem;
+    border-radius: 999px;
+    background: linear-gradient(90deg, rgba(148, 163, 184, 0.8) 0%, rgba(55, 171, 200, 0.75) 100%);
+    z-index: 0;
+}
+
+.academy-process-row {
+    position: relative;
+    z-index: 1;
+    margin-left: -0.7rem;
+    margin-right: -0.7rem;
+}
+
+.academy-process-row>.academy-process-column {
+    padding: 0.7rem;
+}
+
+.academy-process-row>.academy-process-column .academy-process-card {
+    max-width: 25.5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.academy-process-card {
+    position: relative;
+    padding: 1.15rem;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.95rem;
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.05);
+}
+
+.academy-process-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    margin-bottom: 0.8rem;
+}
+
+.academy-process-heading .title {
+    margin-bottom: 0;
+}
+
+.academy-process-duration {
+    margin: 0 0 0.2rem;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #2f95ae;
+}
+
+.academy-process-emphasis {
+    margin-bottom: 0.7rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.academy-process-summary {
+    margin: 0 0 0.8rem;
+    font-style: italic;
+    color: #475569;
+    line-height: 1.5;
+}
+
+.academy-process-points {
+    margin: 0;
+    padding-left: 1.15rem;
+    list-style: disc;
+}
+
+.academy-process-points li+li {
+    margin-top: 0.35rem;
+}
+
+.academy-process-points li::marker {
+    color: #2f95ae;
+}
+
+.academy-process-step {
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #0f172a;
+    color: #ffffff;
+    font-size: 0.88rem;
+    font-weight: 700;
+    box-shadow: 0 0 0 4px #f8fafc;
+}
+
+.academy-process-card-featured {
+    border-color: rgba(55, 171, 200, 0.24);
+    background: linear-gradient(180deg, #f7fcfd 0%, #ffffff 100%);
+    box-shadow: 0 18px 36px rgba(15, 23, 42, 0.08);
+}
+
+.academy-process-card-featured .academy-process-step {
+    background: #37abc8;
+}
+
+@media screen and (min-width: 1216px) {
+    .academy-process-timeline {
+        width: calc(100% + 4rem);
+        margin-left: -2rem;
+        margin-right: -2rem;
+    }
+
+    .academy-process-row>.academy-process-column .academy-process-card {
+        max-width: 27rem;
+    }
+}
+
+.academy-followthrough {
+    margin-top: 1rem;
+    padding: 1.15rem 1.25rem;
+    border-radius: 1rem;
+    background: linear-gradient(135deg, rgba(55, 171, 200, 0.12), rgba(255, 224, 138, 0.18));
+    border: 1px solid rgba(55, 171, 200, 0.18);
+}
+
+.academy-followthrough p {
+    margin: 0.7rem 0 0;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.academy-workshop-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-radius: 1.2rem;
+    overflow: visible;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    transition: transform 0.2s ease;
+}
+
+.academy-workshop-card:hover,
+.academy-workshop-card:focus {
+    transform: translateY(-3px);
+}
+
+.academy-workshop-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    min-height: 0;
+    margin: 0 1rem;
+    padding: 0.35rem 0 0.9rem;
+}
+
+.academy-workshop-visual img {
+    display: block;
+    width: 100%;
+    max-width: 14rem;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 0.8rem;
+}
+
+.academy-workshop-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 14rem;
+    min-height: 10.5rem;
+    padding: 2rem;
+    color: #0f172a;
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-align: center;
+    border-radius: 0.8rem;
+}
+
+.academy-workshop-overlay {
+    position: absolute;
+    top: 0.8rem;
+    left: 0.8rem;
+    right: 0.8rem;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.academy-workshop-title {
+    margin: 0;
+    color: #0f172a;
+    font-size: 1.3rem !important;
+    line-height: 1.25;
+    text-align: center;
+    text-wrap: balance;
+}
+
+.academy-workshop-body {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+}
+
+.academy-workshop-body:not(.academy-workshop-body-actions) {
+    justify-content: center;
+    min-height: 4.75rem;
+}
+
+.academy-workshop-body-actions {
+    padding-top: 0.1rem;
+}
+
+.academy-workshop-cta {
+    margin-top: auto;
+}
+
+.academy-workshops-fallback {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    text-align: center;
+}
+
+.academy-workshops-fallback-headline {
+    margin: 0 0 1rem;
+    color: #334155;
+}
+
+.academy-workshop-lever {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.32rem 0.55rem;
+    border-radius: 999px;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 1;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.14);
+}
+
+.academy-workshop-lever-data-management {
+    background: rgba(227, 244, 230, 0.92);
+    color: #245b2f;
+}
+
+.academy-workshop-lever-analytical-capabilities {
+    background: rgba(221, 240, 246, 0.94);
+    color: #1f5b6c;
+}
+
+.academy-workshop-lever-decision-support-tools {
+    background: rgba(255, 240, 199, 0.94);
+    color: #7a4d0b;
+}
+
+.academy-workshop-lever-automated-workflows {
+    background: rgba(231, 228, 247, 0.94);
+    color: #4f3f7f;
+}
+
+.academy-feature-card {
+    padding: 1.4rem;
+}
+
+.academy-team-band .academy-section-kicker,
+.academy-cta-section .academy-section-kicker {
+    color: #2f95ae;
+}
+
+.academy-team-text {
+    max-width: 40rem;
+    font-size: 1.05rem;
+    color: #334155;
+}
+
+.academy-team-card {
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #0f172a 0%, #1d3449 100%);
+    color: #ffffff;
+}
+
+.academy-team-card-text {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.25rem;
+}
+
+.academy-team-form {
+    margin-top: 0.25rem;
+}
+
+.academy-team-form iframe {
+    display: block;
+    width: 100%;
+}
+
+.academy-team-card .academy-team-card-label {
+    color: #2f95ae;
+}
+
+.academy-testimonial-box {
+    background: linear-gradient(140deg, #ffffff 0%, #f8fbfd 100%);
+    border-top: 3px solid rgba(47, 149, 174, 0.28);
+}
+
+.academy-testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.academy-testimonial-card .academy-testimonial-box {
+    height: 100%;
+}
+
+.academy-testimonial-text {
+    font-size: 1.1rem;
+    line-height: 1.55;
+}
+
+.academy-testimonial-card.is-hidden {
+    display: none;
+}
+
+.academy-testimonial-actions {
+    margin-top: 1.25rem;
+}
+
+.button.academy-testimonial-toggle,
+.button.is-light.academy-testimonial-toggle {
+    border-color: #2f95ae;
+    background: #2f95ae;
+    color: #ffffff;
+}
+
+.button.academy-testimonial-toggle:hover,
+.button.is-light.academy-testimonial-toggle:hover {
+    border-color: #267f94;
+    background: #267f94;
+    color: #ffffff;
+}
+
+.academy-price-card {
+    padding: 1.6rem;
+}
+
+.academy-price-card-primary {
+    border-color: rgba(55, 171, 200, 0.3);
+    background: linear-gradient(180deg, #eff9fc 0%, #ffffff 100%);
+}
+
+.academy-price-value {
+    margin: 0.35rem 0 0.9rem;
+    font-size: 1.7rem;
+    font-weight: 800;
+    line-height: 1.15;
+    color: #0f172a;
+}
+
+.academy-price-value-muted {
+    color: #2f95ae;
+}
+
+.academy-price-text {
+    color: #334155;
+}
+
+.academy-faq-list {
+    max-width: 52rem;
+    margin: 0 auto;
+}
+
+.academy-faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 1rem;
+    background: #ffffff;
+    padding: 1rem 1.15rem;
+    margin-bottom: 0.9rem;
+}
+
+.academy-faq-item summary {
+    cursor: pointer;
+    list-style: none;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.academy-faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.academy-faq-item[open] summary {
+    margin-bottom: 0.75rem;
+}
+
+.academy-faq-item p {
+    margin: 0;
+    color: #334155;
+}
+
+.academy-cta-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    background: linear-gradient(135deg, #0f172a 0%, #1d3449 100%);
+    color: #ffffff;
+}
+
+.academy-cta-shell {
+    max-width: 52rem;
+    margin: 0 auto;
+    padding: 2rem 1.75rem;
+    border-radius: 1.1rem;
+    background: transparent;
+    border: 0;
+    text-align: center;
+    box-shadow: none;
+}
+
+.academy-cta-section .title,
+.academy-cta-section p {
+    color: #ffffff;
+}
+
+.academy-cta-form {
+    max-width: 34rem;
+    margin: 1.5rem auto 0;
+}
+
+.academy-cta-form iframe {
+    display: block;
+    width: 100%;
+}
+
+.academy-cta-secondary-link {
+    margin: 1rem 0 0;
+}
+
+.academy-cta-secondary-link a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: rgba(255, 255, 255, 0.08);
+    color: #2f95ae;
+    text-decoration: none;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.academy-cta-secondary-link a:hover {
+    color: #2f95ae;
+    background: rgba(255, 255, 255, 0.14);
+    border-color: rgba(255, 255, 255, 0.42);
+}
+
+.academy-workshop-hero .academy-hero-title {
+    max-width: 12ch;
+}
+
+.academy-workshop-hero-card {
+    overflow: hidden;
+    border-radius: 1.25rem;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    box-shadow: 0 22px 46px rgba(15, 23, 42, 0.1);
+}
+
+.academy-workshop-hero-image {
+    min-height: 16rem;
+}
+
+.academy-workshop-hero-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.academy-workshop-hero-body {
+    padding: 1.4rem;
+}
+
+.academy-workshop-hero-body h2 {
+    margin: 0.9rem 0 0.6rem;
+    font-size: 1.45rem;
+    line-height: 1.2;
+    color: #0f172a;
+}
+
+.academy-workshop-hero-body p {
+    color: #334155;
+}
+
+.academy-gis-hero {
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    background:
+        radial-gradient(circle at top left, rgba(55, 171, 200, 0.14), transparent 30%),
+        linear-gradient(180deg, #f8fcfd 0%, #ffffff 62%);
+}
+
+.academy-gis-shell {
+    position: relative;
+}
+
+.academy-gis-title {
+    max-width: 10ch;
+    margin-bottom: 1rem !important;
+    line-height: 1.05;
+}
+
+.academy-gis-subtitle {
+    max-width: 60ch;
+    font-size: 1.08rem;
+    line-height: 1.65;
+    color: #334155;
+}
+
+.academy-gis-badges {
+    justify-content: flex-start;
+    margin-top: 1.2rem;
+}
+
+.academy-gis-outcome {
+    margin-top: 1.4rem;
+    max-width: 50rem;
+}
+
+.academy-gis-lead {
+    margin-bottom: 0.8rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.55;
+    color: #0f172a;
+}
+
+.academy-gis-lead-support {
+    max-width: 44rem;
+    margin: 0;
+    color: #475569;
+    line-height: 1.6;
+}
+
+.academy-gis-hero-support {
+    margin-top: 1rem;
+}
+
+.academy-gis-lead-points,
+.academy-gis-checklist {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.academy-gis-lead-points li,
+.academy-gis-checklist li {
+    position: relative;
+    padding-left: 1.45rem;
+    color: #334155;
+}
+
+.academy-gis-lead-points li+li,
+.academy-gis-checklist li+li {
+    margin-top: 0.65rem;
+}
+
+.academy-gis-lead-points li::before,
+.academy-gis-checklist li::before {
+    content: "";
+    position: absolute;
+    top: 0.6rem;
+    left: 0;
+    width: 0.65rem;
+    height: 0.65rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #37abc8, #ffe08a);
+    box-shadow: 0 0 0 4px rgba(55, 171, 200, 0.12);
+}
+
+.academy-gis-actions {
+    margin-top: 1.6rem;
+    justify-content: flex-start;
+}
+
+.academy-gis-hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem 1rem;
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+    color: #475569;
+}
+
+.academy-gis-hero-meta a {
+    color: #2f95ae;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.academy-gis-hero-meta a:hover {
+    text-decoration: underline;
+}
+
+.academy-gis-offer-stack {
+    display: grid;
+    gap: 1rem;
+}
+
+.academy-gis-price-card,
+.academy-gis-visual-card,
+.academy-gis-signal-card,
+.academy-gis-package-card,
+.academy-gis-bonus-card,
+.academy-gis-flow-card,
+.academy-gis-difference-card,
+.academy-gis-bring-card,
+.academy-gis-guarantee-card,
+.academy-gis-fit-card,
+.academy-gis-pricing-card,
+.academy-gis-requirements-card {
+    border-radius: 1.25rem;
+    border: 1px solid #dde7ee;
+    background: #ffffff;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06);
+}
+
+.academy-gis-price-card {
+    padding: 1.4rem;
+    background: linear-gradient(180deg, #ffffff 0%, #f7fbfd 100%);
+    border-color: rgba(47, 149, 174, 0.22);
+}
+
+.academy-gis-price-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.academy-gis-price-label-plain {
+    margin: 0;
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: #64748b;
+}
+
+.academy-gis-price {
+    margin: 0.1rem 0 0;
+    font-size: 2.3rem;
+    font-weight: 800;
+    line-height: 1;
+    color: #0f172a;
+}
+
+.academy-gis-price-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.45rem 0.7rem;
+    border-radius: 999px;
+    background: #eef5f8;
+    color: #1f4e5c;
+    font-size: 0.8rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.academy-gis-offer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.8rem;
+    margin-top: 1.15rem;
+}
+
+.academy-gis-offer-item {
+    padding: 0.85rem;
+    border-radius: 1rem;
+    background: #f8fbfd;
+    border: 1px solid #e6edf2;
+}
+
+.academy-gis-offer-term {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #64748b;
+}
+
+.academy-gis-offer-item strong {
+    display: block;
+    line-height: 1.35;
+    color: #0f172a;
+}
+
+.academy-gis-offer-note {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e2e8f0;
+    color: #334155;
+}
+
+.academy-gis-visual-card {
+    overflow: hidden;
+}
+
+.academy-gis-visual {
+    background: linear-gradient(140deg, #d9eef4 0%, #eef7fa 45%, #ffffff 100%);
+}
+
+.academy-gis-visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.academy-gis-visual-copy {
+    padding: 1.1rem 1.2rem 1.2rem;
+}
+
+.academy-gis-visual-copy p:last-child {
+    margin-bottom: 0;
+    color: #334155;
+}
+
+.academy-gis-proof-strip {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.8rem;
+    margin-top: 1.3rem;
+}
+
+.academy-gis-proof-item {
+    padding: 1rem 1.05rem;
+    border-radius: 1rem;
+    background: #0f172a;
+    color: #ffffff;
+}
+
+.academy-gis-proof-value {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #ffe08a;
+}
+
+.academy-gis-proof-label {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.academy-gis-signal-card,
+.academy-gis-package-card,
+.academy-gis-bonus-card,
+.academy-gis-flow-card,
+.academy-gis-difference-card,
+.academy-gis-bring-card,
+.academy-gis-guarantee-card,
+.academy-gis-fit-card,
+.academy-gis-pricing-card,
+.academy-gis-requirements-card {
+    padding: 1.5rem;
+}
+
+.academy-gis-signal-card-plain {
+    height: 100%;
+}
+
+.academy-gis-signal-card-dark {
+    background: linear-gradient(135deg, #0f172a 0%, #1d3449 100%);
+    border-color: rgba(15, 23, 42, 0.4);
+}
+
+.academy-gis-signal-card-dark .title,
+.academy-gis-signal-card-dark p,
+.academy-gis-signal-card-dark li {
+    color: #ffffff;
+}
+
+.academy-gis-signal-card-dark .academy-section-kicker {
+    color: #8fd1e1;
+}
+
+.academy-gis-checklist-muted li {
+    color: #475569;
+}
+
+.academy-gis-inline-cta {
+    margin-top: 1.15rem;
+}
+
+.academy-gis-header-narrow {
+    max-width: 46rem;
+}
+
+.academy-gis-package-list {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.academy-gis-package-row {
+    display: grid;
+    grid-template-columns: 0.85rem 1fr;
+    gap: 0.85rem;
+    align-items: start;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid #e8edf1;
+}
+
+.academy-gis-package-row:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.academy-gis-package-row p {
+    margin: 0;
+    color: #334155;
+}
+
+.academy-gis-package-dot {
+    width: 0.65rem;
+    height: 0.65rem;
+    margin-top: 0.42rem;
+    border-radius: 999px;
+    background: #37abc8;
+}
+
+.academy-gis-bonus-card {
+    background: linear-gradient(180deg, #f8fcfd 0%, #ffffff 100%);
+}
+
+.academy-gis-testimonial-grid {
+    gap: 1.1rem;
+}
+
+.academy-gis-testimonial-box {
+    height: 100%;
+    border-top-width: 4px;
+}
+
+.academy-gis-testimonial-text {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: #0f172a;
+}
+
+.academy-gis-flow-card {
+    height: 100%;
+}
+
+.academy-gis-flow-top {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.8rem;
+}
+
+.academy-gis-flow-top .title {
+    margin-bottom: 0;
+}
+
+.academy-gis-checklist-compact li+li {
+    margin-top: 0.5rem;
+}
+
+.academy-gis-difference-list,
+.academy-gis-fit-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.academy-gis-difference-item {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: 0.9rem;
+    align-items: start;
+}
+
+.academy-gis-difference-item .title,
+.academy-gis-fit-item .title {
+    margin-bottom: 0.35rem;
+}
+
+.academy-gis-guarantee-card {
+    background: linear-gradient(180deg, #ffffff 0%, #fbfcfd 100%);
+}
+
+.academy-gis-pricing-card {
+    height: 100%;
+}
+
+.academy-gis-pricing-card-primary {
+    background: linear-gradient(180deg, #eff9fc 0%, #ffffff 100%);
+    border-color: rgba(55, 171, 200, 0.28);
+}
+
+.academy-gis-pricing-price-large {
+    font-size: 2.35rem;
+}
+
+.academy-gis-price-rationale {
+    margin: 0.4rem 0 0.8rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.academy-gis-price-checklist {
+    margin-top: 0.9rem;
+}
+
+.academy-gis-price-includes-label {
+    margin-top: 1.2rem;
+    margin-bottom: 0.7rem;
+}
+
+.academy-gis-fit-card+.academy-gis-fit-card {
+    margin-top: 1rem;
+}
+
+.academy-gis-fit-card-secondary {
+    background: #f8fafc;
+}
+
+.academy-gis-inline-action {
+    margin-bottom: 0 !important;
+}
+
+.academy-gis-details {
+    border-radius: 1.25rem;
+    border: 1px solid #dde7ee;
+    background: #ffffff;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06);
+    overflow: hidden;
+}
+
+.academy-gis-details summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 1.4rem 1.5rem;
+    background: linear-gradient(180deg, #f8fcfd 0%, #ffffff 100%);
+}
+
+.academy-gis-details summary::-webkit-details-marker {
+    display: none;
+}
+
+.academy-gis-details-title {
+    display: block;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.academy-gis-details-body {
+    padding: 0 1.5rem 1.5rem;
+}
+
+.academy-gis-guarantee-close {
+    margin-top: 1rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.academy-gis-pricing-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.academy-gis-pricing-price {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+    color: #0f172a;
+    white-space: nowrap;
+}
+
+.academy-gis-pricing-actions {
+    margin-top: 1.25rem;
+    margin-bottom: 0 !important;
+}
+
+.academy-gis-companion-card {
+    display: block;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.academy-gis-companion-card:hover,
+.academy-gis-companion-card:focus {
+    transform: translateY(-3px);
+    border-color: rgba(55, 171, 200, 0.28);
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+.academy-gis-requirements-card-muted {
+    background: #f8fafc;
+}
+
+.academy-gis-final-cta {
+    padding-top: 3.5rem;
+}
+
+.academy-offer-hero {
+    padding-top: 4rem;
+    padding-bottom: 2.75rem;
+    background:
+        radial-gradient(circle at top left, rgba(55, 171, 200, 0.12), transparent 28%),
+        linear-gradient(180deg, #f8fcfd 0%, #ffffff 64%);
+}
+
+.academy-offer-wrap {
+    max-width: 58rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.academy-offer-title {
+    max-width: none;
+    margin-bottom: 0.9rem !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    line-height: 1.02;
+    white-space: nowrap;
+}
+
+.academy-offer-subtitle {
+    max-width: 50rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.32rem;
+    line-height: 1.55;
+    font-weight: 700;
+    font-style: italic;
+    color: #334155;
+}
+
+.academy-offer-support {
+    max-width: 50rem;
+    margin-top: 0.9rem;
+    margin-left: auto;
+    margin-right: auto;
+    color: #475569;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.academy-offer-hero-visual {
+    max-width: 44rem;
+    margin: 1.4rem auto 0;
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 1px solid #dbe5ec;
+    background: #eef6f9;
+    box-shadow: 0 18px 38px rgba(15, 23, 42, 0.08);
+}
+
+.academy-offer-hero-visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.academy-offer-actions {
+    margin-top: 1.45rem;
+    justify-content: center;
+}
+
+.academy-offer-section {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.academy-offer-section-alt {
+    background: #f8fbfd;
+}
+
+.academy-offer-shell {
+    max-width: 58rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.academy-offer-testimonials {
+    max-width: 120rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.academy-offer-card-grid {
+    max-width: 120rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.academy-offer-shell-narrow {
+    max-width: 50rem;
+}
+
+.academy-offer-section .academy-offer-shell,
+.academy-offer-section .academy-offer-shell-narrow {
+    max-width: 58rem;
+}
+
+.academy-offer-shell-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.academy-offer-heading {
+    max-width: 42rem;
+    margin-bottom: 1.35rem;
+}
+
+.academy-offer-landing .academy-section-kicker {
+    font-size: 1.35rem;
+    letter-spacing: 0.1em;
+}
+
+.academy-offer-intro {
+    color: #475569;
+    line-height: 1.65;
+}
+
+.academy-offer-testimonials {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.academy-offer-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.academy-offer-section-alt .academy-offer-heading {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.academy-offer-section .academy-offer-shell-narrow .academy-offer-heading {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.academy-offer-quote {
+    height: 100%;
+    padding: 1.35rem 1.4rem;
+    border-top: 3px solid rgba(47, 149, 174, 0.28);
+    border-radius: 1rem;
+    background: #ffffff;
+    box-shadow: 0 16px 34px rgba(15, 23, 42, 0.05);
+    border-bottom: none;
+}
+
+.academy-offer-quote-text {
+    margin: 0 0 0.9rem;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #0f172a;
+}
+
+.academy-offer-quote-meta {
+    margin: 0;
+    font-size: 0.92rem;
+    color: #475569;
+    font-weight: 700;
+}
+
+.academy-offer-card {
+    height: 100%;
+    padding: 1.1rem 1.2rem;
+    border-radius: 1rem;
+    background: linear-gradient(180deg, #ffffff 0%, #fbfdfe 100%);
+    box-shadow: none;
+}
+
+.academy-offer-card-head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 2.8rem;
+    gap: 0.9rem;
+    margin-bottom: 0.55rem;
+    text-align: center;
+}
+
+.academy-offer-card-head .title {
+    margin-bottom: 0;
+    font-size: 1.35rem;
+    text-align: center;
+}
+
+.academy-offer-card-visual {
+    margin-bottom: 0.65rem;
+    aspect-ratio: 16 / 10;
+    border-radius: 0.85rem;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at top left, rgba(255, 224, 138, 0.4), transparent 28%),
+        linear-gradient(145deg, rgba(55, 171, 200, 0.14), rgba(15, 23, 42, 0.03)),
+        repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.55) 0 10px, rgba(255, 255, 255, 0.12) 10px 20px);
+}
+
+.academy-offer-card-visual img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.academy-offer-card p {
+    color: #475569;
+    line-height: 1.65;
+    text-align: center;
+}
+
+.academy-offer-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.academy-offer-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.1rem;
+    height: 2.1rem;
+    border-radius: 999px;
+    background: #0f172a;
+    color: #ffffff;
+    font-size: 0.82rem;
+    font-weight: 800;
+    flex: 0 0 auto;
+}
+
+.academy-offer-flow-item {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+    align-items: start;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.academy-offer-flow-item .title {
+    margin-bottom: 0.1rem;
+    font-size: 1.08rem;
+    font-weight: 700;
+}
+
+.academy-offer-flow-item p,
+.academy-offer-step p {
+    color: #475569;
+    line-height: 1.65;
+}
+
+.academy-offer-inline-cta {
+    margin-bottom: 0 !important;
+    margin-top: 1.85rem;
+}
+
+.academy-offer-inline-cta-center {
+    justify-content: center;
+}
+
+.academy-offer-inline-cta .button {
+    min-height: 3.5rem;
+    padding: 0.95rem 1.7rem;
+    font-size: 1.05rem;
+    font-weight: 800;
+    border-radius: 0.8rem;
+    box-shadow: 0 14px 28px rgba(15, 23, 42, 0.12);
+}
+
+.academy-offer-step {
+    display: block;
+}
+
+.academy-offer-step .title {
+    margin-bottom: 0.5rem;
+}
+
+.academy-offer-price-block {
+    max-width: 34rem;
+}
+
+.academy-offer-price {
+    margin: 0 0 1rem;
+    font-size: 1.02rem;
+    font-weight: 800;
+    line-height: 1.3;
+    color: #0f172a;
+}
+
+.academy-offer-price-intro,
+.academy-offer-subhead {
+    font-size: 1.02rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: none;
+    color: #0f172a;
+    line-height: 1.3;
+}
+
+.academy-offer-price-intro {
+    margin: 0 0 0.8rem;
+}
+
+.academy-offer-subhead {
+    margin: 1rem 0 0.45rem;
+}
+
+.academy-offer-list {
+    margin: 0;
+    padding-left: 1.15rem;
+    list-style: disc;
+    color: #334155;
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
+.academy-offer-list li::marker {
+    color: #2f95ae;
+}
+
+.academy-offer-list li+li {
+    margin-top: 0.5rem;
+}
+
+.academy-offer-fit-block+.academy-offer-fit-block {
+    margin-top: 1.5rem;
+}
+
+.academy-offer-panel {
+    border: 1px solid #dbe5ec;
+    border-radius: 1rem;
+    background: #ffffff;
+    box-shadow: none;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+
+.academy-offer-panel summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.academy-offer-panel summary::-webkit-details-marker {
+    display: none;
+}
+
+.academy-offer-panel-summary {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 3.25rem;
+    gap: 2.4rem;
+    align-items: center;
+    min-height: 4rem;
+    padding: 1rem 2.5rem;
+    background: #0f172a;
+}
+
+.academy-offer-panel-header {
+    text-align: center;
+}
+
+.academy-offer-panel-header .academy-section-kicker {
+    margin-bottom: 0;
+    color: #ffffff;
+    font-weight: 900;
+    line-height: 1.15;
+}
+
+.academy-offer-panel-title {
+    margin: 0 !important;
+    font-size: clamp(2rem, 3vw, 2.9rem);
+    font-weight: 900;
+    color: #ffffff;
+}
+
+.academy-offer-panel-toggle {
+    position: relative;
+    width: 1.8rem;
+    height: 1.8rem;
+    flex: 0 0 auto;
+    justify-self: end;
+    margin-right: 1rem;
+}
+
+.academy-offer-panel-toggle::before,
+.academy-offer-panel-toggle::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1.2rem;
+    height: 3px;
+    background: #ffffff;
+    border-radius: 999px;
+    transform: translate(-50%, -50%);
+}
+
+.academy-offer-panel-toggle::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.academy-offer-panel-body {
+    padding: 1.35rem 1.2rem 1.2rem;
+    font-size: 1rem;
+}
+
+.academy-offer-panel-intro {
+    margin: 0 0 1rem;
+    color: #475569;
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
+.academy-offer-panel-intro-tight {
+    margin-bottom: 0.65rem;
+}
+
+.academy-offer-panel-body>p:not(.academy-offer-panel-intro) {
+    color: #334155;
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
+.academy-offer-details-body {
+    padding-top: 1.35rem;
+}
+
+.academy-offer-details-grid>div,
+.academy-offer-fit-block,
+.academy-offer-price-block {
+    max-width: 42rem;
+}
+
+.academy-offer-guarantee-close {
+    margin-top: 1rem;
+    font-weight: 700;
+    color: #0f172a;
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
+.academy-offer-team {
+    padding-top: 2.4rem;
+}
+
+.academy-offer-team-wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 2rem;
+    align-items: center;
+    padding: 1.3rem 0 0;
+    border-top: 1px solid #dbe5ec;
+}
+
+.academy-offer-team-action {
+    justify-self: end;
+}
+
+.academy-offer-final {
+    padding-top: 3.25rem;
+}
+
 .about-team .columns {
     max-width: 100rem;
     margin-left: auto;
@@ -542,6 +2273,201 @@ input[type="checkbox"] {
 
 /* Responsive horizontal margins - remove on mobile to prevent horizontal scroll */
 @media screen and (max-width: 1025px) {
+    .academy-hero {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .academy-gis-proof-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .academy-hero-title {
+        max-width: none;
+        font-size: 1.95rem;
+    }
+
+    .academy-proof-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .academy-testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .academy-gis-offer-grid,
+    .academy-gis-proof-strip {
+        grid-template-columns: 1fr;
+    }
+
+    .academy-gis-price-top,
+    .academy-gis-pricing-head {
+        flex-direction: column;
+    }
+
+    .academy-gis-badges,
+    .academy-gis-actions {
+        justify-content: center;
+    }
+
+    .academy-gis-hero-meta {
+        justify-content: center;
+    }
+
+    .academy-gis-title,
+    .academy-gis-subtitle,
+    .academy-gis-outcome {
+        max-width: none;
+        text-align: center;
+    }
+
+    .academy-offer-card-grid,
+    .academy-offer-details-grid,
+    .academy-offer-testimonials,
+    .academy-offer-team-wrap {
+        grid-template-columns: 1fr;
+    }
+
+    .academy-offer-team-action {
+        justify-self: start;
+    }
+
+    .academy-offer-flow-item {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .academy-gis-difference-item {
+        grid-template-columns: 1fr;
+    }
+
+    .academy-compare-head,
+    .academy-compare-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .academy-process-line {
+        display: none;
+    }
+
+    .academy-compare-shell {
+        border: 0;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .academy-compare-head {
+        display: none;
+    }
+
+    .academy-compare-dimension {
+        grid-column: 1 / -1;
+        padding: 0.55rem 0.7rem;
+        background: #eef5f8;
+        border-color: #dbe5ec;
+    }
+
+    .academy-compare-cell::before {
+        display: block;
+        margin-bottom: 0.35rem;
+        font-size: 0.7rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+    }
+
+    .academy-compare-cell-muted::before {
+        content: "Standard training";
+        color: #64748b;
+    }
+
+    .academy-compare-cell-strong::before {
+        content: "Academy";
+        color: #2f95ae;
+    }
+
+    .academy-compare-board {
+        padding: 0;
+    }
+
+    .academy-compare-row {
+        gap: 0.45rem;
+        padding: 0.7rem;
+        border: 1px solid #dbe5ec;
+        border-radius: 0.85rem;
+        background: #ffffff;
+        box-shadow: 0 8px 18px rgba(15, 23, 42, 0.04);
+    }
+
+    .academy-compare-row+.academy-compare-row {
+        margin-top: 0.6rem;
+    }
+
+    .academy-compare-cell {
+        padding: 0.6rem 0.65rem;
+        border-radius: 0.7rem;
+    }
+
+    .academy-compare-cell p {
+        font-size: 0.88rem;
+    }
+
+    .academy-process-card {
+        padding: 1.1rem;
+    }
+
+    .academy-process-row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .academy-process-row>.academy-process-column {
+        position: relative;
+        padding: 0 0 1.15rem;
+    }
+
+    .academy-process-row>.academy-process-column::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: calc(100% - 1.15rem);
+        width: 0.28rem;
+        height: 1.15rem;
+        transform: translateX(-50%);
+        border-radius: 999px;
+        background: linear-gradient(180deg, rgba(148, 163, 184, 0.8) 0%, rgba(55, 171, 200, 0.75) 100%);
+    }
+
+    .academy-process-row>.academy-process-column:last-child::after {
+        display: none;
+    }
+
+    .academy-process-row>.academy-process-column .academy-process-card {
+        max-width: none;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .academy-process-card+.academy-process-card {
+        margin-top: 0;
+    }
+
+    .academy-section,
+    .academy-cta-section {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .academy-cta-shell,
+    .academy-path-card,
+    .academy-feature-card,
+    .academy-process-card,
+    .academy-price-card,
+    .academy-team-card,
+    .academy-workshop-body {
+        padding: 1.2rem;
+    }
+
     .mx-6-tablet {
         margin-left: 0 !important;
         margin-right: 0 !important;

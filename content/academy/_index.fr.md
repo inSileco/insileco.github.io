@@ -1,5 +1,112 @@
 ---
-title: "Academie"
+title: "inSileco Académie"
+hero_title: "Ateliers premium et accompagnement pour les professionnel.le.s et équipes en environnement"
+hero_eyebrow: "inSileco Académie"
+hero_summary: "Développer durablement les capacités opérationnelles grâce à une mise en oeuvre accompagnée ancrée dans des projets réels"
+hero_ctas:
+  - label: "Explorer les ateliers"
+    url: "#available-workshops"
+    class: "is-primary"
+  - label: "Joindre une cohorte"
+    url: "#academy-cta"
+    class: "is-light"
+proof_items:
+  - value: "Environnement"
+    label: "axé sur les flux de travail, les données et l'automatisation de rapports"
+  - value: "Accompagné"
+    label: "avant, pendant et après la livraison"
+  - value: "Appliqué"
+    label: "des cas d’usage réels plutôt que des exemples génériques"
+  - value: "3 mois"
+    label: "de mise en oeuvre accompagnée toutes les deux semaines"
+difference:
+  title: "Pourquoi Académie fonctionne mieux qu’une formation standard"
+  intro: "La plupart des formations créent de la valeur pendant la séance elle-même. Académie crée de la valeur grâce à un accompagnement centré sur des changements durables dans les flux de travail et les façons de faire."
+  left:
+    label: "Formation standard"
+  right:
+    label: "Académie"
+  dimensions:
+    - label: "Modèle de livraison"
+      left: "La majeure partie de la valeur est censée se produire pendant la séance en direct elle-même."
+      right: "La livraison en direct n’est qu’une partie d’un processus d’adoption accompagné."
+    - label: "Usage dans le vrai travail"
+      left: "Les exemples restent souvent génériques et déconnectés de la pression réelle des flux de travail."
+      right: "Les ateliers sont conçus autour de vrais problèmes opérationnels, contraintes et livrables."
+    - label: "Soutien après la livraison"
+      left: "Les participant.e.s doivent généralement mettre en oeuvre les changements seul.e.s une fois la séance terminée."
+      right: "Une période fixe de trois mois de mise en oeuvre accompagnée offre un soutien toutes les deux semaines."
+    - label: "Retour sur l’investissement"
+      left: "La compréhension peut s’améliorer sans que les comportements et les flux de travail changent réellement."
+      right: "La structure est conçue pour que l’investissement produise un changement durable dans les workflows et les façons de faire."
+process_title: "Comment Académie se déploie dans le temps"
+process_intro: "Chaque atelier suit la même structure accompagnée : préparation avant la livraison, application sur du vrai travail pendant l’atelier en direct, puis une période fixe de trois mois de mise en oeuvre accompagnée."
+process:
+  - title: "Avant"
+    duration: "1 à 2 semaines avant"
+    emphasis: "Préparer le terrain"
+    text: "Nous définissons le contexte client et les cas d’usage, puis réduisons les frictions techniques avant la livraison en direct."
+    points:
+      - "intake et diagnostic"
+      - "soutien à la configuration et au dépannage"
+      - "préparation et coordination"
+  - title: "Pendant"
+    duration: "Atelier en direct"
+    emphasis: "Travailler sur votre propre projet"
+    text: "Le temps en direct est consacré à l’application guidée, à des retours pratiques et à des décisions qui comptent dans le vrai travail."
+    points:
+      - "survol du matériel"
+      - "application à de vrais workflows ou problèmes opérationnels"
+      - "accompagnement en direct, revue experte et rétroaction"
+  - title: "Après"
+    duration: "3 mois de mise en oeuvre accompagnée"
+    emphasis: "Faire durer les apprentissages"
+    text: "L’accompagnement se poursuit assez longtemps pour que les habitudes, la réutilisation et l’imputabilité deviennent partie intégrante du workflow."
+    points:
+      - "suivis structurés toutes les deux semaines"
+      - "revue asynchrone des workflows"
+      - "suivi de progression"
+workshops_title: "Explorer tous les ateliers Académie"
+workshops_fallback:
+  text: "Vous ne trouvez pas ce que vous cherchez? Dites-nous ce qui serait utile pour vous."
+  label: "Nous contacter"
+  url: "/contact/"
+team_offer:
+  kicker: "Option équipe"
+  title: "Besoin de cela pour votre équipe?"
+  text: "Académie peut aussi être offerte en privé à des équipes qui veulent la même structure accompagnée, avec des exemples, un rythme et une portée adaptés à leur propre contexte."
+  points:
+    - "Livraison privée"
+    - "Exemples adaptés"
+    - "Format prêt pour les gestionnaires"
+    - "Soumission personnalisée"
+  card:
+    label: "Livraison privée pour équipe"
+    note: "Soumettez vos coordonnées et nous vous contacterons pour planifier une conversation."
+  tally_src: "https://tally.so/embed/Gxqv1e?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=team&cta_source=academy_team_fr"
+testimonials_title: "Ce que les participant.e.s valorisent"
+testimonials_intro: "Ces témoignages ont été retenus parce qu’ils parlent de pertinence pratique, de qualité d’accompagnement et du type de soutien qui distingue Académie d’une formation générique."
+faq:
+  title: "Questions que les acheteurs se posent avant de nous écrire"
+  items:
+    - question: "À qui s’adresse Académie?"
+      answer: "Académie s’adresse aux professionnel.le.s en environnement, spécialistes techniques, gestionnaires, analystes et équipes qui veulent améliorer concrètement leurs workflows, leur production et leur usage appliqué des outils ou des données."
+    - question: "Académie est-elle destinée aux individus ou aux équipes?"
+      answer: "Aux deux. Le parcours public principal repose sur de petites cohortes pour les professionnel.le.s, et il existe aussi une option privée pour les équipes."
+    - question: "Faut-il apporter son propre projet?"
+      answer: "Oui, lorsque c’est possible. Académie est plus forte lorsque les participant.e.s apportent un vrai workflow, livrable ou contexte de projet dans la cohorte."
+    - question: "Quel soutien est inclus après l’atelier?"
+      answer: "Chaque cohorte Académie inclut une période fixe de trois mois de mise en oeuvre accompagnée, avec des suivis toutes les deux semaines pendant toute cette période."
+    - question: "Comment fonctionne l’évaluation d’adéquation?"
+      answer: "Nous vous contactons pour planifier une conversation après chaque demande. L’adéquation est évaluée durant cet échange afin de discuter du bon atelier, de la bonne cohorte ou du bon format équipe."
+    - question: "Pourquoi afficher un prix pour les cohortes mais pas pour les équipes?"
+      answer: "Les cohortes se prêtent plus facilement à une offre publique structurée. Le format équipe dépend davantage du nombre de participant.e.s, de la portée et du niveau d’adaptation requis, donc une soumission personnalisée est plus juste."
+final_cta:
+  kicker: "Prochaine étape"
+  title: "Joindre une conversation de cohorte"
+  text: "Soumettez vos coordonnées et nous vous contacterons pour planifier une conversation sur la bonne cohorte et le bon atelier pour votre situation."
+  tally_src: "https://tally.so/embed/Gxqv1e?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=individual&cta_source=academy_final_fr"
+  secondary_link:
+    label: "Vous postulez pour votre équipe?"
+    url: "#team-option"
 ---
-
-Contenu de formation et d'accompagnement a venir.

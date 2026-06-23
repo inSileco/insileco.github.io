@@ -1,0 +1,414 @@
+{{ define "main" }}
+{{ $academyTestimonialsData := index .Site.Data .Site.Language.Lang "academy" "testimonials" }}
+{{ $academyTestimonials := slice }}
+{{ with $academyTestimonialsData.testimonials }}
+  {{ $academyTestimonials = sort . "date" "desc" }}
+{{ end }}
+{{ $isFr := eq .Site.Language.Lang "fr" }}
+{{ $workshops := sort .Pages "Weight" "asc" }}
+{{ if and $isFr (eq (len $workshops) 0) }}
+  {{ range .Sites }}
+    {{ if eq .Language.Lang "en" }}
+      {{ with .GetPage "section" "academy" }}
+        {{ $workshops = sort .Pages "Weight" "asc" }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ $orderedWorkshops := slice }}
+{{ $workshopGroups := slice
+  "Data Management"
+  "Analytical Capabilities"
+  "Decision-support Tools"
+  "Automated Workflows"
+}}
+{{ range $group := $workshopGroups }}
+  {{ range where $workshops "Params.academy_levers" "intersect" (slice $group) }}
+    {{ $orderedWorkshops = $orderedWorkshops | append . }}
+  {{ end }}
+{{ end }}
+{{ range $workshops }}
+  {{ if not (in $orderedWorkshops .) }}
+    {{ $orderedWorkshops = $orderedWorkshops | append . }}
+  {{ end }}
+{{ end }}
+{{ $labelHowItWorks := cond $isFr "Fonctionnement" "How it works" }}
+{{ $labelFeaturedWorkshops := cond $isFr "Ateliers en vedette" "Featured workshops" }}
+{{ $labelWorkshopCta := cond $isFr "Voir l'atelier" "View workshop" }}
+{{ $labelWhyAcademyWorks := cond $isFr "Pourquoi Académie fonctionne" "Why Academy works" }}
+{{ $labelProof := cond $isFr "Preuves" "Proof" }}
+{{ $labelFaq := cond $isFr "FAQ" "FAQ" }}
+{{ $testimonialMore := cond $isFr "Voir plus de témoignages" "Read more testimonials" }}
+{{ $testimonialLess := cond $isFr "Voir moins de témoignages" "Show fewer testimonials" }}
+{{ $differenceAlt := cond $isFr "Comparatif visuel montrant qu’une formation standard s’arrête à la livraison alors qu’Académie inclut la préparation, un atelier en direct et trois mois de mise en oeuvre accompagnée." "Visual comparison showing that standard training stops at delivery while Academy includes preparation, a live workshop, and three months of coached implementation." }}
+{{ $differenceImage := "/img/academy/academy-why-it-works.png" }}
+
+<section class="section academy-hero">
+  <div class="container">
+    <div class="academy-hero-copy">
+      {{ with .Params.hero_eyebrow }}
+      <p class="academy-eyebrow">{{ . }}</p>
+      {{ end }}
+      <h1 class="title is-2 hero-title academy-hero-title">{{ .Params.hero_title | default .Title }}</h1>
+      {{ with .Params.hero_summary }}
+      <p class="subtitle is-5 hero-subtitle academy-hero-subtitle">{{ . }}</p>
+      {{ end }}
+
+      {{ with .Params.hero_badges }}
+      <div class="academy-badge-row">
+        {{ range . }}
+        <span class="academy-badge">{{ . }}</span>
+        {{ end }}
+      </div>
+      {{ end }}
+
+      {{ with .Params.hero_ctas }}
+      <div class="buttons hero-cta academy-hero-actions is-centered">
+        {{ range . }}
+        {{ $href := .url }}
+        {{ if and (not (hasPrefix $href "#")) (not (hasPrefix $href "http")) (not (hasPrefix $href "/en/")) (not (hasPrefix $href "/fr/")) }}
+          {{ $href = relLangURL $href }}
+        {{ end }}
+        <a class="button {{ .class | default "is-light" }}" href="{{ $href }}">{{ .label }}</a>
+        {{ end }}
+      </div>
+      {{ end }}
+
+      {{ with .Params.hero_link }}
+      {{ $href := .url }}
+      {{ if and (not (hasPrefix $href "#")) (not (hasPrefix $href "http")) (not (hasPrefix $href "/en/")) (not (hasPrefix $href "/fr/")) }}
+        {{ $href = relLangURL $href }}
+      {{ end }}
+      <p class="academy-hero-link"><a href="{{ $href }}">{{ .label }}</a></p>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ with .Params.proof_items }}
+<section class="section academy-proof-strip">
+  <div class="container">
+    <div class="academy-proof-grid">
+      {{ range . }}
+      <div class="academy-proof-item">
+        <span class="academy-proof-value">{{ .value }}</span>
+        <span class="academy-proof-label">{{ .label }}</span>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<section id="how-academy-works" class="section academy-section academy-section-alt">
+  <div class="container">
+    <div class="academy-section-header academy-section-header-centered">
+      <p class="academy-section-kicker">{{ $labelHowItWorks }}</p>
+      <h2 class="title is-3">{{ .Params.process_title }}</h2>
+      <p>{{ .Params.process_intro }}</p>
+    </div>
+
+    <div class="academy-process-timeline">
+      <div class="academy-process-line" aria-hidden="true"></div>
+      <div class="columns is-multiline academy-process-row">
+        {{ $lastIndex := sub (len .Params.process) 1 }}
+        {{ range $index, $step := .Params.process }}
+        <div class="column is-one-third-desktop is-full-tablet academy-process-column{{ if eq $index $lastIndex }} academy-process-column-last{{ end }}">
+          <div class="academy-process-card{{ if eq $index $lastIndex }} academy-process-card-featured{{ end }}">
+            <div class="academy-process-top">
+              <span class="academy-process-step">0{{ add $index 1 }}</span>
+              <div class="academy-process-heading">
+                {{ with $step.duration }}
+                <p class="academy-process-duration">{{ . }}</p>
+                {{ end }}
+                <h3 class="title is-4">{{ $step.title }}</h3>
+              </div>
+            </div>
+            {{ with $step.emphasis }}
+            <p class="academy-process-emphasis">{{ . }}</p>
+            {{ end }}
+            <p class="academy-process-summary">{{ $step.text }}</p>
+            <ul class="academy-process-points">
+              {{ range $step.points }}
+              <li>{{ . }}</li>
+              {{ end }}
+            </ul>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{{ if gt (len $workshops) 0 }}
+<section id="available-workshops" class="section academy-section academy-section-alt">
+  <div class="container">
+    <div class="academy-section-header">
+      <p class="academy-section-kicker">{{ $labelFeaturedWorkshops }}</p>
+      <h2 class="title is-3">{{ .Params.workshops_title }}</h2>
+      <p>{{ .Params.workshops_intro }}</p>
+    </div>
+
+    <div class="columns is-multiline">
+      {{ range $orderedWorkshops }}
+      <div class="column is-one-quarter-desktop is-half-tablet is-full-mobile">
+        <article class="academy-workshop-card">
+          {{ $workshop := . }}
+          {{ $levers := .Params.academy_levers | default (slice) }}
+          <div class="academy-workshop-visual">
+            {{ with .Params.card_image }}
+            <img src="{{ . | relURL }}" alt="{{ $workshop.Title }} workshop cover">
+            {{ else }}
+            <div class="academy-workshop-placeholder">
+              <span>{{ .Title }}</span>
+            </div>
+            {{ end }}
+            {{ if gt (len $levers) 0 }}
+            <div class="academy-workshop-overlay">
+              {{ range $levers }}
+              {{ $slug := . | urlize }}
+              <span class="academy-workshop-lever academy-workshop-lever-{{ $slug }}">{{ . }}</span>
+              {{ end }}
+            </div>
+            {{ end }}
+          </div>
+          <div class="academy-workshop-body">
+            <h3 class="title is-4 academy-workshop-title">{{ .Title }}</h3>
+          </div>
+          <div class="academy-workshop-body academy-workshop-body-actions">
+            <a href="{{ .RelPermalink }}" class="button is-primary is-fullwidth academy-workshop-cta">{{ $labelWorkshopCta }}</a>
+          </div>
+        </article>
+      </div>
+      {{ end }}
+    </div>
+
+    {{ with .Params.workshops_fallback }}
+    {{ $href := .url }}
+    {{ if and (not (hasPrefix $href "#")) (not (hasPrefix $href "http")) (not (hasPrefix $href "/en/")) (not (hasPrefix $href "/fr/")) }}
+      {{ $href = relLangURL $href }}
+    {{ end }}
+    <div class="academy-workshops-fallback">
+      <p class="academy-workshops-fallback-headline"><em><strong>{{ .text }}</strong></em></p>
+      <div class="buttons is-centered">
+        <a class="button is-primary" href="{{ $href }}">{{ .label }}</a>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+<section class="section academy-section academy-section-alt">
+  <div class="container">
+    <div class="academy-section-header academy-section-header-centered academy-difference-header">
+      <p class="academy-section-kicker">{{ $labelWhyAcademyWorks }}</p>
+      <h2 class="title is-3">{{ .Params.difference.title }}</h2>
+      <p>{{ .Params.difference.intro }}</p>
+    </div>
+
+    <figure class="academy-difference-visual">
+      <img src="{{ $differenceImage | relURL }}" alt="{{ $differenceAlt }}">
+    </figure>
+  </div>
+</section>
+
+{{ if gt (len $academyTestimonials) 0 }}
+<section id="testimonials" class="section academy-section academy-section-alt">
+  <div class="container">
+    <div class="academy-section-header academy-section-header-centered">
+      <p class="academy-section-kicker">{{ $labelProof }}</p>
+      <h2 class="title is-3">{{ $.Params.testimonials_title }}</h2>
+      <p>{{ $.Params.testimonials_intro }}</p>
+    </div>
+
+    <div class="academy-testimonial-grid">
+      {{ range $index, $testimonial := $academyTestimonials }}
+      <article class="academy-testimonial-card{{ if ge $index 3 }} academy-testimonial-card-extra is-hidden{{ end }}">
+        <div class="box testimonial-box academy-testimonial-box">
+          <div class="content has-text-centered">
+            <p class="testimonial-text academy-testimonial-text mb-4">"{{ $testimonial.text }}"</p>
+            <p class="has-text-weight-semibold">{{ $testimonial.name }}{{ with $testimonial.post }} ({{ . }}){{ end }}</p>
+            {{ with $testimonial.organization }}
+            <p class="has-text-grey">{{ . }}</p>
+            {{ end }}
+          </div>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+
+    {{ if gt (len $academyTestimonials) 3 }}
+    <div class="academy-testimonial-actions has-text-centered">
+      <button class="button is-light academy-testimonial-toggle" type="button" data-label-more="{{ $testimonialMore }}" data-label-less="{{ $testimonialLess }}">
+        {{ $testimonialMore }}
+      </button>
+    </div>
+    <script>
+      (function() {
+        var section = document.getElementById("testimonials");
+        if (!section) return;
+        var button = section.querySelector(".academy-testimonial-toggle");
+        if (!button) return;
+        var extras = section.querySelectorAll(".academy-testimonial-card-extra");
+        if (!extras.length) return;
+
+        button.addEventListener("click", function() {
+          var expanded = button.classList.toggle("is-expanded");
+          extras.forEach(function(card) {
+            card.classList.toggle("is-hidden", !expanded);
+          });
+          button.textContent = expanded ? button.dataset.labelLess : button.dataset.labelMore;
+        });
+      })();
+    </script>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+{{ with .Params.final_cta }}
+<section id="academy-cta" class="section academy-cta-section">
+  <div class="container">
+    <div class="academy-cta-shell">
+      <p class="academy-section-kicker">{{ .kicker }}</p>
+      <h2 class="title is-3">{{ .title }}</h2>
+      {{ with .text }}
+      <p>{{ . }}</p>
+      {{ end }}
+      {{ with .tally_src }}
+      <div class="academy-cta-form">
+        <iframe
+          data-tally-src="{{ . }}"
+          loading="lazy"
+          width="100%"
+          height="168"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="Academy">
+        </iframe>
+      </div>
+      <script>
+        (function() {
+          var d = document;
+          var widgetSrc = "https://tally.so/widgets/embed.js";
+          var loadEmbeds = function() {
+            if (typeof Tally !== "undefined") {
+              Tally.loadEmbeds();
+            } else {
+              d.querySelectorAll('iframe[data-tally-src]:not([src])').forEach(function(el) {
+                el.src = el.dataset.tallySrc;
+              });
+            }
+          };
+
+          if (typeof Tally !== "undefined") {
+            loadEmbeds();
+          } else if (d.querySelector('script[src="' + widgetSrc + '"]') === null) {
+            var s = d.createElement("script");
+            s.src = widgetSrc;
+            s.onload = loadEmbeds;
+            s.onerror = loadEmbeds;
+            d.body.appendChild(s);
+          } else {
+            loadEmbeds();
+          }
+        })();
+      </script>
+      {{ with $.Params.final_cta.secondary_link }}
+      {{ $href := .url }}
+      {{ if and (not (hasPrefix $href "#")) (not (hasPrefix $href "http")) (not (hasPrefix $href "/en/")) (not (hasPrefix $href "/fr/")) }}
+        {{ $href = relLangURL $href }}
+      {{ end }}
+      <p class="academy-cta-secondary-link">
+        <a href="{{ $href }}">{{ .label }}</a>
+      </p>
+      {{ end }}
+      {{ else }}
+      {{ with .buttons }}
+      <div class="buttons is-centered mt-5">
+        {{ range . }}
+        {{ $href := .url }}
+        {{ if and (not (hasPrefix $href "#")) (not (hasPrefix $href "http")) (not (hasPrefix $href "/en/")) (not (hasPrefix $href "/fr/")) }}
+          {{ $href = relLangURL $href }}
+        {{ end }}
+        <a class="button {{ .class | default "is-light" }}" href="{{ $href }}">{{ .label }}</a>
+        {{ end }}
+      </div>
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with .Params.team_offer }}
+<section id="team-option" class="section academy-section academy-section-alt academy-team-band">
+  <div class="container">
+    <div class="columns is-vcentered">
+      <div class="column is-7-desktop">
+        <p class="academy-section-kicker">{{ .kicker }}</p>
+        <h2 class="title is-3 academy-team-title">{{ .title }}</h2>
+        <p class="academy-team-text">{{ .text }}</p>
+        <div class="academy-team-points">
+          {{ range .points }}
+          <span class="academy-badge academy-badge-light">{{ . }}</span>
+          {{ end }}
+        </div>
+      </div>
+      <div class="column is-5-desktop">
+        <div class="academy-team-card">
+          <p class="academy-team-card-label">{{ .card.label }}</p>
+          {{ with .card.note }}
+          <p class="academy-team-card-text">{{ . }}</p>
+          {{ end }}
+          {{ with .tally_src }}
+          <div class="academy-team-form">
+            <iframe
+              data-tally-src="{{ . }}"
+              loading="lazy"
+              width="100%"
+              height="168"
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0"
+              title="Academy team inquiry">
+            </iframe>
+          </div>
+          {{ else }}
+          {{ $href := .cta.url }}
+          {{ if and (not (hasPrefix $href "#")) (not (hasPrefix $href "http")) (not (hasPrefix $href "/en/")) (not (hasPrefix $href "/fr/")) }}
+            {{ $href = relLangURL $href }}
+          {{ end }}
+          <a class="button is-primary is-fullwidth" href="{{ $href }}">{{ .cta.label }}</a>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with .Params.faq }}
+<section class="section academy-section academy-section-alt">
+  <div class="container">
+    <div class="academy-section-header academy-section-header-centered">
+      <p class="academy-section-kicker">{{ $labelFaq }}</p>
+      <h2 class="title is-3">{{ .title }}</h2>
+    </div>
+
+    <div class="academy-faq-list">
+      {{ range .items }}
+      <details class="academy-faq-item">
+        <summary>{{ .question }}</summary>
+        <p>{{ .answer }}</p>
+      </details>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}

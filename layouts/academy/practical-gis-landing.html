@@ -1,0 +1,361 @@
+{{ define "main" }}
+{{ $academyTestimonialsData := index .Site.Data .Site.Language.Lang "academy" "testimonials" }}
+{{ $academyTestimonials := slice }}
+{{ with $academyTestimonialsData.testimonials }}
+  {{ $academyTestimonials = sort . "date" "desc" }}
+{{ end }}
+{{ $workshopTestimonials := first 3 (where $academyTestimonials "workshop" .Params.academy_testimonial_workshop) }}
+
+<div class="academy-offer-landing">
+<section class="section academy-offer-hero">
+  <div class="container">
+    <div class="academy-offer-wrap">
+      {{ with .Params.hero_eyebrow }}
+      <p class="academy-eyebrow">{{ . }}</p>
+      {{ end }}
+      <h1 class="title academy-offer-title">{{ .Title }}</h1>
+      {{ with .Params.subtitle }}
+      <p class="academy-offer-subtitle">{{ . }}</p>
+      {{ end }}
+      {{ with .Params.card_image }}
+      <div class="academy-offer-hero-visual">
+        <img src="{{ . | relURL }}" alt="{{ $.Title }}">
+      </div>
+      {{ end }}
+      {{ with .Params.hero_support }}
+      <p class="academy-offer-support">{{ . }}</p>
+      {{ end }}
+      {{ with .Params.hero_ctas }}
+      <div class="buttons academy-offer-actions">
+        {{ range . }}
+        {{ $href := .url }}
+        {{ if and (not (hasPrefix $href "#")) (not (hasPrefix $href "http")) (not (hasPrefix $href "/en/")) (not (hasPrefix $href "/fr/")) }}
+          {{ $href = relLangURL $href }}
+        {{ end }}
+        <a class="button {{ .class | default "is-light" }}" href="{{ $href }}">{{ .label }}</a>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="section academy-offer-section">
+  <div class="container">
+    <div class="academy-offer-shell academy-offer-shell-narrow">
+      <div class="academy-offer-heading">
+        <p class="academy-section-kicker">{{ .Params.what_you_get.label }}</p>
+      </div>
+    </div>
+    <div class="academy-offer-card-grid">
+      {{ range $index, $item := .Params.what_you_get.items }}
+        <article class="academy-offer-card">
+          <div class="academy-offer-card-head">
+            <span class="academy-offer-number">0{{ add $index 1 }}</span>
+            <h3 class="title is-4">{{ $item.title }}</h3>
+          </div>
+          {{ with $item.image }}
+          <div class="academy-offer-card-visual">
+            <img src="{{ . | relURL }}" alt="{{ $item.title }}">
+          </div>
+          {{ else }}
+          <div class="academy-offer-card-visual" aria-hidden="true"></div>
+          {{ end }}
+          <p>{{ $item.text }}</p>
+        </article>
+      {{ end }}
+    </div>
+    {{ with .Params.inline_cta }}
+    {{ $href := .url }}
+    {{ if and (not (hasPrefix $href "#")) (not (hasPrefix $href "http")) (not (hasPrefix $href "/en/")) (not (hasPrefix $href "/fr/")) }}
+      {{ $href = relLangURL $href }}
+    {{ end }}
+    <div class="buttons academy-offer-inline-cta academy-offer-inline-cta-center">
+      <a class="button is-primary" href="{{ $href }}">{{ .label }}</a>
+    </div>
+    {{ end }}
+  </div>
+</section>
+
+{{ if gt (len $workshopTestimonials) 0 }}
+<section class="section academy-offer-section academy-offer-section-alt">
+  <div class="container">
+    <div class="academy-offer-shell academy-offer-shell-narrow">
+      <div class="academy-offer-heading">
+        <p class="academy-section-kicker">{{ .Params.proof_section.label }}</p>
+      </div>
+    </div>
+    <div class="academy-offer-testimonials">
+      {{ range $workshopTestimonials }}
+      <article class="academy-offer-quote">
+        <p class="academy-offer-quote-text">"{{ .text }}"</p>
+        <p class="academy-offer-quote-meta">{{ .name }}{{ with .post }}, {{ . }}{{ end }}</p>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<section class="section academy-offer-section academy-offer-section-alt">
+  <div class="container">
+    <details class="academy-offer-panel academy-offer-shell">
+      <summary class="academy-offer-panel-summary">
+        <div class="academy-offer-panel-header">
+          <p class="academy-section-kicker">{{ .Params.what_happens.label }}</p>
+          {{ if ne .Params.what_happens.title .Params.what_happens.label }}
+          <h2 class="title is-3 academy-offer-panel-title">{{ .Params.what_happens.title }}</h2>
+          {{ end }}
+        </div>
+        <span class="academy-offer-panel-toggle" aria-hidden="true"></span>
+      </summary>
+      <div class="academy-offer-panel-body">
+        <p class="academy-offer-panel-intro">{{ .Params.what_happens.intro }}</p>
+        <div class="academy-offer-flow academy-offer-flow-steps">
+          {{ range .Params.what_happens.steps }}
+          <article class="academy-offer-flow-item academy-offer-step">
+            <h3 class="title is-4">{{ .title }}</h3>
+            <p>{{ .text }}</p>
+          </article>
+          {{ end }}
+        </div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="section academy-offer-section">
+  <div class="container">
+    <details class="academy-offer-panel academy-offer-shell">
+      <summary class="academy-offer-panel-summary">
+        <div class="academy-offer-panel-header">
+          <p class="academy-section-kicker">{{ .Params.price_section.label }}</p>
+          {{ if ne .Params.price_section.title .Params.price_section.label }}
+          <h2 class="title is-3 academy-offer-panel-title">{{ .Params.price_section.title }}</h2>
+          {{ end }}
+        </div>
+        <span class="academy-offer-panel-toggle" aria-hidden="true"></span>
+      </summary>
+      <div class="academy-offer-panel-body">
+        <div class="academy-offer-price-block">
+          <p class="academy-offer-price">{{ .Params.price_section.price }}</p>
+          <p class="academy-offer-price-intro">{{ .Params.price_section.rationale_intro }}</p>
+          <ul class="academy-offer-list">
+            {{ range .Params.price_section.rationale_points }}
+            <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+          <p class="academy-offer-subhead">{{ .Params.price_section.includes_label }}</p>
+          <ul class="academy-offer-list">
+            {{ range .Params.price_section.includes }}
+            <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="section academy-offer-section">
+  <div class="container">
+    <details class="academy-offer-panel academy-offer-shell academy-offer-shell-narrow">
+      <summary class="academy-offer-panel-summary">
+        <div class="academy-offer-panel-header">
+          <p class="academy-section-kicker">{{ .Params.bonus_section.label }}</p>
+        </div>
+        <span class="academy-offer-panel-toggle" aria-hidden="true"></span>
+      </summary>
+      <div class="academy-offer-panel-body academy-offer-details-body">
+        <p class="academy-offer-panel-intro">{{ .Params.bonus_section.summary }}</p>
+        <div class="academy-offer-fit-block">
+          <p class="academy-offer-subhead">{{ .Params.bonus_section.bonus_label }}</p>
+          <ul class="academy-offer-list">
+            {{ range .Params.bonus_section.bonus_points }}
+            <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+        </div>
+        <div class="academy-offer-fit-block">
+          <p class="academy-offer-subhead">{{ .Params.bonus_section.guarantee_label }}</p>
+          <p class="academy-offer-panel-intro academy-offer-panel-intro-tight">{{ .Params.bonus_section.guarantee_intro }}</p>
+          <ul class="academy-offer-list">
+            {{ range .Params.bonus_section.guarantee_points }}
+            <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+          <p class="academy-offer-guarantee-close">{{ .Params.bonus_section.guarantee_close }}</p>
+        </div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="section academy-offer-section academy-offer-section-alt">
+  <div class="container">
+    <details class="academy-offer-panel academy-offer-shell academy-offer-shell-narrow">
+      <summary class="academy-offer-panel-summary">
+        <div class="academy-offer-panel-header">
+          <p class="academy-section-kicker">{{ .Params.fit_section.label }}</p>
+          {{ if ne .Params.fit_section.title .Params.fit_section.label }}
+          <h2 class="title is-3 academy-offer-panel-title">{{ .Params.fit_section.title }}</h2>
+          {{ end }}
+        </div>
+        <span class="academy-offer-panel-toggle" aria-hidden="true"></span>
+      </summary>
+      <div class="academy-offer-panel-body">
+        <p class="academy-offer-panel-intro">{{ .Params.fit_section.summary }}</p>
+        <div class="academy-offer-fit-block">
+          <p class="academy-offer-subhead">{{ .Params.fit_section.for_label }}</p>
+          <ul class="academy-offer-list">
+            {{ range .Params.fit_section.for_points }}
+            <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+        </div>
+        <div class="academy-offer-fit-block">
+          <p class="academy-offer-subhead">{{ .Params.fit_section.not_label }}</p>
+          <ul class="academy-offer-list">
+            {{ range .Params.fit_section.not_points }}
+            <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+    </details>
+  </div>
+</section>
+
+{{ with .Params.final_cta }}
+<section id="academy-cta" class="section academy-cta-section academy-offer-final">
+  <div class="container">
+    <div class="academy-cta-shell academy-offer-shell academy-offer-shell-center">
+      <p class="academy-section-kicker">{{ .kicker }}</p>
+      <h2 class="title is-3">{{ .title }}</h2>
+      {{ with .text }}
+      <p>{{ . }}</p>
+      {{ end }}
+      {{ with .tally_src }}
+      <div class="academy-cta-form">
+        <iframe
+          data-tally-src="{{ . }}"
+          loading="lazy"
+          width="100%"
+          height="168"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="Academy">
+        </iframe>
+      </div>
+      <script>
+        (function() {
+          var d = document;
+          var widgetSrc = "https://tally.so/widgets/embed.js";
+          var loadEmbeds = function() {
+            if (typeof Tally !== "undefined") {
+              Tally.loadEmbeds();
+            } else {
+              d.querySelectorAll('iframe[data-tally-src]:not([src])').forEach(function(el) {
+                el.src = el.dataset.tallySrc;
+              });
+            }
+          };
+
+          if (typeof Tally !== "undefined") {
+            loadEmbeds();
+          } else if (d.querySelector('script[src="' + widgetSrc + '"]') === null) {
+            var s = d.createElement("script");
+            s.src = widgetSrc;
+            s.onload = loadEmbeds;
+            s.onerror = loadEmbeds;
+            d.body.appendChild(s);
+          } else {
+            loadEmbeds();
+          }
+        })();
+      </script>
+      {{ with $.Params.final_cta.secondary_link }}
+      {{ $href := .url }}
+      {{ if and (not (hasPrefix $href "#")) (not (hasPrefix $href "http")) (not (hasPrefix $href "/en/")) (not (hasPrefix $href "/fr/")) }}
+        {{ $href = relLangURL $href }}
+      {{ end }}
+      <p class="academy-cta-secondary-link">
+        <a href="{{ $href }}">{{ .label }}</a>
+      </p>
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with .Params.team_offer }}
+<section id="team-cta" class="section academy-section academy-section-alt academy-team-band">
+  <div class="container">
+    <div class="columns is-vcentered">
+      <div class="column is-7-desktop">
+        <p class="academy-section-kicker">{{ .kicker }}</p>
+        <h2 class="title is-3 academy-team-title">{{ .title }}</h2>
+        <p class="academy-team-text">{{ .text }}</p>
+        <div class="academy-team-points">
+          {{ range .points }}
+          <span class="academy-badge academy-badge-light">{{ . }}</span>
+          {{ end }}
+        </div>
+      </div>
+      <div class="column is-5-desktop">
+        <div class="academy-team-card">
+          <p class="academy-team-card-label">{{ .card.label }}</p>
+          {{ with .card.note }}
+          <p class="academy-team-card-text">{{ . }}</p>
+          {{ end }}
+          {{ with .tally_src }}
+          <div class="academy-team-form">
+            <iframe
+              data-tally-src="{{ . }}"
+              loading="lazy"
+              width="100%"
+              height="168"
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0"
+              title="Academy team inquiry">
+            </iframe>
+          </div>
+          <script>
+            (function() {
+              var d = document;
+              var widgetSrc = "https://tally.so/widgets/embed.js";
+              var loadEmbeds = function() {
+                if (typeof Tally !== "undefined") {
+                  Tally.loadEmbeds();
+                } else {
+                  d.querySelectorAll('iframe[data-tally-src]:not([src])').forEach(function(el) {
+                    el.src = el.dataset.tallySrc;
+                  });
+                }
+              };
+
+              if (typeof Tally !== "undefined") {
+                loadEmbeds();
+              } else if (d.querySelector('script[src="' + widgetSrc + '"]') === null) {
+                var s = d.createElement("script");
+                s.src = widgetSrc;
+                s.onload = loadEmbeds;
+                s.onerror = loadEmbeds;
+                d.body.appendChild(s);
+              } else {
+                loadEmbeds();
+              }
+            })();
+          </script>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+</div>
+{{ end }}

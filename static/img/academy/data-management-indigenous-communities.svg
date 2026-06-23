@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Data Management for Indigenous Communities</title>
+  <desc id="desc">Workshop cover illustration with flowing lines, connected circles, and a calm stewardship-oriented layout.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#17353d"/>
+      <stop offset="52%" stop-color="#355f6d"/>
+      <stop offset="100%" stop-color="#f3dfb6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1260" cy="170" r="220" fill="#ffffff" opacity=".07"/>
+  <path d="M0 640c102-37 188-47 259-17 93 39 154 126 275 120 117-6 160-88 274-100 121-14 226 53 349 44 122-9 202-70 443-29V900H0Z" fill="#ffffff" opacity=".08"/>
+  <g fill="none" stroke="#f7edd8" stroke-opacity=".4" stroke-width="6">
+    <path d="M930 210c114-48 211 32 252 96 47 73 130 112 238 98"/>
+    <path d="M901 310c91 14 151 83 185 147 44 82 134 114 264 96"/>
+  </g>
+  <g transform="translate(960 420)" fill="none" stroke="#eff8fa" stroke-width="8">
+    <circle cx="74" cy="70" r="36"/>
+    <circle cx="230" cy="42" r="28"/>
+    <circle cx="304" cy="148" r="34"/>
+    <circle cx="154" cy="176" r="30"/>
+    <path d="M110 78l92-26 74 84-93 34Z"/>
+    <path d="M188 163l-44 8"/>
+    <path d="M223 69l42 59"/>
+  </g>
+  <g transform="translate(120 110)">
+    <rect x="0" y="0" width="180" height="44" rx="22" fill="#ffffff" opacity=".14"/>
+    <text x="90" y="29" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#ffffff" letter-spacing="2">ACADEMY WORKSHOP</text>
+  </g>
+  <g transform="translate(120 560)">
+    <text x="0" y="0" font-family="Georgia, 'Times New Roman', serif" font-size="74" fill="#ffffff">Data Management</text>
+    <text x="0" y="88" font-family="Georgia, 'Times New Roman', serif" font-size="74" fill="#ffffff">for Indigenous Communities</text>
+    <text x="0" y="150" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#eef7f8" letter-spacing="1">Community data stewardship, continuity, and practical internal use</text>
+  </g>
+</svg>

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">R as a Practical GIS</title>
+  <desc id="desc">Workshop cover illustration with layered maps, grid overlays, and an operational GIS workflow motif.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#143044"/>
+      <stop offset="55%" stop-color="#23758a"/>
+      <stop offset="100%" stop-color="#e8f2d6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1284" cy="176" r="220" fill="#ffffff" opacity=".08"/>
+  <path d="M0 712c110-47 226-58 335-18 93 34 170 106 294 106 136 0 205-86 330-108 133-23 246 18 378 37 90 13 171 10 263-5V900H0Z" fill="#ffffff" opacity=".08"/>
+  <g transform="translate(960 228)">
+    <rect x="0" y="0" width="374" height="408" rx="28" fill="#fbfdfe" opacity=".95"/>
+    <rect x="34" y="34" width="306" height="200" rx="24" fill="#d9eef0"/>
+    <path d="M58 194l56-112 74 44 58-68 86 39" fill="none" stroke="#2f95ae" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M78 58h228M78 98h228M78 138h228M78 178h228" stroke="#ffffff" stroke-opacity=".55" stroke-width="2"/>
+    <path d="M78 58v144M138 58v144M198 58v144M258 58v144M318 58v144" stroke="#ffffff" stroke-opacity=".55" stroke-width="2"/>
+    <rect x="34" y="266" width="126" height="108" rx="18" fill="#123247"/>
+    <text x="97" y="334" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="52" fill="#ffffff">R</text>
+    <rect x="188" y="282" width="122" height="18" rx="9" fill="#123247"/>
+    <rect x="188" y="316" width="104" height="14" rx="7" fill="#5d8b95"/>
+    <rect x="188" y="346" width="118" height="14" rx="7" fill="#5d8b95" opacity=".72"/>
+  </g>
+  <g transform="translate(120 110)">
+    <rect x="0" y="0" width="180" height="44" rx="22" fill="#ffffff" opacity=".14"/>
+    <text x="90" y="29" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#ffffff" letter-spacing="2">ACADEMY WORKSHOP</text>
+  </g>
+  <g transform="translate(120 560)">
+    <text x="0" y="0" font-family="Georgia, 'Times New Roman', serif" font-size="84" fill="#ffffff">R as a Practical GIS</text>
+    <text x="0" y="62" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#dbf2f5" letter-spacing="1">Spatial workflows, reusable outputs, and clearer operational delivery</text>
+  </g>
+</svg>

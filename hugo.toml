@@ -1,6 +1,6 @@
 baseURL = 'https://insileco.io/'
 languageCode = 'en'
-title = 'inSileco Website'
+title = 'inSileco | Environmental Intelligence'
 defaultContentLanguageInSubdir = true
 organization = "inSileco"
 pygmentsCodeFences = true
@@ -97,12 +97,12 @@ title = "Comment nous vous aidons"
 [[languages.fr.params.help.item]]
 title = "Analyses & conseils pratiques"
 subtitle = "Contenu ouvert sur les données environnementales, la modélisation et la prise de décision, issu de projets concrets."
-url = "/services#blog"
+url = "/blog/"
 
 [[languages.fr.params.help.item]]
 title = "Formation & renforcement des capacités"
 subtitle = "Cours, ateliers et accompagnement pour aider les équipes à utiliser les données et les outils avec confiance."
-url = "/services#academy"
+url = "/academy/"
 
 [[languages.fr.params.help.item]]
 title = "Outils sur mesure & systèmes de données"
@@ -129,6 +129,11 @@ weight = 1
 name = "À propos"
 url = "/about/"
 weight = 2
+
+[[languages.fr.menu.main]]
+name = "Académie"
+url = "/academy/"
+weight = 3
 
 # [[languages.fr.menu.main]]
 #     name = "Carrières"
@@ -193,12 +198,12 @@ title = "How we help"
 [[languages.en.params.help.item]]
 title = "Insights & practical guidance"
 subtitle = "Open content on environmental data, modeling, and decision-making drawn from real projects."
-url = "/services#blog"
+url = "/blog/"
 
 [[languages.en.params.help.item]]
 title = "Training & capacity building"
 subtitle = "Courses, workshops, and coaching to help teams apply data and tools with confidence."
-url = "/services#academy"
+url = "/academy/"
 
 [[languages.en.params.help.item]]
 title = "Custom tools & data systems"
@@ -225,6 +230,11 @@ weight = 1
 name = "About"
 url = "/about/"
 weight = 2
+
+[[languages.en.menu.main]]
+name = "Academy"
+url = "/academy/"
+weight = 3
 
 # [[languages.en.menu.main]]
 #     name = "Careers"
