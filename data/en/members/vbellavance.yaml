@@ -10,6 +10,8 @@ social:
   orcid: 0000-0002-3263-8784
   linkedin: vincent-bellavance-895759401
 role: Data scientist
+active:
+  begin: 2026-04-01
 bio:
   short: |
     Vincent Bellavance holds a master’s degree from the Université de Sherbrooke. Specializing in scientific programming and data management, he works on structuring and enhancing research data, with a focus on spatial modeling and interactive tool development.

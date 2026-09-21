@@ -1,0 +1,21 @@
+picture: /img/team/wvieira.jpg
+name:
+  given: Willian
+  family: Vieira
+order: 5
+title: PhD.
+social:
+  mail: will.vieira@insileco.io
+  # website: https://kevcaz.insileco.io/
+  github: willvieira
+  researchgate: Kevin_Cazelles
+  orcid: 0000-0003-0283-4570
+  # linkedin: kevin-cazelles-51552283
+active:
+  begin: 2026-07-06
+role: Data scientist
+bio:
+  short: |
+    Willian Vieira holds a PhD
+  long: |
+    Soon.
