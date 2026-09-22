@@ -30,9 +30,15 @@
     <meta name="robots" content="noindex,nofollow" />
     {{ end }}
     
-   <!-- load bulma css compiled with our customizations from scss -->
-    {{ $cssOpts := (dict "includePaths" (slice "node_modules/bulma" "assets/scss")) }}
-    {{ with $bulma := resources.Get "scss/main.scss" | toCSS $cssOpts }}
+    <!-- Fonts (Roboto is Bulma's primary family, see assets/scss/main.scss) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap">
+
+    <!-- Bulma (Hugo module) compiled with our customizations by Dart Sass -->
+    {{/* silenceDeprecations: Bulma 1.0.4 still uses the old Sass if() syntax */}}
+    {{ $sassOpts := dict "transpiler" "dartsass" "outputStyle" "compressed" "silenceDeprecations" (slice "if-function") }}
+    {{ with resources.Get "scss/main.scss" | css.Sass $sassOpts }}
         <style> {{ .Content | safeCSS }} </style>
     {{ end }}
 

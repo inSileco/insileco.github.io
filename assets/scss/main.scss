@@ -1,17 +1,25 @@
 @charset "utf-8";
 
-@import 'sass/utilities/initial-variables.sass';
+// Bulma 1.x (Sass module system, compiled with Dart Sass).
+// Bulma is a Hugo module mounted under assets/mod/bulma (see hugo.toml).
+// The "no-dark-mode" build is used because the site CSS assumes a light theme.
+//
+// Fonts (Roboto, Merriweather) are loaded from Google Fonts in
+// layouts/partials/head.html and assets/css/fonts.css.
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Merriweather');
+$primary: #37abc8;
 
+@use "../mod/bulma/versions/bulma-no-dark-mode" with (
+  $primary: $primary,
+  $link: $primary,
+  $family-sans-serif: ("Roboto", sans-serif),
+  $navbar-height: 2rem,
+  // Keep the navbar background unchanged on hover (was white in 0.9 config).
+  $navbar-item-hover-background-l-delta: 0%
+);
 
-$primary: #37abc8ff;
-$family-serif: "Merriweather", serif;
-$family-sans-serif: "Roboto", sans-serif;
-$navbar-height: 2rem;
-$navbar-item-hover-color: #37abc8ff;
-$navbar-item-hover-background-color: #ffffff;
-$link: $primary !default
-
-@import 'bulma.sass';
+// Navbar hover colour ($navbar-item-hover-color was removed in Bulma 1).
+.navbar-item:hover,
+.navbar-link:hover {
+  color: $primary;
+}
