@@ -3,7 +3,7 @@
     {{ $letk := "Kevin" | truncate 1 "." }}
     {{ $letd := "David" | truncate 1 "." }}
     {{ $lets := "Steve" | truncate 1 "." }}
-    {{ range sort .Site.Data.tech.references "issued" "desc" }}
+    {{ range sort hugo.Data.tech.references "issued" "desc" }}
     <li>
       {{ $len := len .author }}
       {{ $len2 := sub $len 1 }}

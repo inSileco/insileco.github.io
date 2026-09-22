@@ -2,7 +2,7 @@
 <main>
   {{ partial "page-hero.html" . }}
 
-  {{ $services := sort (index .Site.Data .Lang "services" "services") "weigth" }}
+  {{ $services := sort (index hugo.Data .Lang "services" "services") "weigth" }}
 
   {{ range $i, $svc := $services }}
   {{ $even := eq (mod $i 2) 0 }}

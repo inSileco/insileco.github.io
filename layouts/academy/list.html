@@ -1,5 +1,5 @@
 {{ define "main" }}
-{{ $academyTestimonialsData := index .Site.Data .Site.Language.Lang "academy" "testimonials" }}
+{{ $academyTestimonialsData := index hugo.Data .Site.Language.Lang "academy" "testimonials" }}
 {{ $academyTestimonials := slice }}
 {{ with $academyTestimonialsData.testimonials }}
   {{ $academyTestimonials = sort . "date" "desc" }}

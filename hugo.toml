@@ -1,5 +1,5 @@
 baseURL = 'https://insileco.io/'
-languageCode = 'en'
+locale = 'en'
 title = 'inSileco | Environmental Intelligence'
 defaultContentLanguageInSubdir = true
 organization = "inSileco"
@@ -60,7 +60,7 @@ weight = 5
 [languages]
 
 [languages.fr]
-languageCode = "fr-ca"
+locale = "fr-ca"
 weight = 1
 
 [languages.fr.params]
@@ -163,7 +163,7 @@ weight = 7
 
 
 [languages.en]
-languageCode = "en-ca"
+locale = "en-ca"
 weight = 2
 
 [languages.en.params]

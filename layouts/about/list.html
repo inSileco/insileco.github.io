@@ -1,6 +1,6 @@
 {{ define "main" }}
-{{ $hero := index .Site.Data .Site.Language.Lang "about" "hero" }}
-{{ $about := index .Site.Data .Site.Language.Lang "about" "page" }}
+{{ $hero := index hugo.Data .Site.Language.Lang "about" "hero" }}
+{{ $about := index hugo.Data .Site.Language.Lang "about" "page" }}
 <section class="section about-hero">
     <div class="container about-content has-text-centered hero-shared">
         <h1 class="title is-2 hero-title">{{ $hero.headline }}</h1>

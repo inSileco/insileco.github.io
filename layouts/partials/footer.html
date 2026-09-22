@@ -2,7 +2,7 @@
   <div class="columns is-desktop is-vcentered">
     <div class="column is-2"></div>
     
-    {{ $footer := index .Site.Data .Site.Language.Lang "home" "footer" }}
+    {{ $footer := index hugo.Data .Site.Language.Lang "home" "footer" }}
     <div class="column is-4-desktop is-12-mobile">
       <div id="contact" class="content has-text-centered">
         <h3>{{ $footer.tally.heading }}</h3>

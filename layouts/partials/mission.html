@@ -5,7 +5,7 @@
                 <img src="/img/data-scientist2.svg" style="max-height:20rem" />
             </div>
             <div class="column is-5-desktop">
-                {{ with index .Site.Data .Site.Language.Lang "home" "mission" }}
+                {{ with index hugo.Data .Site.Language.Lang "home" "mission" }}
                 <h1 class="content-text is-size-3">{{ .title }}</h1>
                 <p class="has-text-weight-light content-text is-size-5">
                     {{ .description }}
