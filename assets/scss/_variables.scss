@@ -8,6 +8,8 @@
 // Bulma (main.scss), à partir de ces tokens.
 // =============================================================================
 
+@use "sass:math";
+
 // -----------------------------------------------------------------------------
 // 1. FONTS
 // -----------------------------------------------------------------------------
@@ -172,7 +174,22 @@ $border-width-main: 1px; // pas d'équivalent Sass dans Bulma 1
 // 8. BREAKPOINTS (Bulma 1 par défaut — conservés)
 // -----------------------------------------------------------------------------
 // tablet:     769px
-// desktop:    1024px
 // widescreen: 1216px
 // fullhd:     1408px
 // Maquette conçue à 1440px → widescreen/fullhd suffisants
+
+$breakpoint-desktop: 1024px; // en dessous : tablette et mobile (Bulma "touch")
+
+// -----------------------------------------------------------------------------
+// 9. TEXTURES (DS-02)
+// Texture terrain — Figma nodes 2412:42531 (1581px) et 2412:42530 (970px)
+// -----------------------------------------------------------------------------
+
+$texture-terrain:         '/img/textures/terrain.svg';
+$texture-ratio:           math.div(1581, 504.4);
+$texture-width:           1581px; // desktop, taille du header du styleguide
+$texture-width-touch:     970px;  // tablette / mobile, la version réduite du Figma
+$texture-color-light:     $teal-dark;         // sur fond clair ou brand
+$texture-opacity-light:   1;
+$texture-color-dark:      $white;             // sur fond teal (footer, header Services)
+$texture-opacity-dark:    0.3;                // estimée sur la capture du footer
