@@ -1,0 +1,89 @@
+// =============================================================================
+// DS-02 — Textures SVG terrain
+//
+// The SVG is used as a CSS mask on a ::before layer, so a single file can be
+// tinted and faded per background (light / dark) without extra DOM in Hugo.
+// The layer sits behind the section content (isolation + z-index: -1) but
+// above the section's own background.
+//
+// Offsets from the mockups are set per section with custom properties, e.g.
+//   <section class="has-texture has-texture--bottom-right"
+//            style="--texture-offset-x: -70px; --texture-offset-y: -252px">
+// =============================================================================
+
+@use "sass:list";
+@use "variables" as v;
+
+// $position: (top | bottom) (left | right)
+@mixin texture-position($position) {
+  $vertical: list.nth($position, 1);
+  $horizontal: list.nth($position, 2);
+
+  inset: auto;
+  #{$vertical}: var(--texture-offset-y, 0);
+  #{$horizontal}: var(--texture-offset-x, 0);
+}
+
+@mixin texture(
+  $file: v.$texture-terrain,
+  $position: bottom right,
+  $opacity: v.$texture-opacity-light,
+  $color: v.$texture-color-light
+) {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    @include texture-position($position);
+    width: var(--texture-width, #{v.$texture-width});
+    aspect-ratio: v.$texture-ratio;
+    background-color: var(--texture-color, #{$color});
+    opacity: var(--texture-opacity, #{$opacity});
+    -webkit-mask: url(#{$file}) no-repeat center / contain;
+    mask: url(#{$file}) no-repeat center / contain;
+    pointer-events: none;
+
+    @media (max-width: #{v.$breakpoint-desktop - 1px}) {
+      width: var(--texture-width-touch, #{v.$texture-width-touch});
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Utility classes
+// -----------------------------------------------------------------------------
+
+.has-texture {
+  @include texture;
+}
+
+.has-texture--top-left::before {
+  @include texture-position(top left);
+}
+
+.has-texture--top-right::before {
+  @include texture-position(top right);
+}
+
+.has-texture--bottom-left::before {
+  @include texture-position(bottom left);
+}
+
+.has-texture--bottom-right::before {
+  @include texture-position(bottom right);
+}
+
+// Background variants
+.has-texture--on-dark {
+  --texture-color: #{v.$texture-color-dark};
+  --texture-opacity: #{v.$texture-opacity-dark};
+}
+
+.has-texture--on-light {
+  --texture-color: #{v.$texture-color-light};
+  --texture-opacity: #{v.$texture-opacity-light};
+}
