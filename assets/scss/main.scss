@@ -4,15 +4,44 @@
 // Bulma is a Hugo module mounted under assets/mod/bulma (see hugo.toml).
 // The "no-dark-mode" build is used because the site CSS assumes a light theme.
 //
-// Fonts (Roboto, Merriweather) are loaded from Google Fonts in
-// layouts/partials/head.html and assets/css/fonts.css.
+// Design tokens live in _variables.scss (DS-01) and are passed to Bulma
+// through `with()` below: Bulma 1 only accepts variables it declares !default.
+// Text, background and border colours are driven by Bulma's CSS variables
+// (scheme hue/lightness), not by Sass: they are themed in DS-03.
 
-$primary: #37abc8;
+@use "variables" as v;
 
 @use "../mod/bulma/versions/bulma-no-dark-mode" with (
-  $primary: $primary,
-  $link: $primary,
-  $family-sans-serif: ("Roboto", sans-serif),
+  // Colours
+  $primary: v.$teal-dark,
+  $link: v.$teal-dark,
+  $info: v.$teal-mid,
+
+  // Typography
+  $family-sans-serif: v.$font-primary,
+  $family-primary: v.$font-primary,
+  $family-secondary: v.$font-secondary,
+  $size-1: v.$font-size-h1,
+  $size-2: v.$font-size-h2,
+  $size-3: v.$font-size-h3,
+  $size-4: v.$font-size-h4,
+  $size-5: v.$font-size-h5,
+  $size-6: v.$font-size-h6,
+  $size-7: v.$font-size-text-small,
+  $weight-normal: v.$weight-regular,
+  $weight-bold: v.$weight-bold,
+
+  // Radius
+  $radius-small: v.$radius-small,
+  $radius: v.$radius-small,
+  $radius-large: v.$radius-main,
+  $radius-rounded: v.$radius-round,
+
+  // Layout — Bulma applies $column-gap on each side of a column,
+  // so half the Figma gutter gives the 32px gap between columns.
+  $column-gap: v.$site-gutter * 0.5,
+
+  // Navbar (unchanged until COMP-01)
   $navbar-height: 2rem,
   // Keep the navbar background unchanged on hover (was white in 0.9 config).
   $navbar-item-hover-background-l-delta: 0%
@@ -21,5 +50,5 @@ $primary: #37abc8;
 // Navbar hover colour ($navbar-item-hover-color was removed in Bulma 1).
 .navbar-item:hover,
 .navbar-link:hover {
-  color: $primary;
+  color: v.$teal-dark;
 }

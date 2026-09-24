@@ -1,0 +1,178 @@
+// =============================================================================
+// inSileco.io — Design Tokens
+// DS-01 — Variables Sass & tokens Bulma
+// Source : Figma Styleguide node 2:2
+//
+// Ce fichier ne produit aucun CSS : il est chargé via `@use 'variables' as v;`
+// dans main.scss. Les overrides Bulma 1 se font dans le `with()` du `@use`
+// Bulma (main.scss), à partir de ces tokens.
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// 1. FONTS
+// -----------------------------------------------------------------------------
+
+// Nexa : police unique du styleguide (Bold = 700, Regular = 400)
+// Poppins : fallback
+// → @font-face à ajouter en DS-03 (_fonts.scss), fichiers Nexa à récupérer
+
+$font-primary: 'Nexa', 'Poppins', sans-serif;
+$font-secondary: 'Poppins', sans-serif;
+
+// Weights
+$weight-regular: 400;
+$weight-bold: 700;
+$weight-xbold: 800; // Surtitres (Nexa XBold) — disponibilité à vérifier
+
+// -----------------------------------------------------------------------------
+// 2. TYPOGRAPHIC SCALE
+// Extraite du Figma Styleguide — section Typography
+// -----------------------------------------------------------------------------
+
+$font-size-display: 112px;  // Display — Nexa Regular, lh: 1, ls: -3%
+$font-size-h1:       80px;  // H1      — Nexa Bold,    lh: 1, ls: -3%
+$font-size-h2:       64px;  // H2      — Nexa Bold,    lh: 1, ls: -3%
+$font-size-h3:       48px;  // H3      — Nexa Bold,    lh: 1.1, ls: -3%
+$font-size-h4:       32px;  // H4      — Nexa Bold,    lh: 1.1, ls: -1%
+$font-size-h5:       24px;  // H5      — Nexa Bold,    lh: 1.1, ls: -1%
+$font-size-h6:       18px;  // H6      — Nexa Bold,    lh: 1.3, ls: -1%
+$font-size-text-large:  18px; // Text Large  — Nexa Regular, lh: 1.4
+$font-size-text-main:   16px; // Text Main   — Nexa Regular, lh: 1.4
+$font-size-text-small:  14px; // Text Small  — Nexa Regular, lh: 1.4
+$font-size-text-xsmall: 12px; // Text XSmall — copyright footer
+
+// Line-height
+$line-height-heading-tight: 1;   // Display, H1, H2
+$line-height-heading:       1.1; // H3, H4, H5
+$line-height-h6:            1.3;
+$line-height-text:          1.4;
+
+// Letter-spacing (Figma en % de la taille, converti en px)
+$letter-spacing-display: -3.36px;
+$letter-spacing-h1: -2.4px;
+$letter-spacing-h2: -1.92px;
+$letter-spacing-h3: -1.44px;
+$letter-spacing-h4: -0.32px;
+$letter-spacing-h5: -0.24px;
+$letter-spacing-h6: -0.18px;
+
+// -----------------------------------------------------------------------------
+// 3. COULEURS BRUTES (palette fixe)
+// -----------------------------------------------------------------------------
+
+// Primaires
+$teal-dark:   #07485e;  // Couleur principale — texte, fond dark, bordures
+$yellow:      #ceee60;  // Accent brand — fond brand, boutons primaires, badges
+$teal-mid:    #396d7e;  // Texte secondaire mode clair, fond cards services dark
+
+// Neutres
+$white:       #ffffff;
+$off-white:   #edf3f7;  // Fond background-2 (mode clair), fond icône service
+
+// Accents de section (bullets de surtitre, badges)
+$green-500:   #67c78e;  // Bullet témoignages
+$blue-500:    #a4d8ff;  // Bullet blog
+$blue-200:    #dbefff;  // Badge catégorie blog
+
+// Bordure subtile — séparateurs
+$teal-dark-o20: rgba($teal-dark, 0.2);
+
+// États (success, warning, error) : absents du Figma — Bulma par défaut en
+// attendant la réponse du designer.
+
+// -----------------------------------------------------------------------------
+// 4. COULEURS THÉMATIQUES (Light / Dark / Brand)
+// Valeurs de référence ; les CSS custom properties sont déclarées en DS-03
+// (_utilities.scss) via :root et [data-theme]
+// -----------------------------------------------------------------------------
+
+// Theme Light (défaut)
+$theme-light-bg:            $white;
+$theme-light-bg-2:          $off-white;
+$theme-light-text:          $teal-dark;
+$theme-light-text-2:        $teal-mid;
+$theme-light-border:        $teal-dark;
+$theme-light-border-subtle: $teal-dark-o20;
+
+// Theme Dark
+$theme-dark-bg:             $teal-dark;
+$theme-dark-text:           $white;
+$theme-dark-border:         rgba($white, 0.2);
+
+// Theme Brand
+$theme-brand-bg:            $yellow;
+$theme-brand-text:          $teal-dark;
+$theme-brand-border:        $teal-dark;
+
+// Boutons — Primary
+$btn-primary-bg:           $yellow;
+$btn-primary-border:       $yellow;
+$btn-primary-text:         $teal-dark;
+$btn-primary-bg-hover:     $teal-dark;
+$btn-primary-border-hover: $teal-dark;
+$btn-primary-text-hover:   $white;
+
+// Boutons — Secondary (mode light)
+$btn-secondary-bg:           transparent;
+$btn-secondary-text:         $teal-dark;
+$btn-secondary-border:       $teal-dark;
+$btn-secondary-bg-hover:     $teal-dark;
+$btn-secondary-text-hover:   $white;
+$btn-secondary-border-hover: $teal-dark;
+
+// Texte lien
+$link-text:   $teal-dark;
+$link-border: $teal-dark;
+
+// -----------------------------------------------------------------------------
+// 5. ESPACEMENTS & LAYOUT
+// Extraits du Figma — section Global Styles
+// -----------------------------------------------------------------------------
+
+// Section spacing
+$section-space-small:  80px;   // gap entre blocs dans une section
+$section-space-main:   112px;  // padding vertical des sections
+$section-space-large:  160px;  // grandes sections hero / CTA
+$page-top:             224px;  // padding top des pages intérieures
+
+// Site layout
+$site-margin:          64px;   // padding horizontal global (desktop)
+$site-gutter:          32px;   // gap entre colonnes
+
+// Spacing scale
+$space-0:    0px;
+$space-1:    8px;
+$space-2:    12px;
+$space-3:    16px;
+$space-4:    24px;
+$space-5:    32px;
+$space-6:    40px;
+$space-7:    48px;
+$space-8:    64px;
+
+// Size scale
+$size-half:  32px;  // padding card (--size/2)
+$size-1-5:   24px;  // padding bouton horizontal (--size/1,5)
+
+// -----------------------------------------------------------------------------
+// 6. BORDER-RADIUS
+// -----------------------------------------------------------------------------
+
+$radius-small: 8px;     // badges, boutons, inputs, cards internes
+$radius-main:  16px;    // cards principales
+$radius-round: 99999px; // boutons circulaires (play, arrow)
+
+// -----------------------------------------------------------------------------
+// 7. BORDURES
+// -----------------------------------------------------------------------------
+
+$border-width-main: 1px; // pas d'équivalent Sass dans Bulma 1
+
+// -----------------------------------------------------------------------------
+// 8. BREAKPOINTS (Bulma 1 par défaut — conservés)
+// -----------------------------------------------------------------------------
+// tablet:     769px
+// desktop:    1024px
+// widescreen: 1216px
+// fullhd:     1408px
+// Maquette conçue à 1440px → widescreen/fullhd suffisants
