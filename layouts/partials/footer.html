@@ -24,6 +24,7 @@
     <div class="content has-text-centered">
       <p>
         {{ .Site.Params.footer | safeHTML }}
+        <span class="has-text-grey"> · {{ T "last_build" }} {{ $built := now.UTC }}<time datetime="{{ $built.Format "2006-01-02T15:04:05Z07:00" }}">{{ $built | time.Format ":date_long" }}, {{ $built | time.Format ":time_short" }} UTC</time></span>
       </p>
     </div>
     <div class="is-hidden-desktop is-flex is-justify-content-center mt-4" style="gap: 1.5rem;">

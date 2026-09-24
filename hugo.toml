@@ -173,7 +173,7 @@ title_expertise = "Our expertise"
 subtitle_expertise = "We are distinguished scientists and data experts specializing in biodiversity sciences. Our academic expertise spans theoretical food web ecology and the development of essential methodologies for ecosystem-based management, as detailed in our extensive list of peer-reviewed publications. As data scientists, we excel in a wide range of statistical analyses, applying them to large and diverse datasets using advanced technologies. With over a decade of professional and academic experience, we have honed our skills in supporting academic and governmental scientists in analyzing and visualizing biodiversity data, and in creating robust analytical pipelines and interactive tools."
 title_team = "Our team"
 subtitle_team = ""
-footer = 'The source code of this website is available on <a href="https://github.com/inSilecoInc/insilecoinc.github.io">GitHub</a> licensed under <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.</br><i class="fa-solid fa-copyright fa-sm"></i> inSileco Inc. 2020-2026.'
+footer = 'The source code of this website is available on <a href="https://github.com/inSilecoInc/insilecoinc.github.io">GitHub</a> licensed under <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.</br><i class="fa-solid fa-copyright fa-sm"></i> inSileco Inc. 2020-2026'
 blog_button = "Checkout out blog"
 
 #   [languages.en.params.login]
