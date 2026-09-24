@@ -1,4 +1,4 @@
-{{ $featured := index .Site.Data .Site.Language.Lang "home" "portfolio_featured" "items" }}
+{{ $featured := index hugo.Data .Site.Language.Lang "home" "portfolio_featured" "items" }}
 <section id="portfolio-preview" class="section home-placeholder">
     <div class="container">
         <h2 class="title is-3 has-text-centered">{{ .Site.Params.portfolio.title }}</h2>

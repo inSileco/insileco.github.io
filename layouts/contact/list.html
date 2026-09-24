@@ -1,5 +1,5 @@
 {{ define "main" }}
-{{ $contact := index .Site.Data .Site.Language.Lang "home" "approach" }}
+{{ $contact := index hugo.Data .Site.Language.Lang "home" "approach" }}
 <section id="contact" class="section">
     <div class="container content">
         <h1>{{ .Title | default $contact.title }}</h1>

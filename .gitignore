@@ -30,9 +30,6 @@ CLAUDE.md
 # Go workspace file
 go.work
 
-# Ignore node module
-node_modules/*
-
 # Ignore hugo build
 .hugo_build.lock
 public/

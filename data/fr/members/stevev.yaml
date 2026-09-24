@@ -16,7 +16,9 @@ skills:
   - R
   - Manipulation de données
   - Visualitsation de données
-role: Co-fondateur et scientifique de données
+active:
+  begin: 2020-10-04
+role: Co-fondateur
 bio:
   short: |
     Steve Vissault est titulaire d'une maîtrise de l'Université du Québec à Rimouski où il s'est concentré sur la dynamique forestière dans le contexte des changements climatiques et a développé de solides compétences quantitatives et informatiques. Depuis, il a travaillé comme scientifique des données principal dans les domaines environnemental et médical.

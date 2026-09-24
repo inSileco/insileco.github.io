@@ -1,4 +1,4 @@
-picture: /img/team/david.jpg
+picture: /img/team/dbeauchesne.jpg
 name:
   given: David
   family: Beauchesne
@@ -13,10 +13,10 @@ social:
   orcid: 0000-0002-3590-8161
   linkedin: david-beauchesne-16683353
 role: Co-fondateur et scientifique de données
+active:
+  begin: 2020-10-04
 bio:
   short: |
-    David Beauchesne est titulaire d'un doctorat en océanographie de l'Institut des sciences de la mer et possède plus de 10 ans d'expérience en gestion écosystémique et en évaluation des effets cumulatifs, s'appuyant fortement sur la science des données, la reproductibilité et de saines pratiques de gestion des données.  
+    David Beauchesne est titulaire d'un doctorat en océanographie de l'Institut des sciences de la mer et possède plus de 10 ans d'expérience en gestion écosystémique et en évaluation des effets cumulatifs, s'appuyant fortement sur la science des données, la reproductibilité et de saines pratiques de gestion des données.
   long: |
     Je suis l'un des fondateurs de inSileco and un chercheur postdoctoral à l'Université de Toronto. Je suis un écologiste qui travaille sur la gestion écosystémique en général et l'évaluation des effets cumulatifs en particulier, avec un focus sur la science ouverte, la reproductibilité and les outils computationnels.
-
-

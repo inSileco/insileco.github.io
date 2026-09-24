@@ -1,4 +1,4 @@
-{{ $data := index .Site.Data .Site.Language.Lang "expertise" }}
+{{ $data := index hugo.Data .Site.Language.Lang "expertise" }}
 {{ $categories := slice }}
 
 {{ range $data }}

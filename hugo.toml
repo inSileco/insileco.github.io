@@ -1,5 +1,5 @@
 baseURL = 'https://insileco.io/'
-languageCode = 'en'
+locale = 'en'
 title = 'inSileco | Environmental Intelligence'
 defaultContentLanguageInSubdir = true
 organization = "inSileco"
@@ -60,7 +60,7 @@ weight = 5
 [languages]
 
 [languages.fr]
-languageCode = "fr-ca"
+locale = "fr-ca"
 weight = 1
 
 [languages.fr.params]
@@ -163,7 +163,7 @@ weight = 7
 
 
 [languages.en]
-languageCode = "en-ca"
+locale = "en-ca"
 weight = 2
 
 [languages.en.params]
@@ -260,3 +260,16 @@ weight = 6
 name = "Events"
 url = "/events/"
 weight = 7
+
+# Bulma is pulled in as a Hugo module (no npm needed).
+# Its Sass sources are mounted under assets/mod/bulma and compiled by
+# Dart Sass in layouts/partials/head.html.
+[module]
+  [[module.imports]]
+    path = "github.com/jgthms/bulma"
+    [[module.imports.mounts]]
+      source = "sass"
+      target = "assets/mod/bulma/sass"
+    [[module.imports.mounts]]
+      source = "versions"
+      target = "assets/mod/bulma/versions"

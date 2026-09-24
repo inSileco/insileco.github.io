@@ -12,7 +12,9 @@ social:
   researchgate: Steve-Vissault
   orcid: 0000-0002-0866-4376
   linkedin: steve-vissault-66602946
-role: Co-founder and data scientist
+active:
+  begin: 2020-10-04
+role: Co-founder
 bio:
   short: |
     Steve Vissault holds a MSc from Université du Québec à Rimouski where he focused on forest dynamics in the context of climate change and he developed strong quantitative and computational skills. He has since worked as a lead data scientist in the environmental and medical fields.

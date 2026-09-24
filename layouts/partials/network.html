@@ -3,13 +3,13 @@
         <div class="container">
             <div class="has-text-centered mb-6">
                 <h1 class="title">
-                    {{ index .Site.Data .Site.Language.Lang "network" "title" }}
+                    {{ index hugo.Data .Site.Language.Lang "network" "title" }}
                 </h1>
             </div>
             <div class="columns is-multiline is-vcentered is-mobile is-centered">
-                {{ range .Site.Data.network }}
+                {{ range hugo.Data.network }}
                 <div class="column
-                    {{ if eq (len $.Site.Data.network) 1 }}
+                    {{ if eq (len hugo.Data.network) 1 }}
                       is-narrow
                     {{ else }}
                       is-4-desktop is-6-tablet is-12-mobile
@@ -26,7 +26,7 @@
                 {{ end }}
             </div>
             <div class="has-text-centered mt-5">
-                <p class="network-credibility">{{ index .Site.Data .Site.Language.Lang "network" "credibility" }}</p>
+                <p class="network-credibility">{{ index hugo.Data .Site.Language.Lang "network" "credibility" }}</p>
             </div>
         </div>
     </div>

@@ -1,4 +1,4 @@
-{{ $mission := index .Site.Data .Site.Language.Lang "home" "mission" }}
+{{ $mission := index hugo.Data .Site.Language.Lang "home" "mission" }}
 <section id="about" class="section about-table">
     <div class="container">
         <h2 class="title is-3 has-text-centered">{{ .Title }}</h2>

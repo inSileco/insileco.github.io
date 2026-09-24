@@ -1,4 +1,4 @@
-picture: /img/team/david.jpg
+picture: /img/team/dbeauchesne.jpg
 name:
   given: David
   family: Beauchesne
@@ -12,10 +12,11 @@ social:
   researchgate: David_Beauchesne
   orcid: 0000-0002-3590-8161
   linkedin: david-beauchesne-16683353
+active:
+  begin: 2020-10-04
 role: Co-founder and data scientist
 bio:
   short: |
     David Beauchesne holds a PhD in oceanography from the Institut des sciences de la mer and has 10+ years of experience on ecosystem-based management in general and cumulative effects assessment in particular, relying heavily on data science, reproducibility and sound data management practices.
   long: |
     David Beauchesne holds a PhD in oceanography focused on cumulative effects assessments and ecosystem-based management in general, with a strong emphasis on data science and reproducibility. 2Bcompleted.
-

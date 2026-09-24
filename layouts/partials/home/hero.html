@@ -1,4 +1,4 @@
-{{ $hero := index .Site.Data .Site.Language.Lang "home" "hero" }}
+{{ $hero := index hugo.Data .Site.Language.Lang "home" "hero" }}
 <section id="hero" class="section hero-main">
     <div class="container">
         <div class="columns is-centered is-vcentered">
@@ -25,7 +25,7 @@
                 </div>
             </div>
         </div>
-        {{ $logos := .Site.Data.network }} {{ if $logos }}
+        {{ $logos := hugo.Data.network }} {{ if $logos }}
         <div class="hero-carousel" aria-label="Partner logos">
             <div class="hero-carousel-track">
                 {{ range seq 2 }} {{ range $logos }}

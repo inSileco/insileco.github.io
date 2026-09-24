@@ -11,16 +11,25 @@ jobs:
     steps:
     - uses: actions/checkout@v6
 
-    - uses: actions/setup-node@v6
+    - name: Setup Go (needed for Hugo modules)
+      uses: actions/setup-go@v6
       with:
-        node-version: 20
-    - run: npm install
+        go-version-file: go.mod
+
+    - name: Install Dart Sass
+      env:
+        DART_SASS_VERSION: 1.104.1
+      run: |
+        curl -sfL --output-dir "${{ runner.temp }}" -O "https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz"
+        mkdir -p "${HOME}/.local"
+        tar -C "${HOME}/.local" -xf "${{ runner.temp }}/dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz"
+        echo "${HOME}/.local/dart-sass" >> "${GITHUB_PATH}"
 
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v3
       with:
-        hugo-version: '0.153.2'
+        hugo-version: '0.166.0'
         extended: true
-        
+
     - name: Build website
       run: hugo --minify

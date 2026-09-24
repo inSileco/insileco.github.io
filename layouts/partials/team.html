@@ -4,7 +4,7 @@
             <h1>{{ .Site.Params.title_team }}</h1>
             <p>{{ .Site.Params.subtitle_team }}</p>
         </div>
-        {{ $members := index .Site.Data .Site.Language.Lang "members"}}
+        {{ $members := index hugo.Data .Site.Language.Lang "members"}}
         {{ range sort $members "order" }}
         <div class="column is-4-desktop is-12-mobile has-text-centered">
             <figure class="image is-inline-block">
