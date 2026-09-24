@@ -47,6 +47,8 @@
   $navbar-item-hover-background-l-delta: 0%
 );
 
+@use "textures";
+
 // Navbar hover colour ($navbar-item-hover-color was removed in Bulma 1).
 .navbar-item:hover,
 .navbar-link:hover {
