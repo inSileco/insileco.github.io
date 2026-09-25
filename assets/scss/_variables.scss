@@ -79,8 +79,15 @@ $blue-200:    #dbefff;  // Badge catégorie blog
 // Bordure subtile — séparateurs
 $teal-dark-o20: rgba($teal-dark, 0.2);
 
-// États (success, warning, error) : absents du Figma — Bulma par défaut en
-// attendant la réponse du designer.
+// États — source : insileco-Actions-couleurs.pdf (codes étiquetés)
+// Deux tons par état, à combiner (ex. boîte : fond soft + texte strong).
+// « Error » dans le PDF = « danger » dans Bulma.
+$success-soft:  #defbea;
+$success-strong: #64a77e;
+$warning-soft:  #df9733;
+$warning-strong: #a1673f;
+$danger-soft:   #ffe2e8;
+$danger-strong: #923448;
 
 // -----------------------------------------------------------------------------
 // 4. COULEURS THÉMATIQUES (Light / Dark / Brand)
