@@ -16,6 +16,16 @@
   $primary: v.$teal-dark,
   $link: v.$teal-dark,
   $info: v.$teal-mid,
+  $success: v.$success-strong,
+  $warning: v.$warning-strong,
+  $danger: v.$danger-strong,
+  // Generates is-*, has-text-* and has-background-* for each colour
+  // (e.g. `tag is-brand` for the yellow badges). Format: (base, invert).
+  $custom-colors: (
+    "brand": (v.$yellow, v.$teal-dark),
+    "secondary": (v.$teal-mid, v.$white),
+    "surface": (v.$off-white, v.$teal-dark),
+  ),
 
   // Typography
   $family-sans-serif: v.$font-primary,
@@ -47,6 +57,7 @@
   $navbar-item-hover-background-l-delta: 0%
 );
 
+@use "utilities";
 @use "textures";
 
 // Navbar hover colour ($navbar-item-hover-color was removed in Bulma 1).

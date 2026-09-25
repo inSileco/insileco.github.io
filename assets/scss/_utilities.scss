@@ -1,0 +1,98 @@
+// =============================================================================
+// DS-03 — Global Sass utilities
+//
+// - Section themes (Light / Dark / Brand) from the Figma styleguide
+// - Section spacing helpers (Figma "Global Styles")
+//
+// Not redefined here because Bulma 1 already ships them:
+// - reset: Bulma's minireset (base/minireset)
+// - visually hidden: `is-sr-only`
+// - colour helpers: `has-text-*` / `has-background-*`, including the custom
+//   colours brand / secondary / surface declared in main.scss
+// =============================================================================
+
+@use "variables" as v;
+
+// -----------------------------------------------------------------------------
+// Themes
+//
+// Each theme exposes our own custom properties (--theme-*) for the partials,
+// and overrides the Bulma variables that drive text, titles and borders, so
+// Bulma elements inside a themed section follow it.
+// The light theme is the site default (:root).
+// -----------------------------------------------------------------------------
+
+@mixin theme($bg, $bg-2, $text, $text-2, $border, $border-subtle) {
+  --theme-bg: #{$bg};
+  --theme-bg-2: #{$bg-2};
+  --theme-text: #{$text};
+  --theme-text-2: #{$text-2};
+  --theme-border: #{$border};
+  --theme-border-subtle: #{$border-subtle};
+
+  --bulma-text: #{$text};
+  --bulma-text-strong: #{$text};
+  --bulma-text-weak: #{$text-2};
+  --bulma-border: #{$border-subtle};
+}
+
+:root,
+.theme-light {
+  @include theme(
+    $bg: v.$theme-light-bg,
+    $bg-2: v.$theme-light-bg-2,
+    $text: v.$theme-light-text,
+    $text-2: v.$theme-light-text-2,
+    $border: v.$theme-light-border,
+    $border-subtle: v.$theme-light-border-subtle
+  );
+}
+
+.theme-dark {
+  @include theme(
+    $bg: v.$theme-dark-bg,
+    $bg-2: v.$teal-mid,
+    $text: v.$theme-dark-text,
+    $text-2: v.$theme-dark-text,
+    $border: v.$theme-dark-border,
+    $border-subtle: v.$theme-dark-border
+  );
+}
+
+.theme-brand {
+  @include theme(
+    $bg: v.$theme-brand-bg,
+    $bg-2: v.$white,
+    $text: v.$theme-brand-text,
+    $text-2: v.$theme-brand-text,
+    $border: v.$theme-brand-border,
+    $border-subtle: v.$teal-dark-o20
+  );
+}
+
+.theme-light,
+.theme-dark,
+.theme-brand {
+  background-color: var(--theme-bg);
+  color: var(--theme-text);
+}
+
+// -----------------------------------------------------------------------------
+// Section spacing (Bulma's m-* / p-* helpers stop at 3rem)
+// -----------------------------------------------------------------------------
+
+.section-space-small {
+  padding-block: v.$section-space-small;
+}
+
+.section-space-main {
+  padding-block: v.$section-space-main;
+}
+
+.section-space-large {
+  padding-block: v.$section-space-large;
+}
+
+.page-top {
+  padding-top: v.$page-top;
+}
