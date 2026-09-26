@@ -1,6 +1,6 @@
 ---
 title: "Services"
-subtitle: "Voici comment nous pouvons vous aider."
+eyebrow: "Services"
+headline: "Des solutions concrètes pour des enjeux environnementaux complexes."
+intro: "Nous combinons science écologique, données et outils numériques pour vous aider à mieux comprendre les enjeux environnementaux, structurer l’information et passer de l’analyse à l’action."
 ---
-
-<!-- Nous préparons une présentation complète de nos services. Revenez bientôt pour en savoir plus. -->
