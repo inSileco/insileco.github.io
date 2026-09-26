@@ -10,34 +10,6 @@ body {
     max-width: 100vw;
 }
 
-
-.home-help {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-}
-
-.home-help-card {
-    display: block;
-    height: 100%;
-    border: 1px solid #e5e7eb;
-    box-shadow: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
-}
-
-.home-help-card:hover,
-.home-help-card:focus {
-    border-color: #cbd5f5;
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
-    transform: translateY(-2px);
-}
-
-.home-help-link {
-    display: inline-block;
-    margin-top: 0.75rem;
-    font-weight: 600;
-    color: #37abc8;
-}
-
 .blog-video-shell {
     max-width: 720px;
     margin: 1.5rem auto;
@@ -60,18 +32,9 @@ body {
     border: 0;
 }
 
-
-.home-placeholder .portfolio-grid {
-    margin-top: 1.5rem;
-}
-
 .home-placeholder {
     padding-top: 2rem;
     padding-bottom: 2rem;
-}
-
-.home-placeholder-alt {
-    background-color: #f6f6f6;
 }
 
 .home-band-alt {
@@ -97,7 +60,6 @@ body {
     font-size: 1.05rem;
 }
 
-
 .login-page {
     padding-top: 6rem;
     padding-bottom: 4rem;
@@ -112,7 +74,6 @@ body {
 .login-page .login-note p {
     font-style: italic;
 }
-
 
 .portfolio-grid .card {
     height: 100%;
@@ -147,7 +108,6 @@ body {
     overflow: hidden;
 }
 
-
 .portfolio-grid .card-content {
     padding: 0;
 }
@@ -178,7 +138,6 @@ body {
     margin-right: auto;
 }
 
-
 .about-section {
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
@@ -187,7 +146,6 @@ body {
 .about-section-alt {
     background-color: #f6f6f6;
 }
-
 
 .services-section-alt {
     background-color: #f6f6f6;
@@ -2120,8 +2078,6 @@ body {
     color: inherit;
 }
 
-
-
 .content-text {
     animation: fadeInAnimation ease 3s;
     animation-iteration-count: 1;
@@ -2146,7 +2102,6 @@ body {
 .card .card-image .image img {
     height: 200px;
 }
-
 
 #expertise {
     background-color: #f6f6f6;
@@ -2180,7 +2135,6 @@ input[type="checkbox"] {
 .card-header a:hover {
     color: white;
 }
-
 
 /* HELPERS */
 

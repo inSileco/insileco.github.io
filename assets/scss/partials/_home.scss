@@ -1,0 +1,464 @@
+// =============================================================================
+// PAGE-01 — Home (Figma « Accueil », Insileco-Accueil-v2.pdf)
+// =============================================================================
+
+@use "../variables" as v;
+
+$touch: "(max-width: #{v.$breakpoint-desktop - 1px})";
+$mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
+
+// -----------------------------------------------------------------------------
+// Shared section layout
+// -----------------------------------------------------------------------------
+
+.home-section {
+  padding-block: v.$section-space-main;
+
+  @media #{$touch} {
+    padding-block: v.$section-space-small;
+  }
+}
+
+// Title (+ eyebrow) on the left, intro text or button on the right
+.home-section-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: v.$space-5;
+  margin-bottom: v.$space-8;
+
+  .title {
+    margin-bottom: 0;
+    color: var(--theme-text);
+  }
+}
+
+.home-section-intro {
+  max-width: 50%;
+  font-size: v.$font-size-text-small;
+
+  @media #{$touch} {
+    max-width: none;
+  }
+}
+
+// Cards are lists of links: no bullets, no Bulma list spacing
+.home-help-grid,
+.home-portfolio-grid,
+.home-blog-grid {
+  display: grid;
+  gap: v.$space-3;
+  list-style: none;
+  margin: 0 0 v.$space-8;
+}
+
+// -----------------------------------------------------------------------------
+// Hero: text | photo, then partner logos
+// -----------------------------------------------------------------------------
+
+.home-hero-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: v.$home-hero-height;
+
+  @media #{$touch} {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+}
+
+.home-hero-text {
+  align-self: center;
+  padding: v.$space-8 v.$site-margin;
+
+  .title {
+    color: v.$teal-dark;
+  }
+
+  @media #{$touch} {
+    padding: v.$space-7 v.$space-4;
+  }
+}
+
+.home-hero-subtitle {
+  color: v.$teal-mid;
+  margin-bottom: v.$space-5;
+}
+
+// Greyscale photo lightened by a teal screen blend, logo centred on top
+.home-hero-visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background-color: v.$teal-dark;
+
+  @media #{$touch} {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+.home-hero-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: screen;
+}
+
+// Centred by the grid of .home-hero-visual, half the photo width
+.home-hero-logo {
+  position: relative;
+  width: 50%;
+}
+
+.home-partners {
+  padding-block: v.$space-7;
+  border-top: v.$border-width-main solid v.$teal-dark-o20;
+  text-align: center;
+}
+
+.home-partners-title {
+  color: v.$teal-dark;
+  font-size: v.$font-size-h5;
+  font-weight: v.$weight-bold;
+  margin-bottom: v.$space-5;
+}
+
+// Infinite scroll with faded edges (logos are rendered twice)
+.home-partners-viewport {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.home-partners-track {
+  display: flex;
+  align-items: center;
+  gap: v.$space-8;
+  width: max-content;
+  list-style: none;
+  margin: 0;
+  animation: home-partners-scroll 40s linear infinite;
+
+  img {
+    display: block;
+    height: v.$partner-logo-height;
+    width: auto;
+    max-width: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+@keyframes home-partners-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// How we help (dark): 4 service cards
+// -----------------------------------------------------------------------------
+
+.home-help-grid {
+  grid-template-columns: repeat(4, 1fr);
+
+  @media #{$touch} {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media #{$mobile} {
+    grid-template-columns: 1fr;
+  }
+}
+
+.home-help-card {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-4;
+  height: 100%;
+  padding: v.$space-4;
+  border-radius: v.$radius-small;
+  background-color: v.$teal-mid;
+  color: v.$white;
+
+  &:hover,
+  &:focus-visible {
+    color: v.$white;
+  }
+
+  .arrow-button {
+    margin-top: auto;
+    align-self: flex-end;
+  }
+}
+
+.home-help-icon {
+  width: v.$service-icon-size;
+  height: v.$service-icon-size;
+}
+
+.home-help-card-title {
+  // Keeps titles aligned when cards sit side by side
+  min-height: v.$service-title-height;
+
+  @media #{$mobile} {
+    min-height: 0;
+  }
+
+  font-size: v.$font-size-h5;
+  font-weight: v.$weight-bold;
+  line-height: v.$line-height-heading;
+  letter-spacing: v.$letter-spacing-h5;
+}
+
+// -----------------------------------------------------------------------------
+// Portfolio: 3 project cards (image, badge, title, arrow)
+// -----------------------------------------------------------------------------
+
+.home-portfolio-grid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: v.$site-gutter;
+  margin-bottom: 0;
+
+  @media #{$touch} {
+    grid-template-columns: 1fr;
+  }
+}
+
+.home-project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  aspect-ratio: v.$team-card-ratio;
+  padding: v.$space-4;
+  border-radius: v.$radius-main;
+  overflow: hidden;
+  background-color: v.$teal-dark;
+  color: v.$white;
+
+  isolation: isolate;
+
+  // Layers: image (0) < teal tint, hue blend as in the mockup (1)
+  // < gradient for the title (1) < badge, title and arrow (2)
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  &::before {
+    background-color: v.$teal-dark;
+    mix-blend-mode: hue;
+  }
+
+  &::after {
+    background: v.$team-card-overlay;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: v.$white;
+  }
+
+  .arrow-button {
+    position: absolute;
+    top: v.$space-4;
+    right: v.$space-4;
+    z-index: 2;
+  }
+
+  @media #{$touch} {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+.home-project-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-project-body {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: v.$space-2;
+}
+
+.home-project-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  font-size: v.$font-size-h5;
+  font-weight: v.$weight-bold;
+  line-height: v.$line-height-heading;
+  letter-spacing: v.$letter-spacing-h5;
+}
+
+// -----------------------------------------------------------------------------
+// Blog: 3 post cards (16:9 image, badge + date, title, excerpt)
+// -----------------------------------------------------------------------------
+
+.home-blog-grid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: v.$site-gutter;
+  margin-bottom: 0;
+
+  @media #{$touch} {
+    grid-template-columns: 1fr;
+  }
+}
+
+.home-post-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: v.$radius-main;
+  overflow: hidden;
+  background-color: v.$white;
+  color: v.$teal-dark;
+
+  &:hover,
+  &:focus-visible {
+    color: v.$teal-dark;
+  }
+}
+
+.home-post-media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background-color: v.$off-white;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .arrow-button {
+    position: absolute;
+    top: v.$space-3;
+    right: v.$space-3;
+  }
+}
+
+.home-post-body {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-2;
+  padding: v.$space-4;
+}
+
+.home-post-meta {
+  display: flex;
+  align-items: center;
+  gap: v.$space-2;
+  font-size: v.$font-size-text-small;
+}
+
+.tag.home-post-tag {
+  background-color: v.$blue-200;
+  color: v.$teal-dark;
+}
+
+.home-post-title {
+  font-size: v.$font-size-h5;
+  font-weight: v.$weight-bold;
+  line-height: v.$line-height-heading;
+  letter-spacing: v.$letter-spacing-h5;
+}
+
+.home-post-excerpt {
+  color: v.$teal-mid;
+  font-size: v.$font-size-text-small;
+}
+
+// -----------------------------------------------------------------------------
+// Testimonials: 2 per slide, progress steps + previous / next
+// -----------------------------------------------------------------------------
+
+.home-testimonials-slide {
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  gap: v.$space-8;
+
+  &.is-active {
+    display: grid;
+  }
+
+  @media #{$touch} {
+    grid-template-columns: 1fr;
+    gap: v.$space-7;
+  }
+}
+
+.home-testimonial {
+  margin: 0;
+  color: v.$teal-dark;
+
+  blockquote {
+    font-size: v.$font-size-h6;
+    line-height: v.$line-height-h6;
+    margin-bottom: v.$space-4;
+  }
+
+  figcaption {
+    display: flex;
+    flex-direction: column;
+    font-size: v.$font-size-h6;
+    font-weight: v.$weight-bold;
+  }
+}
+
+// Quote mark: inline SVG (assets/icons/quote.svg), coloured by `color`
+.home-testimonial-quote {
+  display: block;
+  width: v.$testimonial-quote-width;
+  height: auto;
+  margin-bottom: v.$space-4;
+  color: v.$testimonial-quote-color;
+}
+
+.home-testimonials-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: v.$space-5;
+  margin-top: v.$space-8;
+
+  .buttons {
+    margin-bottom: 0;
+  }
+}
+
+.home-testimonials-progress {
+  display: flex;
+  flex: 0 1 50%;
+}
+
+.home-testimonials-step {
+  flex: 1;
+  height: 2px;
+  padding: 0;
+  border: 0;
+  background-color: v.$teal-dark-o20;
+  cursor: pointer;
+
+  &.is-active {
+    background-color: v.$teal-dark;
+  }
+}

@@ -1,54 +1,40 @@
+// Home testimonials (PAGE-01): slides of two testimonials, progress steps and
+// previous / next buttons. Auto-play every 16 s, paused on hover and focus.
 document.addEventListener('DOMContentLoaded', function () {
-    const slides = document.querySelectorAll('.testimonial-slide');
-    const dots = document.querySelectorAll('.testimonial-dot');
+    document.querySelectorAll('[data-carousel]').forEach(function (carousel) {
+        const slides = carousel.querySelectorAll('[data-slide]');
+        const steps = carousel.querySelectorAll('[data-goto]');
+        if (slides.length <= 1) return;
 
-    if (slides.length <= 1) return;
+        const slideInterval = 16000;
+        let current = 0;
+        let autoPlay;
 
-    let currentSlide = 0;
-    const slideInterval = 16000; // 16 seconds
-    let autoPlayInterval;
+        function show(index) {
+            current = (index + slides.length) % slides.length;
+            slides.forEach(function (slide, i) { slide.classList.toggle('is-active', i === current); });
+            steps.forEach(function (step, i) {
+                step.classList.toggle('is-active', i === current);
+                step.setAttribute('aria-current', i === current ? 'true' : 'false');
+            });
+        }
 
-    function showSlide(index) {
-        slides.forEach(slide => slide.classList.remove('is-active'));
-        dots.forEach(dot => dot.classList.remove('is-active'));
+        function start() { stop(); autoPlay = setInterval(function () { show(current + 1); }, slideInterval); }
+        function stop() { clearInterval(autoPlay); }
 
-        slides[index].classList.add('is-active');
-        dots[index].classList.add('is-active');
-        currentSlide = index;
-    }
-
-    function nextSlide() {
-        const next = (currentSlide + 1) % slides.length;
-        showSlide(next);
-    }
-
-    function startAutoPlay() {
-        autoPlayInterval = setInterval(nextSlide, slideInterval);
-    }
-
-    function stopAutoPlay() {
-        clearInterval(autoPlayInterval);
-    }
-
-    // Dot click handlers
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            showSlide(index);
-            stopAutoPlay();
-            startAutoPlay();
+        steps.forEach(function (step) {
+            step.addEventListener('click', function () { show(Number(step.dataset.goto)); start(); });
         });
+        const prev = carousel.querySelector('[data-prev]');
+        const next = carousel.querySelector('[data-next]');
+        if (prev) prev.addEventListener('click', function () { show(current - 1); start(); });
+        if (next) next.addEventListener('click', function () { show(current + 1); start(); });
+
+        carousel.addEventListener('mouseenter', stop);
+        carousel.addEventListener('mouseleave', start);
+        carousel.addEventListener('focusin', stop);
+        carousel.addEventListener('focusout', start);
+
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) start();
     });
-
-    // Start auto-play
-    startAutoPlay();
-
-    // Pause on hover
-    const carousel = document.querySelector('.testimonials-carousel');
-    if (carousel) {
-        carousel.addEventListener('mouseenter', stopAutoPlay);
-        carousel.addEventListener('mouseleave', () => {
-            stopAutoPlay();
-            startAutoPlay();
-        });
-    }
 });

@@ -1,43 +1,43 @@
 {{ $hero := index hugo.Data .Site.Language.Lang "home" "hero" }}
-<section id="hero" class="section hero-main">
-    <div class="container">
-        <div class="columns is-centered is-vcentered">
-            <div class="column is-8-desktop is-10-tablet has-text-centered">
-                <h1 class="title is-2 hero-title">{{ $hero.headline }}</h1>
-                <p class="subtitle is-5 hero-subtitle">
-                    {{ $hero.subheadline }}
-                </p>
-                <div class="buttons hero-cta is-centered">
-                    <a
-                        class="button is-primary"
-                        href="{{ relLangURL $hero.cta_primary.link }}"
-                        data-track="hero_cta_portfolio"
-                    >
-                        {{ $hero.cta_primary.label }}
-                    </a>
-                    <a
-                        class="button is-light"
-                        href="{{ relLangURL $hero.cta_secondary.link }}"
-                        data-track="hero_cta_contact"
-                    >
-                        {{ $hero.cta_secondary.label }}
-                    </a>
-                </div>
-            </div>
-        </div>
-        {{ $logos := hugo.Data.network }} {{ if $logos }}
-        <div class="hero-carousel" aria-label="Partner logos">
-            <div class="hero-carousel-track">
-                {{ range seq 2 }} {{ range $logos }}
-                <a href="{{ .url }}" target="_blank" rel="noopener">
-                    <img src="{{ .logo }}" alt="{{ .name }}" />
+{{ $sections := index hugo.Data .Site.Language.Lang "home" "sections" }}
+<section id="hero" class="home-hero">
+    <div class="home-hero-main">
+        <div class="home-hero-text">
+            <h1 class="title is-3">{{ $hero.headline }}</h1>
+            <p class="home-hero-subtitle">{{ $hero.subheadline }}</p>
+            <div class="buttons">
+                <a class="button is-outline" href="{{ relLangURL $hero.cta_primary.link }}" data-track="hero_cta_portfolio">
+                    {{ $hero.cta_primary.label }}
                 </a>
-                {{ end }} {{ end }}
+                <a class="button is-brand" href="{{ relLangURL $hero.cta_secondary.link }}" data-track="hero_cta_contact">
+                    {{ $hero.cta_secondary.label }}
+                </a>
             </div>
         </div>
-        {{ end }}
-        <div class="hero-credibility">
-            <p>{{ $hero.credibility }}</p>
+        <div class="home-hero-visual" aria-hidden="true">
+            <img class="home-hero-photo" src="{{ $sections.hero.image }}" alt="" />
+            <img class="home-hero-logo" src="/img/logo-icon-white.svg" alt="" />
         </div>
     </div>
+
+    {{ $logos := hugo.Data.network }}
+    {{ with $logos }}
+    <div class="home-partners">
+        <h2 class="home-partners-title">{{ $sections.hero.trusted_title }}</h2>
+        <div class="home-partners-viewport">
+            <ul class="home-partners-track">
+                {{/* Logos rendered twice for a seamless loop; the copy is hidden from assistive tech */}}
+                {{ range $copy := seq 2 }}
+                {{ range $logos }}
+                <li {{ if eq $copy 2 }}aria-hidden="true"{{ end }}>
+                    <a href="{{ .url }}" target="_blank" rel="noopener" {{ if eq $copy 2 }}tabindex="-1"{{ end }}>
+                        <img src="{{ .logo }}" alt="{{ .name }}" />
+                    </a>
+                </li>
+                {{ end }}
+                {{ end }}
+            </ul>
+        </div>
+    </div>
+    {{ end }}
 </section>

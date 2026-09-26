@@ -1,0 +1,38 @@
+// =============================================================================
+// Typography helpers
+//
+// .eyebrow — section « surtitre » from the mockups: small coloured square +
+// uppercase label (Nexa XBold). Square colour: yellow by default, blue (blog),
+// green (testimonials).
+// =============================================================================
+
+@use "../variables" as v;
+
+.eyebrow {
+  --eyebrow-color: #{v.$yellow};
+
+  display: inline-flex;
+  align-items: center;
+  gap: v.$space-1;
+  margin-bottom: v.$space-3;
+  color: var(--theme-text);
+  font-size: v.$font-size-text-main;
+  font-weight: v.$weight-xbold;
+  text-transform: uppercase;
+
+  &::before {
+    content: "";
+    width: v.$eyebrow-square-size;
+    height: v.$eyebrow-square-size;
+    border-radius: v.$eyebrow-square-radius;
+    background-color: var(--eyebrow-color);
+  }
+}
+
+.eyebrow--blue {
+  --eyebrow-color: #{v.$blue-500};
+}
+
+.eyebrow--green {
+  --eyebrow-color: #{v.$green-500};
+}

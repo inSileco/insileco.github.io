@@ -145,6 +145,7 @@ $section-space-large:  160px;  // grandes sections hero / CTA
 $page-top:             224px;  // padding top des pages intérieures
 
 // Site layout
+$site-max-width:       1440px; // largeur des maquettes
 $site-margin:          64px;   // padding horizontal global (desktop)
 $site-gutter:          32px;   // gap entre colonnes
 
@@ -202,6 +203,27 @@ $navbar-dropdown-width: 160px;
 
 $footer-logo-width:     221px;
 $input-height:          48px;  // champs de formulaire (footer, contact)
+
+// -----------------------------------------------------------------------------
+// BOUTONS & SURTITRES (PAGE-01) — Figma : button_default, button_arrow_small
+// -----------------------------------------------------------------------------
+
+$button-padding-block:  18px;  // hauteur 59px avec Text Main
+$button-padding-inline: $size-1-5;
+$arrow-button-size:     40px;
+$eyebrow-square-size:   11.6px;
+$eyebrow-square-radius: 2px;
+
+// -----------------------------------------------------------------------------
+// ACCUEIL (PAGE-01)
+// -----------------------------------------------------------------------------
+
+$home-hero-height:      800px;
+$partner-logo-height:   48px;  // dans une bande de 80px
+$service-icon-size:     40px;
+$service-title-height:  70px;  // titres de cards alignés sur 2 lignes
+$testimonial-quote-width: 65px;       // taille du guillemet de la maquette (65×56)
+$testimonial-quote-color: rgba($teal-dark, 0.25);
 
 // -----------------------------------------------------------------------------
 // ÉQUIPE (COMP-03) — Figma : card 414×517, icônes sociales rondes 36px
