@@ -1,6 +1,19 @@
-tally:
+tagline_alt: "inSileco — Environmental data. Actionable decisions."
+links_heading: "Links"
+contact:
+  heading: "Contact"
+  email: "info@insileco.io"
+newsletter:
   heading: "Stay informed"
   blurb: "Occasional insights and updates by email. No Spam!"
-  subscribe_url: "https://tally.so/embed/jaoJKE?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-  subscribe_title: "Subscribe footer"
-  subscribe_height: 150
+  label: "Your email"
+  button: "Subscribe"
+  # Tally form: the popup opens with the email pre-filled (hidden field "email")
+  tally_form_id: "jaoJKE"
+bottom:
+  rights: "All rights reserved."
+  legal:
+    - label: "Terms of use"
+      url: "/terms/"
+    - label: "Privacy policy"
+      url: "/privacy/"

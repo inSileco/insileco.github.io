@@ -70,7 +70,7 @@ title_expertise = "Notre expertise"
 subtitle_expertise = "Nous sommes d’éminents scientifiques et experts en données spécialisés dans les sciences de la biodiversité. Notre expertise académique couvre l'écologie théorique du réseau trophique et le développement de méthodologies essentielles pour la gestion écosystémique, comme détaillé dans notre longue liste de publications évaluées par des pairs. En tant que data scientists, nous excellons dans un large éventail d’analyses statistiques, en les appliquant à des ensembles de données vastes et diversifiés à l’aide de technologies avancées. Avec plus d'une décennie d'expérience professionnelle et universitaire, nous avons perfectionné nos compétences en aidant les scientifiques universitaires et gouvernementaux à analyser et à visualiser les données sur la biodiversité, et à créer des pipelines analytiques robustes et des outils interactifs."
 title_team = "Notre équipe"
 subtitle_team = ""
-footer = 'Le code source de ce site est disponible sur <a href="https://github.com/inSilecoInc/insilecoinc.github.io">GitHub</a> sous licence <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.</br><i class="fa-solid fa-copyright fa-sm"></i> inSileco Inc. 2020-2026'
+footer = 'Le code source de ce site est disponible sur <a href="https://github.com/inSilecoInc/insilecoinc.github.io">GitHub</a> sous licence <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.'
 
 
 # [languages.fr.params.login]
@@ -184,6 +184,47 @@ parent = "news"
 url = "/events/"
 weight = 2
 
+# Footer links (order of the mockup, not of the navbar)
+[[languages.fr.menu.footer]]
+name = "Notre approche"
+url = "/about/"
+weight = 1
+
+[[languages.fr.menu.footer]]
+name = "Équipe"
+url = "/about/#team"
+weight = 2
+
+[[languages.fr.menu.footer]]
+name = "Académie"
+url = "/academy/"
+weight = 3
+
+[[languages.fr.menu.footer]]
+name = "Services"
+url = "/services/"
+weight = 4
+
+[[languages.fr.menu.footer]]
+name = "Portfolio"
+url = "/portfolio/"
+weight = 5
+
+[[languages.fr.menu.footer]]
+name = "Publications"
+url = "/publications/"
+weight = 6
+
+[[languages.fr.menu.footer]]
+name = "Blogue"
+url = "/blog/"
+weight = 7
+
+[[languages.fr.menu.footer]]
+name = "Évènements"
+url = "/events/"
+weight = 8
+
 
 
 [languages.en]
@@ -197,7 +238,7 @@ title_expertise = "Our expertise"
 subtitle_expertise = "We are distinguished scientists and data experts specializing in biodiversity sciences. Our academic expertise spans theoretical food web ecology and the development of essential methodologies for ecosystem-based management, as detailed in our extensive list of peer-reviewed publications. As data scientists, we excel in a wide range of statistical analyses, applying them to large and diverse datasets using advanced technologies. With over a decade of professional and academic experience, we have honed our skills in supporting academic and governmental scientists in analyzing and visualizing biodiversity data, and in creating robust analytical pipelines and interactive tools."
 title_team = "Our team"
 subtitle_team = ""
-footer = 'The source code of this website is available on <a href="https://github.com/inSilecoInc/insilecoinc.github.io">GitHub</a> licensed under <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.</br><i class="fa-solid fa-copyright fa-sm"></i> inSileco Inc. 2020-2026'
+footer = 'The source code of this website is available on <a href="https://github.com/inSilecoInc/insilecoinc.github.io">GitHub</a> licensed under <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.'
 blog_button = "Checkout out blog"
 
 #   [languages.en.params.login]
@@ -308,6 +349,47 @@ name = "Events"
 parent = "news"
 url = "/events/"
 weight = 2
+
+# Footer links (order of the mockup, not of the navbar)
+[[languages.en.menu.footer]]
+name = "Our approach"
+url = "/about/"
+weight = 1
+
+[[languages.en.menu.footer]]
+name = "Team"
+url = "/about/#team"
+weight = 2
+
+[[languages.en.menu.footer]]
+name = "Academy"
+url = "/academy/"
+weight = 3
+
+[[languages.en.menu.footer]]
+name = "Services"
+url = "/services/"
+weight = 4
+
+[[languages.en.menu.footer]]
+name = "Portfolio"
+url = "/portfolio/"
+weight = 5
+
+[[languages.en.menu.footer]]
+name = "Publications"
+url = "/publications/"
+weight = 6
+
+[[languages.en.menu.footer]]
+name = "Blog"
+url = "/blog/"
+weight = 7
+
+[[languages.en.menu.footer]]
+name = "Events"
+url = "/events/"
+weight = 8
 
 # Bulma is pulled in as a Hugo module (no npm needed).
 # Its Sass sources are mounted under assets/mod/bulma and compiled by
