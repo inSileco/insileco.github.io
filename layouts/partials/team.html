@@ -1,41 +1,12 @@
-<div id="team" class="p-2 mb-6">
-    <div class="columns is-multiline is-vcentered is-mobile mx-6-tablet content">
-        <div class="column is-full has-text-centered content-text">
-            <h1>{{ .Site.Params.title_team }}</h1>
-            <p>{{ .Site.Params.subtitle_team }}</p>
-        </div>
-        {{ $members := index hugo.Data .Site.Language.Lang "members"}}
+<div id="team" class="team">
+    <h2 class="team-title">{{ .Site.Params.title_team }}</h2>
+    {{ with .Site.Params.subtitle_team }}<p class="team-subtitle">{{ . }}</p>{{ end }}
+
+    {{/* One card per file in data/{lang}/members/, sorted by `order` */}}
+    {{ $members := index hugo.Data .Site.Language.Lang "members" }}
+    <ul class="team-grid">
         {{ range sort $members "order" }}
-        <div class="column is-4-desktop is-12-mobile has-text-centered">
-            <figure class="image is-inline-block">
-                <img class="is-rounded img-member" style="max-height:13rem" src="{{ .picture }}"/>
-            </figure>
-            <h6 class="my-0 is-size-4">{{ .name.given }} {{ .name.family }}, {{ .title }}</h6>
-            <p class="is-size-5 mb-0">{{ .role }}</p>
-            <p class="is-size-4 mb-2">
-                {{with .social }}
-                    {{ if .mail }}
-                        <a href="mailto:{{ .mail }}" target="_blank"><i class="fa-solid fa-envelope"></i></a>
-                    {{ end }}
-                    {{ if .website }}
-                        <a href="{{ .website }}" target="_blank"><i class="fa-solid fa-globe"></i></a>
-                    {{ end }}
-                    {{ if .github }}
-                        <a href="https://github.com/{{ .github }}" target="_blank"><i class="fa-brands fa-github"></i></a>
-                    {{ end }}
-                    {{ if .linkedin }}
-                        <a href="https://www.linkedin.com/in/{{ .linkedin }}" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                    {{ end }}
-                    {{ if .researchgate }}
-                        <a href="https://www.researchgate.net/profile/{{ .researchgate }}" target="_blank"><i class="fa-brands fa-researchgate"></i></a>
-                    {{ end }}
-                    {{ if .orcid }}
-                        <a href="https://orcid.org/{{ .orcid }}" target="_blank"><i class="fa-brands fa-orcid"></i></a>
-                    {{ end }}
-                {{ end }}
-            </p>
-            <p class="is-size-6 mb-0">{{ .bio.short }}</p>
-        </div>
+        <li>{{ partial "team-card.html" . }}</li>
         {{ end }}
-    </div>
+    </ul>
 </div>

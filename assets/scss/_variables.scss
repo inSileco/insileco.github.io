@@ -185,6 +185,7 @@ $border-width-main: 1px; // pas d'équivalent Sass dans Bulma 1
 // fullhd:     1408px
 // Maquette conçue à 1440px → widescreen/fullhd suffisants
 
+$breakpoint-tablet:  769px;  // en dessous : mobile (Bulma "mobile")
 $breakpoint-desktop: 1024px; // en dessous : tablette et mobile (Bulma "touch")
 
 // -----------------------------------------------------------------------------
@@ -201,6 +202,14 @@ $navbar-dropdown-width: 160px;
 
 $footer-logo-width:     221px;
 $input-height:          48px;  // champs de formulaire (footer, contact)
+
+// -----------------------------------------------------------------------------
+// ÉQUIPE (COMP-03) — Figma : card 414×517, icônes sociales rondes 36px
+// -----------------------------------------------------------------------------
+
+$team-card-ratio:       math.div(414, 517);
+$team-social-size:      36px;
+$team-card-overlay:     linear-gradient(to bottom, transparent 40%, rgba($teal-dark, 0.9));
 
 // -----------------------------------------------------------------------------
 // 10. TEXTURES (DS-02)

@@ -1,0 +1,29 @@
+{{/*
+  COMP-03 — Team member card. Context: one entry of data/{lang}/members/.
+  Default state: photo + name. Hover / focus: yellow panel with social links
+  and short bio. The card is focusable so touch and keyboard users reach it.
+*/}}
+{{ $name := printf "%s %s" .name.given .name.family }}
+<article class="team-card" tabindex="0" aria-label="{{ $name }}">
+    <img class="team-card-photo" src="{{ .picture }}" alt="{{ $name }}" loading="lazy" />
+
+    <div class="team-card-details">
+        {{ with .social }}
+        <ul class="team-card-social">
+            {{ with .mail }}<li><a href="mailto:{{ . }}" aria-label="{{ T "email" }} {{ $name }}"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a></li>{{ end }}
+            {{ with .website }}<li><a href="{{ . }}" target="_blank" rel="noopener" aria-label="{{ T "website" }} {{ $name }}"><i class="fa-solid fa-globe" aria-hidden="true"></i></a></li>{{ end }}
+            {{ with .github }}<li><a href="https://github.com/{{ . }}" target="_blank" rel="noopener" aria-label="GitHub {{ $name }}"><i class="fa-brands fa-github" aria-hidden="true"></i></a></li>{{ end }}
+            {{ with .linkedin }}<li><a href="https://www.linkedin.com/in/{{ . }}" target="_blank" rel="noopener" aria-label="LinkedIn {{ $name }}"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a></li>{{ end }}
+            {{ with .twitter }}<li><a href="https://x.com/{{ . }}" target="_blank" rel="noopener" aria-label="X {{ $name }}"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a></li>{{ end }}
+            {{ with .researchgate }}<li><a href="https://www.researchgate.net/profile/{{ . }}" target="_blank" rel="noopener" aria-label="ResearchGate {{ $name }}"><i class="fa-brands fa-researchgate" aria-hidden="true"></i></a></li>{{ end }}
+            {{ with .orcid }}<li><a href="https://orcid.org/{{ . }}" target="_blank" rel="noopener" aria-label="ORCID {{ $name }}"><i class="fa-brands fa-orcid" aria-hidden="true"></i></a></li>{{ end }}
+        </ul>
+        {{ end }}
+        {{ with .bio.short }}<p class="team-card-bio">{{ . }}</p>{{ end }}
+    </div>
+
+    <header class="team-card-identity">
+        <h3 class="team-card-name">{{ $name }}{{ with .title }}, {{ . }}{{ end }}</h3>
+        <p class="team-card-role">{{ strings.FirstUpper .role }}</p>
+    </header>
+</article>
