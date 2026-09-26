@@ -1,37 +1,48 @@
-<nav class="navbar is-spaced is-fixed-top is-size-8 px-6" role="navigation" aria-label="main navigation">
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-        <a class="navbar-item navbar-logo is-hidden-touch" href='{{ relLangURL "/" }}'>
-            <img src="/img/logo.svg" alt="inSileco logo" />
-            <span class="navbar-title">inSileco</span>
+        <a class="navbar-item navbar-logo" href='{{ relLangURL "/" }}'>
+            <img src="/img/logo-horizontal.svg" alt="inSileco" width="175" height="40" />
         </a>
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" aria-controls="main-navbar" data-target="main-navbar">
+            <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
         </a>
     </div>
 
-    <div id="navbarBasicExample" class="navbar-menu">
-
-        <a class="navbar-item navbar-logo is-hidden-desktop" href='{{ relLangURL "/" }}'>
-            <img src="/img/logo.svg" alt="inSileco logo" />
-            <span class="navbar-title">inSileco</span>
-        </a>
-
+    <div id="main-navbar" class="navbar-menu">
         <div class="navbar-start">
+            {{/* Active = the current page is the entry or one of its sub-pages.
+                 Menu URLs have no language prefix, hence relLangURL before comparing. */}}
             {{ range .Site.Menus.main }}
-            <a class="navbar-item" href="{{ relLangURL .URL }}">
-                {{ .Name }}
-            </a>
+            {{ $active := false }}
+            {{ $entries := slice . }}
+            {{ if .HasChildren }}{{ $entries = .Children }}{{ end }}
+            {{ range $entries }}
+                {{ if and .URL (hasPrefix $.RelPermalink (relLangURL .URL)) }}{{ $active = true }}{{ end }}
+            {{ end }}
+            {{ if .HasChildren }}
+            <div class="navbar-item has-dropdown is-hoverable">
+                {{ if .URL }}
+                <a class="navbar-link{{ if $active }} is-active{{ end }}" href="{{ relLangURL .URL }}" aria-haspopup="true">{{ .Name }}</a>
+                {{ else }}
+                {{/* No page of its own: focusable so the dropdown also opens from the keyboard */}}
+                <span class="navbar-link{{ if $active }} is-active{{ end }}" tabindex="0" aria-haspopup="true">{{ .Name }}</span>
+                {{ end }}
+                <div class="navbar-dropdown">
+                    {{ range .Children }}
+                    <a class="navbar-item{{ if hasPrefix $.RelPermalink (relLangURL .URL) }} is-active{{ end }}" href="{{ relLangURL .URL }}">{{ .Name }}</a>
+                    {{ end }}
+                </div>
+            </div>
+            {{ else }}
+            <a class="navbar-item{{ if $active }} is-active{{ end }}" href="{{ relLangURL .URL }}">{{ .Name }}</a>
+            {{ end }}
             {{ end }}
         </div>
 
         <div class="navbar-end">
-            {{ range .Site.Params.social }}
-                <a class="navbar-item is-hidden-touch" href="{{ .url }}" target="_blank" rel="noopener" aria-label="{{ .name }}">
-                    <i class="{{ .icon }}"></i>
-                </a>
-            {{ end }}
             {{ with .Site.Params.login }}
                 <div class="navbar-item">
                     <a class="button is-light navbar-login" href="{{ relLangURL .url }}">
@@ -40,12 +51,12 @@
                 </div>
             {{ end }}
             <div class="navbar-item">
-                <a class="button navbar-contact" href='{{ relLangURL "/contact/" }}'>
+                <a class="button is-brand navbar-contact" href='{{ relLangURL "/contact/" }}'>
                     {{ lang.Translate "contact" . }}
                 </a>
             </div>
             {{ range .Translations }}
-                <a class="navbar-item has-text-weight-bold" href="{{ .RelPermalink }}">{{ upper .Lang }}</a>
+                <a class="navbar-item navbar-lang" href="{{ .RelPermalink }}" hreflang="{{ .Lang }}" lang="{{ .Lang }}">{{ upper .Lang }}</a>
             {{ end }}
         </div>
         <div class="navbar-close-wrapper is-hidden-desktop has-text-centered">
@@ -54,5 +65,4 @@
             </a>
         </div>
     </div>
-
 </nav>

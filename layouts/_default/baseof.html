@@ -1,13 +1,10 @@
 {{/* https://gohugo.io/templates/base/ */}}
 <!DOCTYPE html>
-<html>
+<html lang="{{ .Site.Language.Lang }}">
 {{ partial "head.html" . }}
-{{ partial "navbar.html" . }}
 
-<body>
-<a class="navbar-mobile-logo is-hidden-desktop" href='{{ relLangURL "/" }}'>
-    <img src="/img/logo.svg" alt="inSileco logo" />
-</a>
+<body class="has-navbar-fixed-top">
+	{{ partial "navbar.html" . }}
 
 	{{ block "main" . }}
 

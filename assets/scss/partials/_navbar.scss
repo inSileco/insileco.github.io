@@ -1,0 +1,135 @@
+// =============================================================================
+// COMP-01 — Navbar (Figma « Nav 1 »)
+//
+// Bulma's navbar provides the layout, the burger and the dropdowns (opened on
+// hover and :focus-within). This partial only applies the mockup's look.
+// =============================================================================
+
+@use "../variables" as v;
+
+// Anchors (e.g. /about/#team) must not end up under the fixed navbar
+html {
+  scroll-padding-top: v.$navbar-height;
+}
+
+.navbar {
+  border-bottom: v.$border-width-main solid v.$teal-dark-o20;
+  padding-inline: v.$site-margin;
+
+  @media (max-width: #{v.$breakpoint-desktop - 1px}) {
+    padding-inline: 0;
+  }
+}
+
+.navbar-logo img {
+  height: v.$navbar-logo-height;
+  width: auto;
+  max-height: none;
+}
+
+// Links (Text Main, teal) — the centre zone of the mockup
+.navbar-start {
+  @media (min-width: v.$breakpoint-desktop) {
+    margin-inline: auto;
+  }
+}
+
+.navbar-end {
+  @media (min-width: v.$breakpoint-desktop) {
+    margin-left: 0;
+  }
+}
+
+.navbar-item,
+.navbar-link {
+  color: v.$teal-dark;
+  font-size: v.$font-size-text-main;
+  padding-inline: v.$space-3;
+}
+
+// Hover / current page: Figma text-link hover border (#ceee60)
+@mixin underline {
+  color: v.$teal-dark;
+  background-color: transparent;
+  text-decoration: underline;
+  text-decoration-color: v.$yellow;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+
+// Links only (not the .has-dropdown wrapper, which is a .navbar-item too)
+.navbar-start > a.navbar-item,
+a.navbar-link {
+  &:hover,
+  &:focus-visible,
+  &.is-active {
+    @include underline;
+  }
+}
+
+// Entries without a page (Réalisations, Actualités): no hover underline,
+// only keyboard focus and "current section"
+span.navbar-link {
+  cursor: default;
+
+  &:hover {
+    background-color: transparent;
+  }
+
+  &:focus-visible,
+  &.is-active {
+    @include underline;
+  }
+}
+
+// Chevron: Bulma's arrow, turned 180° while the dropdown is open
+.navbar-link:not(.is-arrowless)::after {
+  border-color: v.$teal-dark;
+  transition: transform 150ms ease-in-out;
+}
+
+.navbar-item.has-dropdown:is(:hover, :focus-within) > .navbar-link::after {
+  transform: rotate(135deg);
+}
+
+// Dropdown: white, 160px, items separated by a subtle border
+.navbar-dropdown {
+  min-width: v.$navbar-dropdown-width;
+  padding-block: 0;
+  border-top: 0;
+  border-radius: 0;
+
+  .navbar-item {
+    padding: v.$space-3;
+    border-bottom: v.$border-width-main solid v.$teal-dark-o20;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    &:hover,
+    &:focus-visible,
+    &.is-active {
+      @include underline;
+      background-color: v.$off-white;
+    }
+  }
+}
+
+// Language switch
+.navbar-lang {
+  font-weight: v.$weight-bold;
+}
+
+// Mobile: close button at the bottom of the open menu (navbar.js)
+.navbar-close-wrapper {
+  padding-block: v.$space-2;
+}
+
+.navbar-close-btn {
+  color: v.$teal-mid;
+
+  &:hover {
+    color: v.$teal-dark;
+  }
+}

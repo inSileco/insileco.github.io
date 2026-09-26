@@ -188,7 +188,15 @@ $border-width-main: 1px; // pas d'équivalent Sass dans Bulma 1
 $breakpoint-desktop: 1024px; // en dessous : tablette et mobile (Bulma "touch")
 
 // -----------------------------------------------------------------------------
-// 9. TEXTURES (DS-02)
+// 9. NAVBAR (COMP-01) — Figma « Nav 1 » : 96px = barre 64px + 16px de part et d'autre
+// -----------------------------------------------------------------------------
+
+$navbar-height:         96px;
+$navbar-logo-height:    40px;
+$navbar-dropdown-width: 160px;
+
+// -----------------------------------------------------------------------------
+// 10. TEXTURES (DS-02)
 // Texture terrain — Figma nodes 2412:42531 (1581px) et 2412:42530 (970px)
 // -----------------------------------------------------------------------------
 
