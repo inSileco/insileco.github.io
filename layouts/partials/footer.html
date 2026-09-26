@@ -1,41 +1,62 @@
-<footer class="footer">
-  <div class="columns is-desktop is-vcentered">
-    <div class="column is-2"></div>
-    
-    {{ $footer := index hugo.Data .Site.Language.Lang "home" "footer" }}
-    <div class="column is-4-desktop is-12-mobile">
-      <div id="contact" class="content has-text-centered">
-        <h3>{{ $footer.tally.heading }}</h3>
-        <p><i>{{ $footer.tally.blurb }}</i></p>
-        <iframe
-          data-tally-src="{{ $footer.tally.subscribe_url }}"
-          loading="lazy" width="100%" height="{{ $footer.tally.subscribe_height }}" frameborder="0" marginheight="0" marginwidth="0"
-          title="{{ $footer.tally.subscribe_title }}">
-        </iframe>
-        <script>var d = document, w = "https://tally.so/widgets/embed.js", v = function () { "undefined" != typeof Tally ? Tally.loadEmbeds() : d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function (e) { e.src = e.dataset.tallySrc })) }; if ("undefined" != typeof Tally) v(); else if (d.querySelector('script[src="' + w + '"]') == null) { var s = d.createElement("script"); s.src = w, s.onload = v, s.onerror = v, d.body.appendChild(s); }</script>
-      </div>
+{{ $footer := index hugo.Data .Site.Language.Lang "home" "footer" }}
+<footer class="footer site-footer theme-dark has-texture has-texture--on-dark has-texture--top-left">
+  <div class="columns is-desktop site-footer-top">
+
+    <div class="column is-3-desktop">
+      <a href='{{ relLangURL "/" }}'>
+        <img class="site-footer-logo" src="/img/logo-horizontal-tagline-white.svg" alt="{{ $footer.tagline_alt }}" width="221" height="60" />
+      </a>
     </div>
 
-  <div class="column is-5-desktop is-12-mobile">
-    <div class="content has-text-centered mb-6">
-      <h3>inSileco Inc.</h3>
-      <h6>{{ .Site.Params.subtitle }}</h6>
+    <nav class="column is-2-desktop" aria-labelledby="footer-links-heading">
+      <h2 id="footer-links-heading" class="site-footer-heading">{{ $footer.links_heading }}</h2>
+      <ul class="site-footer-links">
+        {{ range .Site.Menus.footer }}
+        <li><a href="{{ relLangURL .URL }}">{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </nav>
+
+    <div class="column is-3-desktop">
+      <h2 class="site-footer-heading">{{ $footer.contact.heading }}</h2>
+      <p><a href="mailto:{{ $footer.contact.email }}">{{ $footer.contact.email }}</a></p>
+      <ul class="site-footer-social">
+        {{ range .Site.Params.social }}
+        <li>
+          <a href="{{ .url }}" target="_blank" rel="noopener" aria-label="{{ .name }}">
+            <i class="{{ .icon }}" aria-hidden="true"></i>
+          </a>
+        </li>
+        {{ end }}
+      </ul>
     </div>
-    <div class="content has-text-centered">
-      <p>
-        {{ .Site.Params.footer | safeHTML }}
-        <span class="has-text-grey"> · {{ T "last_build" }} {{ $built := now.UTC }}<time datetime="{{ $built.Format "2006-01-02T15:04:05Z07:00" }}">{{ $built | time.Format ":date_long" }}, {{ $built | time.Format ":time_short" }} UTC</time></span>
-      </p>
-    </div>
-    <div class="is-hidden-desktop is-flex is-justify-content-center mt-4" style="gap: 1.5rem;">
-      {{ range .Site.Params.social }}
-        <a class="has-text-grey" href="{{ .url }}" target="_blank" rel="noopener" aria-label="{{ .name }}">
-          <i class="{{ .icon }} is-size-5"></i>
-        </a>
+
+    <div class="column is-4-desktop">
+      {{ with $footer.newsletter }}
+      <h2 class="site-footer-heading">{{ .heading }}</h2>
+      <p class="site-footer-blurb">{{ .blurb }}</p>
+      <form class="site-footer-newsletter" data-tally-form="{{ .tally_form_id }}">
+        <label class="is-sr-only" for="footer-newsletter-email">{{ .label }}</label>
+        <input id="footer-newsletter-email" class="input" type="email" name="email" placeholder="{{ .label }}" autocomplete="email" required />
+        <button class="button is-brand" type="submit">{{ .button }}</button>
+      </form>
       {{ end }}
     </div>
-  </div>
 
   </div>
 
+  <div class="site-footer-bottom">
+    <p>
+      © {{ now.Year }} insileco • {{ $footer.bottom.rights }}
+      <span class="site-footer-meta">
+        · {{ .Site.Params.footer | safeHTML }}
+        · {{ T "last_build" }} {{ $built := now.UTC }}<time datetime="{{ $built.Format "2006-01-02T15:04:05Z07:00" }}">{{ $built | time.Format ":date_long" }}, {{ $built | time.Format ":time_short" }} UTC</time>
+      </span>
+    </p>
+    <ul class="site-footer-legal">
+      {{ range $footer.bottom.legal }}
+      <li><a href="{{ relLangURL .url }}">{{ .label }}</a></li>
+      {{ end }}
+    </ul>
+  </div>
 </footer>

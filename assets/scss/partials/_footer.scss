@@ -1,0 +1,115 @@
+// =============================================================================
+// COMP-02 — Footer (Figma « Footer inSileco », version finale dark)
+//
+// Background, text colour and texture come from the utility classes on the
+// <footer>: theme-dark + has-texture--on-dark (DS-02 / DS-03).
+// =============================================================================
+
+@use "../variables" as v;
+
+.site-footer {
+  padding: v.$section-space-small v.$site-margin 0;
+
+  // Texture position from the mockup (top: 347px, left: -70px)
+  --texture-offset-x: -70px;
+  --texture-offset-y: 347px;
+
+  a {
+    color: var(--theme-text);
+
+    &:hover,
+    &:focus-visible {
+      color: v.$yellow;
+    }
+  }
+
+  @media (max-width: #{v.$breakpoint-desktop - 1px}) {
+    padding-inline: v.$space-4;
+  }
+}
+
+.site-footer-top {
+  padding-bottom: v.$section-space-small;
+}
+
+.site-footer-logo {
+  width: v.$footer-logo-width;
+  height: auto;
+}
+
+.site-footer-heading {
+  // !important: insileco.css forces `h2 { font-size: 1.65rem !important }` on
+  // mobile. Remove once those legacy heading overrides are gone.
+  font-size: v.$font-size-h6 !important;
+  font-weight: v.$weight-bold;
+  line-height: v.$line-height-h6;
+  letter-spacing: v.$letter-spacing-h6;
+  margin-bottom: v.$space-4;
+}
+
+.site-footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-2;
+  font-size: v.$font-size-text-small;
+}
+
+.site-footer-social {
+  display: flex;
+  gap: v.$space-4;
+  margin-top: v.$space-5;
+  font-size: v.$space-4; // 24px icons
+}
+
+.site-footer-blurb {
+  font-size: v.$font-size-text-small;
+  margin-bottom: v.$space-5;
+}
+
+// Input + button on one line, stacked on small screens
+.site-footer-newsletter {
+  display: flex;
+  gap: v.$space-1;
+
+  .input {
+    height: v.$input-height;
+    background-color: transparent;
+    color: var(--theme-text);
+    border-color: var(--theme-border);
+    border-radius: v.$radius-small;
+
+    &::placeholder {
+      color: var(--theme-text);
+      opacity: 0.6;
+    }
+  }
+
+  .button {
+    height: v.$input-height;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: #{v.$breakpoint-desktop - 1px}) {
+    flex-direction: column;
+  }
+}
+
+// Bottom bar: copyright | legal links
+.site-footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: v.$space-3;
+  padding-block: v.$space-5;
+  border-top: v.$border-width-main solid v.$white;
+  font-size: v.$font-size-text-xsmall;
+}
+
+.site-footer-meta {
+  opacity: 0.7;
+}
+
+.site-footer-legal {
+  display: flex;
+  gap: v.$space-4;
+}
