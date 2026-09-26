@@ -1,0 +1,19 @@
+# Texts of the home sections (PAGE-01) not covered by hero.yaml / testimonials.yaml
+hero:
+  image: "/img/home/hero-ice.jpg"
+  trusted_title: "They trust us"
+help:
+  # Text to the right of the title in the mockup (placeholder there, none online): hidden while empty
+  intro: ""
+  cta: "Learn more"
+portfolio:
+  eyebrow: "Recent projects"
+  button: "See our portfolio"
+blog:
+  eyebrow: "Blog"
+  title: "Insights from the field"
+  button: "Check out our blog"
+testimonials:
+  previous: "Previous testimonials"
+  next: "Next testimonials"
+  page: "Show testimonials"
