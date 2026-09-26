@@ -223,6 +223,14 @@ $partner-logo-height:   48px;  // dans une bande de 80px
 $service-icon-size:     40px;
 $service-title-height:  70px;  // titres de cards alignés sur 2 lignes
 $testimonial-quote-width: 65px;       // taille du guillemet de la maquette (65×56)
+
+// -----------------------------------------------------------------------------
+// PAGES INTÉRIEURES (PAGE-02+)
+// -----------------------------------------------------------------------------
+
+$page-header-main-width: 640px;  // colonne titre des headers (Figma)
+$service-icon-box:       80px;   // carré de l'icône service (Figma)
+$service-icon-inner:     40px;
 $testimonial-quote-color: rgba($teal-dark, 0.25);
 
 // -----------------------------------------------------------------------------
@@ -240,9 +248,12 @@ $team-card-overlay:     linear-gradient(to bottom, transparent 40%, rgba($teal-d
 
 $texture-terrain:         '/img/textures/terrain.svg';
 $texture-ratio:           math.div(1581, 504.4);
-$texture-width:           1581px; // desktop, taille du header du styleguide
-$texture-width-touch:     970px;  // tablette / mobile, la version réduite du Figma
+// Perspective mesh: small cells at the back (peaks), large at the front.
+// Mockups only show the back: full width, front sunk below the section.
+$texture-width:           100%;   // largeur de la section (460px de haut à 1440px)
+$texture-min-width:       970px;  // tablette / mobile : la version réduite du Figma
+$texture-shift:           52%;    // ancrage bas : sommet ~220px au-dessus du bas (maquette Services)
 $texture-color-light:     $teal-dark;         // sur fond clair ou brand
 $texture-opacity-light:   1;
 $texture-color-dark:      $white;             // sur fond teal (footer, header Services)
-$texture-opacity-dark:    0.3;                // estimée sur la capture du footer
+$texture-opacity-dark:    0.2;                // comparée aux maquettes rendues à l’échelle
