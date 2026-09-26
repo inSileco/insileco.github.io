@@ -1,0 +1,123 @@
+// =============================================================================
+// COMP-03 — Team cards (Figma « Notre équipe », page À propos)
+//
+// Default: photo + teal gradient, name and role in white at the bottom.
+// Hover / focus (card or one of its links): yellow panel with social links and
+// short bio, name and role in teal. No transition: animations are ANI-01.
+// =============================================================================
+
+@use "../variables" as v;
+
+.team-title {
+  color: v.$teal-dark;
+  font-size: v.$font-size-h3;
+  font-weight: v.$weight-bold;
+  line-height: v.$line-height-heading;
+  letter-spacing: v.$letter-spacing-h3;
+  margin-bottom: v.$space-7;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: v.$site-gutter;
+
+  @media (max-width: #{v.$breakpoint-desktop - 1px}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: #{v.$breakpoint-tablet - 1px}) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.team-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  aspect-ratio: v.$team-card-ratio;
+  padding: v.$space-4;
+  border-radius: v.$radius-main;
+  overflow: hidden;
+  background-color: v.$yellow;
+  color: v.$white;
+
+  // Photo and gradient fill the card behind the content
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: v.$team-card-overlay;
+  }
+}
+
+.team-card-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-card-details,
+.team-card-identity {
+  position: relative;
+  z-index: 1;
+}
+
+// Hidden by default but kept focusable: tabbing to a link reveals the panel
+.team-card-details {
+  opacity: 0;
+}
+
+.team-card-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: v.$space-1;
+  margin-bottom: v.$space-4;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: v.$team-social-size;
+    height: v.$team-social-size;
+    border-radius: v.$radius-round;
+    background-color: v.$teal-dark;
+    color: v.$white;
+  }
+}
+
+.team-card-bio {
+  font-size: v.$font-size-text-small;
+  line-height: v.$line-height-text;
+}
+
+.team-card-name {
+  color: inherit;
+  font-size: v.$font-size-h4;
+  font-weight: v.$weight-bold;
+  line-height: v.$line-height-heading;
+  letter-spacing: v.$letter-spacing-h4;
+  margin-bottom: v.$space-2;
+}
+
+.team-card-role {
+  max-width: 170px;
+  font-size: v.$font-size-text-small;
+}
+
+// Yellow state
+.team-card:is(:hover, :focus-within) {
+  color: v.$teal-dark;
+
+  &::after,
+  .team-card-photo {
+    opacity: 0;
+  }
+
+  .team-card-details {
+    opacity: 1;
+  }
+}
