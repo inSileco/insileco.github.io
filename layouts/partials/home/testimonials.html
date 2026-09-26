@@ -1,40 +1,51 @@
 {{ $testimonials := index hugo.Data .Site.Language.Lang "home" "testimonials" }}
+{{ $labels := (index hugo.Data .Site.Language.Lang "home" "sections").testimonials }}
 {{ with $testimonials }}
-<section id="testimonials" class="section home-placeholder">
-    <div class="container">
-        <h2 class="title is-3 has-text-centered">{{ .title }}</h2>
-        <p class="has-text-centered mb-5">{{ .subtitle }}</p>
+{{ $items := .testimonials }}
+<section id="testimonials" class="home-section home-testimonials">
+    <div class="site-container">
+        <header class="home-section-header">
+            <div>
+                <p class="eyebrow eyebrow--green">{{ .title }}</p>
+                <h2 class="title is-3">{{ .subtitle }}</h2>
+            </div>
+        </header>
 
-        {{ if .testimonials }}
-        <div class="testimonials-carousel">
-            <div class="testimonials-container">
-                {{ range $index, $testimonial := .testimonials }}
-                <div class="testimonial-slide {{ if eq $index 0 }}is-active{{ end }}">
-                    <div class="box testimonial-box">
-                        <div class="content has-text-centered">
-                            <p class="testimonial-text is-size-5 mb-4">"{{ $testimonial.text }}"</p>
-                            <p class="has-text-weight-semibold">{{ $testimonial.name }} ({{ $testimonial.post }})</p>
-                            <p class="has-text-grey">{{ $testimonial.organization }}</p>
-                        </div>
-                    </div>
-                </div>
+        {{ if $items }}
+        {{/* Two testimonials per slide, as in the mockup */}}
+        <div class="home-testimonials-carousel" data-carousel>
+            {{ $slides := 0 }}
+            {{ range $start := seq 0 2 (sub (len $items) 1) }}
+            {{ $slides = add $slides 1 }}
+            <div class="home-testimonials-slide{{ if eq $start 0 }} is-active{{ end }}" data-slide>
+                {{ range first 2 (after $start $items) }}
+                <figure class="home-testimonial">
+                    {{ (resources.Get "icons/quote.svg").Content | safeHTML }}
+                    <blockquote>{{ .text }}</blockquote>
+                    <figcaption>
+                        <strong>{{ .name }}</strong>
+                        <span>{{ .post }}{{ if and .post .organization }}, {{ end }}{{ .organization }}</span>
+                    </figcaption>
+                </figure>
                 {{ end }}
             </div>
+            {{ end }}
 
-            {{ if gt (len .testimonials) 1 }}
-            <div class="testimonial-controls has-text-centered mt-4">
-                {{ range $index, $testimonial := .testimonials }}
-                    <button 
-                        class="testimonial-dot {{ if eq $index 0 }}is-active{{ end }}"
-                        data-slide="{{ $index }}"
-                        aria-label="Go to testimonial {{ add $index 1 }}">
-                    </button>
-                {{ end }}
+            {{ if gt $slides 1 }}
+            <div class="home-testimonials-controls">
+                <div class="home-testimonials-progress">
+                    {{ range $i := seq 0 (sub $slides 1) }}
+                    <button type="button" class="home-testimonials-step{{ if eq $i 0 }} is-active{{ end }}" data-goto="{{ $i }}" aria-label="{{ $labels.page }} {{ add $i 1 }}"></button>
+                    {{ end }}
+                </div>
+                <div class="buttons">
+                    <button type="button" class="arrow-button is-outline" data-prev aria-label="{{ $labels.previous }}"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button>
+                    <button type="button" class="arrow-button is-outline" data-next aria-label="{{ $labels.next }}"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+                </div>
             </div>
             {{ end }}
         </div>
         {{ end }}
     </div>
 </section>
-
 {{ end }}

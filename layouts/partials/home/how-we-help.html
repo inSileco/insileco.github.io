@@ -1,25 +1,26 @@
-<section id="how-we-help" class="section home-help home-band-alt hero-cta">
-    <div class="container">
-        <h2 class="title is-3 has-text-centered home-band-text">{{ .Site.Params.help.title }}</h2>
-        <div class="columns is-multiline">
+{{ $sections := index hugo.Data .Site.Language.Lang "home" "sections" }}
+<section id="how-we-help" class="home-section theme-dark has-texture has-texture--on-dark has-texture--bottom-right home-help">
+    <div class="site-container">
+        <header class="home-section-header">
+            <h2 class="title is-3">{{ .Site.Params.help.title }}</h2>
+            {{ with $sections.help.intro }}<p class="home-section-intro">{{ . }}</p>{{ end }}
+        </header>
+
+        <ul class="home-help-grid">
             {{ range .Site.Params.help.item }}
-                <div class="column is-one-quarter-desktop is-half-tablet is-full-mobile">
-                    <a class="card home-help-card" href='{{ relLangURL .url }}' data-track="home_help_blog">
-                        <div class="card-content">
-                            <h3 class="title is-5">{{ .title }}</h3>
-                            <p>{{ .subtitle }}</p>
-                            <span class="home-help-link">
-                                {{ lang.Translate "learn_more" . }} <i class="fa-solid fa-arrow-right"></i>
-                            </span>
-                        </div>
-                    </a>
-                </div>
+            <li>
+                <a class="home-help-card" href="{{ relLangURL .url }}" data-track="home_help">
+                    {{ with .icon }}<img class="home-help-icon" src="{{ . }}" alt="" />{{ end }}
+                    <h3 class="home-help-card-title">{{ .title }}</h3>
+                    <p>{{ .subtitle }}</p>
+                    <span class="arrow-button is-brand" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+            </li>
             {{ end }}
-        </div>
-        <div class="buttons is-centered mt-5 hero-cta">
-            <a class="button is-primary " href='{{ relLangURL "/services/" }}'>
-                {{ lang.Translate "learn_more" . }}
-            </a>
+        </ul>
+
+        <div class="buttons is-centered">
+            <a class="button is-brand" href='{{ relLangURL "/services/" }}'>{{ $sections.help.cta }}</a>
         </div>
     </div>
 </section>

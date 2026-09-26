@@ -1,7 +1,5 @@
-.hero-main {
-    padding-top: 3rem;
-    padding-bottom: 1rem;
-}
+
+
 
 .hero-shared .hero-title,
 .hero-title {
@@ -36,33 +34,13 @@
     justify-content: center;
 }
 
-.hero-carousel {
-    margin: 4rem auto 0.5rem;
-    max-width: 48rem;
-    overflow: hidden;
-}
 
-.hero-carousel-track {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    width: max-content;
-    animation: hero-carousel-scroll 16s linear infinite;
-}
 
-.hero-carousel-track a {
-    flex: 0 0 auto;
-}
 
-.hero-carousel img {
-    display: block;
-    flex: 0 0 auto;
-    height: 2.25rem;
-    width: auto;
-    max-width: none;
-    opacity: 0.75;
-    filter: grayscale(100%);
-}
+
+
+
+
 
 .page-hero {
     padding-top: 6rem;
@@ -97,13 +75,7 @@
     position: relative;
 }
 
-.hero-credibility {
-    margin-top: 1.25rem;
-    color: #73848a;
-    font-size: 0.95rem;
-    font-style: italic;
-    text-align: center;
-}
+
 
 
 @media screen and (max-width: 1025px) {
