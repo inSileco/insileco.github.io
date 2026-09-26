@@ -78,6 +78,21 @@
 }
 
 // -----------------------------------------------------------------------------
+// Layout: content width of the mockups (1440px, 64px side margins)
+// -----------------------------------------------------------------------------
+
+.site-container {
+  width: 100%;
+  max-width: v.$site-max-width;
+  margin-inline: auto;
+  padding-inline: v.$site-margin;
+
+  @media (max-width: #{v.$breakpoint-desktop - 1px}) {
+    padding-inline: v.$space-4;
+  }
+}
+
+// -----------------------------------------------------------------------------
 // Section spacing (Bulma's m-* / p-* helpers stop at 3rem)
 // -----------------------------------------------------------------------------
 

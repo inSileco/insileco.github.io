@@ -1,0 +1,83 @@
+// =============================================================================
+// Buttons (Figma styleguide « Button Components »)
+//
+// - .button.is-brand   primary: yellow, teal text → hover: theme text colour
+// - .button.is-outline secondary: transparent, theme border → hover: filled
+// - .arrow-button      round 40px arrow (cards, carousels), decorative or <button>
+//
+// Colours follow the section theme (--theme-*), so the same markup works on
+// light, dark and brand sections.
+// =============================================================================
+
+@use "../variables" as v;
+
+.button.is-brand,
+.button.is-outline {
+  height: auto;
+  padding: v.$button-padding-block v.$button-padding-inline;
+  border-width: v.$border-width-main;
+  border-radius: v.$radius-small;
+  font-size: v.$font-size-text-main;
+  line-height: v.$line-height-text;
+}
+
+.button.is-brand {
+  background-color: v.$btn-primary-bg;
+  border-color: v.$btn-primary-border;
+  color: v.$btn-primary-text;
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--theme-text);
+    border-color: var(--theme-text);
+    color: var(--theme-bg);
+  }
+}
+
+.button.is-outline {
+  background-color: transparent;
+  border-color: var(--theme-border);
+  color: var(--theme-text);
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--theme-text);
+    border-color: var(--theme-text);
+    color: var(--theme-bg);
+  }
+}
+
+.arrow-button {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: v.$arrow-button-size;
+  height: v.$arrow-button-size;
+  padding: 0;
+  border: v.$border-width-main solid transparent;
+  border-radius: v.$radius-round;
+  cursor: pointer;
+
+  &.is-brand {
+    background-color: v.$yellow;
+    color: v.$teal-dark;
+  }
+
+  &.is-light {
+    background-color: v.$white;
+    color: v.$teal-dark;
+  }
+
+  &.is-outline {
+    background-color: transparent;
+    border-color: var(--theme-border);
+    color: var(--theme-text);
+
+    &:hover,
+    &:focus-visible {
+      background-color: var(--theme-text);
+      color: var(--theme-bg);
+    }
+  }
+}
