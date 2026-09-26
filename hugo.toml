@@ -116,22 +116,31 @@ url = "/services#intelligence"
 
 
 [[languages.fr.menu.main]]
-name = "Accueil"
-url = "/"
-weight = 1
-
-[[languages.fr.menu.main]]
 name = "Services"
 url = "/services/"
 weight = 1
 
 [[languages.fr.menu.main]]
 name = "À propos"
+identifier = "about"
 url = "/about/"
 weight = 2
 
 [[languages.fr.menu.main]]
+name = "Notre approche"
+parent = "about"
+url = "/about/"
+weight = 1
+
+[[languages.fr.menu.main]]
+name = "Équipe"
+parent = "about"
+url = "/about/#team"
+weight = 2
+
+[[languages.fr.menu.main]]
 name = "Académie"
+parent = "about"
 url = "/academy/"
 weight = 3
 
@@ -140,25 +149,40 @@ weight = 3
 #     url = "/careers/"
 #     weight = 3
 
+# Réalisations / Actualités : no page of their own, the entry only opens its dropdown
+[[languages.fr.menu.main]]
+name = "Réalisations"
+identifier = "work"
+weight = 3
+
 [[languages.fr.menu.main]]
 name = "Portfolio"
+parent = "work"
 url = "/portfolio/"
-weight = 4
+weight = 1
 
 [[languages.fr.menu.main]]
 name = "Publications"
-url = "publications"
-weight = 5
+parent = "work"
+url = "/publications/"
+weight = 2
+
+[[languages.fr.menu.main]]
+name = "Actualités"
+identifier = "news"
+weight = 4
 
 [[languages.fr.menu.main]]
 name = "Blogue"
+parent = "news"
 url = "/blog/"
-weight = 6
+weight = 1
 
 [[languages.fr.menu.main]]
 name = "Évènements"
+parent = "news"
 url = "/events/"
-weight = 7
+weight = 2
 
 
 
@@ -217,22 +241,31 @@ url = "/services#intelligence"
 
 
 [[languages.en.menu.main]]
-name = "Home"
-url = "/"
-weight = 1
-
-[[languages.en.menu.main]]
 name = "Services"
 url = "/services/"
 weight = 1
 
 [[languages.en.menu.main]]
 name = "About"
+identifier = "about"
 url = "/about/"
 weight = 2
 
 [[languages.en.menu.main]]
+name = "Our approach"
+parent = "about"
+url = "/about/"
+weight = 1
+
+[[languages.en.menu.main]]
+name = "Team"
+parent = "about"
+url = "/about/#team"
+weight = 2
+
+[[languages.en.menu.main]]
 name = "Academy"
+parent = "about"
 url = "/academy/"
 weight = 3
 
@@ -241,25 +274,40 @@ weight = 3
 #     url = "/careers/"
 #     weight = 3
 
+# Work / News: no page of their own, the entry only opens its dropdown
+[[languages.en.menu.main]]
+name = "Our work"
+identifier = "work"
+weight = 3
+
 [[languages.en.menu.main]]
 name = "Portfolio"
+parent = "work"
 url = "/portfolio/"
-weight = 4
+weight = 1
 
 [[languages.en.menu.main]]
 name = "Publications"
-url = "publications"
-weight = 5
+parent = "work"
+url = "/publications/"
+weight = 2
+
+[[languages.en.menu.main]]
+name = "News"
+identifier = "news"
+weight = 4
 
 [[languages.en.menu.main]]
 name = "Blog"
+parent = "news"
 url = "/blog/"
-weight = 6
+weight = 1
 
 [[languages.en.menu.main]]
 name = "Events"
+parent = "news"
 url = "/events/"
-weight = 7
+weight = 2
 
 # Bulma is pulled in as a Hugo module (no npm needed).
 # Its Sass sources are mounted under assets/mod/bulma and compiled by
