@@ -108,13 +108,10 @@ $mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
   mix-blend-mode: screen;
 }
 
-// Mockup: left half of the photo (over its darker, teal areas), ~1/4 wide
+// Centred by the grid of .home-hero-visual, half the photo width
 .home-hero-logo {
-  position: absolute;
-  top: 50%;
-  left: 14%;
-  width: 25%;
-  transform: translateY(-50%);
+  position: relative;
+  width: 50%;
 }
 
 .home-partners {
