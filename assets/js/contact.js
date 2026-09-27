@@ -60,6 +60,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
+  // ?need=<group> pre-selects an option (e.g. Academy CTAs → ?need=training)
+  const preset = new URLSearchParams(window.location.search).get('need');
+  const presetOption = preset && need.querySelector(`option[data-group="${CSS.escape(preset)}"]`);
+  if (presetOption) presetOption.selected = true;
+
   need.addEventListener('change', showGroup);
   form.addEventListener('change', checkRequiredChoices);
   form.querySelector('[type="submit"]').addEventListener('click', checkRequiredChoices);

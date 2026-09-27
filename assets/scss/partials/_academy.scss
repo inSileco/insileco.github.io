@@ -1,0 +1,469 @@
+// =============================================================================
+// PAGE-05 — Academy, workshop list (no mockup: harmonised with the designed
+// pages — page header, About cards, home project cards and testimonials).
+// The legacy .academy-* rules still in insileco.css belong to the workshop
+// detail templates (PAGE-06).
+// =============================================================================
+
+@use "../variables" as v;
+
+$touch: "(max-width: #{v.$breakpoint-desktop - 1px})";
+$mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
+
+// -----------------------------------------------------------------------------
+// Sections
+// -----------------------------------------------------------------------------
+
+.academy-block {
+  padding-block: v.$section-space-main;
+
+  @media #{$touch} {
+    padding-block: v.$section-space-small;
+  }
+}
+
+.academy-block--grey {
+  background-color: v.$off-white;
+}
+
+.academy-block-header {
+  max-width: v.$page-header-main-width;
+  margin-bottom: v.$space-8;
+  color: v.$teal-mid;
+
+  .title {
+    margin-bottom: v.$space-4;
+    color: v.$teal-dark;
+  }
+
+  @media #{$touch} {
+    margin-bottom: v.$space-6;
+  }
+}
+
+// Page header CTAs (partials/page-header.html)
+.page-header-ctas {
+  margin-top: v.$space-5;
+  margin-bottom: 0;
+}
+
+// -----------------------------------------------------------------------------
+// Proof strip: 4 key points under the header
+// -----------------------------------------------------------------------------
+
+.academy-proof {
+  border-bottom: v.$border-width-main solid v.$teal-dark-o20;
+}
+
+.academy-proof-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: v.$site-gutter;
+  padding-block: v.$space-7;
+
+  @media #{$touch} {
+    grid-template-columns: 1fr 1fr;
+    padding-block: v.$space-6;
+  }
+
+  @media #{$mobile} {
+    grid-template-columns: 1fr;
+    gap: v.$space-4;
+  }
+}
+
+.academy-proof-item {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-1;
+  color: v.$teal-mid;
+
+  strong {
+    color: v.$teal-dark;
+    font-size: v.$font-size-h5;
+    line-height: v.$line-height-heading;
+    letter-spacing: v.$letter-spacing-h5;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// How Academy unfolds: 3 step cards, the last one teal (as the About cards)
+// -----------------------------------------------------------------------------
+
+.academy-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: v.$site-gutter;
+  list-style: none;
+
+  @media #{$touch} {
+    grid-template-columns: 1fr;
+  }
+}
+
+.academy-step {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-3;
+  padding: v.$space-7;
+  border-radius: v.$radius-main;
+  background-color: v.$off-white;
+  color: v.$teal-mid;
+
+  @media #{$touch} {
+    padding: v.$space-5;
+  }
+}
+
+// theme-dark gives white text
+.academy-step--teal {
+  background-color: v.$teal-mid;
+  color: v.$white;
+}
+
+.academy-step-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: v.$space-3;
+  margin-bottom: v.$space-3;
+}
+
+.academy-step-number {
+  display: grid;
+  place-items: center;
+  width: v.$arrow-button-size;
+  height: v.$arrow-button-size;
+  border-radius: v.$radius-round;
+  background-color: v.$yellow;
+  color: v.$teal-dark;
+  font-weight: v.$weight-bold;
+}
+
+.academy-step-duration {
+  font-size: v.$font-size-text-small;
+  text-align: right;
+}
+
+.academy-step-title {
+  color: var(--theme-text);
+  font-size: v.$font-size-h4;
+  font-weight: v.$weight-bold;
+  line-height: v.$line-height-heading;
+  letter-spacing: v.$letter-spacing-h4;
+}
+
+.academy-step-emphasis {
+  color: var(--theme-text);
+  font-size: v.$font-size-h6;
+  font-weight: v.$weight-bold;
+  line-height: v.$line-height-h6;
+}
+
+.academy-step-points {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-1;
+  margin-top: auto;
+  padding-top: v.$space-3;
+  padding-left: v.$space-4;
+  list-style: disc;
+}
+
+// -----------------------------------------------------------------------------
+// Workshop cards: cover, category badges, title, arrow
+// -----------------------------------------------------------------------------
+
+.academy-workshops {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: v.$site-gutter;
+  list-style: none;
+
+  > li {
+    display: flex;
+  }
+
+  @media #{$touch} {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media #{$mobile} {
+    grid-template-columns: 1fr;
+  }
+}
+
+.academy-workshop {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: v.$radius-main;
+  overflow: hidden;
+  background-color: v.$white;
+  color: v.$teal-dark;
+  transition: box-shadow 0.2s ease;
+
+  .arrow-button {
+    align-self: flex-end;
+    margin-top: auto;
+  }
+
+  &:hover,
+  &:focus-visible {
+    box-shadow: 0 v.$space-1 v.$space-4 v.$teal-dark-o20;
+    color: v.$teal-dark;
+
+    .arrow-button {
+      background-color: v.$teal-dark;
+      color: v.$white;
+    }
+  }
+}
+
+// Covers are illustrations (1672×941): shown whole, not under a teal veil
+.academy-workshop-cover {
+  display: block;
+  aspect-ratio: 16 / 9;
+  background-color: v.$teal-dark;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.academy-workshop-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: v.$space-3;
+  padding: v.$space-4;
+}
+
+.academy-workshop-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: v.$space-1;
+
+  .tag {
+    margin: 0;
+  }
+}
+
+.academy-workshop-title {
+  font-size: v.$font-size-h6;
+  font-weight: v.$weight-bold;
+  line-height: v.$line-height-h6;
+  letter-spacing: v.$letter-spacing-h6;
+}
+
+.academy-workshops-fallback {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: v.$space-4;
+  margin-top: v.$space-7;
+  padding-top: v.$space-7;
+  border-top: v.$border-width-main solid v.$teal-dark-o20;
+  color: v.$teal-dark;
+  font-size: v.$font-size-h6;
+  font-weight: v.$weight-bold;
+}
+
+// -----------------------------------------------------------------------------
+// Why Academy works: comparison image
+// -----------------------------------------------------------------------------
+
+.academy-difference {
+  margin: 0;
+  padding: v.$space-5;
+  border: v.$border-width-main solid v.$teal-dark-o20;
+  border-radius: v.$radius-main;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  @media #{$mobile} {
+    padding: v.$space-2;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Testimonials: static grid, same quote style as the home page
+// -----------------------------------------------------------------------------
+
+.academy-testimonials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: v.$space-8;
+
+  @media #{$touch} {
+    grid-template-columns: 1fr;
+    gap: v.$space-7;
+  }
+}
+
+.academy-testimonial {
+  margin: 0;
+  color: v.$teal-dark;
+
+  blockquote {
+    margin-bottom: v.$space-4;
+  }
+
+  figcaption {
+    display: flex;
+    flex-direction: column;
+    font-weight: v.$weight-bold;
+
+    span {
+      color: v.$teal-mid;
+      font-weight: v.$weight-regular;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// CTAs: cohort (yellow card) + team (teal card) on the dark textured band
+// -----------------------------------------------------------------------------
+
+.academy-cta {
+  padding-block: v.$section-space-main;
+
+  @media #{$touch} {
+    padding-block: v.$section-space-small;
+  }
+}
+
+.academy-cta-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: v.$site-gutter;
+
+  @media #{$touch} {
+    grid-template-columns: 1fr;
+  }
+}
+
+.academy-cta-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: v.$space-4;
+  padding: v.$space-7;
+  border: v.$border-width-main solid var(--theme-border);
+  border-radius: v.$radius-main;
+  background-color: var(--theme-bg);
+  color: var(--theme-text);
+  scroll-margin-top: v.$navbar-height;
+
+  .eyebrow {
+    margin-bottom: 0;
+  }
+
+  .button {
+    margin-top: auto;
+  }
+
+  @media #{$touch} {
+    padding: v.$space-5;
+  }
+}
+
+// Teal card on the teal band: yellow eyebrow square stays, border marks the card
+.academy-cta-card:not(.theme-brand) {
+  --eyebrow-color: #{v.$yellow};
+
+  background-color: v.$teal-mid;
+}
+
+// Yellow card: teal eyebrow square
+.academy-cta-card.theme-brand .eyebrow {
+  --eyebrow-color: #{v.$teal-dark};
+}
+
+.academy-cta-title {
+  font-size: v.$font-size-h4;
+  font-weight: v.$weight-bold;
+  line-height: v.$line-height-heading;
+  letter-spacing: v.$letter-spacing-h4;
+}
+
+.academy-cta-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: v.$space-1;
+  list-style: none;
+
+  .tag {
+    margin: 0;
+    border: v.$border-width-main solid var(--theme-border);
+    background-color: transparent;
+    color: var(--theme-text);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// FAQ: native <details> accordion
+// -----------------------------------------------------------------------------
+
+.academy-faq {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: v.$site-gutter;
+
+  .academy-block-header {
+    margin-bottom: 0;
+  }
+
+  @media #{$touch} {
+    grid-template-columns: 1fr;
+  }
+}
+
+.academy-faq-item {
+  border-bottom: v.$border-width-main solid v.$teal-dark-o20;
+  color: v.$teal-mid;
+
+  &:first-child {
+    border-top: v.$border-width-main solid v.$teal-dark-o20;
+  }
+
+  summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: v.$space-4;
+    padding-block: v.$space-4;
+    color: v.$teal-dark;
+    font-size: v.$font-size-h6;
+    font-weight: v.$weight-bold;
+    line-height: v.$line-height-h6;
+    list-style: none;
+    cursor: pointer;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    i {
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+    }
+  }
+
+  &[open] summary i {
+    transform: rotate(45deg);
+  }
+
+  p {
+    padding-bottom: v.$space-4;
+  }
+}

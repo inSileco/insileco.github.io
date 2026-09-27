@@ -1,7 +1,8 @@
 {{/*
   Header of the designed inner pages (Services, À propos, Contact):
   eyebrow + headline on the left, intro text on the right.
-  Front matter: eyebrow, headline (falls back to title), intro.
+  Front matter: eyebrow, headline (falls back to title), intro,
+  ctas (optional, below the intro): list of { label, url, style: "brand"|"outline" }.
   Call: partial "page-header.html" (dict "page" . "theme" "dark")
         theme: "dark" (teal + texture) or "light" (white, bottom border).
 */}}
@@ -13,6 +14,18 @@
             {{ with $p.Params.eyebrow }}<p class="eyebrow">{{ . }}</p>{{ end }}
             <h1 class="title is-3">{{ $p.Params.headline | default $p.Title }}</h1>
         </div>
-        {{ with $p.Params.intro }}<p class="page-header-intro">{{ . }}</p>{{ end }}
+        {{ if or $p.Params.intro $p.Params.ctas }}
+        <div class="page-header-aside">
+            {{ with $p.Params.intro }}<p class="page-header-intro">{{ . }}</p>{{ end }}
+            {{ with $p.Params.ctas }}
+            <div class="buttons page-header-ctas">
+                {{ range . }}
+                {{ $href := cond (hasPrefix .url "#") .url (relLangURL .url) }}
+                <a class="button is-{{ .style | default "outline" }}" href="{{ $href }}">{{ .label }}</a>
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+        {{ end }}
     </div>
 </header>

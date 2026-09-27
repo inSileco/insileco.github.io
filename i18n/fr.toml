@@ -11,3 +11,9 @@ last_build = "Dernière mise à jour :"
 email = "Courriel"
 website = "Site web"
 know_more = "En savoir plus"
+
+# Academy workshop categories (academy_levers)
+academy_lever_data_management = "Gestion des données"
+academy_lever_analytical_capabilities = "Capacités analytiques"
+academy_lever_decision_support_tools = "Outils d’aide à la décision"
+academy_lever_automated_workflows = "Flux de travail automatisés"

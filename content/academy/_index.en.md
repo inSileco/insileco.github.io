@@ -1,15 +1,15 @@
 ---
 title: "inSileco Academy"
-hero_title: "Premium workshops and coaching for environmental professionals and teams"
-hero_eyebrow: "inSileco Academy"
-hero_summary: "Create lasting operational capability through guided implementation built around real projects"
-hero_ctas:
+headline: "Premium workshops and coaching for environmental professionals and teams"
+eyebrow: "inSileco Academy"
+intro: "Create lasting operational capability through guided implementation built around real projects"
+ctas:
   - label: "Explore workshops"
     url: "#available-workshops"
-    class: "is-primary"
+    style: "brand"
   - label: "Join a cohort"
     url: "#academy-cta"
-    class: "is-light"
+    style: "outline"
 proof_items:
   - value: "Environmental"
     label: "workflows, data, and reporting focus"
@@ -20,6 +20,9 @@ proof_items:
   - value: "3 months"
     label: "of coached implementation every two weeks"
 difference:
+  eyebrow: "Why Academy works"
+  image: "/img/academy/academy-why-it-works.png"
+  alt: "Visual comparison showing that standard training stops at delivery while Academy includes preparation, a live workshop, and three months of coached implementation."
   title: "Why Academy works better than standard training"
   intro: "Most training creates value during the course itself. Academy provides value through coaching focused on guaranteeing workflow and behaviour changes stick long term."
   left:
@@ -39,6 +42,7 @@ difference:
     - label: "Return on training spend"
       left: "Understanding may improve even when behaviours and workflows do not actually change."
       right: "The structure is designed to help the investment produce lasting workflow and behaviour change."
+process_eyebrow: "How it works"
 process_title: "How Academy unfolds over time"
 process_intro: "Each workshop follows the same coached structure: preparation before delivery, real-work application during the live workshop, and a fixed three-month coached implementation period afterward."
 process:
@@ -66,6 +70,7 @@ process:
       - "structured check-ins every two weeks"
       - "async workflow review"
       - "progress accountability"
+workshops_eyebrow: "Featured workshops"
 workshops_title: "Explore all Academy workshops"
 workshops_fallback:
   text: "Cannot find what you are looking for? Let us know what would be useful for you."
@@ -80,13 +85,14 @@ team_offer:
     - "Adapted examples"
     - "Manager-ready format"
     - "Custom quote"
-  card:
-    label: "Private team delivery"
-    note: "Submit your information and we will reach out to schedule a conversation."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=team&cta_source=academy_team"
+  button:
+    label: "Discuss team delivery"
+    url: "/contact/?need=training"
+testimonials_eyebrow: "Proof"
 testimonials_title: "What participants value"
 testimonials_intro: "These testimonials were selected because they speak to practical relevance, coaching quality, and the kind of support that makes Academy different from generic training."
 faq:
+  eyebrow: "FAQ"
   title: "Questions buyers usually ask before reaching out"
   items:
     - question: "Who is Academy for?"
@@ -105,8 +111,7 @@ final_cta:
   kicker: "Next step"
   title: "Join a cohort conversation"
   text: "Submit your information and we will reach out to schedule a conversation about the right cohort and workshop fit."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=individual&cta_source=academy_final"
-  secondary_link:
-    label: "Applying for your team?"
-    url: "#team-option"
+  button:
+    label: "Join a cohort"
+    url: "/contact/?need=training"
 ---
