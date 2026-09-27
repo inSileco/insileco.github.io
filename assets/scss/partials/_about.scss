@@ -1,0 +1,129 @@
+// =============================================================================
+// PAGE-03 — À propos (Figma « À propos », Insileco-À propos.pdf)
+// =============================================================================
+
+@use "../variables" as v;
+
+$touch: "(max-width: #{v.$breakpoint-desktop - 1px})";
+
+// -----------------------------------------------------------------------------
+// Story: text on white | full-height team photo
+// -----------------------------------------------------------------------------
+
+.about-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: v.$about-story-height;
+  background-color: v.$off-white;
+
+  @media #{$touch} {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+}
+
+.about-story-text {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: v.$section-space-main v.$site-margin;
+  background-color: v.$white;
+
+  .title {
+    color: v.$teal-dark;
+    margin-bottom: v.$space-5;
+  }
+
+  @media #{$touch} {
+    padding: v.$space-8 v.$space-4;
+  }
+}
+
+.about-story-body {
+  color: v.$teal-mid;
+
+  p + p {
+    margin-top: v.$space-4;
+  }
+}
+
+.about-story-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  @media #{$touch} {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Approach: two cards on the light grey band, texture behind
+// -----------------------------------------------------------------------------
+
+.about-approach {
+  padding-block: v.$section-space-main;
+  background-color: v.$off-white;
+
+  @media #{$touch} {
+    padding-block: v.$section-space-small;
+  }
+}
+
+.about-approach-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: v.$site-gutter;
+
+  @media #{$touch} {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about-approach-card {
+  padding: v.$space-7;
+  border-radius: v.$radius-main;
+  background-color: v.$white;
+  color: v.$teal-mid;
+
+  @media #{$touch} {
+    padding: v.$space-5;
+  }
+}
+
+// Teal card: theme-dark gives white text; background is teal-mid in the mockup
+.about-approach-card--teal {
+  background-color: v.$teal-mid;
+  color: v.$white;
+}
+
+.about-approach-intro {
+  margin-bottom: v.$space-5;
+  color: var(--theme-text);
+  font-size: v.$font-size-h4;
+  font-weight: v.$weight-bold;
+  line-height: v.$line-height-heading;
+  letter-spacing: v.$letter-spacing-h4;
+}
+
+.about-approach-list {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-3;
+  padding-left: v.$space-4;
+  list-style: disc;
+}
+
+// -----------------------------------------------------------------------------
+// Team
+// -----------------------------------------------------------------------------
+
+.about-team-section {
+  padding-block: v.$section-space-main;
+
+  @media #{$touch} {
+    padding-block: v.$section-space-small;
+  }
+}

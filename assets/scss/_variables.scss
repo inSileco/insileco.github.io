@@ -231,6 +231,7 @@ $testimonial-quote-width: 65px;       // taille du guillemet de la maquette (65�
 $page-header-main-width: 640px;  // colonne titre des headers (Figma)
 $service-icon-box:       80px;   // carré de l'icône service (Figma)
 $service-icon-inner:     40px;
+$about-story-height:     800px;  // section histoire + photo (Figma)
 $testimonial-quote-color: rgba($teal-dark, 0.25);
 
 // -----------------------------------------------------------------------------
@@ -254,6 +255,6 @@ $texture-width:           100%;   // largeur de la section (460px de haut à 144
 $texture-min-width:       970px;  // tablette / mobile : la version réduite du Figma
 $texture-shift:           52%;    // ancrage bas : sommet ~220px au-dessus du bas (maquette Services)
 $texture-color-light:     $teal-dark;         // sur fond clair ou brand
-$texture-opacity-light:   1;
+$texture-opacity-light:   0.2;                // lignes teal pâles (maquette À propos)
 $texture-color-dark:      $white;             // sur fond teal (footer, header Services)
 $texture-opacity-dark:    0.2;                // comparée aux maquettes rendues à l’échelle
