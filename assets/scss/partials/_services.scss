@@ -1,0 +1,81 @@
+// =============================================================================
+// PAGE-02 — Services (Figma « Services », Insileco-Services.pdf)
+// One row per service: icon + title + button | description + tags
+// =============================================================================
+
+@use "../variables" as v;
+
+// Each .service already has 80px above and below
+.services-list {
+  padding-bottom: v.$section-space-small;
+}
+
+.service {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: v.$site-gutter;
+  padding-block: v.$section-space-small;
+
+  & + & {
+    border-top: v.$border-width-main solid v.$teal-dark-o20;
+  }
+
+  @media (max-width: #{v.$breakpoint-desktop - 1px}) {
+    grid-template-columns: 1fr;
+    padding-block: v.$space-8;
+  }
+}
+
+.service-main {
+  display: flex;
+  align-items: flex-start;
+  gap: v.$space-5;
+}
+
+.service-icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: v.$service-icon-box;
+  height: v.$service-icon-box;
+  border-radius: v.$radius-main;
+  background-color: v.$off-white;
+
+  img {
+    width: v.$service-icon-inner;
+    height: v.$service-icon-inner;
+  }
+}
+
+.service-title {
+  margin-bottom: v.$space-7;
+  color: v.$teal-dark;
+  font-size: v.$font-size-h4;
+  font-weight: v.$weight-bold;
+  line-height: v.$line-height-heading;
+  letter-spacing: v.$letter-spacing-h4;
+}
+
+.service-description {
+  margin-bottom: v.$space-5;
+  color: v.$teal-mid;
+}
+
+.service-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: v.$space-2;
+  list-style: none;
+  margin: 0;
+
+  .tag {
+    height: auto;
+    padding: v.$space-1 v.$space-3;
+    border: v.$border-width-main solid v.$teal-dark-o20;
+    border-radius: v.$radius-small;
+    background-color: transparent;
+    color: v.$teal-dark;
+    font-size: v.$font-size-text-small;
+    white-space: normal;
+  }
+}

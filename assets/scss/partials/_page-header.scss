@@ -1,0 +1,41 @@
+// =============================================================================
+// Inner page header (Services, À propos, Contact) — layouts/partials/page-header.html
+// Eyebrow + H3 on the left (640px), intro text on the right.
+// =============================================================================
+
+@use "../variables" as v;
+
+.page-header {
+  padding-top: v.$section-space-large;
+  padding-bottom: v.$section-space-main;
+
+  @media (max-width: #{v.$breakpoint-desktop - 1px}) {
+    padding-block: v.$section-space-small;
+  }
+}
+
+.page-header--light {
+  border-bottom: v.$border-width-main solid v.$teal-dark-o20;
+}
+
+// Two equal columns (title | intro), stacked below desktop
+.page-header-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+  gap: v.$site-gutter;
+
+  @media (max-width: #{v.$breakpoint-desktop - 1px}) {
+    grid-template-columns: 1fr;
+    gap: v.$space-4;
+  }
+}
+
+.page-header-main {
+  max-width: v.$page-header-main-width;
+
+  .title {
+    margin-bottom: 0;
+    color: var(--theme-text);
+  }
+}
