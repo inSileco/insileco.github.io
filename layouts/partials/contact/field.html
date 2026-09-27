@@ -1,0 +1,31 @@
+{{/*
+  One question of a conditional group (data/{lang}/contact/form.yaml).
+  Context: dict "field" <field> "id" <unique id> "form" <form.yaml data>
+  Types: radio, checkbox (options, optional "other" free text), textarea.
+*/}}
+{{ $f := .field }}
+{{ $id := .id }}
+{{ if eq $f.type "textarea" }}
+<div class="contact-field">
+    <label class="contact-label" for="{{ $id }}">{{ $f.label }}{{ if $f.required }}*{{ end }}</label>
+    <textarea id="{{ $id }}" class="textarea" name="{{ $f.label }}" rows="3" {{ with $f.placeholder }}placeholder="{{ . }}"{{ end }} {{ if $f.required }}required{{ end }}></textarea>
+</div>
+{{ else }}
+<fieldset class="contact-field contact-choices" {{ if and $f.required (eq $f.type "checkbox") }}data-required-choice{{ end }}>
+    <legend class="contact-label">{{ $f.label }}{{ if $f.required }}*{{ end }}</legend>
+    {{ range $i, $opt := $f.options }}
+    <label class="contact-choice">
+        <input type="{{ $f.type }}" name="{{ $f.label }}" value="{{ $opt }}" {{ if and $f.required (eq $f.type "radio") }}required{{ end }} />
+        <span>{{ $opt }}</span>
+    </label>
+    {{ end }}
+    {{ if $f.other }}
+    {{ $other := $.form.other_option }}
+    <label class="contact-choice">
+        <input type="{{ $f.type }}" name="{{ $f.label }}" value="{{ $other }}" data-other-toggle {{ if and $f.required (eq $f.type "radio") }}required{{ end }} />
+        <span>{{ $other }}</span>
+    </label>
+    <input class="input contact-other" type="text" name="{{ $f.label }} ({{ $other }})" placeholder="{{ $.form.other_label }}" aria-label="{{ $f.label }} ({{ $other }})" hidden disabled />
+    {{ end }}
+</fieldset>
+{{ end }}
