@@ -132,35 +132,17 @@ body {
     margin-top: 0.5rem;
 }
 
-.about-content {
-    max-width: 46rem;
-    margin-left: auto;
-    margin-right: auto;
-}
 
-.about-section {
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
-}
 
-.about-section-alt {
-    background-color: #f6f6f6;
-}
 
-.about-cards {
-    margin-top: 0.5rem;
-}
 
-.about-card {
-    height: 100%;
-    border: 1px solid #e2e8f0;
-    box-shadow: none;
-    border-radius: 0.75rem;
-}
 
-.about-card .card-content {
-    padding: 2rem;
-}
+
+
+
+
+
+
 
 .rdm-webinar-page {
     padding-top: 0.5rem;
@@ -289,39 +271,17 @@ body {
     }
 }
 
-.about-card h2 {
-    margin-top: 0;
-}
 
-.about-two-col {
-    gap: 2rem;
-}
 
-.about-figure {
-    margin: 0;
-    background: transparent;
-}
 
-.about-figure img {
-    width: 80%;
-    height: auto;
-    border-radius: 0;
-    box-shadow: none;
-    display: block;
-    opacity: 0.7;
-}
 
-.about-callout {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-left: 4px solid #37abc8;
-    border-radius: 0.75rem;
-    padding: 1.5rem;
-}
 
-.about-callout p:last-child {
-    margin-bottom: 0;
-}
+
+
+
+
+
+
 
 .academy-hero {
     padding-top: 3rem;
@@ -2054,17 +2014,9 @@ body {
     padding-top: 3.25rem;
 }
 
-.about-team .columns {
-    max-width: 100rem;
-    margin-left: auto;
-    margin-right: auto;
-}
 
-.about-expertise #expertise .columns {
-    max-width: 100rem;
-    margin-left: auto;
-    margin-right: auto;
-}
+
+
 
 .about-table .table th {
     width: 20%;

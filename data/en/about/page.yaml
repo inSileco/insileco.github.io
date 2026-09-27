@@ -1,12 +1,12 @@
 about:
-  title: "About inSileco"
+  title: "Where ecology meets data"
   paragraphs: |
     inSileco emerged from a shared way of working at the intersection of ecology and data science. The name combines *in silico* -- work done through code, models, and computation -- with ecology, the lens through which we approach environmental questions involving complex systems that must be both conserved and used.
     
     Our approach grew from the need to make environmental analyses more robust, reusable, and easier to update as questions evolve. Today, inSileco helps environmental professionals and organizations work more efficiently, make better use of existing knowledge, and build workflows that hold up over time.
 image:
-  src: "/img/about/aboutus.png"
-  alt: "inSileco team collaborating"
+  src: "/img/about/team.jpg"
+  alt: "The inSileco team"
 cards:
   what:
     title: "What we do"

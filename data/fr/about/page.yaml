@@ -1,12 +1,12 @@
 about:
-  title: "À propos d’inSileco"
+  title: "À la rencontre de l’écologie et des données"
   paragraphs: |
     inSileco est né d’une manière de travailler partagée, à l’intersection de l’écologie et de la science des données. Le nom combine *in silico* — un travail réalisé à l’aide de code, de modèles et de calculs — avec l’écologie, le prisme à travers lequel nous abordons des questions environnementales liées à des systèmes complexes devant être à la fois conservés et utilisés.
     
     Notre approche s’est développée à partir du besoin de rendre les analyses environnementales plus robustes, réutilisables et plus faciles à mettre à jour à mesure que les questions évoluent. Aujourd’hui, inSileco aide les professionnels et les organisations de l’environnement à travailler plus efficacement, à mieux tirer parti des connaissances existantes et à concevoir des flux de travail qui tiennent dans le temps.
 image:
-  src: "/img/about/aboutus.png"
-  alt: "L’équipe d’inSileco en collaboration"
+  src: "/img/about/team.jpg"
+  alt: "L’équipe d’inSileco"
 cards:
   what:
     title: "Ce que nous faisons"

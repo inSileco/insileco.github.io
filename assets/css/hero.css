@@ -1,7 +1,6 @@
 
 
 
-.hero-shared .hero-title,
 .hero-title {
     max-width: 28ch;
     padding-bottom: 1rem;
@@ -10,7 +9,6 @@
     margin-right: auto;
 }
 
-.hero-shared .hero-subtitle,
 .hero-subtitle {
     max-width: 70ch;
     margin-left: auto;
@@ -59,21 +57,11 @@
 }
 
 
-.about-hero {
-    position: relative;
-    padding-top: 6rem;
-    padding-bottom: 3rem;
-    overflow: hidden;
-}
 
-.about-hero {
-    padding-top: 10rem;
-    padding-bottom: rem;
-}
 
-.about-hero .container {
-    position: relative;
-}
+
+
+
 
 
 
