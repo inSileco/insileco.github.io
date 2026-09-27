@@ -1,15 +1,15 @@
 ---
 title: "inSileco Académie"
-hero_title: "Ateliers premium et accompagnement pour les professionnel.le.s et équipes en environnement"
-hero_eyebrow: "inSileco Académie"
-hero_summary: "Développer durablement les capacités opérationnelles grâce à une mise en oeuvre accompagnée ancrée dans des projets réels"
-hero_ctas:
+headline: "Ateliers premium et accompagnement pour les professionnel.le.s et équipes en environnement"
+eyebrow: "inSileco Académie"
+intro: "Développer durablement les capacités opérationnelles grâce à une mise en oeuvre accompagnée ancrée dans des projets réels"
+ctas:
   - label: "Explorer les ateliers"
     url: "#available-workshops"
-    class: "is-primary"
+    style: "brand"
   - label: "Joindre une cohorte"
     url: "#academy-cta"
-    class: "is-light"
+    style: "outline"
 proof_items:
   - value: "Environnement"
     label: "axé sur les flux de travail, les données et l'automatisation de rapports"
@@ -20,6 +20,9 @@ proof_items:
   - value: "3 mois"
     label: "de mise en oeuvre accompagnée toutes les deux semaines"
 difference:
+  eyebrow: "Pourquoi Académie fonctionne"
+  image: "/img/academy/academy-why-it-works.png"
+  alt: "Comparatif visuel montrant qu’une formation standard s’arrête à la livraison alors qu’Académie inclut la préparation, un atelier en direct et trois mois de mise en oeuvre accompagnée."
   title: "Pourquoi Académie fonctionne mieux qu’une formation standard"
   intro: "La plupart des formations créent de la valeur pendant la séance elle-même. Académie crée de la valeur grâce à un accompagnement centré sur des changements durables dans les flux de travail et les façons de faire."
   left:
@@ -39,6 +42,7 @@ difference:
     - label: "Retour sur l’investissement"
       left: "La compréhension peut s’améliorer sans que les comportements et les flux de travail changent réellement."
       right: "La structure est conçue pour que l’investissement produise un changement durable dans les workflows et les façons de faire."
+process_eyebrow: "Fonctionnement"
 process_title: "Comment Académie se déploie dans le temps"
 process_intro: "Chaque atelier suit la même structure accompagnée : préparation avant la livraison, application sur du vrai travail pendant l’atelier en direct, puis une période fixe de trois mois de mise en oeuvre accompagnée."
 process:
@@ -66,6 +70,7 @@ process:
       - "suivis structurés toutes les deux semaines"
       - "revue asynchrone des workflows"
       - "suivi de progression"
+workshops_eyebrow: "Ateliers en vedette"
 workshops_title: "Explorer tous les ateliers Académie"
 workshops_fallback:
   text: "Vous ne trouvez pas ce que vous cherchez? Dites-nous ce qui serait utile pour vous."
@@ -80,13 +85,14 @@ team_offer:
     - "Exemples adaptés"
     - "Format prêt pour les gestionnaires"
     - "Soumission personnalisée"
-  card:
-    label: "Livraison privée pour équipe"
-    note: "Soumettez vos coordonnées et nous vous contacterons pour planifier une conversation."
-  tally_src: "https://tally.so/embed/Gxqv1e?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=team&cta_source=academy_team_fr"
+  button:
+    label: "Discuter d’une livraison équipe"
+    url: "/contact/?need=training"
+testimonials_eyebrow: "Preuves"
 testimonials_title: "Ce que les participant.e.s valorisent"
 testimonials_intro: "Ces témoignages ont été retenus parce qu’ils parlent de pertinence pratique, de qualité d’accompagnement et du type de soutien qui distingue Académie d’une formation générique."
 faq:
+  eyebrow: "FAQ"
   title: "Questions que les acheteurs se posent avant de nous écrire"
   items:
     - question: "À qui s’adresse Académie?"
@@ -105,8 +111,7 @@ final_cta:
   kicker: "Prochaine étape"
   title: "Joindre une conversation de cohorte"
   text: "Soumettez vos coordonnées et nous vous contacterons pour planifier une conversation sur la bonne cohorte et le bon atelier pour votre situation."
-  tally_src: "https://tally.so/embed/Gxqv1e?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=individual&cta_source=academy_final_fr"
-  secondary_link:
-    label: "Vous postulez pour votre équipe?"
-    url: "#team-option"
+  button:
+    label: "Joindre une cohorte"
+    url: "/contact/?need=training"
 ---
