@@ -1,0 +1,108 @@
+# Contact form (PAGE-04). Layout from the mockup, questions and conditional
+# logic from the previous Tally form (KYxWOg). Field `label`s are also the
+# field names in the submitted data.
+
+# URL of the form service (Formspree, Web3Forms…) — to choose with inSileco.
+# Empty: the form shows its confirmation without sending anything (see docs/suivi.md).
+endpoint: ""
+
+name:
+  label: "Name"
+  placeholder: "First Last"
+company:
+  label: "Company"
+  placeholder: "Your organization"
+email:
+  label: "Email"
+  placeholder: "you@company.com"
+
+need:
+  label: "What do you need?"
+  placeholder: "Choose an option"
+  options:
+    - { value: resources, label: "Insights, lessons learned, and practical notes" }
+    - { value: training, label: "Training, workshops, or coaching" }
+    - { value: automation, label: "Data automations, models or decision-support tools" }
+    - { value: assessment, label: "Environmental risk or cumulative effects assessments" }
+    - { value: other, label: "Other" }
+
+other_option: "Other"
+other_label: "Please specify"
+
+# Fields shown only for the matching `need` option
+groups:
+  resources:
+    note_title: "You might be better served by visiting our blog!"
+    note_link: "/blog/"
+    note_text: "Let us know your interests, if you have a topic in mind or want to stay up to date with our work!"
+    fields:
+      - label: "What are you interested in?"
+        type: radio
+        other: true
+        options:
+          - "Data & AI workflows"
+          - "R packages & shiny applications"
+          - "Environmental decision-making"
+          - "Biodiversity & cumulative effects"
+          - "Training & capacity building"
+      - label: "Message"
+        type: textarea
+  training:
+    fields:
+      - label: "Audience size"
+        type: radio
+        required: true
+        options: ["Just you!", "2-10", "10-30", "30+"]
+      - label: "Topic"
+        type: checkbox
+        required: true
+        other: true
+        options:
+          - "Automations & reproducibility"
+          - "Artificial Intelligence"
+          - "Data management"
+          - "R (coding, analytics, packages, shiny apps)"
+          - "Spatial analyses"
+          - "Environmental management"
+      - label: "Delivery mode"
+        type: radio
+        required: true
+        other: true
+        options: ["In-person", "Remote", "Both"]
+  automation:
+    fields:
+      - label: "Data state"
+        type: radio
+        options: ["None", "Partial", "Operational"]
+      - label: "Desired output"
+        type: checkbox
+        other: true
+        options: ["Database", "Report", "Tool (dashboard, application)"]
+      - label: "What is your goal?"
+        type: textarea
+        placeholder: "Give us a few words on your dream outcome."
+      - label: "Budget range"
+        type: radio
+        options: ["<$5k", "$5-15k", "$15-50k", "$50k+", "Not sure"]
+      - label: "Timeline"
+        type: radio
+        options: ["ASAP", "1-2 months", "3-6 months", "Flexible"]
+      - label: "Anything else we should know?"
+        type: textarea
+  assessment:
+    fields:
+      - label: "Region"
+        type: textarea
+        required: true
+
+consents:
+  - "I’m OK with you contacting me about this"
+  - "I’d like to receive occasional insights and updates by email"
+
+submit: "Submit"
+delay: "We’ll get back to you within 1–2 business days."
+required_choice: "Choose at least one option."
+thanks:
+  title: "Thanks for contacting us {name}!"
+  text: "We'll be in touch soon!"
+error: "Sending failed. Please try again or email us at info@insileco.io."

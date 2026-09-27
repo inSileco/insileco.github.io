@@ -1,18 +1,89 @@
 {{ define "main" }}
-{{ $contact := index hugo.Data .Site.Language.Lang "home" "approach" }}
-<section id="contact" class="section">
-    <div class="container content">
-        <h1>{{ .Title | default $contact.title }}</h1>
-        <p>{{ $contact.step1.description | safeHTML }}</p>
-        <div class="columns is-centered">
-            <div class="column is-8-desktop is-12-tablet">
-                <iframe
-                    data-tally-src="{{ $contact.tally.project_intake_url }}"
-                    loading="lazy" width="100%" height="733" frameborder="0" marginheight="0" marginwidth="0"
-                    title="{{ $contact.tally.project_intake_title }}"></iframe>
-                <script>var d = document, w = "https://tally.so/widgets/embed.js", v = function () { "undefined" != typeof Tally ? Tally.loadEmbeds() : d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function (e) { e.src = e.dataset.tallySrc })) }; if ("undefined" != typeof Tally) v(); else if (d.querySelector('script[src="' + w + '"]') == null) { var s = d.createElement("script"); s.src = w, s.onload = v, s.onerror = v, d.body.appendChild(s); }</script>
+{{ $form := index hugo.Data .Site.Language.Lang "contact" "form" }}
+<main>
+  <section class="contact-hero has-texture has-texture--bottom-left">
+    <div class="site-container contact-grid">
+      <div class="contact-intro">
+        {{ with .Params.eyebrow }}<p class="eyebrow">{{ . }}</p>{{ end }}
+        <h1 class="title is-3">{{ .Params.headline | default .Title }}</h1>
+        {{ with .Params.intro }}<p>{{ . }}</p>{{ end }}
+      </div>
+
+      <div class="contact-card">
+        {{/* Fields are named after their label, so the service sends readable messages */}}
+        <form class="contact-form" method="post" action="{{ $form.endpoint }}"
+              data-contact-form data-endpoint="{{ $form.endpoint }}"
+              data-required-choice-message="{{ $form.required_choice }}">
+          <div class="contact-row">
+            <div class="contact-field">
+              <label class="contact-label" for="contact-name">{{ $form.name.label }}*</label>
+              <input id="contact-name" class="input" type="text" name="{{ $form.name.label }}" placeholder="{{ $form.name.placeholder }}" autocomplete="name" required data-contact-name />
             </div>
+            <div class="contact-field">
+              <label class="contact-label" for="contact-company">{{ $form.company.label }}*</label>
+              <input id="contact-company" class="input" type="text" name="{{ $form.company.label }}" placeholder="{{ $form.company.placeholder }}" autocomplete="organization" required />
+            </div>
+          </div>
+
+          <div class="contact-field">
+            <label class="contact-label" for="contact-email">{{ $form.email.label }}*</label>
+            <input id="contact-email" class="input" type="email" name="{{ $form.email.label }}" placeholder="{{ $form.email.placeholder }}" autocomplete="email" required />
+          </div>
+
+          <div class="contact-field">
+            <label class="contact-label" for="contact-need">{{ $form.need.label }}*</label>
+            <div class="select is-fullwidth">
+              <select id="contact-need" name="{{ $form.need.label }}" required data-contact-need>
+                <option value="" disabled selected>{{ $form.need.placeholder }}</option>
+                {{ range $form.need.options }}
+                <option value="{{ .label }}" data-group="{{ .value }}">{{ .label }}</option>
+                {{ end }}
+              </select>
+            </div>
+          </div>
+
+          {{/* Conditional groups: shown (and enabled) only for the selected need */}}
+          <div class="contact-group" data-group="other" hidden>
+            <div class="contact-field">
+              <label class="contact-label" for="contact-need-other">{{ $form.other_label }}*</label>
+              <input id="contact-need-other" class="input" type="text" name="{{ $form.need.label }} ({{ $form.other_option }})" required />
+            </div>
+          </div>
+
+          {{ range $key, $group := $form.groups }}
+          <div class="contact-group" data-group="{{ $key }}" hidden>
+            {{ with $group.note_title }}
+            <div class="contact-note">
+              <p class="contact-note-title"><a href="{{ relLangURL $group.note_link }}">{{ . }}</a></p>
+              <p>{{ $group.note_text }}</p>
+            </div>
+            {{ end }}
+            {{ range $i, $field := $group.fields }}
+            {{ partial "contact/field.html" (dict "field" $field "id" (printf "contact-%s-%d" $key $i) "form" $form) }}
+            {{ end }}
+          </div>
+          {{ end }}
+
+          <div class="contact-consents">
+            {{ range $form.consents }}
+            <label class="contact-choice">
+              <input type="checkbox" name="{{ . }}" value="✓" />
+              <span>{{ . }}</span>
+            </label>
+            {{ end }}
+          </div>
+
+          <button class="button is-brand is-fullwidth" type="submit">{{ $form.submit }}</button>
+          <p class="contact-delay">{{ $form.delay }}</p>
+          <p class="contact-error" role="alert" hidden>{{ $form.error }}</p>
+        </form>
+
+        <div class="contact-thanks" role="status" tabindex="-1" hidden data-contact-thanks>
+          <p class="contact-thanks-title" data-template="{{ $form.thanks.title }}"></p>
+          <p>{{ $form.thanks.text }}</p>
         </div>
+      </div>
     </div>
-</section>
+  </section>
+</main>
 {{ end }}

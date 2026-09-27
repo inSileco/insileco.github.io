@@ -1,0 +1,226 @@
+// =============================================================================
+// PAGE-04 — Contact (Figma « Contact », Insileco-Contact.pdf)
+// Intro on the left, form card on the right, texture behind.
+// Error / success states use the designer's state colours.
+// =============================================================================
+
+@use "../variables" as v;
+
+$touch: "(max-width: #{v.$breakpoint-desktop - 1px})";
+
+.contact-hero {
+  min-height: v.$contact-hero-height;
+  padding-block: v.$section-space-large v.$section-space-main;
+  border-bottom: v.$border-width-main solid v.$teal-dark-o20;
+
+  @media #{$touch} {
+    min-height: 0;
+    padding-block: v.$section-space-small;
+  }
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: v.$site-gutter;
+
+  @media #{$touch} {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-intro {
+  max-width: v.$contact-intro-width;
+  color: v.$teal-mid;
+
+  .title {
+    color: v.$teal-dark;
+    margin-bottom: v.$space-5;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Form card
+// -----------------------------------------------------------------------------
+
+.contact-card {
+  padding: v.$space-6 v.$space-5;
+  border: v.$border-width-main solid v.$teal-dark-o20;
+  border-radius: v.$radius-main;
+  background-color: v.$white;
+  color: v.$teal-dark;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-4;
+}
+
+.contact-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: v.$space-4;
+
+  @media (max-width: #{v.$breakpoint-tablet - 1px}) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-group {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-4;
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-1;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.contact-label {
+  padding: 0;
+  font-size: v.$font-size-text-small;
+}
+
+// Inputs: 48px, radius small, subtle border, placeholder at 40 %
+.contact-form {
+  .input,
+  .textarea,
+  .select select {
+    border: v.$border-width-main solid v.$teal-dark-o20;
+    border-radius: v.$radius-small;
+    box-shadow: none;
+    color: v.$teal-dark;
+    font-size: v.$font-size-text-small;
+
+    &::placeholder {
+      color: v.$teal-dark;
+      opacity: 0.4;
+    }
+
+    &:focus {
+      border-color: v.$teal-dark;
+      box-shadow: 0 0 0 2px v.$teal-dark-o20;
+    }
+
+    // Error state (after the user interacted with the field)
+    &:user-invalid {
+      border-color: v.$danger-strong;
+      background-color: v.$danger-soft;
+    }
+  }
+
+  .input,
+  .select select {
+    height: v.$input-height;
+  }
+
+  .select {
+    height: v.$input-height;
+
+    &::after {
+      border-color: v.$teal-dark;
+    }
+  }
+
+  .select select {
+    width: 100%;
+  }
+}
+
+.contact-other[hidden] {
+  display: none;
+}
+
+// Radios and checkboxes
+.contact-choices {
+  gap: v.$space-2;
+}
+
+// `.contact-form` prefix: outranks the legacy global
+// `input[type="checkbox"] { accent-color }` of insileco.css
+.contact-form .contact-choice {
+  display: flex;
+  align-items: flex-start;
+  gap: v.$space-2;
+  font-size: v.$font-size-text-small;
+  cursor: pointer;
+
+  input {
+    flex-shrink: 0;
+    width: v.$contact-choice-size;
+    height: v.$contact-choice-size;
+    margin: 0;
+    accent-color: v.$teal-dark;
+  }
+}
+
+.contact-form .contact-consents {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-2;
+
+  // Mockup: yellow boxes with a teal tick
+  .contact-choice input {
+    accent-color: v.$yellow;
+  }
+}
+
+// Link to the blog shown for "Ressources…"
+.contact-note {
+  padding: v.$space-3;
+  border-radius: v.$radius-small;
+  background-color: v.$off-white;
+  font-size: v.$font-size-text-small;
+}
+
+.contact-note-title {
+  margin-bottom: v.$space-1;
+  font-weight: v.$weight-bold;
+
+  a {
+    color: v.$teal-dark;
+    text-decoration: underline;
+  }
+}
+
+.contact-delay {
+  font-size: v.$font-size-text-small;
+}
+
+.contact-error {
+  padding: v.$space-3;
+  border-radius: v.$radius-small;
+  background-color: v.$danger-soft;
+  color: v.$danger-strong;
+  font-size: v.$font-size-text-small;
+}
+
+// Confirmation replaces the form
+.contact-thanks {
+  padding: v.$space-4;
+  border-radius: v.$radius-small;
+  background-color: v.$success-soft;
+  color: v.$teal-dark;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.contact-thanks-title {
+  margin-bottom: v.$space-1;
+  font-size: v.$font-size-h5;
+  font-weight: v.$weight-bold;
+}
