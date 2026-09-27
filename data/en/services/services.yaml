@@ -1,41 +1,58 @@
-- title: "**inSileco Blog**: Insights & practical guidance"
-  weigth: 1
+# Services page (PAGE-02). `anchor` is linked from the home page (/services#systems…).
+- title: "Insights & practical guidance"
+  weight: 1
   anchor: blog
+  icon: "/img/icons/analysis-teal.svg"
   description: |
-    We share insights on data management, data visualization, environmental science, and reproducible tools. 
-    Our goal is to curate valuable resources that help you better understand and apply these topics. 
-  cta: Explore our blog to learn more.
-  img: "img/services/blog.svg"
-  url: "/blog"
+    We share insights on data management, data visualization, environmental science, and reproducible tools.
+    Our goal is to curate valuable resources that help you better understand and apply these topics.
+  url: "/blog/"
+  tags:
+    - Environmental science
+    - Reproducibility
+    - Data management
+    - Data visualization
 
-- title: "**inSileco Academy**: Training & capacity building"
-  weigth: 2
+- title: "Training & capacity building"
+  weight: 2
   anchor: academy
+  icon: "/img/icons/training-teal.svg"
   description: |
-    We offer workshops tailored to your needs, along with personalized coaching to help your team 
-    build practical skills and confidence in data, modeling, and decision-making. 
-  cta: Explore the Academy.
-  img: "img/services/academy.svg"
+    We offer workshops tailored to your needs, along with personalized coaching to help your team
+    build practical skills and confidence in data, modeling, and decision-making.
   url: "/academy/"
+  tags:
+    - Web application development
+    - Data management best practices
+    - Reproducible tools and workflows
+    - Insightful data visualizations
 
-- title: "**inSileco Systems**: Custom tools & data systems"
-  weigth: 3
+- title: "Custom tools & data systems"
+  weight: 3
   anchor: systems
+  icon: "/img/icons/systems-teal.svg"
   description: |
     We design and build custom, data-driven systems tailored to your specific context and challenges.
-    Our goal is to help you turn complex environmental data into reliable, actionable insights. 
-  cta: Reach out to see how we can support your projects.
-  img: "img/services/systems.svg"
+    Our goal is to help you turn complex environmental data into reliable, actionable insights.
   url: "/contact/"
+  tags:
+    - Custom web applications
+    - Data management support
+    - Advanced environmental analyses
+    - Targeted data acquisition
 
-- title: "**inSileco Intelligence**: Environmental assessments"
-  weigth: 4
+- title: "Environmental assessments"
+  weight: 4
   anchor: intelligence
+  icon: "/img/icons/assessment-teal.svg"
   description: |
-    We develop and deploy technological solutions to support environmental assessments, 
-    built on tools and workflows we continuously refine through our own research and projects. 
-    These systems enable rigorous, transparent, and reproducible analyses for biodiversity, 
-    cumulative effects, and environmental risk. 
-  cta: If this aligns with your needs, we’d be happy to discuss how we can help.
-  img: "img/services/intelligence.svg"
+    We develop and deploy technological solutions to support environmental assessments,
+    built on tools and workflows we continuously refine through our own research and projects.
+    These systems enable rigorous, transparent, and reproducible analyses for biodiversity,
+    cumulative effects, and environmental risk.
   url: "/contact/"
+  tags:
+    - Automated environmental analyses
+    - Smart reporting
+    - Robust data integration
+    - Reproducible data pipelines

@@ -13,6 +13,7 @@
   // Texture position from the mockup (top: 347px, left: -70px)
   --texture-offset-x: -70px;
   --texture-offset-y: 347px;
+  --texture-width: calc(100% + 70px); // still reaches the right edge
 
   a {
     color: var(--theme-text);

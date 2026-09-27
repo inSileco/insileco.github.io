@@ -22,6 +22,13 @@
   inset: auto;
   #{$vertical}: var(--texture-offset-y, 0);
   #{$horizontal}: var(--texture-offset-x, 0);
+
+  // Bottom anchors sink below the section so the peaks stay inside it
+  @if $vertical == bottom {
+    transform: translateY(var(--texture-shift, #{v.$texture-shift}));
+  } @else {
+    transform: none;
+  }
 }
 
 @mixin texture(
@@ -40,16 +47,13 @@
     z-index: -1;
     @include texture-position($position);
     width: var(--texture-width, #{v.$texture-width});
+    min-width: v.$texture-min-width;
     aspect-ratio: v.$texture-ratio;
     background-color: var(--texture-color, #{$color});
     opacity: var(--texture-opacity, #{$opacity});
     -webkit-mask: url(#{$file}) no-repeat center / contain;
     mask: url(#{$file}) no-repeat center / contain;
     pointer-events: none;
-
-    @media (max-width: #{v.$breakpoint-desktop - 1px}) {
-      width: var(--texture-width-touch, #{v.$texture-width-touch});
-    }
   }
 }
 

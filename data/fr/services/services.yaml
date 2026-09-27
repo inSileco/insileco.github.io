@@ -1,46 +1,63 @@
-- title: "**Blog inSileco** : Analyses & conseils pratiques"
-  weigth: 1
+# Services page (PAGE-02). `anchor` is linked from the home page (/services#systems…).
+- title: "Analyses & conseils pratiques"
+  weight: 1
   anchor: blog
+  icon: "/img/icons/analysis-teal.svg"
   description: |
-    Nous partageons des analyses et des ressources sur la gestion des données, la visualisation, 
-    les sciences de l’environnement et les outils reproductibles. 
-    Notre objectif est de rassembler du contenu de qualité pour vous aider à mieux comprendre 
-    et appliquer ces approches. 
-  cta: Découvrez notre blogue pour en savoir plus.
-  img: "img/services/blog_fr.svg"
+    Nous partageons des analyses et des ressources sur la gestion des données, la visualisation,
+    les sciences de l’environnement et les outils reproductibles.
+    Notre objectif est de rassembler du contenu de qualité pour vous aider à mieux comprendre
+    et appliquer ces approches.
   url: "/blog/"
+  tags:
+    - Sciences environnementales
+    - Reproductibilité
+    - Gestion de données
+    - Visualisation de données
 
-- title: "**inSileco Academy** : Formation & renforcement des capacités"
-  weigth: 2
+- title: "Formation & renforcement des capacités"
+  weight: 2
   anchor: academy
+  icon: "/img/icons/training-teal.svg"
   description: |
-    Nous proposons des ateliers adaptés à vos besoins, ainsi qu’un accompagnement personnalisé 
-    pour aider votre équipe à développer des compétences pratiques et une réelle confiance 
-    dans l’utilisation des données, de la modélisation et des outils d’aide à la décision. 
-  cta: Explorer l’Académie.
-  img: "img/services/academy_fr.svg"
+    Nous proposons des ateliers adaptés à vos besoins, ainsi qu’un accompagnement personnalisé
+    pour aider votre équipe à développer des compétences pratiques et une réelle confiance
+    dans l’utilisation des données, de la modélisation et des outils d’aide à la décision.
   url: "/academy/"
+  tags:
+    - Développement d’applications web
+    - Bonnes pratiques en gestion des données
+    - Outils et flux de travail reproductibles
+    - Visualisations de données éclairantes
 
-- title: "**inSileco Systems** : Outils sur mesure & systèmes de données"
-  weigth: 3
+- title: "Outils sur mesure & systèmes de données"
+  weight: 3
   anchor: systems
+  icon: "/img/icons/systems-teal.svg"
   description: |
-    Nous concevons et développons des systèmes sur mesure, guidés par les données, 
-    adaptés à votre contexte et à vos enjeux. 
-    Notre objectif est de transformer des données environnementales complexes 
-    en informations fiables et directement exploitables. 
-  cta: Communiquez avec nous pour discuter de vos projets.
-  img: "img/services/systems_fr.svg"
+    Nous concevons et développons des systèmes sur mesure, guidés par les données,
+    adaptés à votre contexte et à vos enjeux.
+    Notre objectif est de transformer des données environnementales complexes
+    en informations fiables et directement exploitables.
   url: "/contact/"
+  tags:
+    - Applications web personnalisées
+    - Aide à la gestion de données
+    - Analyses environnementales avancées
+    - Acquisition de données ciblée
 
-- title: "**inSileco Intelligence** : Évaluations environnementales"
-  weigth: 4
+- title: "Évaluations environnementales"
+  weight: 4
   anchor: intelligence
+  icon: "/img/icons/assessment-teal.svg"
   description: |
-    Nous développons et déployons des solutions technologiques pour soutenir les évaluations environnementales, 
-    fondées sur des outils et des flux de travail que nous améliorons continuellement à travers nos propres projets. 
-    Ces systèmes permettent des analyses rigoureuses, transparentes et reproductibles en matière de biodiversité, 
-    d’effets cumulatifs et de risques environnementaux. 
-  cta: Si cela correspond à vos besoins, nous serions heureux d’en discuter avec vous.
-  img: "img/services/intelligence_fr.svg"
+    Nous développons et déployons des solutions technologiques pour soutenir les évaluations environnementales,
+    fondées sur des outils et des flux de travail que nous améliorons continuellement à travers nos propres projets.
+    Ces systèmes permettent des analyses rigoureuses, transparentes et reproductibles en matière de biodiversité,
+    d’effets cumulatifs et de risques environnementaux.
   url: "/contact/"
+  tags:
+    - Analyses environnementales automatisées
+    - Rapport intelligent
+    - Intégration robustes de données
+    - Pipelines de données reproductibles

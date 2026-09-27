@@ -1,32 +1,30 @@
 {{ define "main" }}
 <main>
-  {{ partial "page-hero.html" . }}
+  {{ partial "page-header.html" (dict "page" . "theme" "dark") }}
 
-  {{ $services := sort (index hugo.Data .Lang "services" "services") "weigth" }}
-
-  {{ range $i, $svc := $services }}
-  {{ $even := eq (mod $i 2) 0 }}
-  <section class="section services-section{{ if $even }} services-section-alt{{ end }}">
-    <div class="container py-6 px-4">
-      <section class="columns is-vcentered{{ if $even }} is-flex-direction-row-reverse{{ end }}">
-        <div class="column is-6 mb-4 pb-4">
-          <figure class="image">
-            <img src="{{ $svc.img | absURL }}" alt="{{ $svc.title | plainify }}">
-          </figure>
-        </div>
-        <div class="column is-6 mx-4 {{ if not $even }} has-text-right {{ else }} has-text-left {{ end }}">
-          <h2 class="title is-4" id="{{ $svc.anchor }}">{{ $svc.title | markdownify }}</h2>
-          <div class="content">
-              {{ $svc.description | markdownify }}
-              <br>
-              <a href="{{ relLangURL $svc.url}}">
-                <b>{{ $svc.cta | markdownify }}</b>
-              </a>
+  {{ $services := sort (index hugo.Data .Lang "services" "services") "weight" }}
+  <section class="services-list">
+    <div class="site-container">
+      {{ range $services }}
+      <article id="{{ .anchor }}" class="service">
+        <div class="service-main">
+          <span class="service-icon"><img src="{{ .icon }}" alt="" /></span>
+          <div>
+            <h2 class="service-title">{{ .title }}</h2>
+            <a class="button is-outline" href="{{ relLangURL .url }}">{{ T "know_more" }}</a>
           </div>
         </div>
-      </section>
+        <div class="service-details">
+          <div class="service-description">{{ .description | markdownify }}</div>
+          {{ with .tags }}
+          <ul class="service-tags">
+            {{ range . }}<li class="tag">{{ . }}</li>{{ end }}
+          </ul>
+          {{ end }}
+        </div>
+      </article>
+      {{ end }}
     </div>
   </section>
-  {{ end }}
 </main>
 {{ end }}

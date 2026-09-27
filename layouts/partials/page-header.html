@@ -1,0 +1,18 @@
+{{/*
+  Header of the designed inner pages (Services, À propos, Contact):
+  eyebrow + headline on the left, intro text on the right.
+  Front matter: eyebrow, headline (falls back to title), intro.
+  Call: partial "page-header.html" (dict "page" . "theme" "dark")
+        theme: "dark" (teal + texture) or "light" (white, bottom border).
+*/}}
+{{ $p := .page }}
+{{ $dark := eq .theme "dark" }}
+<header class="page-header{{ if $dark }} theme-dark has-texture has-texture--on-dark has-texture--bottom-right{{ else }} theme-light page-header--light{{ end }}">
+    <div class="site-container page-header-inner">
+        <div class="page-header-main">
+            {{ with $p.Params.eyebrow }}<p class="eyebrow">{{ . }}</p>{{ end }}
+            <h1 class="title is-3">{{ $p.Params.headline | default $p.Title }}</h1>
+        </div>
+        {{ with $p.Params.intro }}<p class="page-header-intro">{{ . }}</p>{{ end }}
+    </div>
+</header>
