@@ -1,0 +1,108 @@
+# Contact form (PAGE-04). Layout from the mockup, questions and conditional
+# logic from the previous Tally form (81L2Yl). Field `label`s are also the
+# field names in the submitted data.
+
+# URL of the form service (Formspree, Web3Forms…) — to choose with inSileco.
+# Empty: the form shows its confirmation without sending anything (see docs/suivi.md).
+endpoint: ""
+
+name:
+  label: "Nom"
+  placeholder: "Prénom Nom"
+company:
+  label: "Entreprise"
+  placeholder: "Votre organisation"
+email:
+  label: "Courriel"
+  placeholder: "vous@entreprise.com"
+
+need:
+  label: "De quoi avez-vous besoin?"
+  placeholder: "Choisissez une option"
+  options:
+    - { value: resources, label: "Ressources, retours d'expérience et notes pratiques" }
+    - { value: training, label: "Formation, ateliers ou accompagnement" }
+    - { value: automation, label: "Automatisation de données, modèles ou outils d’aide à la décision" }
+    - { value: assessment, label: "Évaluations des risques environnementaux ou des effets cumulatifs" }
+    - { value: other, label: "Autre" }
+
+other_option: "Autre"
+other_label: "Précisez"
+
+# Fields shown only for the matching `need` option
+groups:
+  resources:
+    note_title: "Vous serez peut-être mieux servi en visitant notre blogue !"
+    note_link: "/blog/"
+    note_text: "Laissez-nous savoir vos intérêts, si vous avez un sujet en tête ou souhaitez rester informé de notre travail!"
+    fields:
+      - label: "Qu'est-ce qui vous intéresse?"
+        type: radio
+        other: true
+        options:
+          - "Données, automatisation & intelligence artificielle"
+          - "Package R & applications shiny"
+          - "Prise de décision environnementale"
+          - "Biodiversité & effets cumulatifs"
+          - "Formation & développement de capacité"
+      - label: "Message"
+        type: textarea
+  training:
+    fields:
+      - label: "Nombre de participants"
+        type: radio
+        required: true
+        options: ["Juste vous !", "2-10", "10-30", "30+"]
+      - label: "Sujet"
+        type: checkbox
+        required: true
+        other: true
+        options:
+          - "Automatisation et reproductibilité"
+          - "Intelligence artificielle"
+          - "Gestion de données"
+          - "R (code, analyses, packages, applications shiny)"
+          - "Analyses spatiales"
+          - "Gestion environnementale"
+      - label: "Format"
+        type: radio
+        required: true
+        other: true
+        options: ["En personne", "À distance", "Les deux"]
+  automation:
+    fields:
+      - label: "État des données"
+        type: radio
+        options: ["Aucune", "Partielles", "Opérationnelles"]
+      - label: "Produit désiré"
+        type: checkbox
+        other: true
+        options: ["Base de données", "Rapport", "Outil (tableau de bord, application)"]
+      - label: "Quel est votre objectif?"
+        type: textarea
+        placeholder: "Décrivez en quelques mots votre résultat idéal."
+      - label: "Gamme budgétaire"
+        type: radio
+        options: ["<$5k", "$5-15k", "$15-50k", "$50k+", "Incertain"]
+      - label: "Échéancier"
+        type: radio
+        options: ["Dès que possible", "1-2 mois", "3-6 mois", "Flexible"]
+      - label: "Y a-t-il autre chose que nous devrions savoir ?"
+        type: textarea
+  assessment:
+    fields:
+      - label: "Région"
+        type: textarea
+        required: true
+
+consents:
+  - "Je consens à ce que vous me contactiez à ce sujet"
+  - "J’aimerais recevoir occasionnellement des ressources et des mises à jour par courriel"
+
+submit: "Soumettre"
+delay: "Nous vous répondrons dans un délai de 1 à 2 jours ouvrables."
+required_choice: "Choisissez au moins une option."
+thanks:
+  title: "Merci de nous avoir contacté {name} !"
+  text: "Nous vous contacterons sous peu!"
+error: "L’envoi a échoué. Réessayez ou écrivez-nous à info@insileco.io."
