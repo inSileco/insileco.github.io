@@ -1,0 +1,139 @@
+// =============================================================================
+// PAGE-09 — Blog, post list (no mockup: harmonised with the designed pages —
+// page header, home "Insights" cards with their blue category badge).
+// Filter: _filters.scss; tags and "Read more": _cards.scss; CTA: _cta-band.scss.
+// =============================================================================
+
+@use "../variables" as v;
+
+$touch: "(max-width: #{v.$breakpoint-desktop - 1px})";
+$mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
+
+// Intro text (Markdown content of the section)
+.blog-intro {
+  padding-top: v.$section-space-main;
+
+  .content {
+    max-width: calc(#{v.$page-header-main-width} + 2 * #{v.$site-margin});
+    margin-inline: 0;
+    color: v.$teal-mid;
+    font-size: v.$font-size-text-large;
+  }
+
+  @media #{$touch} {
+    padding-top: v.$section-space-small;
+  }
+}
+
+.blog-list {
+  padding-top: v.$space-8;
+  padding-bottom: v.$section-space-main;
+  scroll-margin-top: v.$navbar-height;
+
+  @media #{$touch} {
+    padding-top: v.$space-6;
+    padding-bottom: v.$section-space-small;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Post cards (home "Insights" card: 16:9 image, category + date, title, excerpt)
+// -----------------------------------------------------------------------------
+
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: v.$site-gutter;
+  list-style: none;
+
+  @media #{$touch} {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media #{$mobile} {
+    grid-template-columns: 1fr;
+  }
+}
+
+.post-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: v.$radius-main;
+  overflow: hidden;
+  background-color: v.$off-white;
+  color: v.$teal-mid;
+}
+
+.post-card-media {
+  display: block;
+  aspect-ratio: 16 / 9;
+  background-color: v.$blue-200;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.post-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: v.$space-2;
+  padding: v.$space-4;
+}
+
+.post-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: v.$space-2;
+  color: v.$teal-dark;
+  font-size: v.$font-size-text-small;
+}
+
+// Blue badge of the home blog cards, clickable to filter
+.tag.post-card-category {
+  margin: 0;
+  border: 0;
+  background-color: v.$blue-200;
+  color: v.$teal-dark;
+  font-family: inherit;
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    background-color: v.$teal-dark;
+    color: v.$white;
+  }
+}
+
+.post-card-title {
+  font-size: v.$font-size-h5;
+  font-weight: v.$weight-bold;
+  line-height: v.$line-height-heading;
+  letter-spacing: v.$letter-spacing-h5;
+
+  a {
+    color: v.$teal-dark;
+
+    &:hover,
+    &:focus-visible {
+      text-decoration: underline;
+    }
+  }
+}
+
+.post-card-author {
+  display: inline-flex;
+  align-items: center;
+  gap: v.$space-1;
+  font-size: v.$font-size-text-small;
+}
+
+.post-card-text {
+  font-size: v.$font-size-text-small;
+}

@@ -1,0 +1,60 @@
+// =============================================================================
+// Filter bar for card lists — layouts/partials/filter-bar.html,
+// assets/js/filter.js. Used by the Portfolio (PAGE-07) and Blog (PAGE-09) lists.
+// =============================================================================
+
+@use "../variables" as v;
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: v.$space-1;
+}
+
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: v.$space-1;
+  padding: v.$space-1 v.$space-3;
+  border: v.$border-width-main solid v.$teal-dark-o20;
+  border-radius: v.$radius-round;
+  background-color: transparent;
+  color: v.$teal-dark;
+  font-family: inherit;
+  font-size: v.$font-size-text-small;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    border-color: v.$teal-dark;
+  }
+
+  &[aria-pressed="true"] {
+    border-color: v.$teal-dark;
+    background-color: v.$teal-dark;
+    color: v.$white;
+  }
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+// Active tag chip (not a category): yellow, with a remove cross
+.filter-chip--tag {
+  border-color: v.$yellow;
+  background-color: v.$yellow;
+}
+
+.filter-count {
+  margin-top: v.$space-4;
+  margin-bottom: v.$space-5;
+  color: v.$teal-mid;
+  font-size: v.$font-size-text-small;
+}
+
+// Items hidden by the filter (cards set their own display)
+[data-filter-item][hidden] {
+  display: none;
+}

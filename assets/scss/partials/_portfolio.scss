@@ -2,7 +2,7 @@
 // Portfolio — project list (PAGE-07, layouts/portfolio/list.html) and project
 // detail (PAGE-08, layouts/portfolio/single.html). No mockup: harmonised with
 // the designed pages (page header, Services tags, Academy cards).
-// Filter script: assets/js/portfolio.js
+// Filter: partials/filter-bar.html + assets/js/filter.js (styles in _filters.scss)
 // =============================================================================
 
 @use "../variables" as v;
@@ -38,7 +38,7 @@ $mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
 }
 
 // -----------------------------------------------------------------------------
-// Filters
+// List section (filter bar: partials/_filters.scss)
 // -----------------------------------------------------------------------------
 
 .portfolio-list {
@@ -50,55 +50,6 @@ $mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
     padding-top: v.$space-6;
     padding-bottom: v.$section-space-small;
   }
-}
-
-.portfolio-filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: v.$space-1;
-}
-
-.portfolio-filter {
-  display: inline-flex;
-  align-items: center;
-  gap: v.$space-1;
-  padding: v.$space-1 v.$space-3;
-  border: v.$border-width-main solid v.$teal-dark-o20;
-  border-radius: v.$radius-round;
-  background-color: transparent;
-  color: v.$teal-dark;
-  font-family: inherit;
-  font-size: v.$font-size-text-small;
-  cursor: pointer;
-  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-
-  &:hover,
-  &:focus-visible {
-    border-color: v.$teal-dark;
-  }
-
-  &[aria-pressed="true"] {
-    border-color: v.$teal-dark;
-    background-color: v.$teal-dark;
-    color: v.$white;
-  }
-
-  &[hidden] {
-    display: none;
-  }
-}
-
-// Active tag chip (not a category): yellow, with a remove cross
-.portfolio-filter--tag {
-  border-color: v.$yellow;
-  background-color: v.$yellow;
-}
-
-.portfolio-count {
-  margin-top: v.$space-4;
-  margin-bottom: v.$space-5;
-  color: v.$teal-mid;
-  font-size: v.$font-size-text-small;
 }
 
 // -----------------------------------------------------------------------------
@@ -127,10 +78,6 @@ $mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
   overflow: hidden;
   background-color: v.$off-white;
   color: v.$teal-mid;
-
-  &[hidden] {
-    display: none;
-  }
 }
 
 .portfolio-card-cover {
@@ -192,51 +139,6 @@ $mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
 
 .portfolio-card-text {
   font-size: v.$font-size-text-small;
-}
-
-.portfolio-card-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: v.$space-1;
-  list-style: none;
-
-  .tag {
-    height: auto;
-    margin: 0;
-    padding: v.$space-0 v.$space-2;
-    border: v.$border-width-main solid v.$teal-dark-o20;
-    border-radius: v.$radius-small;
-    background-color: transparent;
-    color: v.$teal-dark;
-    font-family: inherit;
-    font-size: v.$font-size-text-xsmall;
-    cursor: pointer;
-
-    &:hover,
-    &:focus-visible {
-      border-color: v.$teal-dark;
-    }
-  }
-}
-
-.portfolio-card-link {
-  display: inline-flex;
-  align-items: center;
-  gap: v.$space-2;
-  margin-top: auto;
-  padding-top: v.$space-2;
-  color: v.$teal-dark;
-  font-weight: v.$weight-bold;
-
-  &:hover,
-  &:focus-visible {
-    color: v.$teal-dark;
-
-    .arrow-button {
-      background-color: v.$teal-dark;
-      color: v.$white;
-    }
-  }
 }
 
 // =============================================================================
@@ -390,31 +292,6 @@ $mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
     text-decoration: underline;
     text-underline-offset: 3px;
   }
-}
-
-// CTA band (data/{lang}/portfolio/cta.yaml)
-.portfolio-cta {
-  padding-block: v.$section-space-small;
-}
-
-.portfolio-cta-inner {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: v.$space-5;
-
-  .buttons {
-    margin-bottom: 0;
-  }
-}
-
-.portfolio-cta-title {
-  margin-bottom: v.$space-1;
-  font-size: v.$font-size-h4;
-  font-weight: v.$weight-bold;
-  line-height: v.$line-height-heading;
-  letter-spacing: v.$letter-spacing-h4;
 }
 
 // Previous / next projects (white band between the CTA and the footer)
