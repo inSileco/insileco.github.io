@@ -1,10 +1,12 @@
 // =============================================================================
-// PAGE-07 — Portfolio, project list (no mockup: harmonised with the designed
-// pages — page header, Services tags, Academy cards).
+// Portfolio — project list (PAGE-07, layouts/portfolio/list.html) and project
+// detail (PAGE-08, layouts/portfolio/single.html). No mockup: harmonised with
+// the designed pages (page header, Services tags, Academy cards).
 // Filter script: assets/js/portfolio.js
 // =============================================================================
 
 @use "../variables" as v;
+@use "../textures" as t;
 
 $touch: "(max-width: #{v.$breakpoint-desktop - 1px})";
 $mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
@@ -163,6 +165,12 @@ $mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
     border: 0;
     font-family: inherit;
     cursor: pointer;
+
+    &:is(a):hover,
+    &:is(a):focus-visible {
+      background-color: v.$teal-dark;
+      color: v.$yellow;
+    }
   }
 }
 
@@ -229,4 +237,232 @@ $mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
       color: v.$white;
     }
   }
+}
+
+// =============================================================================
+// PAGE-08 — Project detail
+// =============================================================================
+
+// Header: eyebrow (back to the list), categories, H1, description, tags | cover
+.portfolio-header {
+  padding-top: v.$section-space-main;
+  padding-bottom: v.$section-space-small;
+  border-bottom: v.$border-width-main solid v.$teal-dark-o20;
+
+  @media #{$touch} {
+    padding-block: v.$section-space-small;
+  }
+}
+
+.portfolio-header-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: v.$space-8;
+
+  @media #{$touch} {
+    grid-template-columns: 1fr;
+    gap: v.$space-6;
+  }
+}
+
+.portfolio-header-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: v.$space-4;
+
+  .eyebrow {
+    margin-bottom: 0;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  .title {
+    margin-bottom: 0;
+    color: v.$teal-dark;
+  }
+}
+
+.portfolio-header-text {
+  color: v.$teal-mid;
+  font-size: v.$font-size-text-large;
+}
+
+.portfolio-header-cover {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  border-radius: v.$radius-main;
+  object-fit: cover;
+  object-position: top;
+  background-color: v.$off-white;
+}
+
+// Body: Markdown content | project facts
+.portfolio-body {
+  padding-block: v.$section-space-main;
+
+  @media #{$touch} {
+    padding-block: v.$section-space-small;
+  }
+}
+
+.portfolio-body-inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: start;
+  gap: v.$space-8;
+
+  @media #{$touch} {
+    grid-template-columns: 1fr;
+    gap: v.$space-6;
+  }
+}
+
+.portfolio-content {
+  color: v.$teal-mid;
+  font-size: v.$font-size-text-large;
+
+  // YouTube shortcode (youtube-narrow): textured teal box
+  .blog-video-shell {
+    @include t.texture($position: bottom right, $opacity: v.$texture-opacity-dark, $color: v.$texture-color-dark);
+
+    max-width: none;
+    margin-block: v.$space-7;
+    padding: v.$space-7;
+    border-radius: v.$radius-main;
+    background-color: v.$teal-dark;
+
+    @media #{$mobile} {
+      padding: v.$space-3;
+    }
+  }
+
+  .blog-video-embed {
+    border-radius: v.$radius-small;
+  }
+}
+
+.portfolio-facts {
+  position: sticky;
+  top: calc(#{v.$navbar-height} + #{v.$space-4});
+  padding: v.$space-5;
+  border-radius: v.$radius-main;
+  background-color: v.$off-white;
+  color: v.$teal-mid;
+
+  dl {
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-4;
+  }
+
+  dt {
+    margin-bottom: v.$space-1;
+    color: v.$teal-dark;
+    font-size: v.$font-size-text-small;
+    font-weight: v.$weight-xbold;
+    text-transform: uppercase;
+  }
+
+  dd ul {
+    list-style: none;
+  }
+
+  @media #{$touch} {
+    position: static;
+  }
+}
+
+.portfolio-facts-links {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-1;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: v.$space-1;
+    color: v.$teal-dark;
+    font-weight: v.$weight-bold;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+
+// CTA band (data/{lang}/portfolio/cta.yaml)
+.portfolio-cta {
+  padding-block: v.$section-space-small;
+}
+
+.portfolio-cta-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: v.$space-5;
+
+  .buttons {
+    margin-bottom: 0;
+  }
+}
+
+.portfolio-cta-title {
+  margin-bottom: v.$space-1;
+  font-size: v.$font-size-h4;
+  font-weight: v.$weight-bold;
+  line-height: v.$line-height-heading;
+  letter-spacing: v.$letter-spacing-h4;
+}
+
+// Previous / next projects (white band between the CTA and the footer)
+.portfolio-pager {
+  padding-block: v.$space-8;
+}
+
+.portfolio-pager-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: v.$space-5;
+
+  @media #{$mobile} {
+    flex-direction: column;
+  }
+}
+
+.portfolio-pager-link {
+  display: flex;
+  align-items: center;
+  gap: v.$space-3;
+  max-width: 45%;
+  color: v.$teal-dark;
+  font-weight: v.$weight-bold;
+
+  small {
+    display: block;
+    color: v.$teal-mid;
+    font-size: v.$font-size-text-small;
+    font-weight: v.$weight-regular;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: v.$teal-dark;
+
+    .arrow-button {
+      background-color: v.$teal-dark;
+      color: v.$white;
+    }
+  }
+
+  @media #{$mobile} {
+    max-width: none;
+  }
+}
+
+.portfolio-pager-link--next {
+  margin-left: auto;
+  text-align: right;
 }

@@ -1,81 +1,108 @@
 {{ define "main" }}
+{{/* PAGE-08 — Portfolio project detail (no mockup): same components as the list (PAGE-07).
+     Categories and tags link to the list filtered on them (?tag=, assets/js/portfolio.js). */}}
+{{ $list := relLangURL "/portfolio/" }}
+{{ $cats := apply (.Params.categories | default slice) "trim" "." " " }}
+{{ $tags := apply (.Params.tags | default slice) "trim" "." " " }}
+{{ $cover := .Resources.GetMatch "img/cover.png" }}
 
-{{ partial "page-hero.html" . }}
+{{/* Previous / next in the list order (most recent first) */}}
+{{ $projects := sort (where site.RegularPages "Section" "portfolio") ".Params.date" "desc" }}
+{{ $newer := false }}
+{{ $older := false }}
+{{ range $i, $p := $projects }}
+  {{ if eq $p $ }}
+    {{ if gt $i 0 }}{{ $newer = index $projects (sub $i 1) }}{{ end }}
+    {{ if lt $i (sub (len $projects) 1) }}{{ $older = index $projects (add $i 1) }}{{ end }}
+  {{ end }}
+{{ end }}
 
-
-<div class="section">
-    <div class="container">
-        <div class="columns">
-            <div class="column is-8-desktop is-offset-2">
-
-                <article class="content">
-                    <header class="mb-5">
-
-                        <div class="mb-4">
-                            {{ with .Params.date }}
-                            <span class="has-text-grey">
-                                <i class="fa-regular fa-calendar"></i> {{ .Format "January 2, 2006" }}
-                            </span>
-                            {{ end }}
-                            {{ with .Params.gh }}
-                            <span class="has-text-grey ml-1">
-                                <a href="https://github.com/{{ . }}">
-                                    <i class="fa-brands fa-github"></i>
-                                </a>
-                            </span>
-                            {{ end }}
-                            {{ with .Params.ws }}
-                            <span class="has-text-grey ml-1">
-                                <a href="{{ . }}">
-                                    <i class="fa-solid fa-globe"></i>
-                                </a>
-                            </span>
-                            {{ end }}
-                        </div>
-
-                        {{ if .Params.categories }}
-                        <div class="mb-3">
-                            {{ range .Params.categories }}
-                            <span class="tag is-warning is-medium mr-2">{{ . }}</span>
-                            {{ end }}
-                        </div>
-                        {{ end }}
-
-                        {{ if .Params.tags }}
-                        <div class="mb-4">
-                            {{ range .Params.tags }}
-                            <span class="tag is-light mr-1">{{ . }}</span>
-                            {{ end }}
-                        </div>
-                        {{ end }}
-
-                        <div class="columns">
-                            <div class="column is-12 p-6">
-                                <figure class="image portfolio-featured-image">
-                                    {{ $resource := .Resources.GetMatch "img/cover.png" }}
-                                    {{ if $resource }}
-                                    <img src="{{ $resource.RelPermalink }}" alt="{{ .Title }}">
-                                    {{ else }}
-                                    <img src="{{ .RelPermalink }}img/cover.png" alt="{{ .Title }}">
-                                    {{ end }}
-                                </figure>
-                            </div>
-                        </div>
-
-                    </header>
-
-                    <div class="portfolio-content">
-                        {{ .Content }}
-                    </div>
-
-                    {{ partial "cta_portfolio.html" . }}
-
-                </article>
-
-            </div>
+<main>
+  <header class="portfolio-header">
+    <div class="site-container portfolio-header-inner">
+      <div class="portfolio-header-main">
+        <p class="eyebrow"><a href="{{ $list }}">{{ with site.GetPage "/portfolio" }}{{ .Title }}{{ end }}</a></p>
+        {{ with $cats }}
+        <div class="portfolio-card-categories">
+          {{ range . }}<a class="tag is-brand" href="{{ $list }}?tag={{ anchorize . }}">{{ . }}</a>{{ end }}
         </div>
+        {{ end }}
+        <h1 class="title is-3">{{ .Title }}</h1>
+        {{ with .Params.subtitle | default .Params.description }}<p class="portfolio-header-text">{{ . }}</p>{{ end }}
+        {{ with $tags }}
+        <ul class="portfolio-card-tags">
+          {{ range . }}<li><a class="tag" href="{{ $list }}?tag={{ anchorize . }}">{{ . }}</a></li>{{ end }}
+        </ul>
+        {{ end }}
+      </div>
+      {{ with $cover }}<img class="portfolio-header-cover" src="{{ .RelPermalink }}" alt="" />{{ end }}
     </div>
-</div>
+  </header>
 
+  <section class="portfolio-body">
+    <div class="site-container portfolio-body-inner">
+      <div class="content portfolio-content">{{ .Content }}</div>
 
+      {{/* Project facts: client, team, date, links */}}
+      <aside class="portfolio-facts">
+        <dl>
+          {{ with .Params.client }}
+          <div><dt>{{ T "portfolio_client" }}</dt><dd>{{ . }}</dd></div>
+          {{ end }}
+          {{ with .Params.instructors }}
+          <div><dt>{{ T "portfolio_team" }}</dt><dd><ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul></dd></div>
+          {{ end }}
+          {{ if not .Date.IsZero }}
+          <div><dt>{{ T "portfolio_date" }}</dt><dd>{{ .Date | time.Format ":date_long" }}</dd></div>
+          {{ end }}
+          {{ if or .Params.gh .Params.ws }}
+          <div>
+            <dt>{{ T "portfolio_links" }}</dt>
+            <dd>
+              <ul class="portfolio-facts-links">
+                {{ with .Params.gh }}<li><a href="https://github.com/{{ . }}" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i>{{ T "portfolio_github" }}</a></li>{{ end }}
+                {{ with .Params.ws }}<li><a href="{{ . }}" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>{{ T "portfolio_website" }}</a></li>{{ end }}
+              </ul>
+            </dd>
+          </div>
+          {{ end }}
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  {{ with index hugo.Data .Site.Language.Lang "portfolio" "cta" }}
+  <section class="portfolio-cta theme-dark has-texture has-texture--on-dark has-texture--bottom-right">
+    <div class="site-container portfolio-cta-inner">
+      <div>
+        <h2 class="portfolio-cta-title">{{ .headline }}</h2>
+        {{ with .subhead }}<p>{{ . }}</p>{{ end }}
+      </div>
+      <div class="buttons">
+        <a class="button is-brand" href="{{ relLangURL .primary.link }}">{{ .primary.label }}</a>
+        <a class="button is-outline" href="{{ relLangURL .secondary.link }}">{{ .secondary.label }}</a>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ if or $newer $older }}
+  <nav class="portfolio-pager" aria-label="{{ T "portfolio_nav" }}">
+    <div class="site-container portfolio-pager-inner">
+      {{ with $newer }}
+      <a class="portfolio-pager-link" href="{{ .RelPermalink }}">
+        <span class="arrow-button is-outline" aria-hidden="true"><i class="fa-solid fa-arrow-left"></i></span>
+        <span><small>{{ T "portfolio_prev" }}</small>{{ .Title }}</span>
+      </a>
+      {{ else }}<span></span>{{ end }}
+      {{ with $older }}
+      <a class="portfolio-pager-link portfolio-pager-link--next" href="{{ .RelPermalink }}">
+        <span><small>{{ T "portfolio_next" }}</small>{{ .Title }}</span>
+        <span class="arrow-button is-outline" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+      {{ end }}
+    </div>
+  </nav>
+  {{ end }}
+</main>
 {{ end }}
