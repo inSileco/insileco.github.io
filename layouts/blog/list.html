@@ -1,98 +1,56 @@
 {{ define "main" }}
-{{ partial "page-hero.html" . }}
+{{/* PAGE-09 — Blog list (no mockup): same filter as the Portfolio (partials/filter-bar.html
+     + assets/js/filter.js), cards styled after the home "Insights" cards (blue). */}}
+{{ $posts := sort .Pages ".Params.date" "desc" }}
 
-<div class="section">
-  <div class="container">
-    <div class="columns is-8-desktop is-offset-2">
-      <div class="column">
-        <div class="content mb-4">
-          {{ .Content }}
-        </div>
+<main>
+  {{ partial "page-header.html" (dict "page" . "theme" "dark") }}
 
-        <div class="columns is-multiline">
-          {{ range sort .Pages ".Params.date" "desc" }}
-          {{ $page := . }}
-          <div class="column is-half-desktop is-full-tablet">
-            <a href="{{ $page.Permalink }}" class="card blog-card"
-              style="display: block; height: 100%; text-decoration: none; color: inherit;">
-              <div class="card-content" style="height: 100%; display: flex; flex-direction: column;">
-                <div>
-                  <h3 class="title is-5 mb-3">{{ $page.Title }}</h3>
+  {{ with .Content }}
+  <section class="blog-intro">
+    <div class="site-container content">{{ . }}</div>
+  </section>
+  {{ end }}
 
-                  <div class="columns">
-                    <div class="column is-half py-4">
-                      {{ with $page.Params.date }}
-                      <p class="has-text-grey-light mb-3">
-                        <i class="fa-regular fa-calendar"></i> {{ .Format "January 2, 2006" }}
-                      </p>
-                      {{ end }}
+  <section class="blog-list" data-filter-list>
+    <div class="site-container">
+      {{ partial "filter-bar.html" (dict "pages" $posts "label" (T "blog_filter_label") "unit" (T "blog_filter_count")) }}
 
-                      {{ with $page.Params.author }}
-                      <p class="has-text-grey-light mb-3">
-                        <i class="fa-regular fa-user"></i> {{ . }}
-                      </p>
-                      {{ end }}
-
-                      {{ if $page.Params.categories }}
-                      <div class="mb-3">
-                        {{ range $page.Params.categories }}
-                        <span class="tag is-warning">{{ . }}</span>
-                        {{ end }}
-                      </div>
-                      {{ end }}
-
-                      {{ if $page.Params.tags }}
-                      <div class="mb-3">
-                        {{ range $page.Params.tags }}
-                        <span class="tag is-light">{{ . }}</span>
-                        {{ end }}
-                      </div>
-                      {{ end }}
-                    </div>
-                      
-                    <div class="column is-half">
-                    {{ with $page.Params.featured_image }}
-                    <figure class="blog-card-thumbnail">
-                      {{ $img := . }}
-                      {{ $resource := $page.Resources.GetMatch $img }}
-                      {{ if $resource }}
-                      <img src="{{ $resource.RelPermalink }}" class="blog-thumbnail" alt="{{ $page.Params.featured_image_alt | default $page.Title }}">
-                      {{ else }}
-                      {{ if and (not (hasPrefix $img "/")) (not (hasPrefix $img "http")) }}
-                      {{ $img = printf "%s%s" $page.RelPermalink $img }}
-                      {{ end }}
-                      <img src="{{ $img }}" class="blog-thumbnail" alt="{{ $page.Params.featured_image_alt | default $page.Title }}">
-                      {{ end }}
-                    </figure>
-                    {{ end }}
-                    </div>
-                </div>
-
-                  {{ with $page.Params.description }}
-                  <p class="mb-3">{{ . }}</p>
-                  {{ else }}
-                  <p class="mb-3">{{ $page.Summary }}</p>
-                  {{ end }}
-
-                </div>
-
-                <div style="margin-top: auto;">
-                  <span class="has-text-primary has-text-weight-semibold">
-                    {{ lang.Translate "read_more" . }} 
-                    <i class="fa-solid fa-arrow-right"></i>
-                  </span>
-                </div>
-              </div>
+      <ul class="post-grid">
+        {{ range $posts }}
+        {{ $cats := apply (.Params.categories | default slice) "trim" "." " " }}
+        {{ $tags := apply (.Params.tags | default slice) "trim" "." " " }}
+        {{ $slugs := slice }}
+        {{ range $cats | append $tags }}{{ $slugs = $slugs | append (anchorize .) }}{{ end }}
+        <li class="post-card" data-filter-item data-tags="{{ delimit (uniq $slugs) " " }}">
+          <a class="post-card-media" href="{{ .RelPermalink }}" tabindex="-1" aria-hidden="true">
+            {{ $post := . }}
+            {{ with .Params.featured_image }}{{ with $post.Resources.GetMatch . }}<img src="{{ .RelPermalink }}" alt="" loading="lazy" />{{ end }}{{ end }}
+          </a>
+          <div class="post-card-body">
+            <div class="post-card-meta">
+              {{ range $cats }}<button type="button" class="tag post-card-category" data-filter="{{ anchorize . }}">{{ . }}</button>{{ end }}
+              {{ with .Date }}<time datetime="{{ .Format "2006-01-02" }}">{{ . | time.Format ":date_long" }}</time>{{ end }}
+            </div>
+            <h2 class="post-card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            {{ with .Params.author }}<p class="post-card-author"><i class="fa-regular fa-user" aria-hidden="true"></i>{{ . }}</p>{{ end }}
+            <p class="post-card-text">{{ .Params.description | default (.Summary | plainify | htmlUnescape | truncate 160) }}</p>
+            {{ with $tags }}
+            <ul class="card-tags">
+              {{ range . }}<li><button type="button" class="tag" data-filter="{{ anchorize . }}">{{ . }}</button></li>{{ end }}
+            </ul>
+            {{ end }}
+            <a class="card-more" href="{{ .RelPermalink }}">
+              {{ T "read_more" }}<span class="arrow-button is-outline" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
             </a>
           </div>
-          {{ end }}
-        </div>
-
-        {{ partial "cta_blog.html" . }}
-
-      </div>
+        </li>
+        {{ end }}
+      </ul>
     </div>
-  </div>
-</div>
+  </section>
 
+  {{/* Yellow band: can sit right above the teal footer */}}
+  {{ partial "cta-band.html" (dict "page" . "cta" (index hugo.Data .Site.Language.Lang "blog" "cta") "theme" "brand") }}
+</main>
 {{ end }}

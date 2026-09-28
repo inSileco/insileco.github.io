@@ -2,7 +2,7 @@ headline: "Vous avez un sujet en tête ou souhaitez rester informé de notre tra
 subhead: "Faites-nous signe!"
 primary:
   label: "Communiquez avec nous"
-  link: "/get-in-touch/"
+  link: "/contact/"
 secondary:
   label: "Retour au blogue"
   link: "/blog/"
