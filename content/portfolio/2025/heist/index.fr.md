@@ -2,7 +2,7 @@
 title: Outil interactif HEIST
 client: Fisheries and Oceans Canada
 categories: 
-  - Shiny App
+  - Application Shiny
 tags: 
   - Environmental science
   - Modelling

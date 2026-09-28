@@ -2,7 +2,7 @@
 title: Shiny App pour le projet GOTeDNA
 client: "Anaïs Lacoursière, Pêches et Océans Canada"
 categories: 
-  - Shiny App
+  - Application Shiny
 tags: 
   - Géocomputation
   - Visualisation de données

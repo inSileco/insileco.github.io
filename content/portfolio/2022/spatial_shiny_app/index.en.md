@@ -2,7 +2,7 @@
 title: Shiny App for spatial reproducible reporting
 client: "Fisheries and Oceans Canada"
 categories: 
-  - Shiny Application
+  - Shiny App
 tags: 
   - Geocomputation
   - Reporting
