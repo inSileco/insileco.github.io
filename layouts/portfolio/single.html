@@ -30,7 +30,7 @@
         <h1 class="title is-3">{{ .Title }}</h1>
         {{ with .Params.subtitle | default .Params.description }}<p class="portfolio-header-text">{{ . }}</p>{{ end }}
         {{ with $tags }}
-        <ul class="portfolio-card-tags">
+        <ul class="card-tags">
           {{ range . }}<li><a class="tag" href="{{ $list }}?tag={{ anchorize . }}">{{ . }}</a></li>{{ end }}
         </ul>
         {{ end }}
@@ -71,20 +71,8 @@
     </div>
   </section>
 
-  {{ with index hugo.Data .Site.Language.Lang "portfolio" "cta" }}
-  <section class="portfolio-cta theme-dark has-texture has-texture--on-dark has-texture--bottom-right">
-    <div class="site-container portfolio-cta-inner">
-      <div>
-        <h2 class="portfolio-cta-title">{{ .headline }}</h2>
-        {{ with .subhead }}<p>{{ . }}</p>{{ end }}
-      </div>
-      <div class="buttons">
-        <a class="button is-brand" href="{{ relLangURL .primary.link }}">{{ .primary.label }}</a>
-        <a class="button is-outline" href="{{ relLangURL .secondary.link }}">{{ .secondary.label }}</a>
-      </div>
-    </div>
-  </section>
-  {{ end }}
+  {{/* Teal CTA, followed by the project navigation (white) */}}
+  {{ partial "cta-band.html" (dict "page" . "cta" (index hugo.Data .Site.Language.Lang "portfolio" "cta") "theme" "dark") }}
 
   {{ if or $newer $older }}
   <nav class="portfolio-pager" aria-label="{{ T "portfolio_nav" }}">

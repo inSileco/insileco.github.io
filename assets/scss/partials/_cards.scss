@@ -1,0 +1,52 @@
+// =============================================================================
+// Shared card bits (Portfolio and Blog lists, Portfolio detail):
+// .card-tags — outline tag buttons/links (filter on click, assets/js/filter.js)
+// .card-more — "View project" / "Read more" link with the round arrow
+// =============================================================================
+
+@use "../variables" as v;
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: v.$space-1;
+  list-style: none;
+
+  .tag {
+    height: auto;
+    margin: 0;
+    padding: v.$space-0 v.$space-2;
+    border: v.$border-width-main solid v.$teal-dark-o20;
+    border-radius: v.$radius-small;
+    background-color: transparent;
+    color: v.$teal-dark;
+    font-family: inherit;
+    font-size: v.$font-size-text-xsmall;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible {
+      border-color: v.$teal-dark;
+    }
+  }
+}
+
+.card-more {
+  display: inline-flex;
+  align-items: center;
+  gap: v.$space-2;
+  margin-top: auto;
+  padding-top: v.$space-2;
+  color: v.$teal-dark;
+  font-weight: v.$weight-bold;
+
+  &:hover,
+  &:focus-visible {
+    color: v.$teal-dark;
+
+    .arrow-button {
+      background-color: v.$teal-dark;
+      color: v.$white;
+    }
+  }
+}

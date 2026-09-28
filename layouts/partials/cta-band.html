@@ -1,0 +1,27 @@
+{{/*
+  CTA band: headline + subhead | primary and secondary buttons, textured.
+  Data: data/{lang}/<section>/cta.yaml { headline, subhead, primary, secondary { label, link } }.
+  Call: partial "cta-band.html" (dict "page" . "cta" $cta "theme" "dark"|"brand")
+  "dark" (teal) must be followed by a white section, never by the footer;
+  "brand" (yellow) can sit right above the footer.
+  The secondary button is dropped when it links to the current page.
+*/}}
+{{ $cta := .cta }}
+{{ $dark := eq .theme "dark" }}
+{{ with $cta }}
+<section class="cta-band {{ if $dark }}theme-dark has-texture--on-dark{{ else }}theme-brand has-texture--on-light{{ end }} has-texture has-texture--bottom-right">
+  <div class="site-container cta-band-inner">
+    <div>
+      <h2 class="cta-band-title">{{ .headline }}</h2>
+      {{ with .subhead }}<p>{{ . }}</p>{{ end }}
+    </div>
+    <div class="buttons">
+      <a class="button is-brand" href="{{ relLangURL .primary.link }}">{{ .primary.label }}</a>
+      {{ with .secondary }}
+      {{ $href := relLangURL .link }}
+      {{ if ne $href $.page.RelPermalink }}<a class="button is-outline" href="{{ $href }}">{{ .label }}</a>{{ end }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

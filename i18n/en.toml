@@ -20,8 +20,8 @@ academy_lever_automated_workflows = "Automated Workflows"
 
 # Portfolio filters (PAGE-07)
 portfolio_filter_label = "Filter projects"
-portfolio_filter_all = "All"
-portfolio_filter_clear = "Remove filter"
+filter_all = "All"
+filter_clear = "Remove filter"
 portfolio_filter_count = "project(s)"
 
 # Portfolio project page (PAGE-08)
@@ -34,3 +34,7 @@ portfolio_website = "Project website"
 portfolio_prev = "Newer project"
 portfolio_next = "Older project"
 portfolio_nav = "More projects"
+
+# Blog list (PAGE-09)
+blog_filter_label = "Filter posts"
+blog_filter_count = "post(s)"

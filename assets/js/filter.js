@@ -1,15 +1,18 @@
-// Portfolio filter (PAGE-07): category buttons above the grid, category and
-// tag buttons on the cards. The active filter lives in the URL (?tag=<slug>)
-// so a filtered list can be shared. Without JS every project stays visible.
+// Category / tag filter for card lists (Portfolio PAGE-07, Blog PAGE-09).
+// Markup: layouts/partials/filter-bar.html inside a [data-filter-list] root;
+// each card is a [data-filter-item] with data-tags="<slug> <slug>…"; any
+// [data-filter="<slug>"] button (bar or card) applies that filter.
+// The active filter lives in the URL (?tag=<slug>) so a filtered list can be
+// shared. Without JS every item stays visible.
 document.addEventListener('DOMContentLoaded', () => {
-  const root = document.querySelector('[data-portfolio]');
+  const root = document.querySelector('[data-filter-list]');
   if (!root) return;
 
-  const cards = root.querySelectorAll('.portfolio-card');
-  const barButtons = root.querySelectorAll('.portfolio-filters [data-filter]');
+  const items = root.querySelectorAll('[data-filter-item]');
+  const barButtons = root.querySelectorAll('[data-filter-bar] [data-filter]');
   const tagChip = root.querySelector('[data-filter-clear]');
   const tagLabel = root.querySelector('[data-filter-tag-label]');
-  const count = root.querySelector('[data-portfolio-count]');
+  const count = root.querySelector('[data-filter-count]');
 
   // Visible label of a slug, taken from the first button that carries it
   const labelOf = (slug) => {
@@ -19,9 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const apply = (slug) => {
     let visible = 0;
-    cards.forEach(card => {
-      const match = !slug || card.dataset.tags.split(' ').includes(slug);
-      card.hidden = !match;
+    items.forEach(item => {
+      const match = !slug || item.dataset.tags.split(' ').includes(slug);
+      item.hidden = !match;
       if (match) visible += 1;
     });
     count.textContent = visible;
@@ -49,8 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const button = e.target.closest('[data-filter]');
     if (!button) return;
     apply(button.dataset.filter);
-    // From a card, bring the filtered grid back into view
-    if (button.closest('.portfolio-card')) {
+    // From a card, bring the filtered list back into view
+    if (button.closest('[data-filter-item]')) {
       root.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });

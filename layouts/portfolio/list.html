@@ -1,25 +1,8 @@
 {{ define "main" }}
 {{/* PAGE-07 — Portfolio list (no mockup): harmonised with the designed pages.
      Filter: categories in the bar, tags clickable on the cards; ?tag=<slug>
-     (assets/js/portfolio.js). Without JS every project stays visible. */}}
+     (partials/filter-bar.html + assets/js/filter.js). Without JS every project stays visible. */}}
 {{ $projects := sort (where .Pages "Section" "portfolio") ".Params.date" "desc" }}
-
-{{/* Filter bar: categories, most used first */}}
-{{ $counts := dict }}
-{{ $labels := dict }}
-{{ range $projects }}
-  {{ range .Params.categories }}
-    {{ $label := trim . " " }}
-    {{ $slug := anchorize $label }}
-    {{ $counts = merge $counts (dict $slug (add (index $counts $slug | default 0) 1)) }}
-    {{ $labels = merge $labels (dict $slug $label) }}
-  {{ end }}
-{{ end }}
-{{ $categories := slice }}
-{{ range $slug, $count := $counts }}
-  {{ $categories = $categories | append (dict "slug" $slug "label" (index $labels $slug) "count" $count) }}
-{{ end }}
-{{ $categories = sort (sort $categories "label") "count" "desc" }}
 
 <main>
   {{ partial "page-header.html" (dict "page" . "theme" "dark") }}
@@ -30,19 +13,9 @@
   </section>
   {{ end }}
 
-  <section class="portfolio-list" data-portfolio>
+  <section class="portfolio-list" data-filter-list>
     <div class="site-container">
-      <div class="portfolio-filters" role="group" aria-label="{{ T "portfolio_filter_label" }}">
-        <button type="button" class="portfolio-filter" data-filter="" aria-pressed="true">{{ T "portfolio_filter_all" }}</button>
-        {{ range $categories }}
-        <button type="button" class="portfolio-filter" data-filter="{{ .slug }}" aria-pressed="false">{{ .label }}</button>
-        {{ end }}
-        {{/* Active tag that is not a category (set by portfolio.js) */}}
-        <button type="button" class="portfolio-filter portfolio-filter--tag" data-filter-clear hidden aria-label="{{ T "portfolio_filter_clear" }}">
-          <span data-filter-tag-label></span><i class="fa-solid fa-xmark" aria-hidden="true"></i>
-        </button>
-      </div>
-      <p class="portfolio-count" aria-live="polite"><span data-portfolio-count>{{ len $projects }}</span> {{ T "portfolio_filter_count" }}</p>
+      {{ partial "filter-bar.html" (dict "pages" $projects "label" (T "portfolio_filter_label") "unit" (T "portfolio_filter_count")) }}
 
       <ul class="portfolio-grid-list">
         {{ range $projects }}
@@ -51,7 +24,7 @@
         {{ $slugs := slice }}
         {{ range $cats | append $tags }}{{ $slugs = $slugs | append (anchorize .) }}{{ end }}
         {{ $cover := .Resources.GetMatch "img/cover.png" }}
-        <li class="portfolio-card" data-tags="{{ delimit (uniq $slugs) " " }}">
+        <li class="portfolio-card" data-filter-item data-tags="{{ delimit (uniq $slugs) " " }}">
           <a class="portfolio-card-cover" href="{{ .RelPermalink }}" tabindex="-1" aria-hidden="true">
             {{ with $cover }}<img src="{{ .RelPermalink }}" alt="" loading="lazy" />{{ end }}
           </a>
@@ -70,11 +43,11 @@
               {{- end -}}
             </p>
             {{ with $tags }}
-            <ul class="portfolio-card-tags">
+            <ul class="card-tags">
               {{ range . }}<li><button type="button" class="tag" data-filter="{{ anchorize . }}">{{ . }}</button></li>{{ end }}
             </ul>
             {{ end }}
-            <a class="portfolio-card-link" href="{{ .RelPermalink }}">
+            <a class="card-more" href="{{ .RelPermalink }}">
               {{ site.Params.portfolio.link }}<span class="arrow-button is-outline" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
             </a>
           </div>

@@ -1,0 +1,43 @@
+// =============================================================================
+// CTA band — layouts/partials/cta-band.html (Portfolio detail, Blog list…)
+// =============================================================================
+
+@use "../variables" as v;
+
+.cta-band {
+  padding-block: v.$section-space-small;
+}
+
+.cta-band-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: v.$space-5;
+
+  .buttons {
+    margin-bottom: 0;
+  }
+}
+
+.cta-band-title {
+  margin-bottom: v.$space-1;
+  font-size: v.$font-size-h4;
+  font-weight: v.$weight-bold;
+  line-height: v.$line-height-heading;
+  letter-spacing: v.$letter-spacing-h4;
+}
+
+// Yellow band: the yellow primary button turns teal to stay visible
+.cta-band.theme-brand .button.is-brand {
+  border-color: v.$teal-dark;
+  background-color: v.$teal-dark;
+  color: v.$white;
+
+  &:hover,
+  &:focus-visible {
+    border-color: v.$teal-dark;
+    background-color: transparent;
+    color: v.$teal-dark;
+  }
+}

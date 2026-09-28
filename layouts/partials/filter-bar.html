@@ -1,0 +1,33 @@
+{{/*
+  Filter bar for card lists (assets/js/filter.js): "All" + the categories of
+  the given pages (most used first), the active-tag chip and the item count.
+  Call: partial "filter-bar.html" (dict "pages" $pages "label" (T "…") "unit" (T "…"))
+  The surrounding root needs [data-filter-list]; each card [data-filter-item].
+*/}}
+{{ $counts := dict }}
+{{ $labels := dict }}
+{{ range .pages }}
+  {{ range .Params.categories }}
+    {{ $label := trim . " " }}
+    {{ $slug := anchorize $label }}
+    {{ $counts = merge $counts (dict $slug (add (index $counts $slug | default 0) 1)) }}
+    {{ $labels = merge $labels (dict $slug $label) }}
+  {{ end }}
+{{ end }}
+{{ $categories := slice }}
+{{ range $slug, $count := $counts }}
+  {{ $categories = $categories | append (dict "slug" $slug "label" (index $labels $slug) "count" $count) }}
+{{ end }}
+{{ $categories = sort (sort $categories "label") "count" "desc" }}
+
+<div class="filter-bar" role="group" aria-label="{{ .label }}" data-filter-bar>
+  <button type="button" class="filter-chip" data-filter="" aria-pressed="true">{{ T "filter_all" }}</button>
+  {{ range $categories }}
+  <button type="button" class="filter-chip" data-filter="{{ .slug }}" aria-pressed="false">{{ .label }}</button>
+  {{ end }}
+  {{/* Active tag that is not a category (set by filter.js) */}}
+  <button type="button" class="filter-chip filter-chip--tag" data-filter-clear hidden aria-label="{{ T "filter_clear" }}">
+    <span data-filter-tag-label></span><i class="fa-solid fa-xmark" aria-hidden="true"></i>
+  </button>
+</div>
+<p class="filter-count" aria-live="polite"><span data-filter-count>{{ len .pages }}</span> {{ .unit }}</p>
