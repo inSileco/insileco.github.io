@@ -2,7 +2,7 @@
 title: Application Shiny de suivi des oiseaux du Nunatsiavut
 client: "Michelle Saunders, Nunatsiavut Government"
 categories: 
-  - Shiny App
+  - Application Shiny
 tags: 
   - Géocomputation
   - Visualisation de mouvement d'oiseaux

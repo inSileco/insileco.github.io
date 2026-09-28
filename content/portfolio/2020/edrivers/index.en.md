@@ -1,7 +1,7 @@
 ---
 title: eDrivers
 categories: 
-  - Shiny application
+  - Shiny App
 tags: 
   - R
   - Geocomputation

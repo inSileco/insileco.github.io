@@ -2,7 +2,7 @@
 title: Soutien aux plans de gestion des données du programme de recherche ArcticNet
 client: "ArcticNet, Université Laval"
 categories: 
-  - Research Data Management
+  - Gestion de données de recherche
 tags: 
   - Gestion de données 
   - Plan de gestion de données 

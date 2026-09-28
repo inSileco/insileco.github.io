@@ -2,7 +2,7 @@
 title: Application Shiny pour le Système de Soutien à la Gestion des Pêches (FMSS)
 client: Ministère des ressources naturelles (Ontario)
 categories: 
-  - Shiny App
+  - Application Shiny
 tags: 
   - Outils d'aide à la décision
   - Modélisation
