@@ -17,3 +17,9 @@ academy_lever_data_management = "Gestion des données"
 academy_lever_analytical_capabilities = "Capacités analytiques"
 academy_lever_decision_support_tools = "Outils d’aide à la décision"
 academy_lever_automated_workflows = "Flux de travail automatisés"
+
+# Portfolio filters (PAGE-07)
+portfolio_filter_label = "Filtrer les projets"
+portfolio_filter_all = "Tous"
+portfolio_filter_clear = "Retirer le filtre"
+portfolio_filter_count = "projet(s)"
