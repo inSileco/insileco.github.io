@@ -1,8 +1,8 @@
 // =============================================================================
-// PAGE-05 — Academy, workshop list (no mockup: harmonised with the designed
-// pages — page header, About cards, home project cards and testimonials).
-// The legacy .academy-* rules still in insileco.css belong to the workshop
-// detail templates (PAGE-06).
+// Academy — workshop list (PAGE-05, layouts/academy/list.html) and workshop
+// detail (PAGE-06, layouts/academy/single.html). No mockup: harmonised with the
+// designed pages (page header, About cards, home project cards, testimonials).
+// Shared partials: layouts/partials/academy/ (cta, testimonial, levers).
 // =============================================================================
 
 @use "../variables" as v;
@@ -24,6 +24,16 @@ $mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
 
 .academy-block--grey {
   background-color: v.$off-white;
+}
+
+.academy-block--tight {
+  padding-block: v.$section-space-small;
+}
+
+.academy-block-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: v.$space-7;
 }
 
 .academy-block-header {
@@ -465,5 +475,233 @@ $mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
 
   p {
     padding-bottom: v.$space-4;
+  }
+}
+
+// =============================================================================
+// PAGE-06 — Workshop detail
+// =============================================================================
+
+// Header: eyebrow (link back to Academy), categories, H1, subtitle, CTAs | cover
+.academy-workshop-header {
+  padding-top: v.$section-space-main;
+  padding-bottom: v.$section-space-small;
+  border-bottom: v.$border-width-main solid v.$teal-dark-o20;
+
+  @media #{$touch} {
+    padding-block: v.$section-space-small;
+  }
+}
+
+.academy-workshop-header-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: v.$space-8;
+
+  @media #{$touch} {
+    grid-template-columns: 1fr;
+    gap: v.$space-6;
+  }
+}
+
+.academy-workshop-header-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: v.$space-4;
+
+  .eyebrow {
+    margin-bottom: 0;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  .title {
+    margin-bottom: 0;
+    color: v.$teal-dark;
+  }
+
+  .buttons {
+    margin-top: v.$space-3;
+    margin-bottom: 0;
+  }
+}
+
+.academy-workshop-subtitle {
+  color: v.$teal-mid;
+  font-size: v.$font-size-text-large;
+}
+
+.academy-workshop-header-cover {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: v.$radius-main;
+  object-fit: cover;
+}
+
+// What you get: 3 cards, illustration on top
+.academy-benefits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: v.$site-gutter;
+  list-style: none;
+
+  @media #{$touch} {
+    grid-template-columns: 1fr;
+  }
+}
+
+.academy-benefit {
+  border-radius: v.$radius-main;
+  overflow: hidden;
+  background-color: v.$off-white;
+  color: v.$teal-mid;
+}
+
+.academy-benefit-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.academy-benefit-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: v.$space-3;
+  padding: v.$space-5;
+}
+
+.academy-benefit-title {
+  color: v.$teal-dark;
+  font-size: v.$font-size-h5;
+  font-weight: v.$weight-bold;
+  line-height: v.$line-height-heading;
+  letter-spacing: v.$letter-spacing-h5;
+}
+
+// Steps on the grey band: white cards, icon instead of the number
+.academy-step--white {
+  background-color: v.$white;
+}
+
+.academy-step-icon {
+  display: grid;
+  place-items: center;
+  width: v.$service-icon-box;
+  height: v.$service-icon-box;
+  border-radius: v.$radius-main;
+  background-color: v.$yellow;
+  color: v.$teal-dark;
+  font-size: v.$font-size-h4;
+}
+
+// Free Markdown content
+.academy-workshop-content {
+  max-width: v.$page-header-main-width;
+  color: v.$teal-mid;
+}
+
+// Price (always open): title + amount | rationale + included items
+.academy-price {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: v.$site-gutter;
+  padding: v.$space-7;
+  border-radius: v.$radius-main;
+  background-color: v.$off-white;
+
+  .title {
+    margin-bottom: v.$space-4;
+    color: v.$teal-dark;
+  }
+
+  @media #{$touch} {
+    grid-template-columns: 1fr;
+    padding: v.$space-5;
+  }
+}
+
+.academy-price-amount {
+  color: v.$teal-dark;
+  font-size: v.$font-size-h4;
+  font-weight: v.$weight-bold;
+  line-height: v.$line-height-heading;
+  letter-spacing: v.$letter-spacing-h4;
+}
+
+.academy-price-details,
+.academy-details-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: v.$site-gutter;
+
+  @media #{$mobile} {
+    grid-template-columns: 1fr;
+    gap: v.$space-5;
+  }
+}
+
+.academy-price-details {
+  color: v.$teal-mid;
+}
+
+.academy-subhead {
+  margin-bottom: v.$space-2;
+  color: v.$teal-dark;
+  font-weight: v.$weight-bold;
+}
+
+// Lists: disc by default, check / cross icons (Font Awesome glyphs)
+.academy-list {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-1;
+  padding-left: v.$space-4;
+  list-style: disc;
+}
+
+.academy-list--check,
+.academy-list--cross {
+  padding-left: 0;
+  list-style: none;
+
+  li {
+    position: relative;
+    padding-left: v.$space-5;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: v.$success-strong;
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+    }
+  }
+}
+
+.academy-list--check li::before {
+  content: "\f00c";
+}
+
+.academy-list--cross li::before {
+  content: "\f00d";
+  color: v.$danger-strong;
+}
+
+// Accordion bodies (bonus / guarantee, fit)
+.academy-details-body {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-4;
+  padding-bottom: v.$space-5;
+
+  p {
+    padding-bottom: 0;
   }
 }
