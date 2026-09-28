@@ -3,11 +3,10 @@ title: "Practical Introduction to R"
 subtitle: "A practical coaching offer for environmental professionals who want to replace manual spreadsheet-heavy work with simple, reproducible R workflows they can understand, reuse, and keep applying."
 description: "A cohort-based coached experience for environmental professionals who want a practical introduction to R grounded in real workflow improvement."
 weight: 4
-layout: "offer-landing"
 draft: false
 
 card_image: "/img/academy/practical-introduction-to-r.png"
-hero_eyebrow: "inSileco Academy"
+eyebrow: "inSileco Academy"
 hero_support: "This is a cohort-based coached experience with two half-day sessions and eight weeks of follow-through to help you build a first practical R workflow you can actually reuse."
 
 categories:
@@ -22,13 +21,13 @@ academy_testimonial_workshop: ""
 workshop_outcome: "Build a simple, reproducible R workflow for environmental work through guided live delivery and coached follow-through."
 card_price: "$2,200"
 
-hero_ctas:
+ctas:
   - label: "Apply now"
     url: "#academy-cta"
-    class: "is-primary"
+    style: "brand"
   - label: "Discuss team delivery"
     url: "#team-cta"
-    class: "is-light"
+    style: "outline"
 
 proof_section:
   label: "What people are saying"
@@ -122,10 +121,9 @@ final_cta:
   kicker: "Next step"
   title: "Apply to see whether this is the right fit"
   text: "Start with a short application or conversation. If the fit is strong, we will route you to the next cohort or the right team-delivery path."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=individual&cta_source=academy_practical_introduction_to_r_final&workshop=practical-introduction-to-r"
-  secondary_link:
-    label: "Applying for your team?"
-    url: "#team-cta"
+  button:
+    label: "Apply now"
+    url: "/contact/?need=training"
 
 team_offer:
   kicker: "Team option"
@@ -136,8 +134,7 @@ team_offer:
     - "Adapted environmental examples"
     - "Manager-ready format"
     - "Custom quote"
-  card:
-    label: "Private team delivery"
-    note: "Submit your information and we will reach out to schedule a conversation."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=team&cta_source=academy_practical_introduction_to_r_team&workshop=practical-introduction-to-r"
+  button:
+    label: "Discuss team delivery"
+    url: "/contact/?need=training"
 ---

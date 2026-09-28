@@ -3,9 +3,8 @@ title: "R as a Practical GIS"
 subtitle: "A practical coaching offer for environmental professionals who already use R and need clearer, reusable spatial workflows for analysis, mapping, and reporting."
 description: "A cohort-based coached Academy experience for environmental professionals who want clearer, reusable spatial workflows in R."
 weight: 6
-layout: "offer-landing"
 card_image: "/img/academy/r-as-a-practical-gis.png"
-hero_eyebrow: "inSileco Academy"
+eyebrow: "inSileco Academy"
 hero_support: "This is a cohort-based coached experience with two half-day sessions and three months of follow-through to help you build practical spatial capability in R on a real project."
 categories:
   - Workshop
@@ -18,13 +17,13 @@ academy_levers:
 academy_testimonial_workshop: "r-as-a-practical-gis"
 workshop_outcome: "Build practical spatial capacity in R through reusable workflows, project-based application, and coached follow-through."
 card_price: "$3,500"
-hero_ctas:
+ctas:
   - label: "Apply now"
     url: "#academy-cta"
-    class: "is-primary"
+    style: "brand"
   - label: "Discuss team delivery"
     url: "#team-cta"
-    class: "is-light"
+    style: "outline"
 proof_section:
   label: "What people are saying"
   title: "What people are saying"
@@ -110,10 +109,9 @@ final_cta:
   kicker: "Next step"
   title: "Apply to see whether this is the right fit"
   text: "Start with a short application or conversation. If the fit is strong, we will route you to the next cohort or the right team-delivery path."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=individual&cta_source=academy_r_practical_gis_final&workshop=r-as-a-practical-gis"
-  secondary_link:
-    label: "Applying for your team?"
-    url: "#team-cta"
+  button:
+    label: "Apply now"
+    url: "/contact/?need=training"
 team_offer:
   kicker: "Team option"
   title: "Need this for your team?"
@@ -123,8 +121,7 @@ team_offer:
     - "Adapted examples"
     - "Manager-ready format"
     - "Custom quote"
-  card:
-    label: "Private team delivery"
-    note: "Submit your information and we will reach out to schedule a conversation."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=team&cta_source=academy_r_practical_gis_team&workshop=r-as-a-practical-gis"
+  button:
+    label: "Discuss team delivery"
+    url: "/contact/?need=training"
 ---

@@ -3,11 +3,10 @@ title: "Building Practical Shiny Decision-Support Tools"
 subtitle: "A practical coaching offer for environmental professionals who already work in R and want to turn a real, tightly scoped project into a usable Shiny application."
 description: "A cohort-based coached Academy experience for environmental professionals who want to build practical Shiny applications for analysis, reporting, and decision support."
 weight: 8
-layout: "offer-landing"
 draft: false
 
 card_image: "/img/academy/building-decision-support-tools-environmental-management.png"
-hero_eyebrow: "inSileco Academy"
+eyebrow: "inSileco Academy"
 hero_support: "This is a cohort-based coached experience with two intensive live workshop days and three months of follow-through to help you scope, build, and continue a practical Shiny application around a real project."
 
 categories:
@@ -22,13 +21,13 @@ academy_testimonial_workshop: ""
 workshop_outcome: "Turn a real, tightly scoped project into a materially advanced Shiny application or credible first-version prototype through coached implementation."
 card_price: "$4,500"
 
-hero_ctas:
+ctas:
   - label: "Apply now"
     url: "#academy-cta"
-    class: "is-primary"
+    style: "brand"
   - label: "Discuss team delivery"
     url: "#team-cta"
-    class: "is-light"
+    style: "outline"
 
 inline_cta:
   label: "Apply now"
@@ -122,10 +121,9 @@ final_cta:
   kicker: "Next step"
   title: "Apply to see whether this is the right fit"
   text: "Start with a short application or conversation. We will review your project, confirm whether it fits the workshop, and redirect you if a different path makes more sense."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=individual&cta_source=academy_building_practical_shiny_decision_support_tools_final&workshop=building-practical-shiny-decision-support-tools"
-  secondary_link:
-    label: "Applying for your team?"
-    url: "#team-cta"
+  button:
+    label: "Apply now"
+    url: "/contact/?need=training"
 
 team_offer:
   kicker: "Team option"
@@ -136,8 +134,7 @@ team_offer:
     - "Shared project alignment"
     - "Adapted examples"
     - "Custom quote"
-  card:
-    label: "Private team delivery"
-    note: "Submit your information and we will reach out to schedule a conversation."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=team&cta_source=academy_building_practical_shiny_decision_support_tools_team&workshop=building-practical-shiny-decision-support-tools"
+  button:
+    label: "Discuss team delivery"
+    url: "/contact/?need=training"
 ---

@@ -3,11 +3,10 @@ title: "Practical Git and GitHub for Environmental Collaboration"
 subtitle: "Stop losing time to messy file sharing, unclear versions, and fragile handoffs by adopting a collaboration workflow your team can actually use with confidence."
 description: "A cohort-based coached Academy experience for environmental professionals who want to replace fragile file-sharing and manual versioning habits with practical Git and GitHub collaboration."
 weight: 10
-layout: "offer-landing"
 draft: false
 
 card_image: "/img/academy/practical-guide-github-collaboration-environmental-teams.png"
-hero_eyebrow: "inSileco Academy"
+eyebrow: "inSileco Academy"
 hero_support: "This coached experience combines live workshop sessions and three months of follow-through to help you adopt Git and GitHub as a practical collaboration layer for shared technical work and turn first-use mechanics into repeatable team habits."
 
 categories:
@@ -22,13 +21,13 @@ academy_testimonial_workshop: ""
 workshop_outcome: "Manage a first project on GitHub through a practical collaboration workflow that makes shared work easier to review, safer to change, and clearer to hand off."
 card_price: "$2,800"
 
-hero_ctas:
+ctas:
   - label: "Apply now"
     url: "#academy-cta"
-    class: "is-primary"
+    style: "brand"
   - label: "Discuss team delivery"
     url: "#team-cta"
-    class: "is-light"
+    style: "outline"
 
 proof_section:
   label: "What people are saying"
@@ -121,10 +120,9 @@ final_cta:
   kicker: "Next step"
   title: "Apply to see whether this is the right fit"
   text: "Start with a short application or conversation. If the fit is strong, we will route you to the next cohort or the right team-delivery path."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=individual&cta_source=academy_practical_git_github_environmental_collaboration_final&workshop=github"
-  secondary_link:
-    label: "Applying for your team?"
-    url: "#team-cta"
+  button:
+    label: "Apply now"
+    url: "/contact/?need=training"
 
 team_offer:
   kicker: "Team option"
@@ -135,8 +133,7 @@ team_offer:
     - "Adapted examples"
     - "Team convention design"
     - "Custom quote"
-  card:
-    label: "Private team delivery"
-    note: "Submit your information and we will reach out to schedule a conversation."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=team&cta_source=academy_practical_git_github_environmental_collaboration_team&workshop=github"
+  button:
+    label: "Discuss team delivery"
+    url: "/contact/?need=training"
 ---

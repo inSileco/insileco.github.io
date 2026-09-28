@@ -3,11 +3,10 @@ title: "Travailler en équipe avec Git et GitHub"
 subtitle: "Cessez de perdre du temps avec des échanges de fichiers désordonnés, des versions floues et des transferts fragiles en adoptant un workflow de collaboration que votre équipe peut réellement utiliser avec confiance."
 description: "Une expérience Académie accompagnée en cohorte pour les professionnel.le.s en environnement qui veulent remplacer le partage de fichiers fragile et les habitudes de versionnage manuel par une collaboration pratique avec Git et GitHub."
 weight: 10
-layout: "offer-landing"
 draft: false
 
 card_image: "/img/academy/practical-guide-github-collaboration-environmental-teams.png"
-hero_eyebrow: "inSileco Académie"
+eyebrow: "inSileco Académie"
 hero_support: "Cette expérience accompagnée combine des séances d’atelier en direct et trois mois de suivi pour vous aider à adopter Git et GitHub comme couche pratique de collaboration pour le travail technique partagé, et à transformer les premières manipulations en habitudes d’équipe réutilisables."
 
 categories:
@@ -22,13 +21,13 @@ academy_testimonial_workshop: ""
 workshop_outcome: "Gérer un premier projet sur GitHub à l’aide d’un workflow de collaboration pratique qui rend le travail partagé plus facile à revoir, plus sûr à modifier et plus clair à transférer."
 card_price: "$2,800"
 
-hero_ctas:
+ctas:
   - label: "Postuler maintenant"
     url: "#academy-cta"
-    class: "is-primary"
+    style: "brand"
   - label: "Discuter d’une livraison équipe"
     url: "#team-cta"
-    class: "is-light"
+    style: "outline"
 
 proof_section:
   label: "Ce que les participant.e.s en disent"
@@ -121,10 +120,9 @@ final_cta:
   kicker: "Prochaine étape"
   title: "Postulez pour voir si cette offre vous convient"
   text: "Commencez par une courte demande ou une conversation. Si l’adéquation est bonne, nous vous orienterons vers la prochaine cohorte ou vers le bon format de livraison équipe."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=individual&cta_source=academy_practical_git_github_environmental_collaboration_final&workshop=github"
-  secondary_link:
-    label: "Vous postulez pour votre équipe?"
-    url: "#team-cta"
+  button:
+    label: "Postuler maintenant"
+    url: "/contact/?need=training"
 
 team_offer:
   kicker: "Option équipe"
@@ -135,8 +133,7 @@ team_offer:
     - "Exemples adaptés"
     - "Conception de conventions d’équipe"
     - "Soumission personnalisée"
-  card:
-    label: "Livraison privée pour équipe"
-    note: "Soumettez vos coordonnées et nous vous contacterons pour planifier une conversation."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=team&cta_source=academy_practical_git_github_environmental_collaboration_team&workshop=github"
+  button:
+    label: "Discuter d’une livraison équipe"
+    url: "/contact/?need=training"
 ---

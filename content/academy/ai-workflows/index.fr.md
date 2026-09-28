@@ -3,11 +3,10 @@ title: "IA pratique pour les workflows en environnement"
 subtitle: "Apprenez où l’IA aide réellement, où elle crée du risque, et comment l’utiliser sans affaiblir la révisabilité ni le jugement professionnel."
 description: "Une expérience Académie accompagnée en cohorte pour les professionnel.le.s en environnement qui veulent intégrer l’IA à de vrais workflows comme le tri de littérature, la rédaction de rapports, le soutien au codage et l’AQ avec davantage de contrôles, de documentation, de validation et de suivi."
 weight: 9
-layout: "offer-landing"
 draft: false
 
 card_image: "/img/academy/integrating-ai-workflow-confidence-environmental-professionals.png"
-hero_eyebrow: "inSileco Académie"
+eyebrow: "inSileco Académie"
 hero_support: "Cette expérience accompagnée combine des séances d’atelier en direct et trois mois de suivi pour vous aider à appliquer l’IA dans de vrais workflows en environnement, comme la rédaction, le tri de littérature, le soutien au codage, l’AQ et la documentation, tout en gardant le travail révisable et le jugement expert au centre."
 
 categories:
@@ -22,13 +21,13 @@ academy_testimonial_workshop: ""
 workshop_outcome: "Utiliser l’IA là où elle aide réellement le travail en environnement, et construire un workflow qui demeure documenté, validé et révisable."
 card_price: "$3,500"
 
-hero_ctas:
+ctas:
   - label: "Postuler maintenant"
     url: "#academy-cta"
-    class: "is-primary"
+    style: "brand"
   - label: "Discuter d’une livraison équipe"
     url: "#team-cta"
-    class: "is-light"
+    style: "outline"
 
 proof_section:
   label: "Ce que les participant.e.s en disent"
@@ -122,10 +121,9 @@ final_cta:
   kicker: "Prochaine étape"
   title: "Postulez pour voir si cette offre vous convient"
   text: "Commencez par une courte demande ou une conversation. Si l’adéquation est bonne, nous vous orienterons vers la prochaine cohorte ou vers le bon format de livraison équipe."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=individual&cta_source=ai_workflow_final_cta&workshop=practical-ai-environmental-workflows"
-  secondary_link:
-    label: "Vous postulez pour votre équipe?"
-    url: "#team-cta"
+  button:
+    label: "Postuler maintenant"
+    url: "/contact/?need=training"
 
 team_offer:
   kicker: "Option équipe"
@@ -136,8 +134,7 @@ team_offer:
     - "Exemples adaptés"
     - "Alignement sur les outils et le contexte de données"
     - "Soumission personnalisée"
-  card:
-    label: "Livraison privée pour équipe"
-    note: "Soumettez vos coordonnées et nous vous contacterons pour planifier une conversation."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=team&cta_source=ai_workflow_team_cta&workshop=practical-ai-environmental-workflows"
+  button:
+    label: "Discuter d’une livraison équipe"
+    url: "/contact/?need=training"
 ---

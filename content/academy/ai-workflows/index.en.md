@@ -3,11 +3,10 @@ title: "Practical AI for Environmental Workflows"
 subtitle: "Learn where AI genuinely helps, where it creates risk, and how to use it without weakening reviewability or professional judgment."
 description: "A cohort-based coached Academy experience for environmental professionals who want to integrate AI into real workflows such as literature triage, report drafting, coding support, and QA with clearer controls, documentation, validation, and follow-through."
 weight: 9
-layout: "offer-landing"
 draft: false
 
 card_image: "/img/academy/integrating-ai-workflow-confidence-environmental-professionals.png"
-hero_eyebrow: "inSileco Academy"
+eyebrow: "inSileco Academy"
 hero_support: "This coached experience combines live workshop sessions and three months of follow-through to help you apply AI in real environmental workflows such as drafting, literature triage, coding support, QA, and documentation while keeping the work reviewable and expert judgment central."
 
 categories:
@@ -22,13 +21,13 @@ academy_testimonial_workshop: ""
 workshop_outcome: "Use AI where it genuinely helps environmental work, and build a workflow that stays documented, validated, and reviewable."
 card_price: "$3,500"
 
-hero_ctas:
+ctas:
   - label: "Apply now"
     url: "#academy-cta"
-    class: "is-primary"
+    style: "brand"
   - label: "Discuss team delivery"
     url: "#team-cta"
-    class: "is-light"
+    style: "outline"
 
 proof_section:
   label: "What people are saying"
@@ -122,10 +121,9 @@ final_cta:
   kicker: "Next step"
   title: "Apply to see whether this is the right fit"
   text: "Start with a short application or conversation. If the fit is strong, we will route you to the next cohort or the right team-delivery path."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=individual&cta_source=ai_workflow_final_cta&workshop=practical-ai-environmental-workflows"
-  secondary_link:
-    label: "Applying for your team?"
-    url: "#team-cta"
+  button:
+    label: "Apply now"
+    url: "/contact/?need=training"
 
 team_offer:
   kicker: "Team option"
@@ -136,8 +134,7 @@ team_offer:
     - "Adapted examples"
     - "Tool and data-context alignment"
     - "Custom quote"
-  card:
-    label: "Private team delivery"
-    note: "Submit your information and we will reach out to schedule a conversation."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=team&cta_source=ai_workflow_team_cta&workshop=practical-ai-environmental-workflows"
+  button:
+    label: "Discuss team delivery"
+    url: "/contact/?need=training"
 ---

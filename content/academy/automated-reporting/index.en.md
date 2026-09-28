@@ -3,11 +3,10 @@ title: "Building Practical Automated Reporting Workflows"
 subtitle: "A coached Academy offer for environmental professionals who want to turn recurring reporting work into a more reproducible, programmatic, and maintainable workflow with R and Quarto."
 description: "A cohort-based coached Academy experience for environmental professionals who want to reduce manual reporting work through practical reporting automation in R and Quarto, reproducibility, and follow-through on real workflow projects."
 weight: 9
-layout: "offer-landing"
 draft: false
 
 card_image: "/img/academy/automating-results-reporting-environmental-professionals.png"
-hero_eyebrow: "inSileco Academy"
+eyebrow: "inSileco Academy"
 hero_support: "This is a cohort-based coached experience with two practical live sessions and three months of follow-through to help you structure and continue a real automated reporting workflow around your own recurring deliverables. This version of the workshop is delivered through R and Quarto."
 
 categories:
@@ -22,13 +21,13 @@ academy_testimonial_workshop: ""
 workshop_outcome: "Turn a recurring report or reporting workflow into a materially advanced, reproducible first-version process through coached implementation."
 card_price: "$3,250"
 
-hero_ctas:
+ctas:
   - label: "Apply now"
     url: "#academy-cta"
-    class: "is-primary"
+    style: "brand"
   - label: "Discuss team delivery"
     url: "#team-cta"
-    class: "is-light"
+    style: "outline"
 
 inline_cta:
   label: "Apply now"
@@ -122,10 +121,9 @@ final_cta:
   kicker: "Next step"
   title: "Apply to see whether this is the right fit"
   text: "Start with a short application or conversation. We will review your workflow, confirm whether it fits the workshop, and redirect you if a different path makes more sense."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=individual&cta_source=academy_building_practical_automated_reporting_workflows_final&workshop=building-practical-automated-reporting-workflows"
-  secondary_link:
-    label: "Applying for your team?"
-    url: "#team-cta"
+  button:
+    label: "Apply now"
+    url: "/contact/?need=training"
 
 team_offer:
   kicker: "Team option"
@@ -136,8 +134,7 @@ team_offer:
     - "Shared workflow alignment"
     - "Adapted examples"
     - "Custom quote"
-  card:
-    label: "Private team delivery"
-    note: "Submit your information and we will reach out to schedule a conversation."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=team&cta_source=academy_building_practical_automated_reporting_workflows_team&workshop=building-practical-automated-reporting-workflows"
+  button:
+    label: "Discuss team delivery"
+    url: "/contact/?need=training"
 ---

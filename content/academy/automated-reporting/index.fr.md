@@ -3,11 +3,10 @@ title: "Créer des flux de travail pour automatiser la géération de rapports"
 subtitle: "Une offre Académie accompagnée pour les professionnel.le.s en environnement qui veulent transformer la rédaction de rapports récurrents en flux de travail reproductibles, programmatiques et maintenables avec R et Quarto."
 description: "Une expérience Académie accompagnée en cohorte pour les professionnel.le.s en environnement qui veulent réduire le travail manuel de reporting grâce à une automatisation pratique avec R et Quarto, à la reproductibilité et au suivi sur de vrais projets de workflow."
 weight: 9
-layout: "offer-landing"
 draft: false
 
 card_image: "/img/academy/automating-results-reporting-environmental-professionals.png"
-hero_eyebrow: "inSileco Académie"
+eyebrow: "inSileco Académie"
 hero_support: "Cette expérience accompagnée en cohorte comprend deux séances pratiques en direct et trois mois de suivi pour vous aider à structurer et faire avancer un vrai flux de travail de rapport automatisé autour de vos propres livrables récurrents. Cette version de l’atelier est livrée avec R et Quarto."
 
 categories:
@@ -22,13 +21,13 @@ academy_testimonial_workshop: ""
 workshop_outcome: "Transformer un rapport récurrent ou un flux de travail de reporting en un premier processus reproductible nettement plus avancé grâce à une mise en oeuvre accompagnée."
 card_price: "$3,250"
 
-hero_ctas:
+ctas:
   - label: "Postuler maintenant"
     url: "#academy-cta"
-    class: "is-primary"
+    style: "brand"
   - label: "Discuter d’une livraison équipe"
     url: "#team-cta"
-    class: "is-light"
+    style: "outline"
 
 inline_cta:
   label: "Postuler maintenant"
@@ -122,10 +121,9 @@ final_cta:
   kicker: "Prochaine étape"
   title: "Postulez pour voir si cette offre vous convient"
   text: "Commencez par une courte demande ou une conversation. Nous évaluerons votre workflow, confirmerons s’il convient à l’atelier et vous réorienterons si un autre parcours est plus pertinent."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=individual&cta_source=academy_building_practical_automated_reporting_workflows_final&workshop=building-practical-automated-reporting-workflows"
-  secondary_link:
-    label: "Vous postulez pour votre équipe?"
-    url: "#team-cta"
+  button:
+    label: "Postuler maintenant"
+    url: "/contact/?need=training"
 
 team_offer:
   kicker: "Option équipe"
@@ -136,8 +134,7 @@ team_offer:
     - "Alignement sur un flux de travail partagé"
     - "Exemples adaptés"
     - "Soumission personnalisée"
-  card:
-    label: "Livraison privée pour équipe"
-    note: "Soumettez vos coordonnées et nous vous contacterons pour planifier une conversation."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=team&cta_source=academy_building_practical_automated_reporting_workflows_team&workshop=building-practical-automated-reporting-workflows"
+  button:
+    label: "Discuter d’une livraison équipe"
+    url: "/contact/?need=training"
 ---
