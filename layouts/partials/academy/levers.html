@@ -1,0 +1,5 @@
+{{/* Workshop categories (front matter academy_levers, kept in English) as yellow badges, translated via i18n academy_lever_* */}}
+{{ range . }}
+{{ $key := printf "academy_lever_%s" (replace (lower .) "-" "_" | replaceRE `\s+` "_") }}
+<span class="tag is-brand">{{ T $key | default . }}</span>
+{{ end }}

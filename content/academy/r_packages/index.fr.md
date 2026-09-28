@@ -3,11 +3,10 @@ title: "Créer des outils analytiques réutilisables avec des packages R"
 subtitle: "Une offre Académie accompagnée pour les professionnel.le.s en environnement qui veulent transformer un vrai travail d’analyse, de reporting ou de soutien à la décision en outillage interne réutilisable dans R."
 description: "Une expérience Académie accompagnée en cohorte pour les professionnel.le.s en environnement qui veulent créer des outils analytiques réutilisables dans R grâce à une structure par package, à la reproductibilité et à un suivi sur de vrais projets."
 weight: 7
-layout: "offer-landing"
 draft: false
 
 card_image: "/img/academy/harnessing-r-packages-environmental-project-management.png"
-hero_eyebrow: "inSileco Académie"
+eyebrow: "inSileco Académie"
 hero_support: "Cette expérience accompagnée en cohorte comprend deux séances pratiques en direct et trois mois de suivi pour vous aider à structurer et faire avancer un vrai package autour de votre propre travail analytique, de reporting ou d’outillage."
 
 categories:
@@ -22,13 +21,13 @@ academy_testimonial_workshop: ""
 workshop_outcome: "Transformer la logique d’un vrai projet en un package R nettement plus avancé ou en une première fondation de package réutilisable grâce à une mise en oeuvre accompagnée."
 card_price: "$3,750"
 
-hero_ctas:
+ctas:
   - label: "Postuler maintenant"
     url: "#academy-cta"
-    class: "is-primary"
+    style: "brand"
   - label: "Discuter d’une livraison équipe"
     url: "#team-cta"
-    class: "is-light"
+    style: "outline"
 
 inline_cta:
   label: "Postuler maintenant"
@@ -122,10 +121,9 @@ final_cta:
   kicker: "Prochaine étape"
   title: "Postulez pour voir si cette offre vous convient"
   text: "Commencez par une courte demande ou une conversation. Nous évaluerons votre projet, confirmerons s’il convient à l’atelier et vous réorienterons si un autre parcours est plus pertinent."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=individual&cta_source=academy_harnessing_r_packages_environmental_project_management_final&workshop=harnessing-r-packages-environmental-project-management"
-  secondary_link:
-    label: "Vous postulez pour votre équipe?"
-    url: "#team-cta"
+  button:
+    label: "Postuler maintenant"
+    url: "/contact/?need=training"
 
 team_offer:
   kicker: "Option équipe"
@@ -136,8 +134,7 @@ team_offer:
     - "Alignement sur un projet partagé"
     - "Exemples adaptés"
     - "Soumission personnalisée"
-  card:
-    label: "Livraison privée pour équipe"
-    note: "Soumettez vos coordonnées et nous vous contacterons pour planifier une conversation."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=team&cta_source=academy_harnessing_r_packages_environmental_project_management_team&workshop=harnessing-r-packages-environmental-project-management"
+  button:
+    label: "Discuter d’une livraison équipe"
+    url: "/contact/?need=training"
 ---

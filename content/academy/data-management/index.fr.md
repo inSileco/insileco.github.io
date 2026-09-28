@@ -3,11 +3,10 @@ title: "Gestion des données pour les équipes et organisations en environnement
 subtitle: "Une offre d’accompagnement pratique pour les professionnel.le.s et équipes en environnement qui ont besoin de pratiques de gestion des données plus claires pour mieux se coordonner et bâtir une base plus solide pour les workflows à venir."
 description: "Une expérience Académie accompagnée pour les professionnel.le.s et équipes en environnement qui veulent améliorer concrètement leur gestion des données à partir de vrais workflows, de la planification, des métadonnées et d’un suivi de mise en oeuvre."
 weight: 1
-layout: "offer-landing"
 draft: false
 
 card_image: "/img/academy/data-management-environmental-teams-organizations.png"
-hero_eyebrow: "inSileco Académie"
+eyebrow: "inSileco Académie"
 hero_support: "Cette expérience Académie accompagnée comprend deux demi-journées en direct et huit semaines de suivi pour vous aider à repartir avec un plan de gestion des données utilisable, un noyau de métadonnées interopérable et les premières décisions opérationnelles nécessaires pour faire tenir de meilleures pratiques dans le vrai travail en environnement."
 
 categories:
@@ -22,13 +21,13 @@ academy_testimonial_workshop: ""
 workshop_outcome: "Repartir avec un plan de gestion des données utilisable, un noyau de métadonnées interopérable et un chemin de mise en oeuvre pour le vrai travail de projet."
 card_price: "$2,000"
 
-hero_ctas:
+ctas:
   - label: "Postuler maintenant"
     url: "#academy-cta"
-    class: "is-primary"
+    style: "brand"
   - label: "Discuter d’une livraison équipe"
     url: "#team-cta"
-    class: "is-light"
+    style: "outline"
 
 proof_section:
   label: "Ce que les participant.e.s en disent"
@@ -122,10 +121,9 @@ final_cta:
   kicker: "Prochaine étape"
   title: "Postulez pour voir si cette offre vous convient"
   text: "Commencez par une courte demande ou une conversation. Si l’adéquation est bonne, nous vous orienterons vers la prochaine cohorte ou vers le bon format privé pour équipe."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=individual&cta_source=academy_data_management_environmental_teams_organizations_final&workshop=data-management-environmental-teams-organizations"
-  secondary_link:
-    label: "Vous postulez pour votre équipe?"
-    url: "#team-cta"
+  button:
+    label: "Postuler maintenant"
+    url: "/contact/?need=training"
 
 team_offer:
   kicker: "Option équipe"
@@ -136,8 +134,7 @@ team_offer:
     - "Exemples adaptés"
     - "Décisions d’équipe alignées"
     - "Soumission personnalisée"
-  card:
-    label: "Livraison privée pour équipe"
-    note: "Soumettez vos coordonnées et nous vous contacterons pour planifier une conversation."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=team&cta_source=academy_data_management_environmental_teams_organizations_team&workshop=data-management-environmental-teams-organizations"
+  button:
+    label: "Discuter d’une livraison équipe"
+    url: "/contact/?need=training"
 ---

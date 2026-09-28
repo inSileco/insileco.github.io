@@ -3,11 +3,10 @@ title: "Introduction à R"
 subtitle: "Une offre d’accompagnement pratique pour les professionnel.le.s en environnement qui veulent remplacer le travail manuel lourd en feuilles de calcul par des workflows R simples, reproductibles, compréhensibles et réutilisables."
 description: "Une expérience Académie accompagnée en cohorte pour les professionnel.le.s en environnement qui veulent une première introduction pratique à R ancrée dans une amélioration réelle de workflow."
 weight: 4
-layout: "offer-landing"
 draft: false
 
 card_image: "/img/academy/practical-introduction-to-r.png"
-hero_eyebrow: "inSileco Académie"
+eyebrow: "inSileco Académie"
 hero_support: "Cette expérience accompagnée en cohorte comprend deux demi-journées de séances en direct et huit semaines de suivi pour vous aider à bâtir un premier workflow R pratique que vous pourrez réellement réutiliser."
 
 categories:
@@ -22,13 +21,13 @@ academy_testimonial_workshop: ""
 workshop_outcome: "Bâtir un workflow R simple et reproductible pour du travail en environnement grâce à une livraison guidée en direct et à un suivi accompagné."
 card_price: "$2,200"
 
-hero_ctas:
+ctas:
   - label: "Postuler maintenant"
     url: "#academy-cta"
-    class: "is-primary"
+    style: "brand"
   - label: "Discuter d’une livraison équipe"
     url: "#team-cta"
-    class: "is-light"
+    style: "outline"
 
 proof_section:
   label: "Ce que les participant.e.s en disent"
@@ -122,10 +121,9 @@ final_cta:
   kicker: "Prochaine étape"
   title: "Postulez pour voir si cette offre vous convient"
   text: "Commencez par une courte demande ou une conversation. Si l’adéquation est bonne, nous vous orienterons vers la prochaine cohorte ou vers le bon format de livraison équipe."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=individual&cta_source=academy_practical_introduction_to_r_final&workshop=practical-introduction-to-r"
-  secondary_link:
-    label: "Vous postulez pour votre équipe?"
-    url: "#team-cta"
+  button:
+    label: "Postuler maintenant"
+    url: "/contact/?need=training"
 
 team_offer:
   kicker: "Option équipe"
@@ -136,8 +134,7 @@ team_offer:
     - "Exemples adaptés au contexte environnemental"
     - "Format prêt pour les gestionnaires"
     - "Soumission personnalisée"
-  card:
-    label: "Livraison privée pour équipe"
-    note: "Soumettez vos coordonnées et nous vous contacterons pour planifier une conversation."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=team&cta_source=academy_practical_introduction_to_r_team&workshop=practical-introduction-to-r"
+  button:
+    label: "Discuter d’une livraison équipe"
+    url: "/contact/?need=training"
 ---

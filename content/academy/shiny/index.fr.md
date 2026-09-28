@@ -3,11 +3,10 @@ title: "Créer des outils Shiny pour le soutien à la décision"
 subtitle: "Une offre d’accompagnement pour les professionnel.le.s en environnement qui travaillent déjà avec R et qui veulent transformer une myriade de scripts R en une application Shiny efficace et robuste."
 description: "Une expérience Académie accompagnée en cohorte pour les professionnel.le.s en environnement qui veulent créer des applications Shiny pratiques pour l’analyse, le reporting et le soutien à la décision."
 weight: 8
-layout: "offer-landing"
 draft: false
 
 card_image: "/img/academy/building-decision-support-tools-environmental-management.png"
-hero_eyebrow: "inSileco Académie"
+eyebrow: "inSileco Académie"
 hero_support: "Cette expérience accompagnée en cohorte comprend deux journées intensives d’atelier en direct et trois mois de suivi pour vous aider à cadrer, bâtir et poursuivre une application Shiny pratique autour d’un vrai projet."
 
 categories:
@@ -22,13 +21,13 @@ academy_testimonial_workshop: ""
 workshop_outcome: "Transformer votre projet en une application Shiny nettement avancée ou en un prototype crédible de première version grâce à une mise en oeuvre accompagnée."
 card_price: "$4,500"
 
-hero_ctas:
+ctas:
   - label: "Postuler maintenant"
     url: "#academy-cta"
-    class: "is-primary"
+    style: "brand"
   - label: "Discuter d’une livraison équipe"
     url: "#team-cta"
-    class: "is-light"
+    style: "outline"
 
 inline_cta:
   label: "Postuler maintenant"
@@ -122,10 +121,9 @@ final_cta:
   kicker: "Prochaine étape"
   title: "Postulez pour voir si cette offre vous convient"
   text: "Commencez par une courte demande ou une conversation. Nous examinerons votre projet, confirmerons s’il convient à l’atelier et vous réorienterons si un autre parcours est plus pertinent."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=individual&cta_source=academy_building_practical_shiny_decision_support_tools_final&workshop=building-practical-shiny-decision-support-tools"
-  secondary_link:
-    label: "Vous postulez pour votre équipe?"
-    url: "#team-cta"
+  button:
+    label: "Postuler maintenant"
+    url: "/contact/?need=training"
 
 team_offer:
   kicker: "Option équipe"
@@ -136,8 +134,7 @@ team_offer:
     - "Alignement sur un projet partagé"
     - "Exemples adaptés"
     - "Soumission personnalisée"
-  card:
-    label: "Livraison privée pour équipe"
-    note: "Soumettez vos coordonnées et nous vous contacterons pour planifier une conversation."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=team&cta_source=academy_building_practical_shiny_decision_support_tools_team&workshop=building-practical-shiny-decision-support-tools"
+  button:
+    label: "Discuter d’une livraison équipe"
+    url: "/contact/?need=training"
 ---

@@ -3,11 +3,10 @@ title: "Offer Title"
 subtitle: "A practical coaching offer for environmental professionals who need a specific, real-work outcome."
 description: "A cohort-based coached Academy experience for environmental professionals."
 weight: 999
-layout: "offer-landing"
 draft: true
 
 card_image: "/img/academy/placeholder.png"
-hero_eyebrow: "inSileco Academy"
+eyebrow: "inSileco Academy"
 hero_support: "This is a cohort-based coached experience with live delivery and follow-through built around practical application on a real project."
 
 categories:
@@ -20,13 +19,13 @@ academy_testimonial_workshop: "replace-with-workshop-slug"
 workshop_outcome: "Replace with the public-facing outcome shown on cards and listings."
 card_price: "$X,XXX"
 
-hero_ctas:
+ctas:
   - label: "Apply now"
     url: "#academy-cta"
-    class: "is-primary"
+    style: "brand"
   - label: "Discuss team delivery"
     url: "#team-cta"
-    class: "is-light"
+    style: "outline"
 
 proof_section:
   label: "What people are saying"
@@ -108,10 +107,9 @@ final_cta:
   kicker: "Next step"
   title: "Apply to see whether this is the right fit"
   text: "Replace with short CTA support copy."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=individual&cta_source=academy_offer_template&workshop=replace-with-workshop-slug"
-  secondary_link:
-    label: "Applying for your team?"
-    url: "#team-cta"
+  button:
+    label: "Apply now"
+    url: "/contact/?need=training"
 
 team_offer:
   kicker: "Team option"
@@ -121,8 +119,7 @@ team_offer:
     - "Private delivery"
     - "Adapted examples"
     - "Custom quote"
-  card:
-    label: "Private team delivery"
-    note: "Submit your information and we will reach out to schedule a conversation."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=team&cta_source=academy_offer_template_team&workshop=replace-with-workshop-slug"
+  button:
+    label: "Discuss team delivery"
+    url: "/contact/?need=training"
 ---

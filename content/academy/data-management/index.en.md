@@ -3,11 +3,10 @@ title: "Data Management for Environmental Teams and Organizations"
 subtitle: "A practical coaching offer for environmental professionals and teams who need clearer data-management practices to support coordination and create a stronger foundation for future workflows."
 description: "A coached Academy experience for environmental professionals and teams who want practical data-management improvement grounded in real workflows, planning, metadata, and implementation follow-through."
 weight: 1
-layout: "offer-landing"
 draft: false
 
 card_image: "/img/academy/data-management-environmental-teams-organizations.png"
-hero_eyebrow: "inSileco Academy"
+eyebrow: "inSileco Academy"
 hero_support: "This is a coached Academy experience with two half-day live sessions and eight weeks of follow-through to help you leave with a usable data management plan, an interoperable metadata core, and the first operating decisions needed to make better data practice hold in real environmental work."
 
 categories:
@@ -22,13 +21,13 @@ academy_testimonial_workshop: ""
 workshop_outcome: "Leave with a usable data management plan, an interoperable metadata core, and an implementation path for real project work."
 card_price: "$2,000"
 
-hero_ctas:
+ctas:
   - label: "Apply now"
     url: "#academy-cta"
-    class: "is-primary"
+    style: "brand"
   - label: "Discuss team delivery"
     url: "#team-cta"
-    class: "is-light"
+    style: "outline"
 
 proof_section:
   label: "What people are saying"
@@ -122,10 +121,9 @@ final_cta:
   kicker: "Next step"
   title: "Apply to see whether this is the right fit"
   text: "Start with a short application or conversation. If the fit is strong, we will route you to the next cohort or the right private team-delivery path."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=individual&cta_source=academy_data_management_environmental_teams_organizations_final&workshop=data-management-environmental-teams-organizations"
-  secondary_link:
-    label: "Applying for your team?"
-    url: "#team-cta"
+  button:
+    label: "Apply now"
+    url: "/contact/?need=training"
 
 team_offer:
   kicker: "Team option"
@@ -136,8 +134,7 @@ team_offer:
     - "Adapted examples"
     - "Aligned team decisions"
     - "Custom quote"
-  card:
-    label: "Private team delivery"
-    note: "Submit your information and we will reach out to schedule a conversation."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=team&cta_source=academy_data_management_environmental_teams_organizations_team&workshop=data-management-environmental-teams-organizations"
+  button:
+    label: "Discuss team delivery"
+    url: "/contact/?need=training"
 ---

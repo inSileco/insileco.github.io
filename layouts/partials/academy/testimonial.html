@@ -1,0 +1,9 @@
+{{/* One Academy testimonial (data/{lang}/academy/testimonials.yaml) */}}
+<figure class="academy-testimonial">
+  {{ (resources.Get "icons/quote.svg").Content | safeHTML }}
+  <blockquote>{{ .text }}</blockquote>
+  <figcaption>
+    <strong>{{ .name }}</strong>
+    {{ if or .post .organization }}<span>{{ .post }}{{ if and .post .organization }}, {{ end }}{{ .organization }}</span>{{ end }}
+  </figcaption>
+</figure>

@@ -3,11 +3,10 @@ title: "Building Reusable Analytical Tools with R Packages"
 subtitle: "A coached Academy offer for environmental professionals who want to turn real analytical, reporting, or decision-support work into reusable internal tooling in R."
 description: "A cohort-based coached Academy experience for environmental professionals who want to build reusable analytical tools in R through package-based structure, reproducibility, and follow-through on real project work."
 weight: 7
-layout: "offer-landing"
 draft: false
 
 card_image: "/img/academy/harnessing-r-packages-environmental-project-management.png"
-hero_eyebrow: "inSileco Academy"
+eyebrow: "inSileco Academy"
 hero_support: "This is a cohort-based coached experience with two practical live sessions and three months of follow-through to help you structure and continue a real package around your own analytical, reporting, or tooling work."
 
 categories:
@@ -22,13 +21,13 @@ academy_testimonial_workshop: ""
 workshop_outcome: "Turn real project logic into a materially advanced R package or reusable first-package foundation through coached implementation."
 card_price: "$3,750"
 
-hero_ctas:
+ctas:
   - label: "Apply now"
     url: "#academy-cta"
-    class: "is-primary"
+    style: "brand"
   - label: "Discuss team delivery"
     url: "#team-cta"
-    class: "is-light"
+    style: "outline"
 
 inline_cta:
   label: "Apply now"
@@ -122,10 +121,9 @@ final_cta:
   kicker: "Next step"
   title: "Apply to see whether this is the right fit"
   text: "Start with a short application or conversation. We will review your project, confirm whether it fits the workshop, and redirect you if a different path makes more sense."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=individual&cta_source=academy_harnessing_r_packages_environmental_project_management_final&workshop=harnessing-r-packages-environmental-project-management"
-  secondary_link:
-    label: "Applying for your team?"
-    url: "#team-cta"
+  button:
+    label: "Apply now"
+    url: "/contact/?need=training"
 
 team_offer:
   kicker: "Team option"
@@ -136,8 +134,7 @@ team_offer:
     - "Shared project alignment"
     - "Adapted examples"
     - "Custom quote"
-  card:
-    label: "Private team delivery"
-    note: "Submit your information and we will reach out to schedule a conversation."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=team&cta_source=academy_harnessing_r_packages_environmental_project_management_team&workshop=harnessing-r-packages-environmental-project-management"
+  button:
+    label: "Discuss team delivery"
+    url: "/contact/?need=training"
 ---

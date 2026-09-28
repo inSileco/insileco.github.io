@@ -3,9 +3,8 @@ title: "Utiliser R comme un SIG"
 subtitle: "Une offre d’accompagnement pratique pour les professionnel.le.s en environnement qui utilisent déjà R et qui ont besoin de workflows spatiaux plus clairs et réutilisables pour l’analyse, la cartographie et le reporting."
 description: "Une expérience Académie accompagnée en cohorte pour les professionnel.le.s en environnement qui veulent des workflows spatiaux plus clairs et réutilisables dans R."
 weight: 6
-layout: "offer-landing"
 card_image: "/img/academy/r-as-a-practical-gis.png"
-hero_eyebrow: "inSileco Académie"
+eyebrow: "inSileco Académie"
 hero_support: "Cette expérience accompagnée en cohorte comprend deux demi-journées de séances et trois mois de suivi pour vous aider à développer une capacité spatiale pratique dans R autour d’un vrai projet."
 categories:
   - Workshop
@@ -18,13 +17,13 @@ academy_levers:
 academy_testimonial_workshop: "r-as-a-practical-gis"
 workshop_outcome: "Développer une capacité spatiale pratique dans R grâce à des workflows réutilisables, à une application sur projet réel et à un suivi accompagné."
 card_price: "$3,500"
-hero_ctas:
+ctas:
   - label: "Postuler maintenant"
     url: "#academy-cta"
-    class: "is-primary"
+    style: "brand"
   - label: "Discuter d’une livraison équipe"
     url: "#team-cta"
-    class: "is-light"
+    style: "outline"
 proof_section:
   label: "Ce que les participant.e.s en disent"
   title: "Ce que les participant.e.s en disent"
@@ -110,10 +109,9 @@ final_cta:
   kicker: "Prochaine étape"
   title: "Postulez pour voir si cette offre vous convient"
   text: "Commencez par une courte demande ou une conversation. Si l’adéquation est bonne, nous vous orienterons vers la prochaine cohorte ou vers le bon format de livraison équipe."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=individual&cta_source=academy_r_practical_gis_final&workshop=r-as-a-practical-gis"
-  secondary_link:
-    label: "Vous postulez pour votre équipe?"
-    url: "#team-cta"
+  button:
+    label: "Postuler maintenant"
+    url: "/contact/?need=training"
 team_offer:
   kicker: "Option équipe"
   title: "Besoin de cela pour votre équipe?"
@@ -123,8 +121,7 @@ team_offer:
     - "Exemples adaptés"
     - "Format prêt pour les gestionnaires"
     - "Soumission personnalisée"
-  card:
-    label: "Livraison privée pour équipe"
-    note: "Soumettez vos coordonnées et nous vous contacterons pour planifier une conversation."
-  tally_src: "https://tally.so/embed/RGvXEJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&interest_type=team&cta_source=academy_r_practical_gis_team&workshop=r-as-a-practical-gis"
+  button:
+    label: "Discuter d’une livraison équipe"
+    url: "/contact/?need=training"
 ---
