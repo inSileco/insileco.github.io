@@ -1,55 +1,87 @@
 {{ define "main" }}
-{{ partial "page-hero.html" . }}
+{{/* PAGE-07 — Portfolio list (no mockup): harmonised with the designed pages.
+     Filter: categories in the bar, tags clickable on the cards; ?tag=<slug>
+     (assets/js/portfolio.js). Without JS every project stays visible. */}}
+{{ $projects := sort (where .Pages "Section" "portfolio") ".Params.date" "desc" }}
 
-<section class="section">
-    <div class="container">
-        <div class="content">
-            {{ .Content }}
-        </div>
+{{/* Filter bar: categories, most used first */}}
+{{ $counts := dict }}
+{{ $labels := dict }}
+{{ range $projects }}
+  {{ range .Params.categories }}
+    {{ $label := trim . " " }}
+    {{ $slug := anchorize $label }}
+    {{ $counts = merge $counts (dict $slug (add (index $counts $slug | default 0) 1)) }}
+    {{ $labels = merge $labels (dict $slug $label) }}
+  {{ end }}
+{{ end }}
+{{ $categories := slice }}
+{{ range $slug, $count := $counts }}
+  {{ $categories = $categories | append (dict "slug" $slug "label" (index $labels $slug) "count" $count) }}
+{{ end }}
+{{ $categories = sort (sort $categories "label") "count" "desc" }}
 
-        <div class="columns is-multiline portfolio-grid">
-            {{ range sort (where .Data.Pages "Section" "portfolio") ".Params.date" "desc" }}
-            <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-                <a class="card portfolio-card" href="{{ .RelPermalink }}">
-                    <div class="card-image">
-                        <figure class="image portfolio-thumbnail is-3by2">
-                            {{ $resource := .Resources.GetMatch "img/cover.png" }}
-                            {{ if $resource }}
-                            <img src="{{ $resource.RelPermalink }}" alt="{{ .Title }}">
-                            {{ else }}
-                            <img src="{{ .RelPermalink }}img/cover.png" alt="{{ .Title }}">
-                            {{ end }}
-                        </figure>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="title is-5 mb-2">{{ .Title }}</h3>
-                        <p class="mb-3">
-                            {{ with .Params.summary }}
-                                {{ . | markdownify }}
-                            {{ else }}
-                                {{ with .Params.description }}
-                                    {{ . | markdownify | plainify | htmlUnescape | truncate 160 }}
-                                {{ else }}
-                                    {{ .Summary | markdownify | plainify | htmlUnescape | truncate 160 }}
-                                {{ end }}
-                            {{ end }}
-                        </p>
-                        <div class="tags">
-                            {{ range .Params.categories }}
-                                <span class="tag is-warning is-light">{{ . }}</span>
-                            {{ end }}
-                            {{ range .Params.tags }}
-                                <span class="tag is-primary is-light">{{ . }}</span>
-                            {{ end }}
-                        </div>
-                        <span class="portfolio-link">
-                            {{ $.Site.Params.portfolio.link }} <i class="fa-solid fa-arrow-right"></i>
-                        </span>
-                    </div>
-                </a>
+<main>
+  {{ partial "page-header.html" (dict "page" . "theme" "dark") }}
+
+  {{ with .Content }}
+  <section class="portfolio-intro">
+    <div class="site-container content">{{ . }}</div>
+  </section>
+  {{ end }}
+
+  <section class="portfolio-list" data-portfolio>
+    <div class="site-container">
+      <div class="portfolio-filters" role="group" aria-label="{{ T "portfolio_filter_label" }}">
+        <button type="button" class="portfolio-filter" data-filter="" aria-pressed="true">{{ T "portfolio_filter_all" }}</button>
+        {{ range $categories }}
+        <button type="button" class="portfolio-filter" data-filter="{{ .slug }}" aria-pressed="false">{{ .label }}</button>
+        {{ end }}
+        {{/* Active tag that is not a category (set by portfolio.js) */}}
+        <button type="button" class="portfolio-filter portfolio-filter--tag" data-filter-clear hidden aria-label="{{ T "portfolio_filter_clear" }}">
+          <span data-filter-tag-label></span><i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
+      <p class="portfolio-count" aria-live="polite"><span data-portfolio-count>{{ len $projects }}</span> {{ T "portfolio_filter_count" }}</p>
+
+      <ul class="portfolio-grid-list">
+        {{ range $projects }}
+        {{ $cats := apply (.Params.categories | default slice) "trim" "." " " }}
+        {{ $tags := apply (.Params.tags | default slice) "trim" "." " " }}
+        {{ $slugs := slice }}
+        {{ range $cats | append $tags }}{{ $slugs = $slugs | append (anchorize .) }}{{ end }}
+        {{ $cover := .Resources.GetMatch "img/cover.png" }}
+        <li class="portfolio-card" data-tags="{{ delimit (uniq $slugs) " " }}">
+          <a class="portfolio-card-cover" href="{{ .RelPermalink }}" tabindex="-1" aria-hidden="true">
+            {{ with $cover }}<img src="{{ .RelPermalink }}" alt="" loading="lazy" />{{ end }}
+          </a>
+          <div class="portfolio-card-body">
+            {{ with $cats }}
+            <div class="portfolio-card-categories">
+              {{ range . }}<button type="button" class="tag is-brand" data-filter="{{ anchorize . }}">{{ . }}</button>{{ end }}
             </div>
             {{ end }}
-        </div>
+            <h2 class="portfolio-card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            <p class="portfolio-card-text">
+              {{- with .Params.summary -}}
+                {{ . | markdownify | plainify | htmlUnescape | truncate 160 }}
+              {{- else -}}
+                {{ with .Params.description }}{{ . | markdownify | plainify | htmlUnescape | truncate 160 }}{{ else }}{{ .Summary | plainify | htmlUnescape | truncate 160 }}{{ end }}
+              {{- end -}}
+            </p>
+            {{ with $tags }}
+            <ul class="portfolio-card-tags">
+              {{ range . }}<li><button type="button" class="tag" data-filter="{{ anchorize . }}">{{ . }}</button></li>{{ end }}
+            </ul>
+            {{ end }}
+            <a class="portfolio-card-link" href="{{ .RelPermalink }}">
+              {{ site.Params.portfolio.link }}<span class="arrow-button is-outline" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+          </div>
+        </li>
+        {{ end }}
+      </ul>
     </div>
-</section>
+  </section>
+</main>
 {{ end }}
