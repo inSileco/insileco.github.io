@@ -1,0 +1,31 @@
+{{/*
+  Academy CTAs (list + workshop pages): cohort card (yellow) + team card (teal)
+  on the dark textured band, both to the contact form.
+  Front matter: final_cta and team_offer { kicker, title, text, points, button { label, url } }.
+  Anchors: #academy-cta (band), #team-cta (team card).
+*/}}
+{{ $p := . }}
+{{ if or $p.Params.final_cta $p.Params.team_offer }}
+<section id="academy-cta" class="academy-cta theme-dark has-texture has-texture--on-dark has-texture--bottom-right">
+  <div class="site-container academy-cta-grid">
+    {{ range $key := slice "final_cta" "team_offer" }}
+    {{ with index $p.Params $key }}
+    {{ $cohort := eq $key "final_cta" }}
+    <article id="{{ cond $cohort "cohort-cta" "team-cta" }}" class="academy-cta-card{{ if $cohort }} theme-brand{{ end }}">
+      {{ with .kicker }}<p class="eyebrow">{{ . }}</p>{{ end }}
+      <h2 class="academy-cta-title">{{ .title }}</h2>
+      {{ with .text }}<p>{{ . }}</p>{{ end }}
+      {{ with .points }}
+      <ul class="academy-cta-points">
+        {{ range . }}<li class="tag">{{ . }}</li>{{ end }}
+      </ul>
+      {{ end }}
+      {{ with .button }}
+      <a class="button {{ if $cohort }}is-outline{{ else }}is-brand{{ end }}" href="{{ relLangURL .url }}">{{ .label }}</a>
+      {{ end }}
+    </article>
+    {{ end }}
+    {{ end }}
+  </div>
+</section>
+{{ end }}
