@@ -1,0 +1,19 @@
+{{/*
+  Event date or date range, localised (":date_long").
+  Same day: "18 mars 2026" · same month: "18–19 mars 2026" / "March 18–19, 2026"
+  (English puts the month first) · otherwise both dates.
+  Call: partial "event-dates.html" (dict "start" $start "end" $end)
+*/}}
+{{- $start := .start -}}
+{{- $end := .end -}}
+{{- if eq ($start.Format "2006-01-02") ($end.Format "2006-01-02") -}}
+  {{- $start | time.Format ":date_long" -}}
+{{- else if eq ($start.Format "2006-01") ($end.Format "2006-01") -}}
+  {{- if eq site.Language.Lang "en" -}}
+    {{- $start.Format "January 2" }}–{{ $end.Format "2, 2006" -}}
+  {{- else -}}
+    {{- $start.Format "2" }}–{{ $end | time.Format ":date_long" -}}
+  {{- end -}}
+{{- else -}}
+  {{- $start | time.Format ":date_long" }} – {{ $end | time.Format ":date_long" -}}
+{{- end -}}

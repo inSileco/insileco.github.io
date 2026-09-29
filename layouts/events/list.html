@@ -1,181 +1,69 @@
 {{ define "main" }}
-{{ partial "page-hero.html" . }}
+{{/* PAGE-12 — Events list (no mockup): same cards as the Blog list (_cards.scss),
+     the event type as a yellow badge. Upcoming = `upcoming: true` and not over yet;
+     the section is hidden when empty. */}}
+{{ $now := now }}
+{{ $upcoming := slice }}
+{{ $past := slice }}
+{{ range .Pages }}
+  {{ $end := .Date }}
+  {{ with .Params.event_start }}{{ $end = time . }}{{ end }}
+  {{ with .Params.event_end }}{{ $end = time . }}{{ end }}
+  {{ if and .Params.upcoming (ge $end $now) }}
+    {{ $upcoming = $upcoming | append . }}
+  {{ else if lt $end $now }}
+    {{ $past = $past | append . }}
+  {{ end }}
+{{ end }}
 
-<div class="section">
-  <div class="container">
-    <div class="columns is-8-desktop is-offset-2">
-      <div class="column">
-        <div class="content mb-4">
-          {{ .Content }}
-        </div>
+<main>
+  {{ partial "page-header.html" (dict "page" . "theme" "dark") }}
 
-        {{ $now := now }}
-        {{ $upcoming := slice }}
-        {{ $past := slice }}
-        {{ range .Pages }}
-          {{ $eventEnd := .Date }}
-          {{ with .Params.event_end }}
-            {{ $eventEnd = time . }}
-          {{ end }}
-          {{ if and (.Params.upcoming) (ge $eventEnd $now) }}
-            {{ $upcoming = $upcoming | append . }}
-          {{ else if lt $eventEnd $now }}
-            {{ $past = $past | append . }}
-          {{ end }}
-        {{ end }}
+  {{ with .Content }}
+  <section class="blog-intro">
+    <div class="site-container content">{{ . }}</div>
+  </section>
+  {{ end }}
 
-        {{ $upcoming = sort $upcoming ".Date" "asc" }}
-        {{ $past = sort $past ".Date" "desc" }}
-
-        {{ if gt (len $upcoming) 0 }}
-        <h2 class="title is-4 mt-6">{{ lang.Translate "upcoming_events" . }}</h2>
-        <div class="columns is-multiline">
-          {{ range $upcoming }}
-          {{ $page := . }}
-          <div class="column is-half-desktop is-full-tablet">
-            <a href="{{ $page.RelPermalink }}" class="card blog-card"
-              style="display: block; height: 100%; text-decoration: none; color: inherit;">
-              <div class="card-content" style="height: 100%; display: flex; flex-direction: column;">
-                <div>
-                  <h3 class="title is-5 mb-3">{{ $page.Title }}</h3>
-                  <div class="columns">
-                    <div class="column is-half py-4">
-                      {{ $start := $page.Date }}
-                      {{ with $page.Params.event_start }}
-                        {{ $start = time . }}
-                      {{ end }}
-                      {{ $end := $start }}
-                      {{ with $page.Params.event_end }}
-                        {{ $end = time . }}
-                      {{ end }}
-                      <p class="has-text-grey-light mb-3">
-                        <i class="fa-regular fa-calendar"></i>
-                        {{ if ne ($start.Format "2006-01-02") ($end.Format "2006-01-02") }}
-                        {{ $start.Format "January 2, 2006" }} - {{ $end.Format "January 2, 2006" }}
-                        {{ else }}
-                        {{ $start.Format "January 2, 2006" }}
-                        {{ end }}
-                      </p>
-                      {{ with $page.Params.author }}
-                      <p class="has-text-grey-light mb-3">
-                        <i class="fa-regular fa-user"></i> {{ . }}
-                      </p>
-                      {{ end }}
-                      {{ if $page.Params.categories }}
-                      <div class="mb-3">
-                        {{ range $page.Params.categories }}
-                        <span class="tag is-warning">{{ . }}</span>
-                        {{ end }}
-                      </div>
-                      {{ end }}
-                    </div>
-                    <div class="column is-half">
-                    {{ with $page.Params.featured_image }}
-                    <figure class="blog-card-thumbnail">
-                      {{ $img := . }}
-                      {{ $resource := $page.Resources.GetMatch $img }}
-                      {{ if $resource }}
-                      <img src="{{ $resource.RelPermalink }}" class="blog-thumbnail" alt="{{ $page.Params.featured_image_alt | default $page.Title }}">
-                      {{ end }}
-                    </figure>
-                    {{ end }}
-                    </div>
-                  </div>
-                  {{ with $page.Params.description }}
-                  <p class="mb-3">{{ . }}</p>
-                  {{ else }}
-                  <p class="mb-3">{{ $page.Summary }}</p>
-                  {{ end }}
-                </div>
-                <div style="margin-top: auto;">
-                  <span class="has-text-primary has-text-weight-semibold">
-                    {{ lang.Translate "read_more" . }}
-                    <i class="fa-solid fa-arrow-right"></i>
-                  </span>
-                </div>
-              </div>
+  <div class="events-list">
+  {{ range $section := slice (dict "key" "upcoming_events" "events" (sort $upcoming ".Date" "asc")) (dict "key" "past_events" "events" (sort $past ".Date" "desc")) }}
+  {{ with $section.events }}
+  <section class="events-section">
+    <div class="site-container">
+      <h2 class="events-section-title">{{ T $section.key }}</h2>
+      <ul class="post-grid">
+        {{ range . }}
+        {{ $event := . }}
+        {{ $start := .Date }}
+        {{ with .Params.event_start }}{{ $start = time . }}{{ end }}
+        {{ $end := $start }}
+        {{ with .Params.event_end }}{{ $end = time . }}{{ end }}
+        <li class="post-card">
+          <a class="post-card-media" href="{{ .RelPermalink }}" tabindex="-1" aria-hidden="true">
+            {{ with .Params.featured_image }}{{ with $event.Resources.GetMatch . }}<img src="{{ .RelPermalink }}" alt="" loading="lazy" />{{ end }}{{ end }}
+          </a>
+          <div class="post-card-body">
+            <div class="post-card-meta">
+              {{ range .Params.categories }}<span class="tag is-brand">{{ . }}</span>{{ end }}
+              <time datetime="{{ $start.Format "2006-01-02" }}">{{ partial "event-dates.html" (dict "start" $start "end" $end) }}</time>
+            </div>
+            <h3 class="post-card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            {{ with .Params.author }}<p class="post-card-author"><i class="fa-regular fa-user" aria-hidden="true"></i>{{ . }}</p>{{ end }}
+            <p class="post-card-text">{{ .Params.description | default (.Summary | plainify | htmlUnescape | truncate 160) }}</p>
+            <a class="card-more" href="{{ .RelPermalink }}">
+              {{ T "read_more" }}<span class="arrow-button is-outline" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
             </a>
           </div>
-          {{ end }}
-        </div>
+        </li>
         {{ end }}
-
-        {{ if gt (len $past) 0 }}
-        <h2 class="title is-4 mt-6">{{ lang.Translate "past_events" . }}</h2>
-        <div class="columns is-multiline">
-          {{ range $past }}
-          {{ $page := . }}
-          <div class="column is-half-desktop is-full-tablet">
-            <a href="{{ $page.RelPermalink }}" class="card blog-card"
-              style="display: block; height: 100%; text-decoration: none; color: inherit;">
-              <div class="card-content" style="height: 100%; display: flex; flex-direction: column;">
-                <div>
-                  <h3 class="title is-5 mb-3">{{ $page.Title }}</h3>
-                  <div class="columns">
-                    <div class="column is-half py-4">
-                      {{ $start := $page.Date }}
-                      {{ with $page.Params.event_start }}
-                        {{ $start = time . }}
-                      {{ end }}
-                      {{ $end := $start }}
-                      {{ with $page.Params.event_end }}
-                        {{ $end = time . }}
-                      {{ end }}
-                      <p class="has-text-grey-light mb-3">
-                        <i class="fa-regular fa-calendar"></i>
-                        {{ if ne ($start.Format "2006-01-02") ($end.Format "2006-01-02") }}
-                        {{ $start.Format "January 2, 2006" }} - {{ $end.Format "January 2, 2006" }}
-                        {{ else }}
-                        {{ $start.Format "January 2, 2006" }}
-                        {{ end }}
-                      </p>
-                      {{ with $page.Params.author }}
-                      <p class="has-text-grey-light mb-3">
-                        <i class="fa-regular fa-user"></i> {{ . }}
-                      </p>
-                      {{ end }}
-                      {{ if $page.Params.categories }}
-                      <div class="mb-3">
-                        {{ range $page.Params.categories }}
-                        <span class="tag is-warning">{{ . }}</span>
-                        {{ end }}
-                      </div>
-                      {{ end }}
-                    </div>
-                    <div class="column is-half">
-                    {{ with $page.Params.featured_image }}
-                    <figure class="blog-card-thumbnail">
-                      {{ $img := . }}
-                      {{ $resource := $page.Resources.GetMatch $img }}
-                      {{ if $resource }}
-                      <img src="{{ $resource.RelPermalink }}" class="blog-thumbnail" alt="{{ $page.Params.featured_image_alt | default $page.Title }}">
-                      {{ end }}
-                    </figure>
-                    {{ end }}
-                    </div>
-                  </div>
-                  {{ with $page.Params.description }}
-                  <p class="mb-3">{{ . }}</p>
-                  {{ else }}
-                  <p class="mb-3">{{ $page.Summary }}</p>
-                  {{ end }}
-                </div>
-                <div style="margin-top: auto;">
-                  <span class="has-text-primary has-text-weight-semibold">
-                    {{ lang.Translate "read_more" . }}
-                    <i class="fa-solid fa-arrow-right"></i>
-                  </span>
-                </div>
-              </div>
-            </a>
-          </div>
-          {{ end }}
-        </div>
-        {{ end }}
-
-      </div>
+      </ul>
     </div>
+  </section>
+  {{ end }}
+  {{ end }}
   </div>
-</div>
 
+  {{/* Yellow band: can sit right above the teal footer */}}
+  {{ partial "cta-band.html" (dict "page" . "cta" (index hugo.Data .Site.Language.Lang "events" "cta") "theme" "brand") }}
+</main>
 {{ end }}
