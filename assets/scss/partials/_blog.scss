@@ -137,3 +137,184 @@ $mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
 .post-card-text {
   font-size: v.$font-size-text-small;
 }
+
+// =============================================================================
+// PAGE-10 — Article (layouts/blog/single.html). Header and body layout:
+// _detail.scss; CTA: _cta-band.scss; navigation: _pager.scss; video: _video.scss.
+// Code highlighting: assets/css/syntax.css, kept as is.
+// =============================================================================
+
+.post-header-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: v.$space-1 v.$space-4;
+  list-style: none;
+  color: v.$teal-mid;
+  font-size: v.$font-size-text-small;
+
+  li {
+    display: inline-flex;
+    align-items: center;
+    gap: v.$space-1;
+  }
+}
+
+// Article typography (Bulma .content, tuned to the design system)
+.post-content {
+  min-width: 0;
+  color: v.$teal-mid;
+  font-size: v.$font-size-text-large;
+  line-height: v.$line-height-text;
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: v.$teal-dark;
+    font-weight: v.$weight-bold;
+    line-height: v.$line-height-heading;
+    scroll-margin-top: calc(#{v.$navbar-height} + #{v.$space-4});
+  }
+
+  h1,
+  h2 {
+    margin-top: v.$space-7;
+    font-size: v.$font-size-h4;
+    letter-spacing: v.$letter-spacing-h4;
+  }
+
+  h3 {
+    margin-top: v.$space-5;
+    font-size: v.$font-size-h5;
+    letter-spacing: v.$letter-spacing-h5;
+  }
+
+  a:not(.button) {
+    color: v.$teal-dark;
+    text-decoration: underline;
+    text-decoration-color: v.$yellow;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 3px;
+
+    &:hover,
+    &:focus-visible {
+      text-decoration-color: v.$teal-dark;
+    }
+  }
+
+  strong {
+    color: v.$teal-dark;
+  }
+
+  li + li {
+    margin-top: v.$space-1;
+  }
+
+  // syntax.css sets "Fira Code" alone (fonts.css import): monospace fallback
+  // so code never falls back to a serif font when Fira Code does not load
+  code,
+  pre,
+  kbd,
+  samp {
+    font-family: "Fira Code", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+
+  // Inline code (blocks keep the syntax.css colours)
+  :not(pre) > code {
+    padding: 0.1em 0.35em;
+    border-radius: v.$radius-small * 0.5;
+    background-color: v.$off-white;
+    color: v.$teal-dark;
+    font-size: 0.9em;
+  }
+
+  pre,
+  .highlight {
+    border-radius: v.$radius-small;
+    font-size: v.$font-size-text-small;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-inline: auto;
+    border-radius: v.$radius-small;
+  }
+
+  blockquote {
+    padding: v.$space-4 v.$space-5;
+    border-left: 4px solid v.$yellow;
+    border-radius: 0 v.$radius-small v.$radius-small 0;
+    background-color: v.$off-white;
+    color: v.$teal-dark;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    font-size: v.$font-size-text-main;
+
+    th {
+      color: v.$teal-dark;
+    }
+
+    td,
+    th {
+      border-color: v.$teal-dark-o20;
+    }
+  }
+}
+
+// Table of contents (assets/js/toc.js fills #toc-sidebar, hides it under 2 headings)
+.toc-sidebar {
+  position: sticky;
+  top: calc(#{v.$navbar-height} + #{v.$space-4});
+  max-height: calc(100vh - #{v.$navbar-height} - #{v.$space-7});
+  overflow-y: auto;
+  padding: v.$space-5;
+  border-radius: v.$radius-main;
+  background-color: v.$off-white;
+
+  @media #{$touch} {
+    display: none;
+  }
+}
+
+.toc-title {
+  margin-bottom: v.$space-3;
+  color: v.$teal-dark;
+  font-size: v.$font-size-text-small;
+  font-weight: v.$weight-xbold;
+  text-transform: uppercase;
+}
+
+.toc-list {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-1;
+  list-style: none;
+}
+
+.toc-h3 {
+  padding-left: v.$space-3;
+}
+
+.toc-link {
+  display: block;
+  padding-left: v.$space-2;
+  border-left: 2px solid transparent;
+  color: v.$teal-mid;
+  font-size: v.$font-size-text-small;
+  line-height: v.$line-height-h6;
+
+  &:hover {
+    color: v.$teal-dark;
+  }
+
+  &.is-active {
+    border-left-color: v.$yellow;
+    color: v.$teal-dark;
+    font-weight: v.$weight-bold;
+  }
+}

@@ -1,0 +1,87 @@
+// =============================================================================
+// Detail pages — Portfolio project (PAGE-08) and Blog article (PAGE-10):
+// header with cover, then content + side column. Page-specific parts live in
+// _portfolio.scss and _blog.scss.
+// =============================================================================
+
+@use "../variables" as v;
+
+$touch: "(max-width: #{v.$breakpoint-desktop - 1px})";
+
+// Header: eyebrow (back to the list), categories, H1, description, meta, tags | cover
+.detail-header {
+  padding-top: v.$section-space-main;
+  padding-bottom: v.$section-space-small;
+  border-bottom: v.$border-width-main solid v.$teal-dark-o20;
+
+  @media #{$touch} {
+    padding-block: v.$section-space-small;
+  }
+}
+
+.detail-header-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: v.$space-8;
+
+  @media #{$touch} {
+    grid-template-columns: 1fr;
+    gap: v.$space-6;
+  }
+}
+
+.detail-header-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: v.$space-4;
+
+  .eyebrow {
+    margin-bottom: 0;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  .title {
+    margin-bottom: 0;
+    color: v.$teal-dark;
+  }
+}
+
+.detail-header-text {
+  color: v.$teal-mid;
+  font-size: v.$font-size-text-large;
+}
+
+.detail-header-cover {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  border-radius: v.$radius-main;
+  object-fit: cover;
+  object-position: top;
+  background-color: v.$off-white;
+}
+
+// Body: Markdown content | side column (project facts, table of contents)
+.detail-body {
+  padding-block: v.$section-space-main;
+
+  @media #{$touch} {
+    padding-block: v.$section-space-small;
+  }
+}
+
+.detail-body-inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: start;
+  gap: v.$space-8;
+
+  @media #{$touch} {
+    grid-template-columns: 1fr;
+    gap: v.$space-6;
+  }
+}
