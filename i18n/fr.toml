@@ -44,3 +44,8 @@ blog_reading_time = "{{ .Count }} min de lecture"
 blog_prev = "Article plus récent"
 blog_next = "Article plus ancien"
 blog_nav = "Autres articles"
+
+# Publications (PAGE-11)
+pubs_request = "Demander le PDF"
+pubs_link = "Lien"
+pubs_request_note = "Pour obtenir le texte intégral : bouton « Demander le PDF » sous la référence, ou écrivez-nous à"

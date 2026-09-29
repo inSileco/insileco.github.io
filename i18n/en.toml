@@ -44,3 +44,8 @@ blog_reading_time = "{{ .Count }} min read"
 blog_prev = "Newer post"
 blog_next = "Older post"
 blog_nav = "More posts"
+
+# Publications (PAGE-11)
+pubs_request = "Request the PDF"
+pubs_link = "Link"
+pubs_request_note = "To get the full text: use \"Request the PDF\" under the reference, or email us at"

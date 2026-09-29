@@ -1,0 +1,13 @@
+{{ define "main" }}
+{{/* PAGE-11 — Publications (no mockup): shared page header, then the Markdown
+     content whose shortcodes (pubs, tech) render partials/publication-list.html. */}}
+<main>
+  {{ partial "page-header.html" (dict "page" . "theme" "dark") }}
+
+  <section class="publications">
+    <div class="site-container">
+      <div class="content publications-content">{{ .Content }}</div>
+    </div>
+  </section>
+</main>
+{{ end }}
