@@ -26,6 +26,10 @@ $mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
     color: v.$teal-dark;
     font-family: inherit;
     font-size: v.$font-size-text-xsmall;
+  }
+
+  // Only filter buttons / links look clickable; plain tags (<span>) stay static
+  :is(a, button).tag {
     cursor: pointer;
 
     &:hover,
