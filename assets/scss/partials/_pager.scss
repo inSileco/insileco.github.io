@@ -1,0 +1,57 @@
+// =============================================================================
+// Previous / next navigation — layouts/partials/pager.html (Portfolio and Blog
+// detail pages). White band between a teal CTA and the footer.
+// =============================================================================
+
+@use "../variables" as v;
+
+$mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
+
+.pager {
+  padding-block: v.$space-8;
+}
+
+.pager-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: v.$space-5;
+
+  @media #{$mobile} {
+    flex-direction: column;
+  }
+}
+
+.pager-link {
+  display: flex;
+  align-items: center;
+  gap: v.$space-3;
+  max-width: 45%;
+  color: v.$teal-dark;
+  font-weight: v.$weight-bold;
+
+  small {
+    display: block;
+    color: v.$teal-mid;
+    font-size: v.$font-size-text-small;
+    font-weight: v.$weight-regular;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: v.$teal-dark;
+
+    .arrow-button {
+      background-color: v.$teal-dark;
+      color: v.$white;
+    }
+  }
+
+  @media #{$mobile} {
+    max-width: none;
+  }
+}
+
+.pager-link--next {
+  margin-left: auto;
+  text-align: right;
+}

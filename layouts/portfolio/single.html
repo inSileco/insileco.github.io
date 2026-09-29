@@ -6,21 +6,10 @@
 {{ $tags := apply (.Params.tags | default slice) "trim" "." " " }}
 {{ $cover := .Resources.GetMatch "img/cover.png" }}
 
-{{/* Previous / next in the list order (most recent first) */}}
-{{ $projects := sort (where site.RegularPages "Section" "portfolio") ".Params.date" "desc" }}
-{{ $newer := false }}
-{{ $older := false }}
-{{ range $i, $p := $projects }}
-  {{ if eq $p $ }}
-    {{ if gt $i 0 }}{{ $newer = index $projects (sub $i 1) }}{{ end }}
-    {{ if lt $i (sub (len $projects) 1) }}{{ $older = index $projects (add $i 1) }}{{ end }}
-  {{ end }}
-{{ end }}
-
 <main>
-  <header class="portfolio-header">
-    <div class="site-container portfolio-header-inner">
-      <div class="portfolio-header-main">
+  <header class="detail-header">
+    <div class="site-container detail-header-inner">
+      <div class="detail-header-main">
         <p class="eyebrow"><a href="{{ $list }}">{{ with site.GetPage "/portfolio" }}{{ .Title }}{{ end }}</a></p>
         {{ with $cats }}
         <div class="portfolio-card-categories">
@@ -28,19 +17,19 @@
         </div>
         {{ end }}
         <h1 class="title is-3">{{ .Title }}</h1>
-        {{ with .Params.subtitle | default .Params.description }}<p class="portfolio-header-text">{{ . }}</p>{{ end }}
+        {{ with .Params.subtitle | default .Params.description }}<p class="detail-header-text">{{ . }}</p>{{ end }}
         {{ with $tags }}
         <ul class="card-tags">
           {{ range . }}<li><a class="tag" href="{{ $list }}?tag={{ anchorize . }}">{{ . }}</a></li>{{ end }}
         </ul>
         {{ end }}
       </div>
-      {{ with $cover }}<img class="portfolio-header-cover" src="{{ .RelPermalink }}" alt="" />{{ end }}
+      {{ with $cover }}<img class="detail-header-cover" src="{{ .RelPermalink }}" alt="" />{{ end }}
     </div>
   </header>
 
-  <section class="portfolio-body">
-    <div class="site-container portfolio-body-inner">
+  <section class="detail-body">
+    <div class="site-container detail-body-inner">
       <div class="content portfolio-content">{{ .Content }}</div>
 
       {{/* Project facts: client, team, date, links */}}
@@ -74,23 +63,6 @@
   {{/* Teal CTA, followed by the project navigation (white) */}}
   {{ partial "cta-band.html" (dict "page" . "cta" (index hugo.Data .Site.Language.Lang "portfolio" "cta") "theme" "dark") }}
 
-  {{ if or $newer $older }}
-  <nav class="portfolio-pager" aria-label="{{ T "portfolio_nav" }}">
-    <div class="site-container portfolio-pager-inner">
-      {{ with $newer }}
-      <a class="portfolio-pager-link" href="{{ .RelPermalink }}">
-        <span class="arrow-button is-outline" aria-hidden="true"><i class="fa-solid fa-arrow-left"></i></span>
-        <span><small>{{ T "portfolio_prev" }}</small>{{ .Title }}</span>
-      </a>
-      {{ else }}<span></span>{{ end }}
-      {{ with $older }}
-      <a class="portfolio-pager-link portfolio-pager-link--next" href="{{ .RelPermalink }}">
-        <span><small>{{ T "portfolio_next" }}</small>{{ .Title }}</span>
-        <span class="arrow-button is-outline" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
-      </a>
-      {{ end }}
-    </div>
-  </nav>
-  {{ end }}
+  {{ partial "pager.html" (dict "page" . "pages" (sort (where site.RegularPages "Section" "portfolio") ".Params.date" "desc") "newer" (T "portfolio_prev") "older" (T "portfolio_next") "label" (T "portfolio_nav")) }}
 </main>
 {{ end }}
