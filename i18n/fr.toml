@@ -38,3 +38,9 @@ portfolio_nav = "Autres projets"
 # Blog list (PAGE-09)
 blog_filter_label = "Filtrer les articles"
 blog_filter_count = "article(s)"
+
+# Blog article (PAGE-10)
+blog_reading_time = "{{ .Count }} min de lecture"
+blog_prev = "Article plus récent"
+blog_next = "Article plus ancien"
+blog_nav = "Autres articles"
