@@ -1,0 +1,170 @@
+// =============================================================================
+// Events — list (PAGE-12) and event page (PAGE-13). Header and CTA shared with
+// the Blog article (_detail.scss, _cta-band.scss, _pager.scss); the event text
+// uses the article typography (.post-content, _blog.scss).
+// =============================================================================
+
+@use "../variables" as v;
+
+$touch: "(max-width: #{v.$breakpoint-desktop - 1px})";
+$mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
+
+// -----------------------------------------------------------------------------
+// PAGE-12 — Events list (layouts/events/list.html): Blog list layout and cards
+// (_cards.scss), one section per period (upcoming / past).
+// -----------------------------------------------------------------------------
+
+.events-list {
+  padding-bottom: v.$section-space-main;
+
+  @media #{$touch} {
+    padding-bottom: v.$section-space-small;
+  }
+}
+
+.events-section {
+  padding-top: v.$space-8;
+
+  @media #{$touch} {
+    padding-top: v.$space-6;
+  }
+
+  .post-card-meta .tag {
+    margin: 0;
+  }
+}
+
+.events-section-title {
+  margin-bottom: v.$space-5;
+  color: v.$teal-dark;
+  font-size: v.$font-size-h4;
+  font-weight: v.$weight-bold;
+  line-height: v.$line-height-heading;
+  letter-spacing: v.$letter-spacing-h4;
+}
+
+// -----------------------------------------------------------------------------
+// PAGE-13 — Event page: text, then the resources as a card grid
+// -----------------------------------------------------------------------------
+
+.event-body {
+  padding-block: v.$section-space-main;
+
+  @media #{$touch} {
+    padding-block: v.$section-space-small;
+  }
+}
+
+.event-content {
+  max-width: 760px;
+}
+
+.event-resources {
+  margin-top: v.$space-8;
+}
+
+.event-resources-title {
+  margin-bottom: v.$space-5;
+  color: v.$teal-dark;
+  font-size: v.$font-size-h4;
+  font-weight: v.$weight-bold;
+  line-height: v.$line-height-heading;
+  letter-spacing: v.$letter-spacing-h4;
+}
+
+.event-resources-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: v.$site-gutter;
+  list-style: none;
+
+  > li {
+    display: flex;
+  }
+
+  @media #{$touch} {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media #{$mobile} {
+    grid-template-columns: 1fr;
+  }
+}
+
+.event-resource {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: v.$radius-main;
+  overflow: hidden;
+  background-color: v.$off-white;
+  color: v.$teal-mid;
+  transition: box-shadow 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    box-shadow: 0 v.$space-1 v.$space-4 v.$teal-dark-o20;
+    color: v.$teal-mid;
+
+    .arrow-button {
+      background-color: v.$teal-dark;
+      color: v.$white;
+    }
+  }
+}
+
+.event-resource-media {
+  display: block;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: v.$white;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.event-resource-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: v.$space-2;
+  padding: v.$space-4;
+
+  .arrow-button {
+    align-self: flex-end;
+    margin-top: auto;
+  }
+}
+
+.event-resource-title {
+  color: v.$teal-dark;
+  font-size: v.$font-size-h6;
+  font-weight: v.$weight-bold;
+  line-height: v.$line-height-h6;
+}
+
+.event-resource-hint {
+  font-size: v.$font-size-text-small;
+}
+
+// Contact card: team avatars
+.event-resource-people {
+  display: flex;
+
+  img {
+    width: v.$arrow-button-size;
+    height: v.$arrow-button-size;
+    border: 2px solid v.$off-white;
+    border-radius: v.$radius-round;
+    object-fit: cover;
+
+    & + img {
+      margin-left: -(v.$space-2);
+    }
+  }
+}

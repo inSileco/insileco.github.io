@@ -49,3 +49,9 @@ blog_nav = "Autres articles"
 pubs_request = "Demander le PDF"
 pubs_link = "Lien"
 pubs_request_note = "Pour obtenir le texte intégral : bouton « Demander le PDF » sous la référence, ou écrivez-nous à"
+
+# Event page (PAGE-13)
+event_resources = "Ressources"
+events_prev = "Évènement plus récent"
+events_next = "Évènement plus ancien"
+events_nav = "Autres évènements"
