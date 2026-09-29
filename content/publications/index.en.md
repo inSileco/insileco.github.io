@@ -1,16 +1,15 @@
 ---
 title: "Publications"
-subtitle: "Peer-reviewed research and technical outputs supporting ecosystem-based management."
-layout: "publication"
+intro: "Peer-reviewed research and technical outputs supporting ecosystem-based management."
 ---
 
 
 
-# Publications 
+## Publications
 
 {{< pubs >}}
 
 
-# Technical reports
+## Technical reports
 
 {{< tech >}}

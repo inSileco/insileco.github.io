@@ -1,0 +1,166 @@
+// =============================================================================
+// PAGE-11 — Publications (no mockup): numbered bibliography, one reference per
+// block (authors / title / source / links), inSileco authors highlighted.
+// Markup: layouts/partials/publication-list.html
+// =============================================================================
+
+@use "../variables" as v;
+
+$touch: "(max-width: #{v.$breakpoint-desktop - 1px})";
+$mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
+
+.publications {
+  padding-block: v.$section-space-main;
+
+  @media #{$touch} {
+    padding-block: v.$section-space-small;
+  }
+}
+
+.publications-content {
+  max-width: 880px;
+
+  h2 {
+    margin-top: v.$space-8;
+    margin-bottom: v.$space-5;
+    color: v.$teal-dark;
+    font-size: v.$font-size-h4;
+    font-weight: v.$weight-bold;
+    line-height: v.$line-height-heading;
+    letter-spacing: v.$letter-spacing-h4;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+// Numbered list: the number sits in its own column, references are separated
+// by a thin rule for readability
+.content ol.pub-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: pub;
+}
+
+.content ol.pub-list > .pub {
+  position: relative;
+  margin: 0;
+  padding: v.$space-4 0 v.$space-4 v.$space-7;
+  border-top: v.$border-width-main solid v.$teal-dark-o20;
+  counter-increment: pub;
+  color: v.$teal-mid;
+  font-size: v.$font-size-text-main;
+
+  &:last-child {
+    border-bottom: v.$border-width-main solid v.$teal-dark-o20;
+  }
+
+  &::before {
+    content: counter(pub);
+    position: absolute;
+    top: v.$space-4;
+    left: 0;
+    color: v.$teal-mid;
+    font-size: v.$font-size-h6;
+    font-weight: v.$weight-regular;
+    line-height: v.$line-height-text;
+    font-variant-numeric: tabular-nums;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  p + p {
+    margin-top: v.$space-1;
+  }
+
+  @media #{$mobile} {
+    padding-left: v.$space-6;
+  }
+}
+
+.pub-authors {
+  font-size: v.$font-size-text-small;
+}
+
+// inSileco team members: bold teal on a yellow underline
+.pub-author--team {
+  color: v.$teal-dark;
+  box-shadow: inset 0 -0.35em 0 rgba(v.$yellow, 0.7);
+}
+
+.pub-year {
+  color: v.$teal-dark;
+}
+
+.pub-title {
+  color: v.$teal-dark;
+  font-size: v.$font-size-text-large;
+  font-weight: v.$weight-bold;
+  line-height: v.$line-height-h6;
+}
+
+.pub-source {
+  font-size: v.$font-size-text-small;
+
+  &:empty {
+    display: none;
+  }
+}
+
+.pub-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: v.$space-1 v.$space-4;
+  font-size: v.$font-size-text-small;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: v.$space-1;
+    color: v.$teal-dark;
+    font-weight: v.$weight-bold;
+    text-decoration: underline;
+    text-decoration-color: v.$teal-dark-o20;
+    text-underline-offset: 3px;
+    word-break: break-all;
+
+    &:hover,
+    &:focus-visible {
+      text-decoration-color: v.$teal-dark;
+    }
+  }
+}
+
+.pub-links-label {
+  font-weight: v.$weight-xbold;
+}
+
+// Request note above each list: the address stays visible when no mail app
+// opens on "Request the PDF"
+.content .pub-request-note {
+  margin-bottom: v.$space-4;
+  padding: v.$space-3 v.$space-4;
+  border-radius: v.$radius-small;
+  background-color: v.$off-white;
+  color: v.$teal-mid;
+  font-size: v.$font-size-text-small;
+
+  i {
+    margin-right: v.$space-1;
+    color: v.$teal-dark;
+  }
+
+  a {
+    color: v.$teal-dark;
+    font-weight: v.$weight-bold;
+    white-space: nowrap;
+    text-decoration: underline;
+    text-decoration-color: v.$yellow;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 3px;
+  }
+}
