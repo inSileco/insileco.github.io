@@ -18,7 +18,7 @@ resources_title: "At the event"
 resources:
   - title: "Book a meetup"
     hint: "Plan a short discussion with us during the event."
-    url: "/get-in-touch/"
+    url: "/contact/"
   - title: "Talk to us by email"
     hint: "Questions before the conference? Reach out directly."
     url: "mailto:david.beauchesne@insileco.io,kevin.cazelles@insileco.io"

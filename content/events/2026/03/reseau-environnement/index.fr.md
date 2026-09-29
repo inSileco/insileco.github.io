@@ -18,7 +18,7 @@ resources_title: "Pendant l'evenement"
 resources:
   - title: "Planifier une rencontre"
     hint: "Prenez rendez-vous pour une courte discussion pendant le salon."
-    url: "/get-in-touch/"
+    url: "/contact/"
   - title: "Nous ecrire"
     hint: "Des questions avant l'evenement? Contactez-nous directement."
     url: "mailto:david.beauchesne@insileco.io,kevin.cazelles@insileco.io"

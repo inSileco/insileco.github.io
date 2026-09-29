@@ -4,7 +4,6 @@ subtitle: "Materiel de l'atelier pour la session d'ECCC"
 event_start: 2026-03-25
 event_end: 2026-03-26
 publishDate: 2026-03-24
-layout: "event/single"
 featured_image: "img/feature.jpg"
 upcoming: true
 author: "inSileco"

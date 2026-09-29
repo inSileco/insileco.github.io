@@ -2,7 +2,6 @@
 title: "ArcticNet Research Data Management Webinar"
 date: 2026-02-26
 publishDate: 2026-02-26
-layout: "event/single"
 upcoming: false
 author: "David Beauchesne & Kevin Cazelles"
 description: "A practical webinar on research data management for interdisciplinary academic programs"
