@@ -1,0 +1,64 @@
+{{/*
+  Numbered bibliography (PAGE-11), most recent first. References come from the
+  CSL data exported from the reference manager: data/pubs.yaml (articles,
+  chapters) and data/tech.yaml (reports).
+  Call: partial "publication-list.html" (dict "refs" hugo.Data.pubs.references "kind" "article"|"report")
+  inSileco team authors (data/members) are highlighted, matched on family name
+  + first initial so that other people sharing a family name are not.
+*/}}
+{{ $team := slice
+  (dict "family" "Beauchesne" "initial" "D")
+  (dict "family" "Cazelles" "initial" "K")
+  (dict "family" "Vissault" "initial" "S")
+  (dict "family" "Bellavance" "initial" "V")
+  (dict "family" "Vieira" "initial" "W")
+}}
+{{ $kind := .kind }}
+{{/* Contact address: same source as the footer */}}
+{{ $email := (index hugo.Data site.Language.Lang "home" "footer").contact.email }}
+{{/* A mailto link does nothing without a mail app: the address is also shown */}}
+<p class="pub-request-note">
+  <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+  {{ T "pubs_request_note" }} <a href="mailto:{{ $email }}">{{ $email }}</a>
+</p>
+<ol class="pub-list">
+  {{ range sort .refs "issued" "desc" }}
+  {{ $ref := . }}
+  <li class="pub">
+    <p class="pub-authors">
+      {{- $last := sub (len .author) 1 -}}
+      {{- range $i, $a := .author -}}
+        {{- $initial := substr ($a.given | default "") 0 1 -}}
+        {{- $name := printf "%s%s" $a.family (cond (ne $initial "") (printf " %s." $initial) "") -}}
+        {{- $isTeam := false -}}
+        {{- range $team }}{{ if and (eq .family $a.family) (eq .initial $initial) }}{{ $isTeam = true }}{{ end }}{{ end -}}
+        {{- if $isTeam }}<strong class="pub-author--team">{{ $name }}</strong>{{ else }}{{ $name }}{{ end -}}
+        {{- if lt $i $last }}, {{ end -}}
+      {{- end -}}
+      {{- with .issued }} <span class="pub-year">({{ substr (printf "%v" .) 0 4 }})</span>{{ end -}}
+    </p>
+    <p class="pub-title">{{ .title | htmlUnescape }}</p>
+    {{/* Source: journal volume (issue) — or the publisher for reports — then pages */}}
+    {{ $parts := slice }}
+    {{ with index $ref "container-title" }}
+      {{ $journal := printf "<em>%s</em>" (. | htmlUnescape | htmlEscape) }}
+      {{ with $ref.volume }}{{ $journal = printf "%s %v" $journal . }}{{ end }}
+      {{ with $ref.issue }}{{ $journal = printf "%s (%v)" $journal . }}{{ end }}
+      {{ $parts = $parts | append $journal }}
+    {{ end }}
+    {{ if eq $kind "report" }}{{ with .publisher }}{{ $parts = $parts | append (. | htmlUnescape | htmlEscape) }}{{ end }}{{ end }}
+    {{ with .page }}{{ $parts = $parts | append (printf "%v" . | htmlEscape) }}{{ end }}
+    {{ with $parts }}<p class="pub-source">{{ delimit . ", " | safeHTML }}</p>{{ end }}
+    <p class="pub-links">
+      {{ with .doi }}<a href="https://doi.org/{{ . }}" rel="noopener"><span class="pub-links-label">DOI</span> {{ . }}</a>
+      {{ else }}{{ with $ref.url }}<a href="{{ . }}" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>{{ T "pubs_link" }}</a>{{ end }}{{ end }}
+      {{- /* Same request e-mail as before; spaces as %20 (some mail clients show "+") */ -}}
+      {{ $body := printf "Dear inSileco Team,\n\nI'm interested in this %s: \"%s\". Could you please provide the full-text for it?\n\nSincerely," (cond (eq $kind "report") "report" "research") (.title | htmlUnescape) }}
+      {{ $mailto := printf "mailto:%s?subject=Paper%%20Request&body=%s" $email (replace ($body | urlquery) "+" "%20") }}
+      <a href="{{ $mailto | safeURL }}">
+        <i class="fa-solid fa-envelope" aria-hidden="true"></i>{{ T "pubs_request" }}
+      </a>
+    </p>
+  </li>
+  {{ end }}
+</ol>
