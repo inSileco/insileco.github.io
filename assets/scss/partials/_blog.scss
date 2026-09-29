@@ -217,37 +217,3 @@ $mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
     font-weight: v.$weight-bold;
   }
 }
-
-// =============================================================================
-// PAGE-12 — Events list (layouts/events/list.html): Blog list layout and cards,
-// one section per period (upcoming / past).
-// =============================================================================
-
-.events-list {
-  padding-bottom: v.$section-space-main;
-
-  @media #{$touch} {
-    padding-bottom: v.$section-space-small;
-  }
-}
-
-.events-section {
-  padding-top: v.$space-8;
-
-  @media #{$touch} {
-    padding-top: v.$space-6;
-  }
-
-  .post-card-meta .tag {
-    margin: 0;
-  }
-}
-
-.events-section-title {
-  margin-bottom: v.$space-5;
-  color: v.$teal-dark;
-  font-size: v.$font-size-h4;
-  font-weight: v.$weight-bold;
-  line-height: v.$line-height-heading;
-  letter-spacing: v.$letter-spacing-h4;
-}

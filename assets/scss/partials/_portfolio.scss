@@ -110,10 +110,14 @@ $mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
     margin: 0;
     border: 0;
     font-family: inherit;
+  }
+
+  // Filter buttons (list) and links (project page)
+  :is(a, button).tag {
     cursor: pointer;
 
-    &:is(a):hover,
-    &:is(a):focus-visible {
+    &:hover,
+    &:focus-visible {
       background-color: v.$teal-dark;
       color: v.$yellow;
     }
