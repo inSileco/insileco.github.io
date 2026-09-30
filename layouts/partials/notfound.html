@@ -1,0 +1,95 @@
+{{/* CR-02 — 404 page, "Off the map" concept: the visitor's position marker has
+     dropped outside the mapped area of the terrain (brand wireframe texture).
+     The scene is inline SVG with named layers (.nf-*) so it can be animated
+     later (ANI tickets) without touching the markup. Texts: data/{lang}/notfound/page.yaml */}}
+{{ $t := index hugo.Data .Site.Language.Lang "notfound" "page" }}
+
+<main class="notfound">
+  <section class="notfound-hero theme-dark has-texture has-texture--on-dark has-texture--bottom-right">
+    <div class="site-container notfound-inner">
+      <div class="notfound-text">
+        <p class="eyebrow">{{ $t.eyebrow }}</p>
+        <h1 class="title is-2">{{ $t.title }}</h1>
+        <p class="notfound-lead">{{ $t.text }}</p>
+        <div class="buttons">
+          <a class="button is-brand" href="{{ relLangURL "/" }}">{{ $t.home }}</a>
+          <a class="button is-outline" href="{{ relLangURL "/contact/" }}">{{ $t.contact }}</a>
+        </div>
+      </div>
+
+      <svg class="notfound-scene" viewBox="0 0 560 440" role="img" aria-labelledby="notfound-scene-title">
+        <title id="notfound-scene-title">{{ $t.scene_alt }}</title>
+
+        {{/* Graticule: the map grid */}}
+        <g class="nf-grid">
+          {{ range $x := seq 40 60 520 }}<line x1="{{ $x }}" y1="20" x2="{{ $x }}" y2="420" />{{ end }}
+          {{ range $y := seq 40 60 400 }}<line x1="20" y1="{{ $y }}" x2="540" y2="{{ $y }}" />{{ end }}
+        </g>
+
+        {{/* Mapped area: the known ground */}}
+        <g class="nf-zone">
+          <rect x="40" y="100" width="340" height="280" rx="4" />
+          <text x="52" y="122">{{ $t.mapped }}</text>
+        </g>
+
+        {{/* 404 set on the map, one element per digit */}}
+        <g class="nf-digits">
+          <text x="210" y="330" text-anchor="middle"><tspan class="nf-digit nf-digit--1">4</tspan><tspan class="nf-digit nf-digit--2">0</tspan><tspan class="nf-digit nf-digit--3">4</tspan></text>
+        </g>
+
+        {{/* Position marker, off the mapped area, with its pulse rings and shadow */}}
+        <g class="nf-pin" transform="translate(452 128)">
+          <ellipse class="nf-pin-shadow" cx="0" cy="46" rx="14" ry="4" />
+          <circle class="nf-pin-pulse nf-pin-pulse--1" cx="0" cy="46" r="18" />
+          <circle class="nf-pin-pulse nf-pin-pulse--2" cx="0" cy="46" r="30" />
+          <path class="nf-pin-body" d="M0 46 C-4 34 -18 22 -18 8 A18 18 0 1 1 18 8 C18 22 4 34 0 46 Z" />
+          <circle class="nf-pin-dot" cx="0" cy="6" r="6" />
+        </g>
+
+        {{/* Coordinates readout */}}
+        <g class="nf-coords" transform="translate(398 262)">
+          <line x1="54" y1="-58" x2="54" y2="-8" />
+          <text class="nf-coords-label" x="0" y="12">{{ $t.coords_label }}</text>
+          <text class="nf-coords-value" x="0" y="32">{{ $t.coords }}</text>
+        </g>
+
+        {{/* North arrow */}}
+        <g class="nf-north" transform="translate(500 58)">
+          <path d="M0 -18 L8 10 L0 4 L-8 10 Z" />
+          <text x="0" y="30">N</text>
+        </g>
+
+        {{/* Scale bar */}}
+        <g class="nf-scale" transform="translate(40 410)">
+          <line x1="0" y1="0" x2="120" y2="0" />
+          <line x1="0" y1="-5" x2="0" y2="5" />
+          <line x1="60" y1="-3" x2="60" y2="3" />
+          <line x1="120" y1="-5" x2="120" y2="5" />
+          <text x="130" y="4">{{ $t.scale }}</text>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  {{/* Known destinations: white band between the teal hero and the footer */}}
+  <nav class="notfound-links" aria-labelledby="notfound-links-title">
+    <div class="site-container">
+      <h2 id="notfound-links-title" class="notfound-links-title">{{ $t.links_title }}</h2>
+      <ul class="notfound-links-list">
+        {{ range $t.links }}
+        <li>
+          <a href="{{ relLangURL .url }}">{{ .label }}<span class="arrow-button is-outline" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span></a>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+  </nav>
+</main>
+
+{{/* GitHub Pages serves one /404.html for the whole site (French): send
+     visitors of an English URL to the English 404. */}}
+{{ if eq .Site.Language.Lang "fr" }}
+<script>
+  if (location.pathname.indexOf('/en/') === 0) location.replace('{{ "/en/404.html" | relURL }}');
+</script>
+{{ end }}

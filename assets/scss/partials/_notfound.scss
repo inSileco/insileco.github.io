@@ -1,0 +1,232 @@
+// =============================================================================
+// CR-02 — 404 page, "Off the map" (layouts/404.html)
+// Teal hero with the brand terrain texture, a map scene (inline SVG) where the
+// position marker has dropped outside the mapped area, then known destinations.
+// Scene layers (.nf-*) are kept separate for the animation tickets.
+// =============================================================================
+
+@use "../variables" as v;
+
+$touch: "(max-width: #{v.$breakpoint-desktop - 1px})";
+$mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
+
+// -----------------------------------------------------------------------------
+// Hero
+// -----------------------------------------------------------------------------
+
+.notfound-hero {
+  // Bigger terrain than the page headers: it is the scenery here
+  --texture-width: 130%;
+
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - #{v.$navbar-height});
+  padding-block: v.$section-space-small;
+}
+
+.notfound-inner {
+  display: grid;
+  grid-template-columns: 5fr 6fr;
+  align-items: center;
+  gap: v.$space-8;
+
+  @media #{$touch} {
+    grid-template-columns: 1fr;
+    gap: v.$space-6;
+  }
+}
+
+.notfound-text {
+  .title {
+    margin-bottom: v.$space-4;
+    color: var(--theme-text);
+  }
+
+  .buttons {
+    margin-top: v.$space-5;
+    margin-bottom: 0;
+  }
+}
+
+.notfound-lead {
+  max-width: 480px;
+  font-size: v.$font-size-text-large;
+}
+
+// -----------------------------------------------------------------------------
+// Map scene
+// -----------------------------------------------------------------------------
+
+.notfound-scene {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+
+  text {
+    font-family: v.$font-primary;
+  }
+
+  @media #{$touch} {
+    max-width: 560px;
+  }
+}
+
+.nf-grid line {
+  stroke: rgba(v.$white, 0.1);
+  stroke-width: 1;
+}
+
+.nf-zone {
+  rect {
+    fill: rgba(v.$white, 0.04);
+    stroke: rgba(v.$white, 0.45);
+    stroke-dasharray: 6 6;
+    stroke-width: 1.5;
+  }
+
+  text {
+    fill: rgba(v.$white, 0.7);
+    font-size: 12px;
+    font-weight: v.$weight-xbold;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+}
+
+// 404 drawn as outlined contour lines on the map
+.notfound-scene .nf-digits text {
+  fill: none;
+  stroke: v.$white;
+  stroke-width: 1.5;
+  font-family: v.$font-heading;
+  font-size: 180px;
+  font-weight: v.$weight-heading;
+  letter-spacing: -0.03em;
+}
+
+.nf-pin-body {
+  fill: v.$yellow;
+}
+
+.nf-pin-dot {
+  fill: v.$teal-dark;
+}
+
+.nf-pin-shadow {
+  fill: rgba(v.$teal-dark, 0.6);
+}
+
+.nf-pin-pulse {
+  fill: none;
+  stroke: v.$yellow;
+  stroke-width: 1.5;
+}
+
+.nf-pin-pulse--1 {
+  opacity: 0.6;
+}
+
+.nf-pin-pulse--2 {
+  opacity: 0.25;
+}
+
+.nf-coords {
+  line {
+    stroke: rgba(v.$white, 0.5);
+    stroke-dasharray: 3 3;
+  }
+
+  .nf-coords-label {
+    fill: rgba(v.$white, 0.7);
+    font-size: 12px;
+    font-weight: v.$weight-xbold;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .nf-coords-value {
+    fill: v.$yellow;
+    font-family: "Fira Code", ui-monospace, monospace;
+    font-size: 13px;
+  }
+}
+
+.nf-north {
+  path {
+    fill: v.$white;
+  }
+
+  text {
+    fill: v.$white;
+    font-size: 13px;
+    font-weight: v.$weight-bold;
+    text-anchor: middle;
+  }
+}
+
+.nf-scale {
+  line {
+    stroke: v.$white;
+    stroke-width: 1.5;
+  }
+
+  text {
+    fill: v.$white;
+    font-size: 12px;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Known destinations
+// -----------------------------------------------------------------------------
+
+.notfound-links {
+  padding-block: v.$section-space-small;
+}
+
+.notfound-links-title {
+  margin-bottom: v.$space-5;
+  color: v.$teal-dark;
+  font-size: v.$font-size-h5;
+  @include v.heading-font;
+  line-height: v.$line-height-heading;
+  letter-spacing: v.$letter-spacing-h5;
+}
+
+.notfound-links-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: v.$space-3 v.$site-gutter;
+  list-style: none;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: v.$space-3;
+    padding-block: v.$space-3;
+    border-bottom: v.$border-width-main solid v.$teal-dark-o20;
+    color: v.$teal-dark;
+    font-size: v.$font-size-h6;
+    font-weight: v.$weight-bold;
+
+    &:hover,
+    &:focus-visible {
+      border-bottom-color: v.$teal-dark;
+
+      .arrow-button {
+        background-color: v.$teal-dark;
+        color: v.$white;
+      }
+    }
+  }
+
+  @media #{$touch} {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media #{$mobile} {
+    grid-template-columns: 1fr;
+  }
+}

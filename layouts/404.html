@@ -1,0 +1,5 @@
+{{ define "main" }}
+{{/* CR-02 — 404 page per language (/fr/404.html, /en/404.html). The root
+     /404.html served by GitHub Pages is content/notfound.fr.md. */}}
+{{ partial "notfound.html" . }}
+{{ end }}

@@ -1,0 +1,20 @@
+# Page 404 (CR-02) — concept « Hors carte »
+eyebrow: "Erreur 404"
+title: "Ce terrain n'a pas encore été cartographié"
+text: "La page que vous cherchez n'existe pas, ou elle a été déplacée. Revenez en terrain connu :"
+home: "Retour à l'accueil"
+contact: "Nous contacter"
+# Scène : repère hors zone
+coords_label: "Position inconnue"
+coords: "46,81° N · ??,??° O"
+scale: "404 km"
+mapped: "Zone cartographiée"
+scene_alt: "Carte en fil de fer : un repère de position est tombé hors de la zone cartographiée."
+links_title: "Destinations connues"
+links:
+  - { label: "Services", url: "/services/" }
+  - { label: "Académie", url: "/academy/" }
+  - { label: "Portfolio", url: "/portfolio/" }
+  - { label: "Blogue", url: "/blog/" }
+  - { label: "Publications", url: "/publications/" }
+  - { label: "À propos", url: "/about/" }
