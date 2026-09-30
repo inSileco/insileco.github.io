@@ -138,7 +138,7 @@ $mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
 
 .post-card-title {
   font-size: v.$font-size-h5;
-  font-weight: v.$weight-bold;
+  @include v.heading-font;
   line-height: v.$line-height-heading;
   letter-spacing: v.$letter-spacing-h5;
 

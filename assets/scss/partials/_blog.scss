@@ -69,8 +69,8 @@ $mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
   h2,
   h3,
   h4 {
+    @include v.heading-font;
     color: v.$teal-dark;
-    font-weight: v.$weight-bold;
     line-height: v.$line-height-heading;
     scroll-margin-top: calc(#{v.$navbar-height} + #{v.$space-4});
   }

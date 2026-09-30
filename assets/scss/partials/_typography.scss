@@ -6,6 +6,7 @@
 // green (testimonials).
 // =============================================================================
 
+@use "sass:math";
 @use "../variables" as v;
 
 .eyebrow {
@@ -35,4 +36,38 @@
 
 .eyebrow--green {
   --eyebrow-color: #{v.$green-500};
+}
+
+// -----------------------------------------------------------------------------
+// Headings H1–H5 in Nexa Bold (designer, 2026-09-30); everything else in
+// Poppins (body font). Heading-sized classes that are not h1–h5 elements use
+// the same mixin in their partial.
+// -----------------------------------------------------------------------------
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.title {
+  @include v.heading-font;
+}
+
+// -----------------------------------------------------------------------------
+// Heading letter-spacing from the Figma type scale (-3 % on H1–H3, -1 % on
+// H4–H6), applied to Bulma's .title sizes so every heading follows it (CR-01).
+// Expressed in em so it scales with the smaller mobile sizes.
+// -----------------------------------------------------------------------------
+
+@each $size, $spacing, $font-size in (
+  (1, v.$letter-spacing-h1, v.$font-size-h1),
+  (2, v.$letter-spacing-h2, v.$font-size-h2),
+  (3, v.$letter-spacing-h3, v.$font-size-h3),
+  (4, v.$letter-spacing-h4, v.$font-size-h4),
+  (5, v.$letter-spacing-h5, v.$font-size-h5),
+  (6, v.$letter-spacing-h6, v.$font-size-h6)
+) {
+  .title.is-#{$size} {
+    letter-spacing: math.div($spacing, $font-size) * 1em;
+  }
 }

@@ -38,7 +38,7 @@ $mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
   margin-bottom: v.$space-5;
   color: v.$teal-dark;
   font-size: v.$font-size-h4;
-  font-weight: v.$weight-bold;
+  @include v.heading-font;
   line-height: v.$line-height-heading;
   letter-spacing: v.$letter-spacing-h4;
 }
@@ -67,7 +67,7 @@ $mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
   margin-bottom: v.$space-5;
   color: v.$teal-dark;
   font-size: v.$font-size-h4;
-  font-weight: v.$weight-bold;
+  @include v.heading-font;
   line-height: v.$line-height-heading;
   letter-spacing: v.$letter-spacing-h4;
 }

@@ -14,17 +14,32 @@
 // 1. FONTS
 // -----------------------------------------------------------------------------
 
-// Nexa : police unique du styleguide (Bold = 700, Regular = 400)
-// Poppins : fallback
-// → @font-face à ajouter en DS-03 (_fonts.scss), fichiers Nexa à récupérer
+// Répartition validée par le designer (2026-09-30) :
+// - titres H1 à H5 : Nexa Bold ($font-heading) ;
+// - tout le reste (texte, H6, surtitres, boutons, navigation) : Poppins.
+// Nexa n'est pas encore chargée (projet web Adobe Fonts à créer, cf.
+// docs/suivi.md) : les titres s'affichent en Poppins d'ici là, et Nexa
+// reprendra la main dès qu'elle sera chargée (en tête de $font-heading).
+// Poppins est chargée dans head.html (400, 400 italique, 500, 600, 700, 800).
 
-$font-primary: 'Nexa', 'Poppins', sans-serif;
-$font-secondary: 'Poppins', sans-serif;
+$font-heading: 'Nexa', 'Poppins', sans-serif;
+$font-primary: 'Poppins', sans-serif;
 
-// Weights
+// Weights (Poppins)
 $weight-regular: 400;
-$weight-bold: 700;
-$weight-xbold: 800; // Surtitres (Nexa XBold) — disponibilité à vérifier
+$weight-bold: 700;   // Poppins Bold
+$weight-xbold: 800;  // Poppins XBold — surtitres (Brand Guide p. 6)
+
+// Titres : Nexa Bold (700). Tant que Poppins la remplace, 500 : Nexa Bold est
+// plus légère que les gras habituels (comparaison avec les maquettes).
+// Passer à 700 à l'arrivée de Nexa.
+$weight-heading: 500;
+
+// Police et graisse des titres H1 à H5 (balises et classes au format titre)
+@mixin heading-font {
+  font-family: $font-heading;
+  font-weight: $weight-heading;
+}
 
 // -----------------------------------------------------------------------------
 // 2. TYPOGRAPHIC SCALE

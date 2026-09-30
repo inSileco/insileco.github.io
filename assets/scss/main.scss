@@ -30,7 +30,7 @@
   // Typography
   $family-sans-serif: v.$font-primary,
   $family-primary: v.$font-primary,
-  $family-secondary: v.$font-secondary,
+  $family-secondary: v.$font-heading,
   $size-1: v.$font-size-h1,
   $size-2: v.$font-size-h2,
   $size-3: v.$font-size-h3,
@@ -40,6 +40,10 @@
   $size-7: v.$font-size-text-small,
   $weight-normal: v.$weight-regular,
   $weight-bold: v.$weight-bold,
+  // Headings (.title, .content h1–h6) default to Bulma's extrabold (800):
+  // they follow our heading weight (Nexa Bold, see _variables.scss)
+  $title-weight: v.$weight-heading,
+  $content-heading-weight: v.$weight-heading,
 
   // Radius
   $radius-small: v.$radius-small,
