@@ -222,5 +222,5 @@ $touch: "(max-width: #{v.$breakpoint-desktop - 1px})";
 .contact-thanks-title {
   margin-bottom: v.$space-1;
   font-size: v.$font-size-h5;
-  font-weight: v.$weight-bold;
+  @include v.heading-font;
 }

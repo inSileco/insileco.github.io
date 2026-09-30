@@ -103,7 +103,7 @@ $touch: "(max-width: #{v.$breakpoint-desktop - 1px})";
   margin-bottom: v.$space-5;
   color: var(--theme-text);
   font-size: v.$font-size-h4;
-  font-weight: v.$weight-bold;
+  @include v.heading-font;
   line-height: v.$line-height-heading;
   letter-spacing: v.$letter-spacing-h4;
 }

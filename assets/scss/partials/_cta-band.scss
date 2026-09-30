@@ -23,7 +23,7 @@
 .cta-band-title {
   margin-bottom: v.$space-1;
   font-size: v.$font-size-h4;
-  font-weight: v.$weight-bold;
+  @include v.heading-font;
   line-height: v.$line-height-heading;
   letter-spacing: v.$letter-spacing-h4;
 }
