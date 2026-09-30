@@ -16,10 +16,17 @@ $mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
   gap: v.$space-1;
   list-style: none;
 
+  // Flex items: the <li> takes the tag height, not the text line height
+  // (which added 4px between rows) — same gap vertically and horizontally
+  > li {
+    display: flex;
+  }
+
   .tag {
     height: auto;
     margin: 0;
-    padding: v.$space-0 v.$space-2;
+    // 2px vertical padding: 24px tall, like Bulma's tags
+    padding: v.$space-1 * 0.25 v.$space-2;
     border: v.$border-width-main solid v.$teal-dark-o20;
     border-radius: v.$radius-small;
     background-color: transparent;
