@@ -26,7 +26,7 @@
     <meta property="og:title" content="{{ . }}" />
     {{ end }}
     {{ end }}
-    {{ if .Params.noindex }}
+    {{ if or .Params.noindex (eq .Kind "404") }}
     <meta name="robots" content="noindex,nofollow" />
     {{ end }}
     
