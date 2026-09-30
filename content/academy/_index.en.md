@@ -20,6 +20,8 @@ proof_items:
   - value: "3 months"
     label: "of coached implementation every two weeks"
 difference:
+  # Section masquée à la demande du client (CR-04) : false pour la réafficher
+  hidden: true
   eyebrow: "Why Academy works"
   image: "/img/academy/academy-why-it-works.png"
   alt: "Visual comparison showing that standard training stops at delivery while Academy includes preparation, a live workshop, and three months of coached implementation."

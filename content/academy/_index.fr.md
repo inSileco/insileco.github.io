@@ -20,6 +20,8 @@ proof_items:
   - value: "3 mois"
     label: "de mise en oeuvre accompagnée toutes les deux semaines"
 difference:
+  # Section masquée à la demande du client (CR-04) : false pour la réafficher
+  hidden: true
   eyebrow: "Pourquoi Académie fonctionne"
   image: "/img/academy/academy-why-it-works.png"
   alt: "Comparatif visuel montrant qu’une formation standard s’arrête à la livraison alors qu’Académie inclut la préparation, un atelier en direct et trois mois de mise en oeuvre accompagnée."
