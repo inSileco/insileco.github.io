@@ -5,6 +5,7 @@
 @use "../variables" as v;
 
 $touch: "(max-width: #{v.$breakpoint-desktop - 1px})";
+$mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
 
 // -----------------------------------------------------------------------------
 // Story: text on white | full-height team photo
@@ -125,5 +126,147 @@ $touch: "(max-width: #{v.$breakpoint-desktop - 1px})";
 
   @media #{$touch} {
     padding-block: v.$section-space-small;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Our network (CR-05): partner constellation — layouts/partials/network.html
+// Hub (inSileco mark) + partner nodes on % slots, linked by an SVG layer.
+// Below desktop: links hidden, logos in a grid under the hub.
+// -----------------------------------------------------------------------------
+
+$net-node-width: 168px;
+$net-node-height: 88px;
+$net-hub-size: 112px;
+
+.network {
+  padding-block: v.$section-space-main;
+
+  @media #{$touch} {
+    padding-block: v.$section-space-small;
+  }
+}
+
+.network-header {
+  max-width: v.$page-header-main-width;
+  margin-bottom: v.$space-7;
+
+  .title {
+    margin-bottom: v.$space-3;
+    color: var(--theme-text);
+  }
+}
+
+.network-constellation {
+  position: relative;
+  aspect-ratio: 16 / 7;
+
+  @media #{$touch} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: v.$space-5;
+    aspect-ratio: auto;
+  }
+}
+
+.net-links {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+
+  @media #{$touch} {
+    display: none;
+  }
+}
+
+.net-link {
+  stroke: rgba(v.$white, 0.35);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.net-link--ring {
+  stroke: rgba(v.$white, 0.2);
+  stroke-dasharray: 4 6;
+}
+
+.net-hub {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: $net-hub-size;
+  height: $net-hub-size;
+  border: v.$border-width-main solid rgba(v.$white, 0.35);
+  border-radius: v.$radius-round;
+  background-color: v.$teal-mid;
+  box-shadow: 0 0 0 v.$space-2 rgba(v.$white, 0.06);
+  transform: translate(-50%, -50%);
+
+  img {
+    width: 52%;
+    height: auto;
+  }
+
+  @media #{$touch} {
+    position: static;
+    transform: none;
+  }
+}
+
+.net-nodes {
+  list-style: none;
+
+  @media #{$touch} {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: v.$space-3;
+    width: 100%;
+  }
+
+  @media #{$mobile} {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.net-node {
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  width: $net-node-width;
+  height: $net-node-height;
+  transform: translate(-50%, -50%);
+
+  a {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    padding: v.$space-2 v.$space-3;
+    border-radius: v.$radius-small;
+    background-color: v.$white;
+    box-shadow: 0 0 0 v.$space-1 rgba(v.$white, 0.08);
+    transition: box-shadow 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+      box-shadow: 0 0 0 v.$space-1 v.$yellow;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  @media #{$touch} {
+    position: static;
+    width: auto;
+    transform: none;
   }
 }
