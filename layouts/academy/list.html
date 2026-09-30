@@ -114,7 +114,9 @@
   {{ end }}
 
   {{/* Why Academy works: text + comparison image */}}
-  {{ with .Params.difference }}
+  {{/* Hidden with `difference.hidden: true` (CR-04), data kept to bring it back */}}
+  {{ $showDifference := and .Params.difference (not .Params.difference.hidden) }}
+  {{ if $showDifference }}{{ with .Params.difference }}
   <section class="academy-block">
     <div class="site-container">
       <header class="academy-block-header">
@@ -129,10 +131,12 @@
       {{ end }}
     </div>
   </section>
-  {{ end }}
+  {{ end }}{{ end }}
 
   {{ with $testimonials }}
-  <section id="testimonials" class="academy-block academy-block--grey">
+  {{/* Grey when it follows the white comparison section; white otherwise, so
+       it does not sit grey on grey after the workshops (CR-04) */}}
+  <section id="testimonials" class="academy-block{{ if $showDifference }} academy-block--grey{{ end }}">
     <div class="site-container">
       <header class="academy-block-header">
         {{ with $.Params.testimonials_eyebrow }}<p class="eyebrow eyebrow--green">{{ . }}</p>{{ end }}
