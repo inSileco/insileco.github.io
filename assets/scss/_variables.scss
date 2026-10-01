@@ -260,6 +260,7 @@ $testimonial-quote-color: rgba($teal-dark, 0.25);
 $team-card-ratio:       math.div(414, 517);
 $team-social-size:      36px;
 $team-card-overlay:     linear-gradient(to bottom, transparent 40%, rgba($teal-dark, 0.9));
+$team-card-perspective: 1400px;  // profondeur du retournement (ANI-06)
 
 // -----------------------------------------------------------------------------
 // 10. TEXTURES (DS-02)
@@ -297,6 +298,8 @@ $reveal-distance:       24px;    // montée pendant l'apparition
 $reveal-stagger:        120ms;   // décalage entre éléments qui apparaissent ensemble
 $net-glow-duration:     450ms;   // trajet de la lumière logo → symbole (ANI-04)
 $net-hub-glow:          0 0 0 12px rgba($yellow, 0.15), 0 0 32px rgba($yellow, 0.45);
+$team-flip-duration:    700ms;   // retournement des cards équipe (ANI-06)
+$team-flip-easing:      cubic-bezier(0.45, 0.05, 0.35, 1);
 
 // Transition sur les propriétés données, coupée si l'utilisateur
 // demande moins d'animations (prefers-reduced-motion)
