@@ -58,12 +58,16 @@ $mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
   &:hover,
   &:focus-visible {
     color: v.$teal-dark;
-
-    .arrow-button {
-      background-color: v.$teal-dark;
-      color: v.$white;
-    }
   }
+}
+
+// Arrow fills on the link, and (ANI-05) on any other link of its card: every
+// <a> of a list card (image, title, "Read more") opens the same page, the
+// filter tags are <button>s. Not on the text or the tags: they do not open it.
+.card-more:is(:hover, :focus-visible) .arrow-button,
+:is(.portfolio-card, .post-card):has(a:is(:hover, :focus-visible)) .card-more .arrow-button {
+  background-color: v.$teal-dark;
+  color: v.$white;
 }
 
 // -----------------------------------------------------------------------------
