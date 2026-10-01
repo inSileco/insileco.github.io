@@ -9,6 +9,7 @@
 // =============================================================================
 
 @use "sass:math";
+@use "sass:list";
 
 // -----------------------------------------------------------------------------
 // 1. FONTS
@@ -276,3 +277,29 @@ $texture-color-light:     $teal-dark;         // sur fond clair ou brand
 $texture-opacity-light:   0.2;                // lignes teal pâles (maquette À propos)
 $texture-color-dark:      $white;             // sur fond teal (footer, header Services)
 $texture-opacity-dark:    0.2;                // comparée aux maquettes rendues à l’échelle
+
+// -----------------------------------------------------------------------------
+// 11. MOTION (ANI-01) — pas de référence Figma : valeurs de la carte ANI-01
+// -----------------------------------------------------------------------------
+
+$motion-duration:       150ms;   // hovers : couleurs, ombres, élévation
+$motion-duration-large: 250ms;   // grandes surfaces (panneau jaune des cards équipe)
+$motion-easing:         ease-in-out;
+$lift-button:           -2px;    // élévation des boutons au survol
+$lift-card:             -4px;    // élévation des cards au survol
+$shadow-button-hover:   0 4px 12px rgba($teal-dark, 0.25);
+$shadow-card-hover:     0 $space-1 $space-4 $teal-dark-o20;
+$shadow-card-hover-on-dark: 0 $space-1 $space-4 rgba(#000000, 0.35);
+$partner-logo-opacity:  0.6;     // logos partenaires au repos
+
+// Transition sur les propriétés données, coupée si l'utilisateur
+// demande moins d'animations (prefers-reduced-motion)
+@mixin motion($properties, $duration: $motion-duration) {
+  @media (prefers-reduced-motion: no-preference) {
+    $list: ();
+    @each $property in $properties {
+      $list: list.append($list, $property $duration $motion-easing, $separator: comma);
+    }
+    transition: $list;
+  }
+}
