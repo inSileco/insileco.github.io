@@ -189,6 +189,11 @@ $mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
   &:hover,
   &:focus-visible {
     color: v.$white;
+
+    // Arrow (ANI-05): yellow → white on the teal card
+    .arrow-button {
+      background-color: v.$white;
+    }
   }
 
   .arrow-button {
@@ -266,6 +271,11 @@ $mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
   &:hover,
   &:focus-visible {
     color: v.$white;
+
+    // Arrow (ANI-05): white → yellow over the image
+    .arrow-button {
+      background-color: v.$yellow;
+    }
   }
 
   .arrow-button {
@@ -335,6 +345,11 @@ $mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
   &:hover,
   &:focus-visible {
     color: v.$teal-dark;
+
+    // Arrow (ANI-05): white → yellow over the image
+    .arrow-button {
+      background-color: v.$yellow;
+    }
   }
 }
 

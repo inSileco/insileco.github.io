@@ -33,7 +33,8 @@ button,
 .input,
 .textarea,
 .select select,
-span.navbar-link {
+span.navbar-link,
+.arrow-button {
   @include v.motion($colors);
 }
 
