@@ -367,3 +367,85 @@ $nf-legend: 3.8s;
     }
   }
 }
+
+// -----------------------------------------------------------------------------
+// "Our network" (ANI-04): hovering / focusing a partner draws the light along
+// its spoke, from the logo to the inSileco mark, which then glows. On leave the
+// light runs back. data-net-intro: once the constellation has appeared
+// (ANI-02 reveal), the 8 links light up one after the other, then go out.
+// Desktop only: the links are hidden below. With reduced motion the spoke and
+// the hub switch to yellow instantly.
+// -----------------------------------------------------------------------------
+
+$net-count: 8;
+$net-intro-start: 0.8s;   // after the reveal fade
+$net-intro-step: 0.15s;
+
+@media (min-width: v.$breakpoint-desktop) {
+  .net-glow {
+    @include v.motion(scale, v.$net-glow-duration);
+  }
+
+  .net-hub {
+    @include v.motion((border-color, box-shadow), v.$net-glow-duration);
+  }
+
+  @for $i from 1 through $net-count {
+    .network-constellation:has(.net-node:nth-child(#{$i}) a:is(:hover, :focus-visible)) .net-glow:nth-child(#{$i}) {
+      scale: 1;
+    }
+  }
+
+  .network-constellation:has(.net-node a:is(:hover, :focus-visible)) .net-hub {
+    border-color: v.$yellow;
+    box-shadow: v.$net-hub-glow;
+
+    // The hub lights up once the light has reached it
+    @media (prefers-reduced-motion: no-preference) {
+      transition-delay: v.$net-glow-duration;
+    }
+  }
+}
+
+@keyframes net-intro-glow {
+  0% {
+    scale: 0;
+  }
+
+  40%,
+  70% {
+    scale: 1;
+    opacity: 1;
+  }
+
+  100% {
+    scale: 1;
+    opacity: 0;
+  }
+}
+
+@keyframes net-intro-hub {
+  50% {
+    border-color: v.$yellow;
+    box-shadow: v.$net-hub-glow;
+  }
+}
+
+// Fill mode `backwards` only: once played, the hover transitions take over
+@media (min-width: v.$breakpoint-desktop) and (prefers-reduced-motion: no-preference) {
+  .has-reveal [data-net-intro].is-revealed {
+    .net-glow {
+      animation: net-intro-glow 1.1s ease-in-out backwards;
+    }
+
+    @for $i from 1 through $net-count {
+      .net-glow:nth-child(#{$i}) {
+        animation-delay: $net-intro-start + ($i - 1) * $net-intro-step;
+      }
+    }
+
+    .net-hub {
+      animation: net-intro-hub 1.2s ease-in-out ($net-intro-start + $net-count * $net-intro-step) backwards;
+    }
+  }
+}
