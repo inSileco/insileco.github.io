@@ -34,7 +34,7 @@
   <section class="academy-proof">
     <ul class="site-container academy-proof-list">
       {{ range . }}
-      <li class="academy-proof-item">
+      <li class="academy-proof-item reveal">
         <strong>{{ .value }}</strong>
         <span>{{ .label }}</span>
       </li>
@@ -47,7 +47,7 @@
   {{ with .Params.process }}
   <section id="how-academy-works" class="academy-block">
     <div class="site-container">
-      <header class="academy-block-header">
+      <header class="academy-block-header reveal">
         {{ with $.Params.process_eyebrow }}<p class="eyebrow">{{ . }}</p>{{ end }}
         <h2 class="title is-3">{{ $.Params.process_title }}</h2>
         {{ with $.Params.process_intro }}<p>{{ . }}</p>{{ end }}
@@ -56,7 +56,7 @@
       <ol class="academy-steps">
         {{ $last := sub (len .) 1 }}
         {{ range $i, $step := . }}
-        <li class="academy-step{{ if eq $i $last }} theme-dark academy-step--teal{{ end }}">
+        <li class="academy-step reveal{{ if eq $i $last }} theme-dark academy-step--teal{{ end }}">
           <div class="academy-step-top">
             <span class="academy-step-number" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
             {{ with $step.duration }}<span class="academy-step-duration">{{ . }}</span>{{ end }}
@@ -80,7 +80,7 @@
   {{ if $ordered }}
   <section id="available-workshops" class="academy-block academy-block--grey">
     <div class="site-container">
-      <header class="academy-block-header">
+      <header class="academy-block-header reveal">
         {{ with .Params.workshops_eyebrow }}<p class="eyebrow">{{ . }}</p>{{ end }}
         <h2 class="title is-3">{{ .Params.workshops_title }}</h2>
         {{ with .Params.workshops_intro }}<p>{{ . }}</p>{{ end }}
@@ -88,7 +88,7 @@
 
       <ul class="academy-workshops">
         {{ range $ordered }}
-        <li>
+        <li class="reveal">
           <a class="academy-workshop" href="{{ .RelPermalink }}">
             <span class="academy-workshop-cover">
               {{ with .Params.card_image }}<img src="{{ . | relURL }}" alt="" loading="lazy" />{{ end }}
@@ -138,7 +138,7 @@
        it does not sit grey on grey after the workshops (CR-04) */}}
   <section id="testimonials" class="academy-block{{ if $showDifference }} academy-block--grey{{ end }}">
     <div class="site-container">
-      <header class="academy-block-header">
+      <header class="academy-block-header reveal">
         {{ with $.Params.testimonials_eyebrow }}<p class="eyebrow eyebrow--green">{{ . }}</p>{{ end }}
         <h2 class="title is-3">{{ $.Params.testimonials_title }}</h2>
         {{ with $.Params.testimonials_intro }}<p>{{ . }}</p>{{ end }}
@@ -156,13 +156,13 @@
   {{ with .Params.faq }}
   <section class="academy-block">
     <div class="site-container academy-faq">
-      <header class="academy-block-header">
+      <header class="academy-block-header reveal">
         {{ with .eyebrow }}<p class="eyebrow">{{ . }}</p>{{ end }}
         <h2 class="title is-3">{{ .title }}</h2>
       </header>
       <div class="academy-faq-list">
         {{ range .items }}
-        <details class="academy-faq-item">
+        <details class="academy-faq-item reveal">
           <summary>{{ .question }}<i class="fa-solid fa-plus" aria-hidden="true"></i></summary>
           <p>{{ .answer }}</p>
         </details>

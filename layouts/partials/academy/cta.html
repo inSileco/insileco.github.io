@@ -11,7 +11,7 @@
     {{ range $key := slice "final_cta" "team_offer" }}
     {{ with index $p.Params $key }}
     {{ $cohort := eq $key "final_cta" }}
-    <article id="{{ cond $cohort "cohort-cta" "team-cta" }}" class="academy-cta-card{{ if $cohort }} theme-brand{{ end }}">
+    <article id="{{ cond $cohort "cohort-cta" "team-cta" }}" class="academy-cta-card reveal{{ if $cohort }} theme-brand{{ end }}">
       {{ with .kicker }}<p class="eyebrow">{{ . }}</p>{{ end }}
       <h2 class="academy-cta-title">{{ .title }}</h2>
       {{ with .text }}<p>{{ . }}</p>{{ end }}
