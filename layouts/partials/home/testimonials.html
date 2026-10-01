@@ -4,7 +4,7 @@
 {{ $items := .testimonials }}
 <section id="testimonials" class="home-section home-testimonials">
     <div class="site-container">
-        <header class="home-section-header">
+        <header class="home-section-header reveal">
             <div>
                 <p class="eyebrow eyebrow--green">{{ .title }}</p>
                 <h2 class="title is-3">{{ .subtitle }}</h2>
@@ -13,7 +13,7 @@
 
         {{ if $items }}
         {{/* Two testimonials per slide, as in the mockup */}}
-        <div class="home-testimonials-carousel" data-carousel>
+        <div class="home-testimonials-carousel reveal" data-carousel>
             {{ $slides := 0 }}
             {{ range $start := seq 0 2 (sub (len $items) 1) }}
             {{ $slides = add $slides 1 }}
