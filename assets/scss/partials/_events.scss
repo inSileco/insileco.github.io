@@ -99,11 +99,9 @@ $mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
   overflow: hidden;
   background-color: v.$off-white;
   color: v.$teal-mid;
-  transition: box-shadow 0.2s ease;
 
   &:hover,
   &:focus-visible {
-    box-shadow: 0 v.$space-1 v.$space-4 v.$teal-dark-o20;
     color: v.$teal-mid;
 
     .arrow-button {

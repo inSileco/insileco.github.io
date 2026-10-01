@@ -212,7 +212,6 @@ $mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
   overflow: hidden;
   background-color: v.$white;
   color: v.$teal-dark;
-  transition: box-shadow 0.2s ease;
 
   .arrow-button {
     align-self: flex-end;
@@ -221,7 +220,6 @@ $mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
 
   &:hover,
   &:focus-visible {
-    box-shadow: 0 v.$space-1 v.$space-4 v.$teal-dark-o20;
     color: v.$teal-dark;
 
     .arrow-button {
@@ -466,7 +464,6 @@ $mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
 
     i {
       flex-shrink: 0;
-      transition: transform 0.2s ease;
     }
   }
 

@@ -3,7 +3,7 @@
 //
 // Default: photo + teal gradient, name and role in white at the bottom.
 // Hover / focus (card or one of its links): yellow panel with social links and
-// short bio, name and role in teal. No transition: animations are ANI-01.
+// short bio, name and role in teal. Fade and lift: _animations.scss (ANI-01).
 // =============================================================================
 
 @use "../variables" as v;

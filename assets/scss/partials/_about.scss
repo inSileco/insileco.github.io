@@ -250,7 +250,6 @@ $net-hub-size: 112px;
     border-radius: v.$radius-small;
     background-color: v.$white;
     box-shadow: 0 0 0 v.$space-1 rgba(v.$white, 0.08);
-    transition: box-shadow 0.2s ease;
 
     &:hover,
     &:focus-visible {
