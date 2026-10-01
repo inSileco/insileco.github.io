@@ -1,0 +1,154 @@
+// =============================================================================
+// ANI-01 — Hover & micro-interactions
+//
+// Every transition of the site lives here (tokens and `motion` mixin in
+// _variables.scss). The hover colours stay in each partial; this file adds
+// the timing, the button / card elevation and the few hovers the partials
+// did not have. With prefers-reduced-motion, states change instantly and
+// nothing moves (the mixin and the lifts are gated on no-preference).
+//
+// Loaded last in main.scss so the elevation wins over the partials.
+// =============================================================================
+
+@use "sass:list";
+@use "variables" as v;
+
+$colors: color, background-color, border-color, text-decoration-color, box-shadow, opacity;
+
+@mixin lift($distance) {
+  @media (prefers-reduced-motion: no-preference) {
+    transform: translateY($distance);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Colour changes: links, buttons, tags, form fields. Includes the navbar
+// underline (CA3), kept transparent until hover in partials/_navbar.scss
+// -----------------------------------------------------------------------------
+
+a,
+button,
+.button,
+.tag,
+.input,
+.textarea,
+.select select,
+span.navbar-link {
+  @include v.motion($colors);
+}
+
+// -----------------------------------------------------------------------------
+// Buttons (CA2): colour (partials/_buttons.scss) + shadow and lift,
+// pressed back down on click
+// -----------------------------------------------------------------------------
+
+.button.is-brand,
+.button.is-outline,
+button.arrow-button {
+  @include v.motion(list.join($colors, (transform,)));
+
+  &:hover,
+  &:focus-visible {
+    box-shadow: v.$shadow-button-hover;
+    @include lift(v.$lift-button);
+  }
+
+  &:active {
+    box-shadow: none;
+    transform: none;
+  }
+}
+
+// Chevron of the navbar dropdowns, FAQ "+" of the Academy
+.navbar-link:not(.is-arrowless)::after,
+.academy-faq-item summary i {
+  @include v.motion(transform);
+}
+
+// -----------------------------------------------------------------------------
+// Cards (CA4): shadow and lift
+// -----------------------------------------------------------------------------
+
+// Whole card is a link: reacts to hover and keyboard focus
+.home-help-card,
+.home-project-card,
+.home-post-card,
+.academy-workshop,
+.event-resource,
+// Card holding several links (image, title, "Read more") and filter
+// buttons: never a single link (PAGE-07), lifts while one of them is used
+.portfolio-card,
+.post-card,
+.team-card {
+  @include v.motion(list.join($colors, (transform,)));
+}
+
+.home-project-card,
+.home-post-card,
+.academy-workshop,
+.event-resource {
+  &:hover,
+  &:focus-visible {
+    box-shadow: v.$shadow-card-hover;
+    @include lift(v.$lift-card);
+  }
+}
+
+// On the dark "How we help" band a teal shadow would not show
+.home-help-card {
+  &:hover,
+  &:focus-visible {
+    box-shadow: v.$shadow-card-hover-on-dark;
+    @include lift(v.$lift-card);
+  }
+}
+
+.portfolio-card,
+.post-card,
+.team-card {
+  &:hover,
+  &:focus-within {
+    box-shadow: v.$shadow-card-hover;
+    @include lift(v.$lift-card);
+  }
+}
+
+// Team card: the yellow panel fades in instead of popping
+.team-card::after,
+.team-card-photo,
+.team-card-details {
+  @include v.motion(opacity, v.$motion-duration-large);
+}
+
+// -----------------------------------------------------------------------------
+// Partner logos of the home (CA5): dimmed, full opacity on hover; the scroll
+// pauses while a logo is hovered or focused so it can be clicked
+// -----------------------------------------------------------------------------
+
+.home-partners-track {
+  &:is(:hover, :focus-within) {
+    animation-play-state: paused;
+  }
+
+  img {
+    opacity: v.$partner-logo-opacity;
+    @include v.motion(opacity);
+  }
+
+  a:is(:hover, :focus-visible) img {
+    opacity: 1;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Social icons of the team cards (CA6) — the footer ones turn yellow
+// (partials/_footer.scss)
+// -----------------------------------------------------------------------------
+
+.team-card-social a {
+  &:hover,
+  &:focus-visible {
+    background-color: v.$white;
+    color: v.$teal-dark;
+  }
+}
