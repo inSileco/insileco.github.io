@@ -176,3 +176,194 @@ button.arrow-button {
     }
   }
 }
+
+// -----------------------------------------------------------------------------
+// 404 "map monitor" boot-up (ANI-03): the scene of partials/notfound.html
+// builds up layer by layer, then only the marker keeps pulsing.
+// Runs only once assets/js/notfound.js has set html.has-nf-boot (motion
+// allowed): without JS or with reduced motion the final scene shows as is.
+// The SVG layers keep their `transform` attribute: movements use `translate`.
+// -----------------------------------------------------------------------------
+
+// Start of each step (s)
+$nf-grid: 0s;
+$nf-zone: 0.9s;
+$nf-digits: 1.5s;
+$nf-pin: 2.6s;
+$nf-coords: 3.1s;
+$nf-legend: 3.8s;
+
+// Radar sweep: an animatable angle and strength for the conic gradient
+@property --nf-sweep {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@property --nf-sweep-alpha {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+
+@keyframes nf-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes nf-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes nf-sweep {
+  0% {
+    --nf-sweep: 0deg;
+    --nf-sweep-alpha: 0.16;
+  }
+
+  80% {
+    --nf-sweep-alpha: 0.16;
+  }
+
+  100% {
+    --nf-sweep: 360deg;
+    --nf-sweep-alpha: 0;
+  }
+}
+
+@keyframes nf-dash-march {
+  from {
+    stroke-dashoffset: 48;
+  }
+}
+
+@keyframes nf-pin-drop {
+  0% {
+    opacity: 0;
+    translate: 0 -90px;
+  }
+
+  60% {
+    opacity: 1;
+    translate: 0 0;
+  }
+
+  78% {
+    translate: 0 -10px;
+  }
+
+  100% {
+    translate: 0 0;
+  }
+}
+
+@keyframes nf-shadow-land {
+  0%,
+  55% {
+    opacity: 0;
+    scale: 0.3;
+  }
+
+  100% {
+    scale: 1;
+  }
+}
+
+// Starts invisible: the rings must not show before the marker lands
+@keyframes nf-pulse {
+  from {
+    opacity: 0;
+    scale: 0.4;
+  }
+
+  10% {
+    opacity: 0.7;
+  }
+
+  to {
+    opacity: 0;
+    scale: 1.3;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .has-nf-boot {
+    .notfound-scene {
+      background: conic-gradient(
+        from var(--nf-sweep) at 50% 50%,
+        transparent 0deg 290deg,
+        rgba(v.$white, var(--nf-sweep-alpha)) 360deg
+      );
+      animation: nf-sweep 1.4s linear $nf-grid both;
+    }
+
+    // Grid: verticals top to bottom, then horizontals left to right
+    .nf-grid line {
+      stroke-dasharray: 520;
+      stroke-dashoffset: 520;
+      animation: nf-draw 0.5s ease-out both;
+    }
+
+    @for $i from 1 through 16 {
+      .nf-grid line:nth-child(#{$i}) {
+        animation-delay: $nf-grid + ($i - 1) * 0.045s;
+      }
+    }
+
+    .nf-zone {
+      animation: nf-fade-in 0.6s ease-out $nf-zone both;
+
+      rect {
+        animation: nf-dash-march 1.6s ease-out $nf-zone both;
+      }
+    }
+
+    // 404: each digit's contour is drawn, one after the other
+    .nf-digit {
+      stroke-dasharray: 1400;
+      stroke-dashoffset: 1400;
+      animation: nf-draw 1s ease-in-out both;
+    }
+
+    .nf-digit--1 { animation-delay: $nf-digits; }
+    .nf-digit--2 { animation-delay: $nf-digits + 0.3s; }
+    .nf-digit--3 { animation-delay: $nf-digits + 0.6s; }
+
+    // Marker: falls and bounces, its shadow spreads on impact, then it pulses
+    .nf-pin-body,
+    .nf-pin-dot {
+      animation: nf-pin-drop 0.7s ease-in $nf-pin both;
+    }
+
+    .nf-pin-shadow,
+    .nf-pin-pulse {
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+
+    .nf-pin-shadow {
+      animation: nf-shadow-land 0.7s ease-out $nf-pin both;
+    }
+
+    .nf-pin-pulse {
+      animation: nf-pulse 2.4s ease-out $nf-pin + 0.6s infinite both;
+    }
+
+    .nf-pin-pulse--2 {
+      animation-delay: $nf-pin + 1.8s;
+    }
+
+    // Readout: the value scrolls like a terminal (notfound.js) while it shows
+    .nf-coords {
+      animation: nf-fade-in 0.4s ease-out $nf-coords both;
+    }
+
+    .nf-north,
+    .nf-scale {
+      animation: nf-fade-in 0.5s ease-out $nf-legend both;
+    }
+  }
+}
