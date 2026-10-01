@@ -47,14 +47,22 @@ html {
   padding-inline: v.$space-3;
 }
 
-// Hover / current page: Figma text-link hover border (#ceee60)
+// Hover / current page: Figma text-link hover border (#ceee60).
+// The underline is always there, transparent, so its colour can fade in
+// (transition in _animations.scss, ANI-01)
+.navbar-start > a.navbar-item,
+.navbar-link,
+.navbar-dropdown .navbar-item {
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+
 @mixin underline {
   color: v.$teal-dark;
   background-color: transparent;
-  text-decoration: underline;
   text-decoration-color: v.$yellow;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 6px;
 }
 
 // Links only (not the .has-dropdown wrapper, which is a .navbar-item too)
@@ -85,7 +93,6 @@ span.navbar-link {
 // Chevron: Bulma's arrow, turned 180° while the dropdown is open
 .navbar-link:not(.is-arrowless)::after {
   border-color: v.$teal-dark;
-  transition: transform 150ms ease-in-out;
 }
 
 .navbar-item.has-dropdown:is(:hover, :focus-within) > .navbar-link::after {
