@@ -193,6 +193,18 @@ $net-hub-size: 112px;
   stroke-dasharray: 4 6;
 }
 
+// Light travelling on a spoke (ANI-04): scaled to 0 on the logo end (inline
+// transform-origin, in viewBox units) until it grows to the hub (_animations).
+// Not a dash trick: Chrome ignores pathLength with non-scaling-stroke.
+.net-glow {
+  stroke: v.$yellow;
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+  filter: drop-shadow(0 0 3px rgba(v.$yellow, 0.8));
+  transform-box: view-box;
+  scale: 0;
+}
+
 .net-hub {
   position: absolute;
   top: 50%;
