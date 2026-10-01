@@ -38,7 +38,7 @@
         {{ with .Params.event_start }}{{ $start = time . }}{{ end }}
         {{ $end := $start }}
         {{ with .Params.event_end }}{{ $end = time . }}{{ end }}
-        <li class="post-card">
+        <li class="post-card reveal">
           <a class="post-card-media" href="{{ .RelPermalink }}" tabindex="-1" aria-hidden="true">
             {{ with .Params.featured_image }}{{ with $event.Resources.GetMatch . }}<img src="{{ .RelPermalink }}" alt="" loading="lazy" />{{ end }}{{ end }}
           </a>

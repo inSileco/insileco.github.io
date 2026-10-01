@@ -17,12 +17,12 @@
 {{ with $logos }}
 <section id="network" class="network theme-dark">
   <div class="site-container">
-    <header class="network-header">
+    <header class="network-header reveal">
       <h2 class="title is-3">{{ $t.title }}</h2>
       {{ with $t.credibility }}<p>{{ . }}</p>{{ end }}
     </header>
 
-    <div class="network-constellation">
+    <div class="network-constellation reveal">
       <svg class="net-links" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
         {{ range $i, $logo := $logos }}
         {{ $p := index $slots $i }}

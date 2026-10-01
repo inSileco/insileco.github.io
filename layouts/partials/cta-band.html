@@ -10,7 +10,7 @@
 {{ $dark := eq .theme "dark" }}
 {{ with $cta }}
 <section class="cta-band {{ if $dark }}theme-dark has-texture--on-dark{{ else }}theme-brand has-texture--on-light{{ end }} has-texture has-texture--bottom-right">
-  <div class="site-container cta-band-inner">
+  <div class="site-container cta-band-inner reveal">
     <div>
       <h2 class="cta-band-title">{{ .headline }}</h2>
       {{ with .subhead }}<p>{{ . }}</p>{{ end }}

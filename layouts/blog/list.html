@@ -22,7 +22,7 @@
         {{ $tags := apply (.Params.tags | default slice) "trim" "." " " }}
         {{ $slugs := slice }}
         {{ range $cats | append $tags }}{{ $slugs = $slugs | append (anchorize .) }}{{ end }}
-        <li class="post-card" data-filter-item data-tags="{{ delimit (uniq $slugs) " " }}">
+        <li class="post-card reveal" data-filter-item data-tags="{{ delimit (uniq $slugs) " " }}">
           <a class="post-card-media" href="{{ .RelPermalink }}" tabindex="-1" aria-hidden="true">
             {{ $post := . }}
             {{ with .Params.featured_image }}{{ with $post.Resources.GetMatch . }}<img src="{{ .RelPermalink }}" alt="" loading="lazy" />{{ end }}{{ end }}

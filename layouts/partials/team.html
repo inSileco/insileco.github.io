@@ -1,12 +1,12 @@
 <div id="team" class="team">
-    <h2 class="team-title">{{ .Site.Params.title_team }}</h2>
+    <h2 class="team-title reveal">{{ .Site.Params.title_team }}</h2>
     {{ with .Site.Params.subtitle_team }}<p class="team-subtitle">{{ . }}</p>{{ end }}
 
     {{/* One card per file in data/{lang}/members/, sorted by `order` */}}
     {{ $members := index hugo.Data .Site.Language.Lang "members" }}
     <ul class="team-grid">
         {{ range sort $members "order" }}
-        <li>{{ partial "team-card.html" . }}</li>
+        <li class="reveal">{{ partial "team-card.html" . }}</li>
         {{ end }}
     </ul>
 </div>

@@ -17,7 +17,7 @@
     <div class="site-container about-approach-grid">
       {{ range $key := slice "what" "how" }}
       {{ with index $about.cards $key }}
-      <article class="about-approach-card{{ if eq $key "what" }} theme-dark about-approach-card--teal{{ end }}">
+      <article class="about-approach-card reveal{{ if eq $key "what" }} theme-dark about-approach-card--teal{{ end }}">
         <p class="eyebrow">{{ .title }}</p>
         <h3 class="about-approach-intro">{{ .intro }}</h3>
         <ul class="about-approach-list">

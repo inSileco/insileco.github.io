@@ -24,7 +24,7 @@
 <ol class="pub-list">
   {{ range sort .refs "issued" "desc" }}
   {{ $ref := . }}
-  <li class="pub">
+  <li class="pub reveal">
     <p class="pub-authors">
       {{- $last := sub (len .author) 1 -}}
       {{- range $i, $a := .author -}}
