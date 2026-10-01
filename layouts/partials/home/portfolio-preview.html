@@ -2,7 +2,7 @@
 {{ $featured := index hugo.Data .Site.Language.Lang "home" "portfolio_featured" "items" }}
 <section id="portfolio-preview" class="home-section home-portfolio">
     <div class="site-container">
-        <header class="home-section-header">
+        <header class="home-section-header reveal">
             <div>
                 <p class="eyebrow">{{ $sections.portfolio.eyebrow }}</p>
                 <h2 class="title is-3">{{ .Site.Params.portfolio.title }}</h2>
@@ -15,7 +15,7 @@
             {{ range first 3 $featured }}
             {{ with $.Site.GetPage (printf "/portfolio/%s" .) }}
             {{ $cover := .Resources.GetMatch "img/cover.png" }}
-            <li>
+            <li class="reveal">
                 <a class="home-project-card" href="{{ .RelPermalink }}">
                     {{ with $cover }}<img class="home-project-image" src="{{ .RelPermalink }}" alt="" loading="lazy" />{{ end }}
                     <span class="arrow-button is-light" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>

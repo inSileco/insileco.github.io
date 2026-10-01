@@ -152,3 +152,27 @@ button.arrow-button {
     color: v.$teal-dark;
   }
 }
+
+// -----------------------------------------------------------------------------
+// Scroll reveals (ANI-02): .reveal elements fade in and rise once, staggered
+// by --reveal-order (assets/js/reveal.js). Hidden only once the script has set
+// html.has-reveal, so content stays visible without JS or with reduced motion.
+// The rise uses `translate`, not `transform`, so it never fights the hover
+// lift of the cards; the slow transition only applies while .is-revealing.
+// -----------------------------------------------------------------------------
+
+@media (prefers-reduced-motion: no-preference) {
+  .has-reveal .reveal {
+    &:not(.is-revealed) {
+      opacity: 0;
+      translate: 0 v.$reveal-distance;
+    }
+
+    &.is-revealing {
+      transition:
+        opacity v.$reveal-duration v.$reveal-easing,
+        translate v.$reveal-duration v.$reveal-easing;
+      transition-delay: calc(var(--reveal-order, 0) * #{v.$reveal-stagger});
+    }
+  }
+}

@@ -291,6 +291,10 @@ $shadow-button-hover:   0 4px 12px rgba($teal-dark, 0.25);
 $shadow-card-hover:     0 $space-1 $space-4 $teal-dark-o20;
 $shadow-card-hover-on-dark: 0 $space-1 $space-4 rgba(#000000, 0.35);
 $partner-logo-opacity:  0.6;     // logos partenaires au repos
+$reveal-duration:       600ms;   // apparition au scroll (ANI-02)
+$reveal-easing:         ease-out;
+$reveal-distance:       24px;    // montée pendant l'apparition
+$reveal-stagger:        120ms;   // décalage entre éléments qui apparaissent ensemble
 
 // Transition sur les propriétés données, coupée si l'utilisateur
 // demande moins d'animations (prefers-reduced-motion)

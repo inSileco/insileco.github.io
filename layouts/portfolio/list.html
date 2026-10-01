@@ -24,7 +24,7 @@
         {{ $slugs := slice }}
         {{ range $cats | append $tags }}{{ $slugs = $slugs | append (anchorize .) }}{{ end }}
         {{ $cover := .Resources.GetMatch "img/cover.png" }}
-        <li class="portfolio-card" data-filter-item data-tags="{{ delimit (uniq $slugs) " " }}">
+        <li class="portfolio-card reveal" data-filter-item data-tags="{{ delimit (uniq $slugs) " " }}">
           <a class="portfolio-card-cover" href="{{ .RelPermalink }}" tabindex="-1" aria-hidden="true">
             {{ with $cover }}<img src="{{ .RelPermalink }}" alt="" loading="lazy" />{{ end }}
           </a>

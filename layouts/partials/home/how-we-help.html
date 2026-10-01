@@ -1,14 +1,14 @@
 {{ $sections := index hugo.Data .Site.Language.Lang "home" "sections" }}
 <section id="how-we-help" class="home-section theme-dark has-texture has-texture--on-dark has-texture--bottom-right home-help">
     <div class="site-container">
-        <header class="home-section-header">
+        <header class="home-section-header reveal">
             <h2 class="title is-3">{{ .Site.Params.help.title }}</h2>
             {{ with $sections.help.intro }}<p class="home-section-intro">{{ . }}</p>{{ end }}
         </header>
 
         <ul class="home-help-grid">
             {{ range .Site.Params.help.item }}
-            <li>
+            <li class="reveal">
                 <a class="home-help-card" href="{{ relLangURL .url }}" data-track="home_help">
                     {{ with .icon }}<img class="home-help-icon" src="{{ . }}" alt="" />{{ end }}
                     <h3 class="home-help-card-title">{{ .title }}</h3>
@@ -19,7 +19,7 @@
             {{ end }}
         </ul>
 
-        <div class="buttons is-centered">
+        <div class="buttons is-centered reveal">
             <a class="button is-brand" href='{{ relLangURL "/services/" }}'>{{ $sections.help.cta }}</a>
         </div>
     </div>

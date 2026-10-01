@@ -1,7 +1,7 @@
 {{ $sections := index hugo.Data .Site.Language.Lang "home" "sections" }}
 <section id="blog-highlights" class="home-section has-background-surface home-blog">
     <div class="site-container">
-        <header class="home-section-header">
+        <header class="home-section-header reveal">
             <div>
                 <p class="eyebrow eyebrow--blue">{{ $sections.blog.eyebrow }}</p>
                 <h2 class="title is-3">{{ $sections.blog.title }}</h2>
@@ -15,7 +15,7 @@
 
         <ul class="home-blog-grid">
             {{ range $post := $recentPosts }}
-            <li>
+            <li class="reveal">
                 <a class="home-post-card" href="{{ $post.RelPermalink }}">
                     <span class="home-post-media">
                         {{ with $post.Params.featured_image }}{{ with $post.Resources.GetMatch . }}
