@@ -295,6 +295,8 @@ $reveal-duration:       600ms;   // apparition au scroll (ANI-02)
 $reveal-easing:         ease-out;
 $reveal-distance:       24px;    // montée pendant l'apparition
 $reveal-stagger:        120ms;   // décalage entre éléments qui apparaissent ensemble
+$net-glow-duration:     450ms;   // trajet de la lumière logo → symbole (ANI-04)
+$net-hub-glow:          0 0 0 12px rgba($yellow, 0.15), 0 0 32px rgba($yellow, 0.45);
 
 // Transition sur les propriétés données, coupée si l'utilisateur
 // demande moins d'animations (prefers-reduced-motion)

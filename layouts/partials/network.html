@@ -3,6 +3,9 @@
   the hub, partner logos around it on fixed slots, joined by thin links (hub
   spokes + a dashed ring between neighbours). Below desktop the links hide and
   the logos become a grid. Layers (.net-*) are named for the animation tickets.
+  ANI-04: one glow line per partner (.net-glow, same index as its .net-node)
+  lights up from the logo to the hub on hover / focus; data-net-intro plays
+  the cascade once when the section appears (remove it to turn that off).
   Data: data/network.yaml (logos), data/{lang}/network.yml (title, text).
 */}}
 {{ $t := index hugo.Data .Site.Language.Lang "network" }}
@@ -22,7 +25,7 @@
       {{ with $t.credibility }}<p>{{ . }}</p>{{ end }}
     </header>
 
-    <div class="network-constellation reveal">
+    <div class="network-constellation reveal" data-net-intro>
       <svg class="net-links" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
         {{ range $i, $logo := $logos }}
         {{ $p := index $slots $i }}
@@ -30,6 +33,13 @@
         <line class="net-link net-link--spoke" x1="50" y1="50" x2="{{ index $p 0 }}" y2="{{ index $p 1 }}" />
         {{ if gt $n 2 }}<line class="net-link net-link--ring" x1="{{ index $p 0 }}" y1="{{ index $p 1 }}" x2="{{ index $next 0 }}" y2="{{ index $next 1 }}" />{{ end }}
         {{ end }}
+        {{/* Grows from the logo (x1, its transform-origin) to the hub (x2) */}}
+        <g class="net-glows">
+          {{ range $i, $logo := $logos }}
+          {{ $p := index $slots $i }}
+          <line class="net-glow" x1="{{ index $p 0 }}" y1="{{ index $p 1 }}" x2="50" y2="50" style="transform-origin: {{ index $p 0 }}px {{ index $p 1 }}px" />
+          {{ end }}
+        </g>
       </svg>
 
       <span class="net-hub" aria-hidden="true">
