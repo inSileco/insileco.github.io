@@ -1,9 +1,10 @@
 // =============================================================================
 // COMP-03 — Team cards (Figma « Notre équipe », page À propos)
 //
-// Default: photo + teal gradient, name and role in white at the bottom.
-// Hover / focus (card or one of its links): yellow panel with social links and
-// short bio, name and role in teal. Fade and lift: _animations.scss (ANI-01).
+// Two faces (ANI-06): front = photo + teal gradient, name and role in white at
+// the bottom; back = yellow panel with social links, short bio, name and role
+// in teal. Hover / focus (card or one of its links) flips the card: rotation
+// and lift in _animations.scss.
 // =============================================================================
 
 @use "../variables" as v;
@@ -33,23 +34,59 @@
 
 .team-card {
   position: relative;
+  display: block;
+  aspect-ratio: v.$team-card-ratio;
+  border-radius: v.$radius-main;
+  perspective: v.$team-card-perspective;
+}
+
+// Turns in 3D; rounded corners and overflow live on the faces (on this element
+// they would flatten the rotation). will-change: the 3D layers of both faces
+// are built ahead, otherwise Chrome builds them on hover and drops the frames
+// of the first half turn (the card "blinks" out).
+.team-card-inner {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.team-card-face {
+  position: absolute;
+  inset: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  aspect-ratio: v.$team-card-ratio;
   padding: v.$space-4;
   border-radius: v.$radius-main;
   overflow: hidden;
-  background-color: v.$yellow;
+  backface-visibility: hidden;
+}
+
+.team-card-front {
+  justify-content: flex-end;
+  transform: rotateY(0deg); // own 3D layer, like the back
+  background-color: v.$teal-dark;
   color: v.$white;
 
-  // Photo and gradient fill the card behind the content
+  // Gradient over the photo, under the name
   &::after {
     content: "";
     position: absolute;
     inset: 0;
     background: v.$team-card-overlay;
   }
+
+  .team-card-identity {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.team-card-back {
+  background-color: v.$yellow;
+  color: v.$teal-dark;
+  transform: rotateY(180deg);
 }
 
 .team-card-photo {
@@ -58,17 +95,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.team-card-details,
-.team-card-identity {
-  position: relative;
-  z-index: 1;
-}
-
-// Hidden by default but kept focusable: tabbing to a link reveals the panel
-.team-card-details {
-  opacity: 0;
 }
 
 .team-card-social {
@@ -106,18 +132,4 @@
 .team-card-role {
   max-width: 170px;
   font-size: v.$font-size-text-small;
-}
-
-// Yellow state
-.team-card:is(:hover, :focus-within) {
-  color: v.$teal-dark;
-
-  &::after,
-  .team-card-photo {
-    opacity: 0;
-  }
-
-  .team-card-details {
-    opacity: 1;
-  }
 }

@@ -79,8 +79,7 @@ button.arrow-button {
 // Card holding several links (image, title, "Read more") and filter
 // buttons: never a single link (PAGE-07), lifts while one of them is used
 .portfolio-card,
-.post-card,
-.team-card {
+.post-card {
   @include v.motion(list.join($colors, (transform,)));
 }
 
@@ -105,8 +104,7 @@ button.arrow-button {
 }
 
 .portfolio-card,
-.post-card,
-.team-card {
+.post-card {
   &:hover,
   &:focus-within {
     box-shadow: v.$shadow-card-hover;
@@ -114,11 +112,19 @@ button.arrow-button {
   }
 }
 
-// Team card: the yellow panel fades in instead of popping
-.team-card::after,
-.team-card-photo,
-.team-card-details {
-  @include v.motion(opacity, v.$motion-duration-large);
+// Team card (ANI-06): flips to its yellow back. The card itself does not turn
+// (stable hover area): its inner layer does. No lift nor shadow, unlike the
+// other cards: lift + shadow means "opens a page", this card does not; and a
+// box-shadow repainted on the turning faces makes the flip drop frames. With
+// reduced motion the back shows straight away.
+.team-card-inner {
+  @media (prefers-reduced-motion: no-preference) {
+    transition: transform v.$team-flip-duration v.$team-flip-easing;
+  }
+}
+
+.team-card:is(:hover, :focus-within) .team-card-inner {
+  transform: rotateY(180deg);
 }
 
 // -----------------------------------------------------------------------------
