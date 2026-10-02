@@ -212,6 +212,8 @@ $breakpoint-desktop: 1024px; // en dessous : tablette et mobile (Bulma "touch")
 $navbar-height:         96px;
 $navbar-logo-height:    40px;
 $navbar-dropdown-width: 160px;
+$navbar-underline-width: 2px;   // trait jaune de survol / page courante
+$navbar-underline-offset: 4px;  // écart sous le texte (≈ text-underline-offset 6px d'avant)
 
 // -----------------------------------------------------------------------------
 // FOOTER (COMP-02) & FORMULAIRES
@@ -300,6 +302,9 @@ $net-glow-duration:     450ms;   // trajet de la lumière logo → symbole (ANI-
 $net-hub-glow:          0 0 0 12px rgba($yellow, 0.15), 0 0 32px rgba($yellow, 0.45);
 $team-flip-duration:    700ms;   // retournement des cards équipe (ANI-06)
 $team-flip-easing:      cubic-bezier(0.45, 0.05, 0.35, 1);
+$nav-underline-duration: 250ms;  // tracé du soulignement du menu (ANI-07)
+$nav-open-duration:     200ms;  // ouverture du dropdown et du menu mobile
+$nav-open-distance:     -8px;   // le dropdown descend de 8px en s'ouvrant
 
 // Transition sur les propriétés données, coupée si l'utilisateur
 // demande moins d'animations (prefers-reduced-motion)

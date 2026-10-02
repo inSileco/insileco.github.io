@@ -48,21 +48,23 @@ html {
 }
 
 // Hover / current page: Figma text-link hover border (#ceee60).
-// The underline is always there, transparent, so its colour can fade in
-// (transition in _animations.scss, ANI-01)
-.navbar-start > a.navbar-item,
-.navbar-link,
-.navbar-dropdown .navbar-item {
-  text-decoration: underline;
-  text-decoration-color: transparent;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 6px;
+// Drawn as a background on the label (ANI-07) so it can grow from the left:
+// a text-decoration cannot. Width 0 at rest, full on hover / current page
+// (transition in _animations.scss).
+.navbar-label {
+  // Room for the line, given back so the flex items keep their height
+  padding-bottom: v.$navbar-underline-offset;
+  margin-bottom: -(v.$navbar-underline-offset);
+  background: linear-gradient(v.$yellow, v.$yellow) left bottom / 0 v.$navbar-underline-width no-repeat;
 }
 
 @mixin underline {
   color: v.$teal-dark;
   background-color: transparent;
-  text-decoration-color: v.$yellow;
+
+  .navbar-label {
+    background-size: 100% v.$navbar-underline-width;
+  }
 }
 
 // Links only (not the .has-dropdown wrapper, which is a .navbar-item too)

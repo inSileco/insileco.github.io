@@ -14,7 +14,8 @@
     <div id="main-navbar" class="navbar-menu">
         <div class="navbar-start">
             {{/* Active = the current page is the entry or one of its sub-pages.
-                 Menu URLs have no language prefix, hence relLangURL before comparing. */}}
+                 Menu URLs have no language prefix, hence relLangURL before comparing.
+                 .navbar-label carries the yellow underline (text width only, ANI-07). */}}
             {{ range .Site.Menus.main }}
             {{ $active := false }}
             {{ $entries := slice . }}
@@ -25,19 +26,19 @@
             {{ if .HasChildren }}
             <div class="navbar-item has-dropdown is-hoverable">
                 {{ if .URL }}
-                <a class="navbar-link{{ if $active }} is-active{{ end }}" href="{{ relLangURL .URL }}" aria-haspopup="true">{{ .Name }}</a>
+                <a class="navbar-link{{ if $active }} is-active{{ end }}" href="{{ relLangURL .URL }}" aria-haspopup="true"><span class="navbar-label">{{ .Name }}</span></a>
                 {{ else }}
                 {{/* No page of its own: focusable so the dropdown also opens from the keyboard */}}
-                <span class="navbar-link{{ if $active }} is-active{{ end }}" tabindex="0" aria-haspopup="true">{{ .Name }}</span>
+                <span class="navbar-link{{ if $active }} is-active{{ end }}" tabindex="0" aria-haspopup="true"><span class="navbar-label">{{ .Name }}</span></span>
                 {{ end }}
                 <div class="navbar-dropdown">
                     {{ range .Children }}
-                    <a class="navbar-item{{ if hasPrefix $.RelPermalink (relLangURL .URL) }} is-active{{ end }}" href="{{ relLangURL .URL }}">{{ .Name }}</a>
+                    <a class="navbar-item{{ if hasPrefix $.RelPermalink (relLangURL .URL) }} is-active{{ end }}" href="{{ relLangURL .URL }}"><span class="navbar-label">{{ .Name }}</span></a>
                     {{ end }}
                 </div>
             </div>
             {{ else }}
-            <a class="navbar-item{{ if $active }} is-active{{ end }}" href="{{ relLangURL .URL }}">{{ .Name }}</a>
+            <a class="navbar-item{{ if $active }} is-active{{ end }}" href="{{ relLangURL .URL }}"><span class="navbar-label">{{ .Name }}</span></a>
             {{ end }}
             {{ end }}
         </div>

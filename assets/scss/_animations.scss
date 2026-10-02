@@ -456,3 +456,61 @@ $net-intro-step: 0.15s;
     }
   }
 }
+
+// -----------------------------------------------------------------------------
+// Navigation (ANI-07): the yellow underline grows from the left on hover /
+// focus and shrinks back on leave (the current page is underlined from the
+// start, no transition at load). Dropdowns (desktop) and the burger menu
+// (touch) keep Bulma's display toggling and get entry / exit transitions:
+// @starting-style for the entry, allow-discrete so display waits for the exit.
+// A closed menu stays display: none, so its links are never reachable with Tab.
+// Older browsers simply open without motion.
+// -----------------------------------------------------------------------------
+
+.navbar-label {
+  @include v.motion(background-size, v.$nav-underline-duration);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @media (min-width: v.$breakpoint-desktop) {
+    .navbar-dropdown {
+      opacity: 0;
+      translate: 0 v.$nav-open-distance;
+      transition:
+        opacity v.$nav-open-duration v.$motion-easing,
+        translate v.$nav-open-duration v.$motion-easing,
+        display v.$nav-open-duration allow-discrete;
+    }
+
+    .navbar-item.has-dropdown:is(:hover, :focus-within) > .navbar-dropdown {
+      opacity: 1;
+      translate: 0 0;
+
+      @starting-style {
+        opacity: 0;
+        translate: 0 v.$nav-open-distance;
+      }
+    }
+  }
+
+  @media (max-width: #{v.$breakpoint-desktop - 1px}) {
+    .navbar-menu {
+      opacity: 0;
+      translate: 0 v.$nav-open-distance;
+      transition:
+        opacity v.$nav-open-duration v.$motion-easing,
+        translate v.$nav-open-duration v.$motion-easing,
+        display v.$nav-open-duration allow-discrete;
+
+      &.is-active {
+        opacity: 1;
+        translate: 0 0;
+
+        @starting-style {
+          opacity: 0;
+          translate: 0 v.$nav-open-distance;
+        }
+      }
+    }
+  }
+}
