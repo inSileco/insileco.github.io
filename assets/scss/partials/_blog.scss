@@ -188,11 +188,35 @@ $mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
   text-transform: uppercase;
 }
 
+// Reading progress (ANI-08): a thin track along the list, filled in yellow up
+// to --toc-progress (assets/js/toc.js). Scaled, not resized: no repaint while
+// scrolling. It follows the scroll directly, without transition.
 .toc-list {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: v.$space-1;
   list-style: none;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: v.$toc-progress-width;
+  }
+
+  &::before {
+    background-color: v.$teal-dark-o20;
+  }
+
+  &::after {
+    background-color: v.$yellow;
+    transform: scaleY(var(--toc-progress, 0));
+    transform-origin: top;
+  }
 }
 
 .toc-h3 {
@@ -208,6 +232,11 @@ $mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
   line-height: v.$line-height-h6;
 
   &:hover {
+    color: v.$teal-dark;
+  }
+
+  // Sections already read: darker, regular weight (no dimming: contrast)
+  &.is-read {
     color: v.$teal-dark;
   }
 
