@@ -23,14 +23,17 @@
   grid-template-columns: repeat(3, 1fr);
   gap: v.$site-gutter;
 
-  @media (max-width: #{v.$breakpoint-desktop - 1px}) {
+  // Columns follow the room the back face needs (bio + links + name): below
+  // ~345px wide the bio overflowed and was cut (QA-01), e.g. 3 columns at 1024
+  @media (max-width: #{v.$team-grid-3col - 1px}) {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (max-width: #{v.$breakpoint-tablet - 1px}) {
+  @media (max-width: #{v.$team-grid-2col - 1px}) {
     grid-template-columns: 1fr;
   }
 }
+
 
 .team-card {
   position: relative;

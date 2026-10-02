@@ -204,6 +204,8 @@ $border-width-main: 1px; // pas d'équivalent Sass dans Bulma 1
 
 $breakpoint-tablet:  769px;  // en dessous : mobile (Bulma "mobile")
 $breakpoint-desktop: 1024px; // en dessous : tablette et mobile (Bulma "touch")
+$breakpoint-cards-2col: 600px; // grilles de cards : 2 colonnes dès 600px (tablette portrait), 1 colonne en dessous (QA-01)
+$media-cards-1col: "(max-width: #{$breakpoint-cards-2col - 1px})";
 
 // -----------------------------------------------------------------------------
 // 9. NAVBAR (COMP-01) — Figma « Nav 1 » : 96px = barre 64px + 16px de part et d'autre
@@ -254,6 +256,7 @@ $about-story-height:     800px;  // section histoire + photo (Figma)
 $contact-hero-height:    836px;  // hero contact (Figma)
 $contact-intro-width:    527px;  // texte à gauche du formulaire (Figma)
 $contact-choice-size:    18px;   // cases à cocher / boutons radio
+$input-font-size-touch:  16px;   // champs sur écran tactile : en dessous, iOS zoome au focus (QA-01)
 $testimonial-quote-color: rgba($teal-dark, 0.25);
 
 // -----------------------------------------------------------------------------
@@ -264,6 +267,8 @@ $team-card-ratio:       math.div(414, 517);
 $team-social-size:      36px;
 $team-card-overlay:     linear-gradient(to bottom, transparent 40%, rgba($teal-dark, 0.9));
 $team-card-perspective: 1400px;  // profondeur du retournement (ANI-06)
+$team-grid-2col:        768px;  // grille équipe : 2 colonnes à partir de… (QA-01, la bio du verso doit tenir)
+$team-grid-3col:        1240px; // … et 3 colonnes à partir de
 
 // -----------------------------------------------------------------------------
 // 10. TEXTURES (DS-02)
