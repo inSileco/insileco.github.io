@@ -111,3 +111,13 @@
 .page-top {
   padding-top: v.$page-top;
 }
+
+// -----------------------------------------------------------------------------
+// Images (QA-01): Bulma's ratio boxes (.image.is-3by2…) stretch their image to
+// the box; crop it instead. Seen on the legacy list / single templates
+// (_default/list.html, single.html: taxonomy pages).
+// -----------------------------------------------------------------------------
+
+.image img {
+  object-fit: cover;
+}
