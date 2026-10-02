@@ -171,7 +171,8 @@ $mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media #{$mobile} {
+  // 1 column only on phones (QA-01): tablets in portrait get 2
+  @media #{v.$media-cards-1col} {
     grid-template-columns: 1fr;
   }
 }
@@ -231,6 +232,11 @@ $mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
   margin-bottom: 0;
 
   @media #{$touch} {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  // 1 column only on phones (QA-01): tablets in portrait get 2
+  @media #{v.$media-cards-1col} {
     grid-template-columns: 1fr;
   }
 }
@@ -329,6 +335,11 @@ $mobile: "(max-width: #{v.$breakpoint-tablet - 1px})";
   margin-bottom: 0;
 
   @media #{$touch} {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  // 1 column only on phones (QA-01): tablets in portrait get 2
+  @media #{v.$media-cards-1col} {
     grid-template-columns: 1fr;
   }
 }
