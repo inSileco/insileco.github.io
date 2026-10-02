@@ -307,6 +307,8 @@ $nav-underline-duration: 250ms;  // tracé du soulignement du menu (ANI-07)
 $nav-open-duration:     200ms;  // ouverture du dropdown et du menu mobile
 $nav-open-distance:     -8px;   // le dropdown descend de 8px en s'ouvrant
 $terrain-reveal-duration: 1.2s;  // relief des headers révélé par balayage (ANI-10)
+$terrain-wave-travel:     3s;    // traversée d'une vague de lumière sur le relief des bandes teal (ANI-11) ; rythme dans terrain.js
+$terrain-wave-color:      rgba($yellow, 0.9);  // cœur de la vague, sur les lignes du relief
 
 // Transition sur les propriétés données, coupée si l'utilisateur
 // demande moins d'animations (prefers-reduced-motion)
