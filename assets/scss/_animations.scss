@@ -514,3 +514,73 @@ $net-intro-step: 0.15s;
     }
   }
 }
+
+// -----------------------------------------------------------------------------
+// Header terrain (ANI-10): on page arrival the terrain of the headers is
+// revealed by a sweep, as if it were being drawn, once.
+// The texture is one filled shape used as a mask (_textures.scss): it cannot be
+// drawn stroke by stroke, so a second mask layer (a soft-edged gradient, 250%
+// wide) is intersected with it and slides from "all hidden" to "all shown".
+// The sweep starts on the side the terrain is anchored to (right for the page
+// headers, left for Contact): on small screens only that side is in view
+// (the terrain is at least 970px wide), so it shows from the start.
+// Only under html.has-reveal (set by reveal.js when motion is allowed): without
+// JS or with reduced motion the terrain shows as is. The text is not delayed.
+// -----------------------------------------------------------------------------
+
+// $from: the side the sweep starts from (left | right)
+@mixin terrain-reveal($from) {
+  $to: left;
+
+  @if $from == left {
+    $to: right;
+  }
+
+  $mask: url(#{v.$texture-terrain}) no-repeat center / contain,
+    linear-gradient(to #{$to}, #000 45%, transparent 55%) no-repeat 0 0 / 250% 100%;
+
+  -webkit-mask: $mask;
+  -webkit-mask-composite: source-in;
+  mask: $mask;
+  mask-composite: intersect;
+  animation: terrain-reveal-from-#{$from} v.$terrain-reveal-duration v.$motion-easing both;
+}
+
+// Gradient layer position: where it is fully transparent → fully opaque
+@keyframes terrain-reveal-from-left {
+  from {
+    -webkit-mask-position: center, 100% 0;
+    mask-position: center, 100% 0;
+  }
+
+  to {
+    -webkit-mask-position: center, 0 0;
+    mask-position: center, 0 0;
+  }
+}
+
+@keyframes terrain-reveal-from-right {
+  from {
+    -webkit-mask-position: center, 0 0;
+    mask-position: center, 0 0;
+  }
+
+  to {
+    -webkit-mask-position: center, 100% 0;
+    mask-position: center, 100% 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .has-reveal :is(.page-header, .contact-hero).has-texture {
+    &.has-texture--bottom-right::before,
+    &.has-texture--top-right::before {
+      @include terrain-reveal(right);
+    }
+
+    &.has-texture--bottom-left::before,
+    &.has-texture--top-left::before {
+      @include terrain-reveal(left);
+    }
+  }
+}
