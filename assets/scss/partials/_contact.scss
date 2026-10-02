@@ -119,6 +119,12 @@ $touch: "(max-width: #{v.$breakpoint-desktop - 1px})";
       border-color: v.$danger-strong;
       background-color: v.$danger-soft;
     }
+
+    // Touch screens (QA-01): iOS Safari zooms into any field under 16px when
+    // it gets the focus, and stays zoomed. 14px (mockup) is kept with a mouse.
+    @media (hover: none) and (pointer: coarse) {
+      font-size: v.$input-font-size-touch;
+    }
   }
 
   .input,
