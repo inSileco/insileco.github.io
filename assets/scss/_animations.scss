@@ -584,3 +584,50 @@ $net-intro-step: 0.15s;
     }
   }
 }
+
+// -----------------------------------------------------------------------------
+// Teal bands terrain (ANI-11): a wave of light rolls through the terrain of the
+// dark bands (home "How we help", CTA bands, Academy CTA, footer) every few
+// seconds, lighting the lines it crosses.
+// The texture is one filled shape used as a mask: its lines cannot move, but
+// what is behind the mask can. The layer's flat colour becomes a gradient: the
+// usual 20% white (opacity baked into the colour, so the wave can shine above
+// it) plus a soft yellow band, three layers wide, that slides across.
+// Moving a background repaints the layer, so the wave only runs while it
+// travels: assets/js/terrain.js adds .is-waving every few seconds while the
+// band is on screen and removes it at the end. Nothing is painted in between.
+// Desktop only: the repaint is the one real cost of the site on slow phones.
+// Not on the page headers (ANI-10) nor the 404 (its own scene). Without JS or
+// with reduced motion the terrain stays as designed.
+// -----------------------------------------------------------------------------
+
+// Band position: from off the left edge to off the right edge
+@keyframes terrain-wave {
+  from {
+    background-position: 100% 0, 0 0;
+  }
+
+  to {
+    background-position: 0 0, 0 0;
+  }
+}
+
+@media (min-width: v.$breakpoint-desktop) and (prefers-reduced-motion: no-preference) {
+  .has-reveal .has-texture--on-dark:not(.page-header, .notfound-hero)::before {
+    opacity: 1;
+    background:
+      linear-gradient(
+        115deg,
+        transparent 40%,
+        rgba(v.$yellow, 0.25) 45%,
+        v.$terrain-wave-color 50%,
+        rgba(v.$yellow, 0.25) 55%,
+        transparent 60%
+      ) 100% 0 / 300% 100% no-repeat,
+      linear-gradient(rgba(v.$texture-color-dark, v.$texture-opacity-dark), rgba(v.$texture-color-dark, v.$texture-opacity-dark));
+  }
+
+  .has-reveal .has-texture--on-dark.is-waving::before {
+    animation: terrain-wave v.$terrain-wave-travel ease-in-out;
+  }
+}
