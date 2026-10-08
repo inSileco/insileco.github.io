@@ -55,7 +55,13 @@ weight = 5
 #  url = "/blog/index.xml"
 #  weight = 6
 
-
+# CR-08: category / tag pages only redirect to the filtered lists
+# (_default/taxonomy.html): keep them out of the sitemap
+[[cascade]]
+  [cascade.sitemap]
+    disable = true
+  [cascade.target]
+    kind = '{taxonomy,term}'
 
 [languages]
 
