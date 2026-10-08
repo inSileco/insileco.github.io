@@ -10,6 +10,11 @@
       </div>
 
       <div class="contact-card">
+        {{ with $form.tally_id }}
+        {{/* CR-07: the client's Tally form (data/{lang}/contact/form.yaml), loaded by assets/js/tally.js */}}
+        <iframe class="contact-tally" data-tally-src="https://tally.so/embed/{{ . }}?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="560" title="{{ $.Params.headline | default $.Title }}"></iframe>
+        <noscript><a class="button is-brand is-fullwidth" href="https://tally.so/r/{{ . }}">{{ $form.submit }}</a></noscript>
+        {{ else }}
         {{/* Fields are named after their label, so the service sends readable messages */}}
         <form class="contact-form" method="post" action="{{ $form.endpoint }}"
               data-contact-form data-endpoint="{{ $form.endpoint }}"
@@ -82,6 +87,7 @@
           <p class="contact-thanks-title" data-template="{{ $form.thanks.title }}"></p>
           <p>{{ $form.thanks.text }}</p>
         </div>
+        {{ end }}
       </div>
     </div>
   </section>
