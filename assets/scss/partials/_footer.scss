@@ -67,32 +67,14 @@
   margin-bottom: v.$space-5;
 }
 
-// Input + button on one line, stacked on small screens
+// Newsletter: the Tally form itself (CR-07), transparent, styled in Tally to
+// look like the footer (field + yellow button on one line). Its height follows
+// the form (Tally's script), e.g. when an error message shows.
 .site-footer-newsletter {
-  display: flex;
-  gap: v.$space-1;
-
-  .input {
-    height: v.$input-height;
-    background-color: transparent;
-    color: var(--theme-text);
-    border-color: var(--theme-border);
-    border-radius: v.$radius-small;
-
-    &::placeholder {
-      color: var(--theme-text);
-      opacity: 0.6;
-    }
-  }
-
-  .button {
-    height: v.$input-height;
-    flex-shrink: 0;
-  }
-
-  @media (max-width: #{v.$breakpoint-desktop - 1px}) {
-    flex-direction: column;
-  }
+  display: block;
+  width: 100%;
+  min-height: v.$input-height;
+  border: 0;
 }
 
 // Bottom bar: copyright | legal links

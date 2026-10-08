@@ -6,6 +6,12 @@
 # Empty: the form shows its confirmation without sending anything (see docs/suivi.md).
 endpoint: ""
 
+# Tally form shown on the Contact page (CR-07): a copy of inSileco's form made
+# for the new site, styled in Tally (Customize + docs/tally-custom.css); the
+# original stays on the current site until it goes offline. Empty: the native
+# form above comes back (kept for a later fully custom version).
+tally_id: "2EM1qb"
+
 name:
   label: "Name"
   placeholder: "First Last"

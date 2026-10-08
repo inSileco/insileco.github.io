@@ -6,10 +6,9 @@ contact:
 newsletter:
   heading: "Stay informed"
   blurb: "Occasional insights and updates by email. No Spam!"
-  label: "Your email"
   button: "Subscribe"
-  # Tally form: the popup opens with the email pre-filled (hidden field "email")
-  tally_form_id: "jaoJKE"
+  # Tally form embedded in the footer (CR-07); `button`: link when JS is off
+  tally_form_id: "b50PRe"
 bottom:
   rights: "All rights reserved."
   legal:
