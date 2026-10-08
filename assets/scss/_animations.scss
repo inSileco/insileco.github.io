@@ -127,6 +127,19 @@ button.arrow-button {
   transform: rotateY(180deg);
 }
 
+// QA-02: Safari lets the edge of the hidden front show through the rounded
+// corners of the back (thin dark outline). The front is hidden once it has
+// turned away: half the duration, past the 90° reached at ~42% with this
+// easing. Turning back, it shows again at once (still culled by
+// backface-visibility until it faces the viewer), so the card is never empty.
+.team-card:is(:hover, :focus-within) .team-card-front {
+  visibility: hidden;
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition: visibility 0s linear calc(#{v.$team-flip-duration} / 2);
+  }
+}
+
 // -----------------------------------------------------------------------------
 // Partner logos of the home (CA5): dimmed, full opacity on hover; the scroll
 // pauses while a logo is hovered or focused so it can be clicked
