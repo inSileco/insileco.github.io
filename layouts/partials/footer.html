@@ -35,11 +35,10 @@
       {{ with $footer.newsletter }}
       <h2 class="site-footer-heading">{{ .heading }}</h2>
       <p class="site-footer-blurb">{{ .blurb }}</p>
-      <form class="site-footer-newsletter" data-tally-form="{{ .tally_form_id }}">
-        <label class="is-sr-only" for="footer-newsletter-email">{{ .label }}</label>
-        <input id="footer-newsletter-email" class="input" type="email" name="email" placeholder="{{ .label }}" autocomplete="email" required />
-        <button class="button is-brand" type="submit">{{ .button }}</button>
-      </form>
+      {{/* CR-07: the Tally form itself, styled like the footer (in Tally), so
+           subscribing takes one click; loaded near the screen by assets/js/tally.js */}}
+      <iframe class="site-footer-newsletter" data-tally-src="https://tally.so/embed/{{ .tally_form_id }}?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="58" title="{{ .heading }}"></iframe>
+      <noscript><a class="button is-brand" href="https://tally.so/r/{{ .tally_form_id }}">{{ .button }}</a></noscript>
       {{ end }}
     </div>
 
