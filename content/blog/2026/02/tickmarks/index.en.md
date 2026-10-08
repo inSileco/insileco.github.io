@@ -338,38 +338,40 @@ This provides the information under which the post was rendered.
 sessionInfo()
 ```
 
-    R version 4.5.2 (2025-10-31)
-    Platform: x86_64-pc-linux-gnu
-    Running under: Ubuntu 25.10
+```text
+R version 4.5.2 (2025-10-31)
+Platform: x86_64-pc-linux-gnu
+Running under: Ubuntu 25.10
 
-    Matrix products: default
-    BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.12.1 
-    LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.12.1;  LAPACK version 3.12.0
+Matrix products: default
+BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.12.1 
+LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.12.1;  LAPACK version 3.12.0
 
-    locale:
-     [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
-     [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
-     [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
-     [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
-     [9] LC_ADDRESS=C               LC_TELEPHONE=C            
-    [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
 
-    time zone: America/New_York
-    tzcode source: system (glibc)
+time zone: America/New_York
+tzcode source: system (glibc)
 
-    attached base packages:
-    [1] stats     graphics  grDevices datasets  utils     methods   base     
+attached base packages:
+[1] stats     graphics  grDevices datasets  utils     methods   base     
 
-    loaded via a namespace (and not attached):
-     [1] vctrs_0.7.1         cli_3.6.5           knitr_1.51         
-     [4] rlang_1.1.7         xfun_0.56           otel_0.2.0         
-     [7] processx_3.8.6      targets_1.11.4      jsonlite_2.0.0     
-    [10] data.table_1.18.2.1 glue_1.8.0          prettyunits_1.2.0  
-    [13] backports_1.5.0     htmltools_0.5.9     ps_1.9.1           
-    [16] rmarkdown_2.30      evaluate_1.0.5      tibble_3.3.1       
-    [19] fastmap_1.2.0       base64url_1.4       yaml_2.3.12        
-    [22] lifecycle_1.0.5     compiler_4.5.2      codetools_0.2-20   
-    [25] igraph_2.2.1        pkgconfig_2.0.3     digest_0.6.39      
-    [28] R6_2.6.1            tidyselect_1.2.1    pillar_1.11.1      
-    [31] callr_3.7.6         magrittr_2.0.4      tools_4.5.2        
-    [34] secretbase_1.1.1    bspm_0.5.7         
+loaded via a namespace (and not attached):
+ [1] vctrs_0.7.1         cli_3.6.5           knitr_1.51         
+ [4] rlang_1.1.7         xfun_0.56           otel_0.2.0         
+ [7] processx_3.8.6      targets_1.11.4      jsonlite_2.0.0     
+[10] data.table_1.18.2.1 glue_1.8.0          prettyunits_1.2.0  
+[13] backports_1.5.0     htmltools_0.5.9     ps_1.9.1           
+[16] rmarkdown_2.30      evaluate_1.0.5      tibble_3.3.1       
+[19] fastmap_1.2.0       base64url_1.4       yaml_2.3.12        
+[22] lifecycle_1.0.5     compiler_4.5.2      codetools_0.2-20   
+[25] igraph_2.2.1        pkgconfig_2.0.3     digest_0.6.39      
+[28] R6_2.6.1            tidyselect_1.2.1    pillar_1.11.1      
+[31] callr_3.7.6         magrittr_2.0.4      tools_4.5.2        
+[34] secretbase_1.1.1    bspm_0.5.7         
+```
