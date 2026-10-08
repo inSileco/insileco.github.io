@@ -1,0 +1,23 @@
+{{/*
+  CR-08 — Redirect page for the category / tag pages Hugo generates
+  (_default/taxonomy.html). No link of the site leads to
+  them (tags filter the Portfolio / Blog lists instead), but old links and
+  search engines may: send visitors to the matching list, in the new design.
+  Call: partial "taxonomy-redirect.html" (dict "page" . "target" "/fr/portfolio/?tag=…")
+*/}}
+{{ $target := .target }}
+<!doctype html>
+<html lang="{{ .page.Site.Language.Lang }}">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ .page.Title }} · {{ .page.Site.Title }}</title>
+  <link rel="canonical" href="{{ $target | absURL }}" />
+  <meta name="robots" content="noindex" />
+  <meta http-equiv="refresh" content="0; url={{ $target }}" />
+  <script>location.replace({{ $target }});</script>
+</head>
+<body>
+  <p><a href="{{ $target }}">{{ .page.Title }}</a></p>
+</body>
+</html>
