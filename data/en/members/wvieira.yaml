@@ -5,17 +5,17 @@ name:
 order: 5
 title: PhD.
 social:
-  mail: will.vieira@insileco.io
+  mail: willian.vieira@insileco.io
   # website: https://kevcaz.insileco.io/
   github: willvieira
-  researchgate: Kevin_Cazelles
+  researchgate: Willian-Vieira-3
   orcid: 0000-0003-0283-4570
-  # linkedin: kevin-cazelles-51552283
+  linkedin: willvieira90
 active:
   begin: 2026-07-06
 role: Data scientist
 bio:
   short: |
-    Willian Vieira holds a PhD. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    Willian Vieira holds a PhD in ecology from Université de Sherbrooke. He specializes in forest dynamics, Bayesian modeling, and environmental data science, combining quantitative ecology with data engineering to develop reproducible analyses and reliable data workflows for environmental decision-making.
   long: |
-    Soon.
+    Willian Vieira is a quantitative ecologist and data scientist with a PhD in ecology from Université de Sherbrooke. He combines Bayesian modeling, spatial analysis, and data engineering to study forest dynamics and support environmental decision-making. His experience spans academic research, boreal bird monitoring with Environment and Climate Change Canada, and environmental consulting at Habitat. He develops reproducible workflows and analytical tools that make complex environmental data traceable, reliable, and reusable, and has taught statistics, scientific programming, and reproducible research practices.
