@@ -273,3 +273,9 @@ weight = 7
     [[module.imports.mounts]]
       source = "versions"
       target = "assets/mod/bulma/versions"
+
+[markup.goldmark.extensions.passthrough]
+enable = true
+[markup.goldmark.extensions.passthrough.delimiters]
+block = [['\[', '\]'], ['$$', '$$']]
+inline = [['\(', '\)']]

@@ -1,0 +1,14 @@
+{{- /*
+  Render LaTeX math to HTML at build time with Hugo's built-in KaTeX
+  (transform.ToMath). Delimiters are set in hugo.toml under
+  markup.goldmark.extensions.passthrough: \( \) inline, \[ \] and $$ $$ block.
+  head.html loads the KaTeX stylesheet when it finds this output in .Content.
+*/ -}}
+{{- $opts := dict "output" "htmlAndMathml" "displayMode" (eq .Type "block") }}
+{{- with try (transform.ToMath .Inner $opts) }}
+  {{- with .Err }}
+    {{- errorf "KaTeX failed to render math in %s: %s" $.Position . }}
+  {{- else }}
+    {{- .Value }}
+  {{- end }}
+{{- end -}}
