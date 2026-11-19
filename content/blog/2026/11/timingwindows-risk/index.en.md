@@ -1,8 +1,8 @@
 ---
 title: "Setting timing windows from the risk at a site"
-date: 2026-11-09
+date: 2026-11-18
 author: "inSileco Team"
-description: "How a timing window for in-water work is scored, how the same score can be built from the risk fish face at a site, and what the data available today already allow."
+description: "We explain how a timing window for in-water work is calculated, what is gained when the assessment rests on the risk fish face at a specific site, and what the data available today allow us to do."
 featured_image: "img/layered-cutaway.png"
 categories:
   - Timing windows
@@ -45,7 +45,7 @@ On Lake St. Clair, with 12 species, a restricted period from March 15 to May 31 
 
 ## From fish timing to risk
 
-Fish timing tells us when fish could be harmed. It does not tell us where they are within a lake, which pressures already weigh on them, or how much a given type of work would add. Those are the questions a cumulative risk assessment asks, and the calculator was designed from the start to answer them.
+Fish timing tells us when fish could be harmed. It does not tell us where they are within a lake, which pressures already weigh on them, or how much a given type of work would add. Those are the questions a cumulative risk assessment asks, and the calculator was designed from the start as a spatially explicit cumulative risk assessment to answer them.
 
 ![Design of the Timing Windows Risk Calculator: risk combines stressors, species, and sensitivity, with each species broken into six life processes that each vary in time and in space](img/calculator_full.png)
 
@@ -57,9 +57,11 @@ $$
 R(x,t) = \sum_{i} \sum_{p} \sum_{j} L_{ip}(x) \, P_{ip}(t) \, S_{j}(x) \, s_{j}(t) \, \mu_{ipj}
 $$
 
-For each species \(i\), each of its life processes \(p\), and each pressure \(j\), the model combines five things: where the life process occurs (\(L_{ip}\)), when it occurs (\(P_{ip}\)), how intense the pressure is at that location (\(S_j\)), when during the year it acts (\(s_j\)), and how sensitive the species and its habitat are to it (\(\mu_{ipj}\)). The daily risk then feeds the same score and the same sliding search as before.
+For each species \(i\), each of its life processes \(p\), and each pressure \(j\), the model combines five things: where the life process occurs (\(L_{ip}\)), when it occurs (\(P_{ip}\)), how intense the pressure is at that location (\(S_j\)), when during the year it acts (\(s_j\)), and how sensitive the species and its habitat are to it (\(\mu_{ipj}\)).
 
-The calculator we use today is the simplest case of this model. Space is reduced to one waterbody, the intensity of pressures is not mapped, and every sensitivity is set to 1. Adding data therefore improves the same model rather than replacing it.
+The risk is therefore spatially explicit, because it is computed for each location in a waterbody, and cumulative, because it adds up across species, life processes, and pressures. At each location, the daily risk feeds the same score and the same sliding search as before. The result is a window for every location, which can be mapped across a waterbody or read for the locations a project would affect.
+
+The calculator we use today is the simplest case of this model. The whole waterbody is treated as a single location, pressures are not mapped, so their intensity and timing are set to 1, and every sensitivity is set to 1. Adding data therefore improves the same model rather than replacing it.
 
 This also works in both directions. Where pressures already weigh on a species or a life stage at a site, the window can be made more protective. Where they do not, it can be made less restrictive, which matters as much to the people scheduling the work as to the fish.
 
