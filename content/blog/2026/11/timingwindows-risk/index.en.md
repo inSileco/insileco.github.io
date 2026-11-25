@@ -1,6 +1,6 @@
 ---
 title: "Setting timing windows from the risk at a site"
-date: 2026-11-18
+date: 2026-11-25
 author: "inSileco Team"
 description: "We explain how a timing window for in-water work is calculated, what is gained when the assessment rests on the risk fish face at a specific site, and what the data available today allow us to do."
 featured_image: "img/layered-cutaway.png"

@@ -1,6 +1,6 @@
 ---
 title: "Établir les périodes de travaux à partir du risque propre à un site"
-date: 2026-11-18
+date: 2026-11-25
 author: "Équipe inSileco"
 description: "Nous expliquons le calcul d'une période de travaux en milieu aquatique, les gains pour l'évaluation lorsqu'elle repose sur le risque auquel les poissons font face à un site particulier, et ce que les données actuellement disponibles nous permettent de faire."
 featured_image: "img/layered-cutaway.png"
